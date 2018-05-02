@@ -1,0 +1,25 @@
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em
+
+#ifndef __diagnostic_msgs__srv__AddDiagnostics_Request__idl__
+#define __diagnostic_msgs__srv__AddDiagnostics_Request__idl__
+
+
+module diagnostic_msgs
+{
+
+module srv
+{
+
+
+struct AddDiagnostics_Request
+{
+
+  string load_namespace;
+
+};  // struct AddDiagnostics_Request
+
+};  // module srv
+
+};  // module diagnostic_msgs
+
+#endif  // __diagnostic_msgs__srv__AddDiagnostics_Request__idl__

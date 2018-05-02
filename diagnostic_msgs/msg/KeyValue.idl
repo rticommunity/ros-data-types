@@ -1,0 +1,25 @@
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em
+
+#ifndef __diagnostic_msgs__msg__KeyValue__idl__
+#define __diagnostic_msgs__msg__KeyValue__idl__
+
+
+module diagnostic_msgs
+{
+
+module msg
+{
+
+struct KeyValue
+{
+
+  string key;
+  string value;
+
+};  // struct KeyValue
+
+};  // module msg
+
+};  // module diagnostic_msgs
+
+#endif  // __diagnostic_msgs__msg__KeyValue__idl__
