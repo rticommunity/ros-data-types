@@ -1,0 +1,34 @@
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em
+
+#ifndef __stereo_msgs__msg__DisparityImage__idl
+#define __stereo_msgs__msg__DisparityImage__idl
+
+#include "../../sensor_msgs/msg/Image.idl"
+#include "../../sensor_msgs/msg/RegionOfInterest.idl"
+#include "../../std_msgs/msg/Header.idl"
+
+module stereo_msgs
+{
+
+module msg
+{
+
+struct DisparityImage
+{
+
+  std_msgs::msg::Header header;
+  sensor_msgs::msg::Image image;
+  float f;
+  float t;
+  sensor_msgs::msg::RegionOfInterest valid_window;
+  float min_disparity;
+  float max_disparity;
+  float delta_d;
+
+};  // struct DisparityImage
+
+};  // module msg
+
+};  // module stereo_msgs
+
+#endif  // __stereo_msgs__msg__DisparityImage__idl

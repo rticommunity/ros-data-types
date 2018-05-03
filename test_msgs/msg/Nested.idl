@@ -1,0 +1,25 @@
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em
+
+#ifndef __test_msgs__msg__Nested__idl
+#define __test_msgs__msg__Nested__idl
+
+#include "Primitives.idl"
+
+module test_msgs
+{
+
+module msg
+{
+
+struct Nested
+{
+
+  test_msgs::msg::Primitives primitive_values;
+
+};  // struct Nested
+
+};  // module msg
+
+};  // module test_msgs
+
+#endif  // __test_msgs__msg__Nested__idl

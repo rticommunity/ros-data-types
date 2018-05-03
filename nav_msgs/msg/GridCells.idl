@@ -1,0 +1,29 @@
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em
+
+#ifndef __nav_msgs__msg__GridCells__idl
+#define __nav_msgs__msg__GridCells__idl
+
+#include "../../geometry_msgs/msg/Point.idl"
+#include "../../std_msgs/msg/Header.idl"
+
+module nav_msgs
+{
+
+module msg
+{
+
+struct GridCells
+{
+
+  std_msgs::msg::Header header;
+  float cell_width;
+  float cell_height;
+  sequence<geometry_msgs::msg::Point> cells;
+
+};  // struct GridCells
+
+};  // module msg
+
+};  // module nav_msgs
+
+#endif  // __nav_msgs__msg__GridCells__idl

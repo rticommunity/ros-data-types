@@ -1,0 +1,26 @@
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em
+
+#ifndef __lifecycle_msgs__srv__GetAvailableStates_Response__idl
+#define __lifecycle_msgs__srv__GetAvailableStates_Response__idl
+
+#include "../msg/State.idl"
+
+module lifecycle_msgs
+{
+
+module srv
+{
+
+struct GetAvailableStates_Response
+{
+
+  sequence<lifecycle_msgs::msg::State> available_states;
+
+};  // struct GetAvailableStates_Response
+
+
+};  // module srv
+
+};  // module lifecycle_msgs
+
+#endif  // __lifecycle_msgs__srv__GetAvailableStates_Response__idl

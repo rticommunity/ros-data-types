@@ -1,0 +1,25 @@
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em
+
+#ifndef __visualization_msgs__msg__MarkerArray__idl
+#define __visualization_msgs__msg__MarkerArray__idl
+
+#include "Marker.idl"
+
+module visualization_msgs
+{
+
+module msg
+{
+
+struct MarkerArray
+{
+
+  sequence<visualization_msgs::msg::Marker> markers;
+
+};  // struct MarkerArray
+
+};  // module msg
+
+};  // module visualization_msgs
+
+#endif  // __visualization_msgs__msg__MarkerArray__idl

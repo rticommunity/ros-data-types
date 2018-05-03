@@ -1,0 +1,25 @@
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em
+
+#ifndef __sensor_msgs__srv__SetCameraInfo_Request__idl
+#define __sensor_msgs__srv__SetCameraInfo_Request__idl
+
+#include "../msg/CameraInfo.idl"
+
+module sensor_msgs
+{
+
+module srv
+{
+
+struct SetCameraInfo_Request
+{
+
+  sensor_msgs::msg::CameraInfo camera_info;
+
+};  // struct SetCameraInfo_Request
+
+};  // module srv
+
+};  // module sensor_msgs
+
+#endif  // __sensor_msgs__srv__SetCameraInfo_Request__idl

@@ -1,0 +1,34 @@
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em
+
+#ifndef __visualization_msgs__msg__InteractiveMarker__idl
+#define __visualization_msgs__msg__InteractiveMarker__idl
+
+#include "../../geometry_msgs/msg/Pose.idl"
+#include "../../std_msgs/msg/Header.idl"
+#include "InteractiveMarkerControl.idl"
+#include "MenuEntry.idl"
+
+module visualization_msgs
+{
+
+module msg
+{
+
+struct InteractiveMarker
+{
+
+  std_msgs::msg::Header header;
+  geometry_msgs::msg::Pose pose;
+  string name;
+  string description;
+  float scale;
+  sequence<visualization_msgs::msg::MenuEntry> menu_entries;
+  sequence<visualization_msgs::msg::InteractiveMarkerControl> controls;
+
+};  // struct InteractiveMarker
+
+};  // module msg
+
+};  // module visualization_msgs
+
+#endif  // __visualization_msgs__msg__InteractiveMarker__idl

@@ -1,0 +1,28 @@
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em
+
+#ifndef __geometry_msgs__msg__TwistStamped__idl
+#define __geometry_msgs__msg__TwistStamped__idl
+
+#include "Twist.idl"
+#include "../../std_msgs/msg/Header.idl"
+
+module geometry_msgs
+{
+
+module msg
+{
+
+struct TwistStamped
+{
+
+  std_msgs::msg::Header header;
+  geometry_msgs::msg::Twist twist;
+
+};  // struct TwistStamped
+
+
+};  // module msg
+
+};  // module geometry_msgs
+
+#endif  // __geometry_msgs__msg__TwistStamped__idl

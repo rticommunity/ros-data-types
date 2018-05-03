@@ -1,0 +1,25 @@
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em
+
+#ifndef __sensor_msgs__msg__LaserEcho__idl
+#define __sensor_msgs__msg__LaserEcho__idl
+
+
+module sensor_msgs
+{
+
+module msg
+{
+
+struct LaserEcho
+{
+
+  sequence<float> echoes;
+
+};  // struct LaserEcho
+
+
+};  // module msg
+
+};  // module sensor_msgs
+
+#endif  // __sensor_msgs__msg__LaserEcho__idl

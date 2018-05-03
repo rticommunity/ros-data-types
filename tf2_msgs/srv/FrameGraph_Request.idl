@@ -1,0 +1,24 @@
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em
+
+#ifndef __tf2_msgs__srv__FrameGraph_Request__idl
+#define __tf2_msgs__srv__FrameGraph_Request__idl
+
+
+module tf2_msgs
+{
+
+module srv
+{
+
+struct FrameGraph_Request
+{
+
+  boolean _dummy;
+
+};  // struct FrameGraph_Request
+
+};  // module srv
+
+};  // module tf2_msgs
+
+#endif  // __tf2_msgs__srv__FrameGraph_Request__idl

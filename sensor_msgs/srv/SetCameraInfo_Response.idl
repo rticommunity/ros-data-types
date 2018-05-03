@@ -1,0 +1,25 @@
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em
+
+#ifndef __sensor_msgs__srv__SetCameraInfo_Response__idl
+#define __sensor_msgs__srv__SetCameraInfo_Response__idl
+
+
+module sensor_msgs
+{
+
+module srv
+{
+
+struct SetCameraInfo_Response
+{
+
+  boolean success;
+  string status_message;
+
+};  // struct SetCameraInfo_Response
+
+};  // module srv
+
+};  // module sensor_msgs
+
+#endif  // __sensor_msgs__srv__SetCameraInfo_Response__idl

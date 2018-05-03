@@ -1,0 +1,27 @@
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em
+
+#ifndef __test_msgs__msg__Builtins__idl
+#define __test_msgs__msg__Builtins__idl
+
+#include "../../std_msgs/msg/Duration.idl"
+#include "../../std_msgs/msg/Time.idl"
+
+module test_msgs
+{
+
+module msg
+{
+
+struct Builtins
+{
+
+  std_msgs::msg::Duration duration_value;
+  std_msgs::msg::Time time_value;
+
+};  // struct Builtins
+
+};  // module msg
+
+};  // module test_msgs
+
+#endif  // __test_msgs__msg__Builtins__idl

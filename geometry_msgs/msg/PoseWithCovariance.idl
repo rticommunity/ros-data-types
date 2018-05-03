@@ -1,0 +1,28 @@
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em
+
+#ifndef __geometry_msgs__msg__PoseWithCovariance__idl
+#define __geometry_msgs__msg__PoseWithCovariance__idl
+
+#include "Pose.idl"
+
+module geometry_msgs
+{
+
+module msg
+{
+
+typedef double geometry_msgs__PoseWithCovariance__double_array_36[36];
+
+struct PoseWithCovariance
+{
+
+  geometry_msgs::msg::Pose pose;
+geometry_msgs__PoseWithCovariance__double_array_36 covariance;
+
+};  // struct PoseWithCovariance
+
+};  // module msg
+
+};  // module geometry_msgs
+
+#endif  // __geometry_msgs__msg__PoseWithCovariance__idl

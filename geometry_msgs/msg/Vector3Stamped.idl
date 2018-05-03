@@ -1,0 +1,26 @@
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em
+
+#ifndef __geometry_msgs__msg__Vector3Stamped__idl
+#define __geometry_msgs__msg__Vector3Stamped__idl
+
+#include "Vector3.idl"
+#include "../../std_msgs/msg/Header.idl"
+
+module geometry_msgs
+{
+
+module msg
+{
+struct Vector3Stamped
+{
+
+  std_msgs::msg::Header header;
+  geometry_msgs::msg::Vector3 vector;
+
+};  // struct Vector3Stamped
+
+};  // module msg
+
+};  // module geometry_msgs
+
+#endif  // __geometry_msgs__msg__Vector3Stamped__idl

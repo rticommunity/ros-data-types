@@ -1,0 +1,27 @@
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em
+
+#ifndef __visualization_msgs__msg__InteractiveMarkerInit__idl
+#define __visualization_msgs__msg__InteractiveMarkerInit__idl
+
+#include "InteractiveMarker.idl"
+
+module visualization_msgs
+{
+
+module msg
+{
+
+struct InteractiveMarkerInit
+{
+
+  string server_id;
+  unsigned long long seq_num;
+  sequence<visualization_msgs::msg::InteractiveMarker> markers;
+
+};  // struct InteractiveMarkerInit
+
+};  // module msg
+
+};  // module visualization_msgs
+
+#endif  // __visualization_msgs__msg__InteractiveMarkerInit__idl

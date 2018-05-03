@@ -1,0 +1,27 @@
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em
+
+#ifndef __shape_msgs__msg__Plane__idl
+#define __shape_msgs__msg__Plane__idl
+
+
+module shape_msgs
+{
+
+module msg
+{
+
+typedef double shape_msgs__Plane__double_array_4[4];
+
+struct Plane
+{
+
+shape_msgs__Plane__double_array_4 coef;
+
+};  // struct Plane
+
+
+};  // module msg
+
+};  // module shape_msgs
+
+#endif  // __shape_msgs__msg__Plane__idl

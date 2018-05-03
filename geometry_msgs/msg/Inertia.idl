@@ -1,0 +1,32 @@
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em
+
+#ifndef __geometry_msgs__msg__Inertia__idl
+#define __geometry_msgs__msg__Inertia__idl
+
+#include "Vector3.idl"
+
+module geometry_msgs
+{
+
+module msg
+{
+
+struct Inertia
+{
+
+  double m;
+  geometry_msgs::msg::Vector3 com;
+  double ixx;
+  double ixy;
+  double ixz;
+  double iyy;
+  double iyz;
+  double izz;
+
+};  // struct Inertia
+
+};  // module msg
+
+};  // module geometry_msgs
+
+#endif  // __geometry_msgs__msg__Inertia__idl

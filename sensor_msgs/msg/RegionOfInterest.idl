@@ -1,0 +1,29 @@
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em
+
+#ifndef __sensor_msgs__msg__RegionOfInterest__idl
+#define __sensor_msgs__msg__RegionOfInterest__idl
+
+
+module sensor_msgs
+{
+
+module msg
+{
+
+struct RegionOfInterest
+{
+
+  unsigned long x_offset;
+  unsigned long y_offset;
+  unsigned long height;
+  unsigned long width;
+  boolean do_rectify;
+
+};  // struct RegionOfInterest
+
+
+};  // module msg
+
+};  // module sensor_msgs
+
+#endif  // __sensor_msgs__msg__RegionOfInterest__idl

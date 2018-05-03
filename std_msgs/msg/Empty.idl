@@ -1,0 +1,24 @@
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em
+
+#ifndef __std_msgs__msg__Empty__idl
+#define __std_msgs__msg__Empty__idl
+
+
+module std_msgs
+{
+
+module msg
+{
+
+struct Empty
+{
+
+  boolean _dummy;
+
+};  // struct Empty
+
+};  // module msg
+
+};  // module std_msgs
+
+#endif  // __std_msgs__msg__Empty__idl

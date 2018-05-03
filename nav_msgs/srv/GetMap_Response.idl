@@ -1,0 +1,25 @@
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em
+
+#ifndef __nav_msgs__srv__GetMap_Response__idl
+#define __nav_msgs__srv__GetMap_Response__idl
+
+#include "../msg/OccupancyGrid.idl"
+
+module nav_msgs
+{
+
+module srv
+{
+
+struct GetMap_Response
+{
+
+  nav_msgs::msg::OccupancyGrid map;
+
+};  // struct GetMap_Response
+
+};  // module srv
+
+};  // module nav_msgs
+
+#endif  // __nav_msgs__srv__GetMap_Response__idl
