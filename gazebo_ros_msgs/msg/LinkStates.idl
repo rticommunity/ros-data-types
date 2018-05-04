@@ -1,0 +1,24 @@
+
+/* --- LinkStates type: ---------------------------------------------------- */
+
+/*
+ * This is the LinkStates type.
+ *
+ * Broadcast all link states in world frame
+ */
+struct LinkStates {
+        /*
+         * Link names
+         */
+        sequence<string> name;
+
+        /*
+         * Desired pose in world frame
+         */
+        sequence<Pose> pose;
+
+        /*
+         * Desired twist in world frame
+         */
+        sequence<Twist> twist;
+};

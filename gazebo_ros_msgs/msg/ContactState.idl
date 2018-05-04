@@ -1,0 +1,48 @@
+/* --- ContactState type: -------------------------------------------------- */
+
+/*
+ * This is the ContactState type.
+ *
+ * Set Gazebo contact information
+ */
+struct ContactState {
+        /*
+         * Text info on this contact
+         */
+        string info;
+
+        /*
+         * Name of contact collision1
+         */
+        string collision1_name;
+
+        /*
+         * Name of contact collision2
+         */
+        string collision2_name;
+
+        /*
+         * List of forces/torques
+         */
+        sequence<Wrench> wrenches;
+
+        /*
+         * Sum of forces/torques in every DOF
+         */
+        Wrench total_wrench;
+
+        /*
+         * List of contact position
+         */
+        sequence<Vector3> contact_positions;
+
+        /*
+         * List of contact normals
+         */
+        sequence<Vector3> contact_normals;
+
+        /*
+         * List of penetration depths
+         */
+        sequence<double> dephts;
+};

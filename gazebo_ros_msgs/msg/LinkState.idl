@@ -1,0 +1,30 @@
+
+/* --- LinkState type: ----------------------------------------------------- */
+
+/*
+ * This is the LinkState type.
+ *
+ * Set Gazebo Link pose and twist
+ */
+struct LinkState {
+        /*
+         * Link name, link_names are in gazebo scoped name notation, [model_name::body_name]
+         */
+        string link_name;
+
+        /*
+         * Desired pose in reference frame
+         */
+        Pose pose;
+
+        /*
+         * Desired twist in reference frame
+         */
+        Twist twist;
+
+        /*
+         * Set pose/twist relative to the frame of this link/body
+         * leave empty or "world" or "map" defaults to world-frame
+         */
+        string reference_frame;
+};

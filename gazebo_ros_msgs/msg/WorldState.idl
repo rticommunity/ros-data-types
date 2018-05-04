@@ -1,0 +1,38 @@
+
+/* --- WorldState type: ---------------------------------------------------- */
+
+/*
+ * This is the WorldState type.
+ *
+ * This idl is used to do the following:
+ *      reconstruct the world and objects for sensor generation
+ *      stop / start simulation - need pose, twist, wrench of each body
+ *      collision detection - need pose of each collision geometry.  velocity/acceleration if
+ */
+struct WorldState {
+        /*
+         * Stamp
+         */
+        Header header;
+
+        /*
+         * Objects names 
+         */
+        sequence<string> name;
+
+
+        /*
+         * Desired pose in world frame
+         */
+        sequence<Pose> pose;
+
+        /*
+         * Desired twist in world frame
+         */
+        sequence<Twist> twist;
+
+        /*
+         * Desired wrench in world frame
+         */
+        sequence<Wrench> wrench;
+};

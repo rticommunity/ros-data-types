@@ -1,0 +1,59 @@
+
+/* --- ODEPhysics type: ---------------------------------------------------- */
+
+/*
+ * This is the ODEPhysics type.
+ *
+ * Access to ODE ODEPhysics
+ */
+struct ODEPhysics {
+        /*
+         * Enable auto disabling of bodies, default false
+         */
+        boolean auto_disable_bodies;
+
+        /*
+         * Preconditioning inner iterations when uisng projected Gauss Seidel
+         */
+        unsigned long sor_pgs_precon_iters;
+
+        /*
+         * Inner iterations when uisng projected Gauss Seidel
+         */
+        unsigned long sor_pgs_iters;
+
+        /*
+         * Relaxation parameter when using projected Gauss Seidel, 1 = no relaxation
+         */
+        double psor_pgs_w;
+
+        /*
+         * Rms error tolerance before stopping inner iterations
+         */
+        double sor_pgs_rms_error_tol;
+
+        /*
+         * Contact "dead-band" width
+         */
+        double contact_surface_layer;
+
+        /*
+         * Contact maximum correction velocity
+         */
+        double contact_max_correcting_vel;
+
+        /*
+         * Global constraint force mixing
+         */
+        double cfm;
+
+        /*
+         * Global error reduction parameter
+         */
+        double erp;
+
+        /*
+         * Maximum contact joints between two geoms
+         */
+        unsigned long max_contacts;
+};

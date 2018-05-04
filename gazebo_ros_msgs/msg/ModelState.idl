@@ -1,0 +1,30 @@
+
+/* --- ModelState type: ---------------------------------------------------- */
+
+/*
+ * This is the ModelState type.
+ *
+ * Set Gazebo Model pose and twist
+ */
+struct ModelState {
+        /*
+         * Model to set state (pose and twist)
+         */
+        string model_name;
+
+        /*
+         * Desired pose in reference frame
+         */
+        Pose pose;
+
+        /*
+         * Desired twist in reference frame
+         */
+        Twist twist;
+
+        /*
+         * Set pose/twist relative to the frame of this entity (Body/Model)
+         * leave empty or "world" or "map" defaults to world-frame
+         */
+        string reference_frame;
+};
