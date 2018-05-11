@@ -1,0 +1,16 @@
+
+module gazebo_msgs
+{
+
+module srv
+{
+
+struct GetLightProperties_Request {
+
+    string light_name;
+
+};
+
+};  // module srv
+
+};  // module gazebo_msgs

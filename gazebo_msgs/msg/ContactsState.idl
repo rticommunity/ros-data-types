@@ -1,0 +1,17 @@
+
+module gazebo_msgs
+{
+
+module msg
+{
+
+struct ContactsState {
+        
+    Header header;
+    sequence<ContactState> states;
+
+};
+
+};  // module msg
+
+};  // module gazebo_msgs

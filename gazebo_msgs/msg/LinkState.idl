@@ -1,0 +1,19 @@
+
+module gazebo_msgs
+{
+
+module msg
+{
+
+struct LinkState {
+        
+    string link_name;
+    Pose pose;
+    Twist twist;
+    string reference_frame;
+
+};
+
+};  // module msg
+
+};  // module gazebo_msgs

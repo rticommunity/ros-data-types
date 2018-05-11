@@ -1,0 +1,20 @@
+
+module gazebo_msgs
+{
+
+module srv
+{
+
+struct SetJointTrajectory_Request {
+
+    string model_name;
+    JointTrayectory joint_trajectory;
+    Pose model_pose;
+    boolean set_model_pose;
+    boolean disable_physics_updates;
+
+};
+
+};  // module srv
+
+};  // module gazebo_msgs

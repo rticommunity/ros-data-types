@@ -1,0 +1,16 @@
+
+module gazebo_msgs
+{
+
+module srv
+{
+
+struct SetLinkState_Request {
+
+    LinkState link_state;
+
+};
+
+};  // module srv
+
+};  // module gazebo_msgs

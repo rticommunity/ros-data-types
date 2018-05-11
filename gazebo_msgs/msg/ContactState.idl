@@ -1,0 +1,23 @@
+
+module gazebo_msgs
+{
+
+module msg
+{
+
+struct ContactState {
+    
+    string info;
+    string collision1_name;
+    string collision2_name;
+    sequence<Wrench> wrenches;
+    Wrench total_wrench;
+    sequence<Vector3> contact_positions;
+    sequence<Vector3> contact_normals;
+    sequence<double> dephts;
+
+};
+
+};  // module msg
+
+};  // module gazebo_msgs

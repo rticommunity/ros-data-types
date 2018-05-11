@@ -1,0 +1,22 @@
+
+module gazebo_msgs
+{
+
+module srv
+{
+
+struct GetPhysicsProperties_Response {
+
+    double time_step;
+    boolean pause;
+    double max_update_rate;
+    Vector3 gravity;
+    ODEPhysics ode_config;
+    boolean success;
+    string status_message;
+
+};
+
+};  // module srv
+
+};  // module gazebo_msgs

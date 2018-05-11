@@ -1,0 +1,19 @@
+
+module gazebo_msgs
+{
+
+module srv
+{
+
+struct SetPhysicsProperties_Request {
+
+    double time_step;
+    double max_update_rate;
+    Vector3 gravity;
+    ODEPhysics ode_config;
+
+};
+
+};  // module srv
+
+};  // module gazebo_msgs

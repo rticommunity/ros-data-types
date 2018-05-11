@@ -1,0 +1,16 @@
+
+module gazebo_msgs
+{
+
+module srv
+{
+
+struct GetJointProperties_Request {
+
+    string joint_name;
+
+};
+
+};  // module srv
+
+};  // module gazebo_msgs

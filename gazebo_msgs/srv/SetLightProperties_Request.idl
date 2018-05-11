@@ -1,0 +1,20 @@
+
+module gazebo_msgs
+{
+
+module srv
+{
+
+struct SetLightProperties_Request {
+
+    string light_name;
+    ColorRGBA diffuse;
+    double attenuation_constant;
+    double attenuation_linear;
+    double attenuation_quadratic;
+
+};
+
+};  // module srv
+
+};  // module gazebo_msgs

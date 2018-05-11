@@ -1,0 +1,17 @@
+
+module gazebo_msgs
+{
+
+module srv
+{
+
+struct SetJointProperties_Request {
+
+    string joint_name;
+    ODEJointProperties ode_joint_config;
+
+};
+
+};  // module srv
+
+};  // module gazebo_msgs

@@ -1,0 +1,16 @@
+
+module gazebo_msgs
+{
+
+module srv
+{
+
+struct BodyRequest {
+ 
+    string body_name;
+
+};
+
+};  // module srv
+
+};  // module gazebo_msgs

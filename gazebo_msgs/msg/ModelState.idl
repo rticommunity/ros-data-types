@@ -1,0 +1,19 @@
+
+module gazebo_msgs
+{
+
+module msg
+{
+
+struct ModelState {
+        
+    string model_name;
+    Pose pose;
+    Twist twist;
+    string reference_frame;
+
+};
+
+};  // module msg
+
+};  // module gazebo_msgs

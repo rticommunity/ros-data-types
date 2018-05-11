@@ -1,0 +1,19 @@
+
+module gazebo_msgs
+{
+
+module srv
+{
+
+struct ApplyBodyWrench_Request {
+
+    string joint_name;
+    double effort;
+    time start_time;
+    duration duration;
+
+};
+
+};  // module srv
+
+};  // module gazebo_msgs

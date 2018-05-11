@@ -1,0 +1,20 @@
+
+module gazebo_msgs
+{
+
+module srv
+{
+
+struct SpawnModel_Request {
+
+    string model_name;
+    string model_xml;
+    string robot_namespace;
+    Pose initial_pose;
+    string reference_frame;
+
+};
+
+};  // module srv
+
+};  // module gazebo_msgs

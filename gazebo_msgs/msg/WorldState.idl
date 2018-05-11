@@ -1,0 +1,20 @@
+
+module gazebo_msgs
+{
+
+module msg
+{
+
+struct WorldState {
+
+    Header header;
+    sequence<string> name;
+    sequence<Pose> pose;
+    sequence<Twist> twist;
+    sequence<Wrench> wrench;
+
+};
+
+};  // module msg
+
+};  // module gazebo_msgs

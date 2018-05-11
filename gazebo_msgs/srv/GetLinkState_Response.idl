@@ -1,0 +1,18 @@
+
+module gazebo_msgs
+{
+
+module srv
+{
+
+struct GetLinkState_Response {
+
+    LinkState link_state;
+    boolean success;
+    string status_message;
+
+};
+
+};  // module srv
+
+};  // module gazebo_msgs

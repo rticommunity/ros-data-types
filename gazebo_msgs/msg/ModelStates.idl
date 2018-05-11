@@ -1,0 +1,18 @@
+
+module gazebo_msgs
+{
+
+module msg
+{
+
+struct ModelStates {
+
+    sequence<string> name;
+    sequence<Pose> pose;
+    sequence<Twist> twist;
+
+};
+
+};  // module msg
+
+};  // module gazebo_msgs

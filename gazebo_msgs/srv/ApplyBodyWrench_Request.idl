@@ -1,0 +1,21 @@
+
+module gazebo_msgs
+{
+
+module srv
+{
+
+struct ApplyBodyWrench_Request {
+
+    string body_name;
+    string reference_frame;
+    Point reference_point;
+    Wrench wrench;
+    time start_time;
+    duration duration;
+        
+};
+
+};  // module srv
+
+};  // module gazebo_msgs

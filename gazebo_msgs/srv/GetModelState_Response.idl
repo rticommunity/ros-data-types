@@ -1,0 +1,20 @@
+
+module gazebo_msgs
+{
+
+module srv
+{
+
+struct GetModelState_Response {
+
+    Header header;
+    Pose pose;
+    Twist twist;
+    boolean success;
+    string status_message;
+
+};
+
+};  // module srv
+
+};  // module gazebo_msgs
