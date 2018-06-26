@@ -1,4 +1,7 @@
 
+#include "ContactState.idl"
+#include "std_msgs/msg/Header.idl"
+
 module gazebo_msgs
 {
 
@@ -7,8 +10,8 @@ module msg
 
 struct ContactsState {
         
-    Header header;
-    sequence<ContactState> states;
+    std_msgs::msg::Header header;
+    sequence<gazebo_msgs::msg::ContactState> states;
 
 };
 

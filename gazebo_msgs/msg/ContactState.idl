@@ -1,4 +1,7 @@
 
+#include "geometry_msgs/msg/Vector3.idl"
+#include "geometry_msgs/msg/Wrench.idl"
+
 module gazebo_msgs
 {
 
@@ -10,11 +13,11 @@ struct ContactState {
     string info;
     string collision1_name;
     string collision2_name;
-    sequence<Wrench> wrenches;
-    Wrench total_wrench;
-    sequence<Vector3> contact_positions;
-    sequence<Vector3> contact_normals;
-    sequence<double> dephts;
+    sequence<geometry_msgs::msg::Wrench> wrenches;
+    geometry_msgs::msg::Wrench total_wrench;
+    sequence<geometry_msgs::msg::Vector3> contact_positions;
+    sequence<geometry_msgs::msg::Vector3> contact_normals;
+    sequence<double> depths;
 
 };
 

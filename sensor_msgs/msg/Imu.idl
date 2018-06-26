@@ -3,33 +3,24 @@
 #ifndef __sensor_msgs__msg__Imu__idl
 #define __sensor_msgs__msg__Imu__idl
 
-#include "../../geometry_msgs/msg/Quaternion.idl"
-#include "../../geometry_msgs/msg/Vector3.idl"
-#include "../../std_msgs/msg/Header.idl"
+#include "geometry_msgs/msg/Quaternion.idl"
+#include "geometry_msgs/msg/Vector3.idl"
+#include "std_msgs/msg/Header.idl"
 
-module sensor_msgs
-{
-
-module msg
-{
+module sensor_msgs { module msg {
 
 typedef double sensor_msgs__Imu__double_array_9[9];
 
-struct Imu
-{
-
+struct Imu {
   std_msgs::msg::Header header;
   geometry_msgs::msg::Quaternion orientation;
-sensor_msgs__Imu__double_array_9 orientation_covariance;
+  sensor_msgs__Imu__double_array_9 orientation_covariance;
   geometry_msgs::msg::Vector3 angular_velocity;
-sensor_msgs__Imu__double_array_9 angular_velocity_covariance;
+  sensor_msgs__Imu__double_array_9 angular_velocity_covariance;
   geometry_msgs::msg::Vector3 linear_acceleration;
-sensor_msgs__Imu__double_array_9 linear_acceleration_covariance;
+  sensor_msgs__Imu__double_array_9 linear_acceleration_covariance;
+};
 
-};  // struct Imu
-
-};  // module msg
-
-};  // module sensor_msgs
+}; };  // module msg::sensor_msgs
 
 #endif  // __sensor_msgs__msg__Imu__idl

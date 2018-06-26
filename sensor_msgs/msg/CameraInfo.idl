@@ -4,7 +4,7 @@
 #define __sensor_msgs__msg__CameraInfo__idl
 
 #include "RegionOfInterest.idl"
-#include "../../std_msgs/msg/Header.idl"
+#include "std_msgs/msg/Header.idl"
 
 module sensor_msgs
 {

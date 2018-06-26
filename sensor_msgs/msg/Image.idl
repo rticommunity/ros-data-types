@@ -3,7 +3,7 @@
 #ifndef __sensor_msgs__msg__Image__idl
 #define __sensor_msgs__msg__Image__idl
 
-#include "../../std_msgs/msg/Header.idl"
+#include "std_msgs/msg/Header.idl"
 
 module sensor_msgs
 {
