@@ -1,21 +1,14 @@
-
-module gazebo_msgs
-{
-
-module srv
-{
-
-struct GetJointProperties_Response {
  
-    enum type { REVOLUTE, CONTINUOUS, PRISMATIC, FIXED, BALL, UNIVERSAL};
-    sequence<double> damping;
-    sequence<double> position;
-    sequence<double> rate;
-    boolean success;
-    string status_message;
-
-};
-
-};  // module srv
-
-};  // module gazebo_msgs
+module gazebo_msgs { module srv { 
+ 
+struct GetJointProperties_Response 
+{ 
+  enum type { REVOLUTE, CONTINUOUS, PRISMATIC, FIXED, BALL, UNIVERSAL}; 
+  sequence<double> damping; 
+  sequence<double> position; 
+  sequence<double> rate; 
+  boolean success; 
+  string status_message;  
+}; 
+ 
+}; };  // module srv::gazebo_msgs 

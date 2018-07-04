@@ -1,9 +1,10 @@
  
 module gazebo_msgs { module srv { 
  
-struct GetJointProperties_Request 
+struct Default_Response 
 { 
-  string joint_name;    
+  boolean success; 
+  string status_message;    
 }; 
  
 }; };  // module srv::gazebo_msgs 

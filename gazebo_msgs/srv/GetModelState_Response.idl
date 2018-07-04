@@ -1,20 +1,17 @@
-
-module gazebo_msgs
-{
-
-module srv
-{
-
-struct GetModelState_Response {
-
-    Header header;
-    Pose pose;
-    Twist twist;
-    boolean success;
-    string status_message;
-
-};
-
-};  // module srv
-
-};  // module gazebo_msgs
+ 
+#include "std_msgs/msg/Header.idl" 
+#include "geometry_msgs/msg/Pose.idl" 
+#include "geometry_msgs/msg/Twist.idl" 
+ 
+module gazebo_msgs { module srv { 
+ 
+struct GetModelState_Response 
+{ 
+  std_msgs::msg::Header header; 
+  geometry_msgs::msg::Pose pose; 
+  geometry_msgs::msg::Twist twist; 
+  boolean success; 
+  string status_message; 
+}; 
+ 
+}; };  // module srv::gazebo_msgs 

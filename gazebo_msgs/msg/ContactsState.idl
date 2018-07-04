@@ -1,20 +1,13 @@
-
-#include "ContactState.idl"
-#include "std_msgs/msg/Header.idl"
-
-module gazebo_msgs
-{
-
-module msg
-{
-
-struct ContactsState {
-        
-    std_msgs::msg::Header header;
-    sequence<gazebo_msgs::msg::ContactState> states;
-
-};
-
-};  // module msg
-
-};  // module gazebo_msgs
+ 
+#include "ContactState.idl" 
+#include "std_msgs/msg/Header.idl" 
+ 
+module gazebo_msgs { module msg { 
+ 
+struct ContactsState 
+{ 
+  std_msgs::msg::Header header; 
+  sequence<gazebo_msgs::msg::ContactState> states; 
+}; 
+ 
+}; };  // module msg::gazebo_msgs 

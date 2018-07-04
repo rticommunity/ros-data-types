@@ -1,17 +1,12 @@
-
-module gazebo_msgs
-{
-
-module srv
-{
-
-struct SetJointProperties_Request {
-
-    string joint_name;
-    ODEJointProperties ode_joint_config;
-
-};
-
-};  // module srv
-
-};  // module gazebo_msgs
+ 
+#include "gazebo_msgs/msg/ODEJointProperties.idl" 
+ 
+module gazebo_msgs { module srv { 
+ 
+struct SetJointProperties_Request 
+{ 
+  string joint_name; 
+  gazebo_msgs::msg::ODEJointProperties ode_joint_config; 
+}; 
+ 
+}; };  // module srv::gazebo_msgs 

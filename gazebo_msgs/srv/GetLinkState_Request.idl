@@ -1,16 +1,10 @@
-
-module gazebo_msgs
-{
-
-module srv
-{
-
-struct GetLinkState_Request {
-
-    string link_name;
-    string reference_frame;
-};
-
-};  // module srv
-
-};  // module gazebo_msgs
+ 
+module gazebo_msgs { module srv { 
+ 
+struct GetLinkState_Request 
+{ 
+  string link_name; 
+  string reference_frame; 
+}; 
+ 
+}; };  // module srv::gazebo_msgs 

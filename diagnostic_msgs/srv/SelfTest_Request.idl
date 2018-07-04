@@ -1,24 +1,15 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __diagnostic_msgs__srv__SelfTest_Request__idl__
-#define __diagnostic_msgs__srv__SelfTest_Request__idl__
-
-
-module diagnostic_msgs
-{
-
-module srv
-{
-
-struct SelfTest_Request
-{
-
-  boolean _dummy;
-
-};  // struct SelfTest_Request
-
-};  // module srv
-
-};  // module diagnostic_msgs
-
-#endif  // __diagnostic_msgs__srv__SelfTest_Request__idl__
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __diagnostic_msgs__srv__SelfTest_Request__idl__ 
+#define __diagnostic_msgs__srv__SelfTest_Request__idl__ 
+ 
+module diagnostic_msgs { module srv { 
+ 
+struct SelfTest_Request 
+{ 
+  boolean _dummy; 
+}; 
+  
+}; };  // module srv::diagnostic_msgs 
+ 
+#endif  // __diagnostic_msgs__srv__SelfTest_Request__idl__ 

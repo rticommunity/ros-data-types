@@ -1,21 +1,19 @@
-
-module gazebo_msgs
-{
-
-module srv
-{
-
-struct ApplyBodyWrench_Request {
-
-    string body_name;
-    string reference_frame;
-    Point reference_point;
-    Wrench wrench;
-    time start_time;
-    duration duration;
-        
-};
-
-};  // module srv
-
-};  // module gazebo_msgs
+ 
+#include "std_msgs/msg/Time.idl" 
+#include "std_msgs/msg/Duration.idl" 
+#include "geometry_msgs/msg/Wrench.idl" 
+#include "geometry_msgs/msg/Point.idl" 
+ 
+module gazebo_msgs { module srv { 
+ 
+struct ApplyBodyWrench_Request 
+{ 
+  string body_name; 
+  string reference_frame; 
+  geometry_msgs::msg::Point reference_point; 
+  geometry_msgs::msg::Wrench wrench; 
+  std_msgs::msg::Time start_time; 
+  std_msgs::msg::Duration duration; 
+}; 
+ 
+}; };  // module srv::gazebo_msgs 

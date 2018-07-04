@@ -1,16 +1,9 @@
-
-module gazebo_msgs
-{
-
-module srv
-{
-
-struct DeleteLight_Request {
-
-    string light_name;
-
-};
-
-};  // module srv
-
-};  // module gazebo_msgs
+ 
+module gazebo_msgs { module srv { 
+ 
+struct DeleteLight_Request 
+{ 
+  string light_name;    
+}; 
+ 
+}; };  // module srv::gazebo_msgs 

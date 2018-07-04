@@ -1,24 +1,15 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __tf2_msgs__srv__FrameGraph_Response__idl
-#define __tf2_msgs__srv__FrameGraph_Response__idl
-
-
-module tf2_msgs
-{
-
-module srv
-{
-
-struct FrameGraph_Response
-{
-
-  string frame_yaml;
-
-};  // struct FrameGraph_Response
-
-};  // module srv
-
-};  // module tf2_msgs
-
-#endif  // __tf2_msgs__srv__FrameGraph_Response__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __tf2_msgs__srv__FrameGraph_Response__idl 
+#define __tf2_msgs__srv__FrameGraph_Response__idl 
+ 
+module tf2_msgs { module srv { 
+ 
+struct FrameGraph_Response 
+{ 
+  string frame_yaml; 
+}; 
+  
+}; };  // module srv::tf2_msgs 
+ 
+#endif  // __tf2_msgs__srv__FrameGraph_Response__idl 

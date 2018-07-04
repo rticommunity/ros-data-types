@@ -1,20 +1,13 @@
-
-module gazebo_msgs
-{
-
-module srv
-{
-
-struct GetWorldProperties_Response {
-
-    double sim_time;
-    sequence<string> model_names;
-    boolean rendering_enabled;
-    boolean success;
-    string status_message;
-
-};
-
-};  // module srv
-
-};  // module gazebo_msgs
+ 
+module gazebo_msgs { module srv { 
+ 
+struct GetWorldProperties_Response 
+{ 
+  double sim_time; 
+  sequence<string> model_names; 
+  boolean rendering_enabled; 
+  boolean success; 
+  string status_message;    
+}; 
+ 
+}; };  // module srv::gazebo_msgs 

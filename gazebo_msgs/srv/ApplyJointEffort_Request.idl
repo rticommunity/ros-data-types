@@ -1,19 +1,15 @@
-
-module gazebo_msgs
-{
-
-module srv
-{
-
-struct ApplyBodyWrench_Request {
-
-    string joint_name;
-    double effort;
-    time start_time;
-    duration duration;
-
-};
-
-};  // module srv
-
-};  // module gazebo_msgs
+ 
+#include "std_msgs/msg/Time.idl" 
+#include "std_msgs/msg/Duration.idl" 
+ 
+module gazebo_msgs { module srv { 
+ 
+struct ApplyBodyWrench_Request 
+{ 
+  string joint_name; 
+  double effort; 
+  std_msgs::msg::Time start_time; 
+  std_msgs::msg::Duration duration;    
+}; 
+ 
+}; };  // module srv::gazebo_msgs 

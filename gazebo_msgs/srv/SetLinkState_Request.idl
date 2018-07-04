@@ -1,16 +1,11 @@
-
-module gazebo_msgs
-{
-
-module srv
-{
-
-struct SetLinkState_Request {
-
-    LinkState link_state;
-
-};
-
-};  // module srv
-
-};  // module gazebo_msgs
+ 
+#include "gazebo_msgs/msg/LinkState.idl" 
+ 
+module gazebo_msgs { module srv { 
+ 
+struct SetLinkState_Request 
+{ 
+  gazebo_msgs::msg::LinkState link_state;    
+}; 
+ 
+}; };  // module srv::gazebo_msgs 
