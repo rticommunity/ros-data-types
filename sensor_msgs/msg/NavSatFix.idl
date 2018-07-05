@@ -7,7 +7,7 @@
 #include "std_msgs/msg/Header.idl" 
  
 module sensor_msgs { module msg { 
-
+ 
 const octet NavSatFix__COVARIANCE_TYPE_UNKNOWN = 0; 
 const octet NavSatFix__COVARIANCE_TYPE_APPROXIMATED = 1; 
 const octet NavSatFix__COVARIANCE_TYPE_DIAGONAL_KNOWN = 2; 
@@ -15,17 +15,16 @@ const octet NavSatFix__COVARIANCE_TYPE_KNOWN = 3;
  
 typedef double sensor_msgs__NavSatFix__double_array_9[9]; 
  
-struct NavSatFix 
-{ 
-  std_msgs::msg::Header header; 
-  sensor_msgs::msg::NavSatStatus status; 
-  double latitude; 
-  double longitude; 
-  double altitude; 
-  sensor_msgs__NavSatFix__double_array_9 position_covariance; 
-  octet position_covariance_type; 
+struct NavSatFix {  
+    std_msgs::msg::Header header; 
+    sensor_msgs::msg::NavSatStatus status; 
+    double latitude; 
+    double longitude; 
+    double altitude; 
+    sensor_msgs__NavSatFix__double_array_9 position_covariance; 
+    octet position_covariance_type; 
 }; 
-  
+ 
 }; };  // module msg::sensor_msgs 
  
 #endif  // __sensor_msgs__msg__NavSatFix__idl 

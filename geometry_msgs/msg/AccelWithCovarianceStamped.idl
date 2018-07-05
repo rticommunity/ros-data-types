@@ -8,12 +8,11 @@
  
 module geometry_msgs { module msg { 
  
-struct AccelWithCovarianceStamped 
-{ 
-  std_msgs::msg::Header header; 
-  geometry_msgs::msg::AccelWithCovariance accel; 
+struct AccelWithCovarianceStamped {  
+    std_msgs::msg::Header header; 
+    geometry_msgs::msg::AccelWithCovariance accel; 
 }; 
-  
+ 
 }; };  // module msg::geometry_msgs 
  
 #endif  // __geometry_msgs__msg__AccelWithCovarianceStamped__idl 

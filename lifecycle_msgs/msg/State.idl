@@ -15,14 +15,13 @@ const octet State__TRANSITION_STATE_CLEANINGUP = 11;
 const octet State__TRANSITION_STATE_SHUTTINGDOWN = 12; 
 const octet State__TRANSITION_STATE_ACTIVATING = 13; 
 const octet State__TRANSITION_STATE_DEACTIVATING = 14; 
-const octet State__TRANSITION_STATE_ERRORPROCESSING = 15;  
+const octet State__TRANSITION_STATE_ERRORPROCESSING = 15; 
  
-struct State 
-{ 
-  octet id; 
-  string label; 
+struct State {  
+    octet id; 
+    string label; 
 }; 
-  
+ 
 }; };  // module msg::lifecycle_msgs 
  
 #endif  // __lifecycle_msgs__msg__State__idl 

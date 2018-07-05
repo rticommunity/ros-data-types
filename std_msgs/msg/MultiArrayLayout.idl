@@ -7,12 +7,11 @@
  
 module std_msgs { module msg { 
  
-struct MultiArrayLayout 
-{ 
-  sequence<std_msgs::msg::MultiArrayDimension> dim; 
-  unsigned long data_offset; 
+struct MultiArrayLayout {  
+    sequence<std_msgs::msg::MultiArrayDimension> dim; 
+    unsigned long data_offset; 
 }; 
-  
+ 
 }; };  // module msg::std_msgs 
  
 #endif  // __std_msgs__msg__MultiArrayLayout__idl 

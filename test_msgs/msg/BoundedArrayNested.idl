@@ -7,11 +7,10 @@
  
 module test_msgs { module msg { 
  
-struct BoundedArrayNested 
-{ 
-  sequence<test_msgs::msg::Primitives_, 4> primitive_values; 
+struct BoundedArrayNested {  
+    sequence<test_msgs::msg::Primitives_, 4> primitive_values; 
 }; 
-  
+ 
 }; };  // module msg::test_msgs 
  
 #endif  // __test_msgs__msg__BoundedArrayNested__idl 

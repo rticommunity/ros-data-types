@@ -7,11 +7,10 @@
  
 module test_msgs { module msg { 
  
-struct DynamicArrayNested 
-{ 
-  sequence<test_msgs::msg::Primitives> primitive_values; 
+struct DynamicArrayNested {  
+    sequence<test_msgs::msg::Primitives> primitive_values; 
 }; 
-  
+ 
 }; };  // module msg::test_msgs 
  
 #endif  // __test_msgs__msg__DynamicArrayNested__idl 

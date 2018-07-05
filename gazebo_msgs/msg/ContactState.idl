@@ -4,16 +4,15 @@
  
 module gazebo_msgs { module msg { 
  
-struct ContactState 
-{ 
-  string info; 
-  string collision1_name; 
-  string collision2_name; 
-  sequence<geometry_msgs::msg::Wrench> wrenches; 
-  geometry_msgs::msg::Wrench total_wrench; 
-  sequence<geometry_msgs::msg::Vector3> contact_positions; 
-  sequence<geometry_msgs::msg::Vector3> contact_normals; 
-  sequence<double> depths; 
+struct ContactState {  
+    string info; 
+    string collision1_name; 
+    string collision2_name; 
+    sequence<geometry_msgs::msg::Wrench> wrenches; 
+    geometry_msgs::msg::Wrench total_wrench; 
+    sequence<geometry_msgs::msg::Vector3> contact_positions; 
+    sequence<geometry_msgs::msg::Vector3> contact_normals; 
+    sequence<double> depths; 
 }; 
  
 }; };  // module msg::gazebo_msgs 

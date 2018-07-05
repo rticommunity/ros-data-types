@@ -5,11 +5,10 @@
  
 module std_srvs { module srv { 
  
-struct Empty_Request 
-{ 
-  boolean dummy; 
+struct Empty_Request {  
+    boolean dummy; 
 }; 
-  
+ 
 }; };  // module srv::std_srvs 
  
 #endif  // __std_srvs__srv__Empty_Request__idl 

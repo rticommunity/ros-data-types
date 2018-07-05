@@ -8,13 +8,12 @@
  
 module sensor_msgs { module msg { 
  
-struct TimeReference 
-{ 
-  std_msgs::msg::Header header; 
-  std_msgs::msg::Time time_ref; 
-  string source; 
+struct TimeReference {  
+    std_msgs::msg::Header header; 
+    std_msgs::msg::Time time_ref; 
+    string source; 
 }; 
-  
+ 
 }; };  // module msg::sensor_msgs 
  
 #endif  // __sensor_msgs__msg__TimeReference__idl 

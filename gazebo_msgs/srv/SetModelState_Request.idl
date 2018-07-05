@@ -3,9 +3,8 @@
  
 module gazebo_msgs { module srv { 
  
-struct SetModelState_Request 
-{ 
-  gazebo_msgs::msg::ModelState model_state;    
+struct SetModelState_Request {  
+    gazebo_msgs::msg::ModelState model_state; 
 }; 
  
 }; };  // module srv::gazebo_msgs 

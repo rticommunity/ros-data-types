@@ -3,15 +3,14 @@
  
 module gazebo_msgs { module srv { 
  
-struct GetPhysicsProperties_Response 
-{ 
-  double time_step; 
-  boolean pause; 
-  double max_update_rate; 
-  Vector3 gravity; 
-  gazebo_msgs::msg::ODEPhysics ode_config; 
-  boolean success; 
-  string status_message;    
+struct GetPhysicsProperties_Response {  
+    double time_step; 
+    boolean pause; 
+    double max_update_rate; 
+    Vector3 gravity; 
+    gazebo_msgs::msg::ODEPhysics ode_config; 
+    boolean success; 
+    string status_message; 
 }; 
  
 }; };  // module srv::gazebo_msgs 

@@ -9,12 +9,11 @@ module geometry_msgs { module msg {
  
 typedef double geometry_msgs__TwistWithCovariance__double_array_36[36]; 
  
-struct TwistWithCovariance 
-{ 
-  geometry_msgs::msg::Twist twist; 
-  geometry_msgs__TwistWithCovariance__double_array_36 covariance; 
+struct TwistWithCovariance {  
+    geometry_msgs::msg::Twist twist; 
+    geometry_msgs__TwistWithCovariance__double_array_36 covariance; 
 }; 
-  
+ 
 }; };  // module msg::geometry_msgs 
  
 #endif  // __geometry_msgs__msg__TwistWithCovariance__idl 

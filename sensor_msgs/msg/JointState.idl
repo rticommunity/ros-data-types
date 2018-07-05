@@ -7,15 +7,14 @@
  
 module sensor_msgs { module msg { 
  
-struct JointState 
-{ 
-  std_msgs::msg::Header header; 
-  sequence<string> name; 
-  sequence<double> position; 
-  sequence<double> velocity; 
-  sequence<double> effort; 
+struct JointState {  
+    std_msgs::msg::Header header; 
+    sequence<string> name; 
+    sequence<double> position; 
+    sequence<double> velocity; 
+    sequence<double> effort; 
 }; 
-  
+ 
 }; };  // module msg::sensor_msgs 
  
 #endif  // __sensor_msgs__msg__JointState__idl 

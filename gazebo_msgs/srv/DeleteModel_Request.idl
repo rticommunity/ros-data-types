@@ -1,9 +1,8 @@
  
 module gazebo_msgs { module srv { 
  
-struct DeleteModel_Request 
-{ 
-  string mode_name;    
+struct DeleteModel_Request {  
+    string mode_name; 
 }; 
  
 }; };  // module srv::gazebo_msgs 

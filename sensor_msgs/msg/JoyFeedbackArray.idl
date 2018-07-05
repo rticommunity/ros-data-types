@@ -7,9 +7,8 @@
  
 module sensor_msgs { module msg { 
  
-struct JoyFeedbackArray 
-{ 
-  sequence<sensor_msgs::msg::JoyFeedback> array; 
+struct JoyFeedbackArray {  
+    sequence<sensor_msgs::msg::JoyFeedback> array; 
 }; 
  
 }; };  // module msg::sensor_msgs 

@@ -5,15 +5,14 @@
  
 module sensor_msgs { module msg { 
  
-struct RegionOfInterest 
-{ 
-  unsigned long x_offset; 
-  unsigned long y_offset; 
-  unsigned long height; 
-  unsigned long width; 
-  boolean do_rectify; 
+struct RegionOfInterest {  
+    unsigned long x_offset; 
+    unsigned long y_offset; 
+    unsigned long height; 
+    unsigned long width; 
+    boolean do_rectify; 
 }; 
-  
+ 
 }; };  // module msg::sensor_msgs 
  
 #endif  // __sensor_msgs__msg__RegionOfInterest__idl 

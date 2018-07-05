@@ -5,11 +5,10 @@
  
 module diagnostic_msgs { module srv { 
  
-struct SelfTest_Request 
-{ 
-  boolean _dummy; 
+struct SelfTest_Request {  
+    boolean _dummy; 
 }; 
-  
+ 
 }; };  // module srv::diagnostic_msgs 
  
 #endif  // __diagnostic_msgs__srv__SelfTest_Request__idl__ 

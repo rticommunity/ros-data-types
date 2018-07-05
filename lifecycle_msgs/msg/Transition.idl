@@ -4,7 +4,7 @@
 #define __lifecycle_msgs__msg__Transition__idl 
  
 module lifecycle_msgs { module msg { 
-    
+ 
 const octet Transition__TRANSITION_CREATE = 0; 
 const octet Transition__TRANSITION_CONFIGURE = 1; 
 const octet Transition__TRANSITION_CLEANUP = 2; 
@@ -35,14 +35,13 @@ const octet Transition__TRANSITION_ON_ERROR_FAILURE = 61;
 const octet Transition__TRANSITION_ON_ERROR_ERROR = 62; 
 const octet Transition__TRANSITION_CALLBACK_SUCCESS = 97; 
 const octet Transition__TRANSITION_CALLBACK_FAILURE = 98; 
-const octet Transition__TRANSITION_CALLBACK_ERROR = 99;  
+const octet Transition__TRANSITION_CALLBACK_ERROR = 99; 
  
-struct Transition 
-{ 
-  octet id; 
-  string label; 
+struct Transition {  
+    octet id; 
+    string label; 
 }; 
-  
+ 
 }; };  // module msg::lifecycle_msgs 
  
 #endif  // __lifecycle_msgs__msg__Transition__idl 

@@ -1,9 +1,8 @@
  
 module gazebo_msgs { module srv { 
  
-struct BodyRequest 
-{ 
-  string body_name;   
+struct BodyRequest {  
+    string body_name; 
 }; 
  
 }; };  // module srv::gazebo_msgs 

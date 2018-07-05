@@ -7,7 +7,7 @@
 #include "Marker.idl" 
  
 module visualization_msgs { module msg { 
-    
+ 
 const octet InteractiveMarkerControl__INHERIT = 0; 
 const octet InteractiveMarkerControl__FIXED = 1; 
 const octet InteractiveMarkerControl__VIEW_FACING = 2; 
@@ -22,18 +22,17 @@ const octet InteractiveMarkerControl__MOVE_3D = 7;
 const octet InteractiveMarkerControl__ROTATE_3D = 8; 
 const octet InteractiveMarkerControl__MOVE_ROTATE_3D = 9; 
  
-struct InteractiveMarkerControl 
-{ 
-  string name; 
-  geometry_msgs::msg::Quaternion orientation; 
-  octet orientation_mode; 
-  octet interaction_mode; 
-  boolean always_visible; 
-  sequence<visualization_msgs::msg::Marker> markers; 
-  boolean independent_marker_orientation; 
-  string description; 
+struct InteractiveMarkerControl {  
+    string name; 
+    geometry_msgs::msg::Quaternion orientation; 
+    octet orientation_mode; 
+    octet interaction_mode; 
+    boolean always_visible; 
+    sequence<visualization_msgs::msg::Marker> markers; 
+    boolean independent_marker_orientation; 
+    string description; 
 }; 
-  
+ 
 }; };  // module msg::visualization_msgs 
  
 #endif  // __visualization_msgs__msg__InteractiveMarkerControl__idl 

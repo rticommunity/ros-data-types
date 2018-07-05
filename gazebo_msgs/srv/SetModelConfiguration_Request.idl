@@ -1,12 +1,11 @@
  
 module gazebo_msgs { module srv { 
  
-struct SetModelConfiguration_Request 
-{ 
-  string model_name; 
-  string urdf_param_name; 
-  sequence<string> joint_names; 
-  sequence<double> joint_positions; 
+struct SetModelConfiguration_Request {  
+    string model_name; 
+    string urdf_param_name; 
+    sequence<string> joint_names; 
+    sequence<double> joint_positions; 
 }; 
  
-}; };  // module srv::gazebo_msgs
+}; };  // module srv::gazebo_msgs 

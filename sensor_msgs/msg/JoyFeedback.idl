@@ -9,13 +9,12 @@ const octet JoyFeedback__TYPE_LED = 0;
 const octet JoyFeedback__TYPE_RUMBLE = 1; 
 const octet JoyFeedback__TYPE_BUZZER = 2; 
  
-struct JoyFeedback 
-{ 
-  octet type; 
-  octet id; 
-  float intensity; 
+struct JoyFeedback {  
+    octet type; 
+    octet id; 
+    float intensity; 
 }; 
-  
+ 
 }; };  // module msg::sensor_msgs 
  
 #endif  // __sensor_msgs__msg__JoyFeedback__idl 

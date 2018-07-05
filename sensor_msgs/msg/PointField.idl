@@ -14,14 +14,13 @@ const octet PointField__UINT32 = 6;
 const octet PointField__FLOAT32 = 7; 
 const octet PointField__FLOAT64 = 8; 
  
-struct PointField 
-{ 
-  string name; 
-  unsigned long offset; 
-  octet datatype; 
-  unsigned long count; 
+struct PointField {  
+    string name; 
+    unsigned long offset; 
+    octet datatype; 
+    unsigned long count; 
 }; 
-  
+ 
 }; };  // module msg::sensor_msgs 
  
 #endif  // __sensor_msgs__msg__PointField__idl 

@@ -3,19 +3,18 @@
  
 module gazebo_msgs { module srv { 
  
-struct GetLinkProperties_Response 
-{ 
-  geometry_msgs::msg::Pose com; 
-  boolean gravity_mode; 
-  double mass; 
-  double ixx; 
-  double ixy; 
-  double ixz; 
-  double iyy; 
-  double iyz; 
-  double izz; 
-  boolean success; 
-  string status_message;  
+struct GetLinkProperties_Response {  
+    geometry_msgs::msg::Pose com; 
+    boolean gravity_mode; 
+    double mass; 
+    double ixx; 
+    double ixy; 
+    double ixz; 
+    double iyy; 
+    double iyz; 
+    double izz; 
+    boolean success; 
+    string status_message; 
 }; 
  
 }; };  // module srv::gazebo_msgs 

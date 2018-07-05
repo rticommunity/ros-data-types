@@ -7,13 +7,12 @@
  
 module sensor_msgs { module msg { 
  
-struct CompressedImage 
-{ 
-  std_msgs::msg::Header header; 
-  string format; 
-  sequence<octet> data; 
+struct CompressedImage {  
+    std_msgs::msg::Header header; 
+    string format; 
+    sequence<octet> data; 
 }; 
-  
+ 
 }; };  // module msg::sensor_msgs 
  
 #endif  // __sensor_msgs__msg__CompressedImage__idl 

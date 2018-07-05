@@ -7,11 +7,10 @@
  
 module visualization_msgs { module msg { 
  
-struct MarkerArray 
-{ 
-  sequence<visualization_msgs::msg::Marker> markers; 
+struct MarkerArray {  
+    sequence<visualization_msgs::msg::Marker> markers; 
 }; 
-  
+ 
 }; };  // module msg::visualization_msgs 
  
 #endif  // __visualization_msgs__msg__MarkerArray__idl 

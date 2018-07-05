@@ -7,11 +7,10 @@
  
 module lifecycle_msgs { module srv { 
  
-struct GetAvailableTransitions_Response 
-{ 
-  sequence<lifecycle_msgs::msg::TransitionDescription> available_transitions; 
+struct GetAvailableTransitions_Response {  
+    sequence<lifecycle_msgs::msg::TransitionDescription> available_transitions; 
 }; 
-  
+ 
 }; };  // module srv::lifecycle_msgs 
  
 #endif  // __lifecycle_msgs__srv__GetAvailableTransitions_Response__idl 

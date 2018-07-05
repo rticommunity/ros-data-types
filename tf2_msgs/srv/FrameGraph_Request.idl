@@ -5,11 +5,10 @@
  
 module tf2_msgs { module srv { 
  
-struct FrameGraph_Request 
-{ 
-  boolean _dummy; 
+struct FrameGraph_Request {  
+    boolean dummy; 
 }; 
-  
+ 
 }; };  // module srv::tf2_msgs 
  
 #endif  // __tf2_msgs__srv__FrameGraph_Request__idl 

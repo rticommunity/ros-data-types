@@ -7,12 +7,11 @@
  
 module std_msgs { module msg { 
  
-struct Header 
-{ 
-  std_msgs::msg::Time stamp; 
-  string frame_id; 
+struct Header {  
+    std_msgs::msg::Time stamp; 
+    string frame_id; 
 }; 
-  
+ 
 }; };  // module msg::std_msgs 
  
 #endif  // __std_msgs__msg__Header__idl 

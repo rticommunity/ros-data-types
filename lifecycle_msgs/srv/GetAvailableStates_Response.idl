@@ -7,11 +7,10 @@
  
 module lifecycle_msgs { module srv { 
  
-struct GetAvailableStates_Response 
-{ 
-  sequence<lifecycle_msgs::msg::State> available_states; 
+struct GetAvailableStates_Response {  
+    sequence<lifecycle_msgs::msg::State> available_states; 
 }; 
-  
+ 
 }; };  // module srv::lifecycle_msgs 
  
 #endif  // __lifecycle_msgs__srv__GetAvailableStates_Response__idl 

@@ -8,13 +8,12 @@
  
 module trajectory_msgs { module msg { 
  
-struct MultiDOFJointTrajectory 
-{ 
-  std_msgs::msg::Header header; 
-  sequence<string> joint_names; 
-  sequence<trajectory_msgs::msg::MultiDOFJointTrajectoryPoint> points; 
+struct MultiDOFJointTrajectory {  
+    std_msgs::msg::Header header; 
+    sequence<string> joint_names; 
+    sequence<trajectory_msgs::msg::MultiDOFJointTrajectoryPoint> points; 
 }; 
-  
+ 
 }; };  // module msg::trajectory_msgs 
  
 #endif  // __trajectory_msgs__msg__MultiDOFJointTrajectory__idl 

@@ -7,13 +7,12 @@
  
 module nav_msgs { module srv { 
  
-struct GetPlan_Request 
-{ 
-  geometry_msgs::msg::PoseStamped start; 
-  geometry_msgs::msg::PoseStamped goal; 
-  float tolerance; 
+struct GetPlan_Request {  
+    geometry_msgs::msg::PoseStamped start; 
+    geometry_msgs::msg::PoseStamped goal; 
+    float tolerance; 
 }; 
-  
+ 
 }; };  // module srv::nav_msgs 
  
 #endif  // __nav_msgs__srv__GetPlan_Request__idl 

@@ -1,9 +1,8 @@
  
 module gazebo_msgs { module srv { 
  
-struct GetJointProperties_Request 
-{ 
-  string joint_name;    
+struct GetJointProperties_Request {  
+    string joint_name; 
 }; 
  
 }; };  // module srv::gazebo_msgs 

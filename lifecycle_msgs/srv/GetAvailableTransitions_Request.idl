@@ -5,11 +5,10 @@
  
 module lifecycle_msgs { module srv { 
  
-struct GetAvailableTransitions_Request 
-{ 
-  string node_name; 
+struct GetAvailableTransitions_Request {  
+    string node_name; 
 }; 
-  
+ 
 }; };  // module srv::lifecycle_msgs 
  
 #endif  // __lifecycle_msgs__srv__GetAvailableTransitions_Request__idl 

@@ -9,19 +9,18 @@
  
 module pendulum_msgs { module msg { 
  
-struct RttestResults 
-{ 
-  std_msgs::msg::Time stamp; 
-  pendulum_msgs::msg::JointCommand command; 
-  pendulum_msgs::msg::JointState state; 
-  unsigned long long cur_latency; 
-  double mean_latency; 
-  unsigned long long min_latency; 
-  unsigned long long max_latency; 
-  unsigned long long minor_pagefaults; 
-  unsigned long long major_pagefaults; 
+struct RttestResults {  
+    std_msgs::msg::Time stamp; 
+    pendulum_msgs::msg::JointCommand command; 
+    pendulum_msgs::msg::JointState state; 
+    unsigned long long cur_latency; 
+    double mean_latency; 
+    unsigned long long min_latency; 
+    unsigned long long max_latency; 
+    unsigned long long minor_pagefaults; 
+    unsigned long long major_pagefaults; 
 }; 
-  
+ 
 }; };  // module msg::pendulum_msgs 
  
 #endif  // __pendulum_msgs__msg__RttestResults__idl 

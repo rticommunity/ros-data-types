@@ -8,13 +8,12 @@
  
 module nav_msgs { module msg { 
  
-struct OccupancyGrid 
-{ 
-  std_msgs::msg::Header header; 
-  nav_msgs::msg::MapMetaData info; 
-  sequence<octet> data; 
+struct OccupancyGrid {  
+    std_msgs::msg::Header header; 
+    nav_msgs::msg::MapMetaData info; 
+    sequence<octet> data; 
 }; 
-  
+ 
 }; };  // module msg::nav_msgs 
  
 #endif  // __nav_msgs__msg__OccupancyGrid__idl 

@@ -9,14 +9,13 @@
  
 module trajectory_msgs { module msg { 
  
-struct MultiDOFJointTrajectoryPoint 
-{ 
-  sequence<geometry_msgs::msg::Transform> transforms; 
-  sequence<geometry_msgs::msg::Twist> velocities; 
-  sequence<geometry_msgs::msg::Twist> accelerations; 
-  std_msgs::msg::Duration time_from_start; 
+struct MultiDOFJointTrajectoryPoint {  
+    sequence<geometry_msgs::msg::Transform> transforms; 
+    sequence<geometry_msgs::msg::Twist> velocities; 
+    sequence<geometry_msgs::msg::Twist> accelerations; 
+    std_msgs::msg::Duration time_from_start; 
 }; 
-  
+ 
 }; };  // module msg::trajectory_msgs 
  
 #endif  // __trajectory_msgs__msg__MultiDOFJointTrajectoryPoint__idl 

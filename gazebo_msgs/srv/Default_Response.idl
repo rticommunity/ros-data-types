@@ -1,10 +1,9 @@
  
 module gazebo_msgs { module srv { 
  
-struct Default_Response 
-{ 
-  boolean success; 
-  string status_message;    
+struct Default_Response {  
+    boolean success; 
+    string status_message; 
 }; 
  
 }; };  // module srv::gazebo_msgs 

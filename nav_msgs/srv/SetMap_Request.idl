@@ -8,12 +8,11 @@
  
 module nav_msgs { module srv { 
  
-struct SetMap_Request 
-{ 
-  nav_msgs::msg::OccupancyGrid map; 
-  geometry_msgs::msg::PoseWithCovarianceStamped initial_pose; 
+struct SetMap_Request {  
+    nav_msgs::msg::OccupancyGrid map; 
+    geometry_msgs::msg::PoseWithCovarianceStamped initial_pose; 
 }; 
-  
+ 
 }; };  // module srv::nav_msgs 
  
 #endif  // __nav_msgs__srv__SetMap_Request__idl 

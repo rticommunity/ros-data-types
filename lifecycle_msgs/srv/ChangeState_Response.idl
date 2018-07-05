@@ -5,10 +5,9 @@
  
 module lifecycle_msgs { module srv { 
  
-struct ChangeState_Response 
-{ 
-  boolean success; 
-};  
+struct ChangeState_Response {  
+    boolean success; 
+}; 
  
 }; };  // module srv::lifecycle_msgs 
  

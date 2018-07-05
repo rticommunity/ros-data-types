@@ -1,17 +1,16 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __geometry_msgs__msg__Pose2D__idl
-#define __geometry_msgs__msg__Pose2D__idl
-
-module geometry_msgs { module msg {
-
-struct Pose2D
-{
-  double x;
-  double y;
-  double theta;
-};  // struct Pose2D
-
-}; }; // module msg::geometry_msgs
-
-#endif  // __geometry_msgs__msg__Pose2D__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __geometry_msgs__msg__Pose2D__idl 
+#define __geometry_msgs__msg__Pose2D__idl 
+ 
+module geometry_msgs { module msg { 
+ 
+struct Pose2D {  
+    double x; 
+    double y; 
+    double theta; 
+};  // struct Pose2D 
+ 
+}; }; // module msg::geometry_msgs 
+ 
+#endif  // __geometry_msgs__msg__Pose2D__idl 

@@ -5,12 +5,11 @@
  
 module std_srvs { module srv { 
  
-struct Trigger_Response 
-{ 
-  boolean success; 
-  string message; 
+struct Trigger_Response {  
+    boolean success; 
+    string message; 
 }; 
-  
+ 
 }; };  // module srv::std_srvs 
  
 #endif  // __std_srvs__srv__Trigger_Response__idl 

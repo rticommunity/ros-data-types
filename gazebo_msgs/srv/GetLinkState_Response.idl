@@ -3,11 +3,10 @@
  
 module gazebo_msgs { module srv { 
  
-struct GetLinkState_Response 
-{ 
-  gazebo_msgs::msg::LinkState link_state; 
-  boolean success; 
-  string status_message; 
+struct GetLinkState_Response {  
+    gazebo_msgs::msg::LinkState link_state; 
+    boolean success; 
+    string status_message; 
 }; 
  
 }; };  // module srv::gazebo_msgs 

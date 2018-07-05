@@ -4,11 +4,10 @@
  
 module gazebo_msgs { module msg { 
  
-struct LinkStates 
-{ 
-  sequence<string> name; 
-  sequence<geometry_msgs::msg::Pose> pose; 
-  sequence<geometry_msgs::msg::Twist> twist; 
+struct LinkStates {  
+    sequence<string> name; 
+    sequence<geometry_msgs::msg::Pose> pose; 
+    sequence<geometry_msgs::msg::Twist> twist; 
 }; 
  
-}; };  // module msg::gazebo_msgs
+}; };  // module msg::gazebo_msgs 

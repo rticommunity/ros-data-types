@@ -7,11 +7,10 @@
  
 module nav_msgs { module srv { 
  
-struct GetPlan_Response 
-{ 
-  nav_msgs::msg::Path plan; 
+struct GetPlan_Response {  
+    nav_msgs::msg::Path plan; 
 }; 
-  
+ 
 }; };  // module srv::nav_msgs 
  
 #endif  // __nav_msgs__srv__GetPlan_Response__idl 

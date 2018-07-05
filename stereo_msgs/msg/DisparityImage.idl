@@ -9,18 +9,17 @@
  
 module stereo_msgs { module msg { 
  
-struct DisparityImage 
-{ 
-  std_msgs::msg::Header header; 
-  sensor_msgs::msg::Image image; 
-  float f; 
-  float t; 
-  sensor_msgs::msg::RegionOfInterest valid_window; 
-  float min_disparity; 
-  float max_disparity; 
-  float delta_d; 
+struct DisparityImage {  
+    std_msgs::msg::Header header; 
+    sensor_msgs::msg::Image image; 
+    float f; 
+    float t; 
+    sensor_msgs::msg::RegionOfInterest valid_window; 
+    float min_disparity; 
+    float max_disparity; 
+    float delta_d; 
 }; 
-  
+ 
 }; };  // module msg::stereo_msgs 
  
 #endif  // __stereo_msgs__msg__DisparityImage__idl 

@@ -29,24 +29,23 @@ const octet BatteryState__POWER_SUPPLY_TECHNOLOGY_LIFE = 4;
 const octet BatteryState__POWER_SUPPLY_TECHNOLOGY_NICD = 5; 
 const octet BatteryState__POWER_SUPPLY_TECHNOLOGY_LIMN = 6; 
  
-struct BatteryState 
-{ 
-  std_msgs::msg::Header header; 
-  float voltage; 
-  float current; 
-  float charge; 
-  float capacity; 
-  float design_capacity; 
-  float percentage; 
-  octet power_supply_status; 
-  octet power_supply_health; 
-  octet power_supply_technology; 
-  boolean present; 
-  sequence<float> cell_voltage; 
-  string location; 
-  string serial_number; 
+struct BatteryState {  
+    std_msgs::msg::Header header; 
+    float voltage; 
+    float current; 
+    float charge; 
+    float capacity; 
+    float design_capacity; 
+    float percentage; 
+    octet power_supply_status; 
+    octet power_supply_health; 
+    octet power_supply_technology; 
+    boolean present; 
+    sequence<float> cell_voltage; 
+    string location; 
+    string serial_number; 
 }; 
-  
+ 
 }; };  // module msg::sensor_msgs 
  
 #endif  // __sensor_msgs__msg__BatteryState__idl 

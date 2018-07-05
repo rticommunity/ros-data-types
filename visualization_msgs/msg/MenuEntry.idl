@@ -3,21 +3,20 @@
 #ifndef __visualization_msgs__msg__MenuEntry__idl 
 #define __visualization_msgs__msg__MenuEntry__idl 
  
-module visualization_msgs { module msg {
-
+module visualization_msgs { module msg { 
+ 
 const octet MenuEntry__FEEDBACK = 0; 
 const octet MenuEntry__ROSRUN = 1; 
 const octet MenuEntry__ROSLAUNCH = 2; 
  
-struct MenuEntry 
-{ 
-  unsigned long id; 
-  unsigned long parent_id; 
-  string title; 
-  string command; 
-  octet command_type; 
+struct MenuEntry {  
+    unsigned long id; 
+    unsigned long parent_id; 
+    string title; 
+    string command; 
+    octet command_type; 
 }; 
-  
+ 
 }; };  // module msg::visualization_msgs 
  
 #endif  // __visualization_msgs__msg__MenuEntry__idl 

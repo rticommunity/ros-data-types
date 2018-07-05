@@ -28,26 +28,25 @@ const octet Marker__ADD = 0;
 const octet Marker__MODIFY = 0; 
 const octet Marker__DELETE = 2; 
 const octet Marker__DELETEALL = 3; 
-
-struct Marker 
-{ 
-  std_msgs::msg::Header header; 
-  string ns; 
-  long id; 
-  long type; 
-  long action; 
-  geometry_msgs::msg::Pose pose; 
-  geometry_msgs::msg::Vector3 scale; 
-  std_msgs::msg::ColorRGBA color; 
-  std_msgs::msg::Duration lifetime; 
-  boolean frame_locked; 
-  sequence<geometry_msgs::msg::Point> points; 
-  sequence<std_msgs::msg::ColorRGBA> colors; 
-  string text; 
-  string mesh_resource; 
-  boolean mesh_use_embedded_materials; 
+ 
+struct Marker {  
+    std_msgs::msg::Header header; 
+    string ns; 
+    long id; 
+    long type; 
+    long action; 
+    geometry_msgs::msg::Pose pose; 
+    geometry_msgs::msg::Vector3 scale; 
+    std_msgs::msg::ColorRGBA color; 
+    std_msgs::msg::Duration lifetime; 
+    boolean frame_locked; 
+    sequence<geometry_msgs::msg::Point> points; 
+    sequence<std_msgs::msg::ColorRGBA> colors; 
+    string text; 
+    string mesh_resource; 
+    boolean mesh_use_embedded_materials; 
 }; 
-  
+ 
 }; };  // module msg::visualization_msgs 
  
 #endif  // __visualization_msgs__msg__Marker__idl 

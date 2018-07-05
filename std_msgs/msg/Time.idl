@@ -6,12 +6,11 @@
 module std_msgs { module msg { 
  
 @nested 
-struct Time 
-{ 
-  long sec; 
-  unsigned long nanosec; 
+struct Time {  
+    long sec; 
+    unsigned long nanosec; 
 }; 
-  
+ 
 }; };  // module msg::std_msgs 
  
 #endif  // __std_msgs__msg__Time__idl 

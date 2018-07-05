@@ -4,7 +4,7 @@
 #define __tf2_msgs__msg__TF2Error__idl 
  
 module tf2_msgs { module msg { 
-    
+ 
 const octet TF2Error__NO_ERROR = 0; 
 const octet TF2Error__LOOKUP_ERROR = 1; 
 const octet TF2Error__CONNECTIVITY_ERROR = 2; 
@@ -13,12 +13,11 @@ const octet TF2Error__INVALID_ARGUMENT_ERROR = 4;
 const octet TF2Error__TIMEOUT_ERROR = 5; 
 const octet TF2Error__TRANSFORM_ERROR = 6; 
  
-struct TF2Error 
-{ 
-  octet error; 
-  string error_string; 
+struct TF2Error {  
+    octet error; 
+    string error_string; 
 }; 
-  
+ 
 }; };  // module msg::tf2_msgs 
  
 #endif  // __tf2_msgs__msg__TF2Error__idl 

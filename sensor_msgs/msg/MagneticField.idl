@@ -10,13 +10,12 @@ module sensor_msgs { module msg {
  
 typedef double sensor_msgs__MagneticField__double_array_9[9]; 
  
-struct MagneticField 
-{ 
-  std_msgs::msg::Header header; 
-  geometry_msgs::msg::Vector3 magnetic_field; 
-  sensor_msgs__MagneticField__double_array_9 magnetic_field_covariance; 
+struct MagneticField {  
+    std_msgs::msg::Header header; 
+    geometry_msgs::msg::Vector3 magnetic_field; 
+    sensor_msgs__MagneticField__double_array_9 magnetic_field_covariance; 
 }; 
-  
+ 
 }; };  // module msg::sensor_msgs 
  
 #endif  // __sensor_msgs__msg__MagneticField__idl 

@@ -8,14 +8,13 @@
  
 module lifecycle_msgs { module msg { 
  
-struct TransitionEvent 
-{ 
-  unsigned long long timestamp; 
-  lifecycle_msgs::msg::Transition transition; 
-  lifecycle_msgs::msg::State start_state; 
-  lifecycle_msgs::msg::State goal_state; 
+struct TransitionEvent {  
+    unsigned long long timestamp; 
+    lifecycle_msgs::msg::Transition transition; 
+    lifecycle_msgs::msg::State start_state; 
+    lifecycle_msgs::msg::State goal_state; 
 }; 
-  
+ 
 }; };  // module msg::lifecycle_msgs 
  
 #endif  // __lifecycle_msgs__msg__TransitionEvent__idl 

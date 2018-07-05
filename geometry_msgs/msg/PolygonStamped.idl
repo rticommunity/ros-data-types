@@ -8,12 +8,11 @@
  
 module geometry_msgs { module msg { 
  
-struct PolygonStamped 
-{ 
-  std_msgs::msg::Header header; 
-  geometry_msgs::msg::Polygon polygon; 
+struct PolygonStamped {  
+    std_msgs::msg::Header header; 
+    geometry_msgs::msg::Polygon polygon; 
 }; 
-  
+ 
 }; };  // module msg::geometry_msgs 
  
 #endif  // __geometry_msgs__msg__PolygonStamped__idl 

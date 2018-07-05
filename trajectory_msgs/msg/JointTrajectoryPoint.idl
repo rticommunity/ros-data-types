@@ -7,15 +7,14 @@
  
 module trajectory_msgs { module msg { 
  
-struct JointTrajectoryPoint 
-{ 
-  sequence<double> positions; 
-  sequence<double> velocities; 
-  sequence<double> accelerations; 
-  sequence<double> effort; 
-  std_msgs::msg::Duration time_from_start; 
+struct JointTrajectoryPoint {  
+    sequence<double> positions; 
+    sequence<double> velocities; 
+    sequence<double> accelerations; 
+    sequence<double> effort; 
+    std_msgs::msg::Duration time_from_start; 
 }; 
-  
+ 
 }; };  // module msg::trajectory_msgs 
  
 #endif  // __trajectory_msgs__msg__JointTrajectoryPoint__idl 

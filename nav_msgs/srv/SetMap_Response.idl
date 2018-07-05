@@ -5,11 +5,10 @@
  
 module nav_msgs { module srv { 
  
-struct SetMap_Response 
-{ 
-  boolean success; 
+struct SetMap_Response {  
+    boolean success; 
 }; 
-  
+ 
 }; };  // module srv::nav_msgs 
  
 #endif  // __nav_msgs__srv__SetMap_Response__idl 

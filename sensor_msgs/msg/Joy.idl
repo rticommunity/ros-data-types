@@ -7,13 +7,12 @@
  
 module sensor_msgs { module msg { 
  
-struct Joy 
-{ 
-  std_msgs::msg::Header header; 
-  sequence<float> axes; 
-  sequence<long> buttons; 
+struct Joy {  
+    std_msgs::msg::Header header; 
+    sequence<float> axes; 
+    sequence<long> buttons; 
 }; 
-  
+ 
 }; };  // module msg::sensor_msgs 
  
 #endif  // __sensor_msgs__msg__Joy__idl 

@@ -10,17 +10,16 @@ module diagnostic_msgs { module msg {
 const octet DiagnosticStatus__OK = 0; 
 const octet DiagnosticStatus__WARN = 1; 
 const octet DiagnosticStatus__ERROR = 2; 
-const octet DiagnosticStatus__STALE = 3;  
+const octet DiagnosticStatus__STALE = 3; 
  
-struct DiagnosticStatus 
-{ 
-  octet level; 
-  string name; 
-  string message; 
-  string hardware_id; 
-  sequence<diagnostic_msgs::msg::KeyValue> values; 
+struct DiagnosticStatus {  
+    octet level; 
+    string name; 
+    string message; 
+    string hardware_id; 
+    sequence<diagnostic_msgs::msg::KeyValue> values; 
 }; 
-  
+ 
 }; };  // module msg::diagnostic_msgs 
  
 #endif  // __diagnostic_msgs__msg__DiagnosticStatus__idl__ 

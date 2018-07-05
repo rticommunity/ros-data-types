@@ -5,11 +5,10 @@
  
 module pendulum_msgs { module msg { 
  
-struct JointCommand 
-{ 
-  double position; 
+struct JointCommand {  
+    double position; 
 }; 
-  
+ 
 }; };  // module msg::pendulum_msgs 
  
 #endif  // __pendulum_msgs__msg__JointCommand__idl 

@@ -9,13 +9,12 @@
  
 module sensor_msgs { module msg { 
  
-struct PointCloud 
-{ 
-  std_msgs::msg::Header header; 
-  sequence<geometry_msgs::msg::Point32> points; 
-  sequence<sensor_msgs::msg::ChannelFloat32> channels; 
+struct PointCloud {  
+    std_msgs::msg::Header header; 
+    sequence<geometry_msgs::msg::Point32> points; 
+    sequence<sensor_msgs::msg::ChannelFloat32> channels; 
 }; 
-  
+ 
 }; };  // module msg::sensor_msgs 
  
 #endif  // __sensor_msgs__msg__PointCloud__idl 

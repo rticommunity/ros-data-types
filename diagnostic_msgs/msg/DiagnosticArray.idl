@@ -8,12 +8,11 @@
  
 module diagnostic_msgs { module msg { 
  
-struct DiagnosticArray 
-{ 
-  std_msgs::msg::Header header; 
-  sequence<diagnostic_msgs::msg:DiagnosticStatus> status; 
+struct DiagnosticArray {  
+    std_msgs::msg::Header header; 
+    sequence<diagnostic_msgs::msg:DiagnosticStatus> status; 
 }; 
-  
+ 
 }; };  // module msg::diagnostic_msgs 
  
 #endif  // __diagnostic_msgs__msg__DiagnosticArray__idl__ 

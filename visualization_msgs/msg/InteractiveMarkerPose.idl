@@ -8,11 +8,10 @@
  
 module visualization_msgs { module msg { 
  
-struct InteractiveMarkerPose 
-{ 
-  std_msgs::msg::Header header; 
-  geometry_msgs::msg::Pose pose; 
-  string name; 
+struct InteractiveMarkerPose {  
+    std_msgs::msg::Header header; 
+    geometry_msgs::msg::Pose pose; 
+    string name; 
 }; 
  
 }; };  // module msg::visualization_msgs 

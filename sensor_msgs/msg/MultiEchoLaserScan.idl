@@ -8,20 +8,19 @@
  
 module sensor_msgs { module msg { 
  
-struct MultiEchoLaserScan 
-{ 
-  std_msgs::msg::Header header; 
-  float angle_min; 
-  float angle_max; 
-  float angle_increment; 
-  float time_increment; 
-  float scan_time; 
-  float range_min; 
-  float range_max; 
-  sequence<sensor_msgs::msg::LaserEcho> ranges; 
-  sequence<sensor_msgs::msg::LaserEcho> intensities; 
+struct MultiEchoLaserScan {  
+    std_msgs::msg::Header header; 
+    float angle_min; 
+    float angle_max; 
+    float angle_increment; 
+    float time_increment; 
+    float scan_time; 
+    float range_min; 
+    float range_max; 
+    sequence<sensor_msgs::msg::LaserEcho> ranges; 
+    sequence<sensor_msgs::msg::LaserEcho> intensities; 
 }; 
-  
+ 
 }; };  // module msg::sensor_msgs 
  
 #endif  // __sensor_msgs__msg__MultiEchoLaserScan__idl 

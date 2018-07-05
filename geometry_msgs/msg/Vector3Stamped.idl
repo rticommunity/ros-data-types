@@ -8,12 +8,11 @@
  
 module geometry_msgs { module msg { 
  
-struct Vector3Stamped 
-{ 
-  std_msgs::msg::Header header; 
-  geometry_msgs::msg::Vector3 vector; 
+struct Vector3Stamped {  
+    std_msgs::msg::Header header; 
+    geometry_msgs::msg::Vector3 vector; 
 }; 
-  
+ 
 }; };  // module msg::geometry_msgs 
  
 #endif  // __geometry_msgs__msg__Vector3Stamped__idl 

@@ -7,17 +7,16 @@
  
 module sensor_msgs { module msg { 
  
-struct Image 
-{ 
-  std_msgs::msg::Header header; 
-  unsigned long height; 
-  unsigned long width; 
-  string encoding; 
-  octet is_bigendian; 
-  unsigned long step; 
-  sequence<octet> data; 
+struct Image {  
+    std_msgs::msg::Header header; 
+    unsigned long height; 
+    unsigned long width; 
+    string encoding; 
+    octet is_bigendian; 
+    unsigned long step; 
+    sequence<octet> data; 
 }; 
-  
+ 
 }; };  // module msg::sensor_msgs 
  
 #endif  // __sensor_msgs__msg__Image__idl 

@@ -4,13 +4,12 @@
  
 module gazebo_msgs { module srv { 
  
-struct SetJointTrajectory_Request 
-{ 
-  string model_name; 
-  trajectory_msgs::msg::JointTrajectory joint_trajectory; 
-  geometry_msgs::msg::Pose model_pose; 
-  boolean set_model_pose; 
-  boolean disable_physics_updates; 
+struct SetJointTrajectory_Request {  
+    string model_name; 
+    trajectory_msgs::msg::JointTrajectory joint_trajectory; 
+    geometry_msgs::msg::Pose model_pose; 
+    boolean set_model_pose; 
+    boolean disable_physics_updates; 
 }; 
  
 }; };  // module srv::gazebo_msgs 

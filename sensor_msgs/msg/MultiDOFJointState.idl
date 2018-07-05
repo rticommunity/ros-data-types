@@ -10,15 +10,14 @@
  
 module sensor_msgs { module msg { 
  
-struct MultiDOFJointState 
-{ 
-  std_msgs::msg::Header header; 
-  sequence<string> joint_names; 
-  sequence<geometry_msgs::msg::Transform> transforms; 
-  sequence<geometry_msgs::msg::Twist> twist; 
-  sequence<geometry_msgs::msg::Wrench> wrench; 
+struct MultiDOFJointState {  
+    std_msgs::msg::Header header; 
+    sequence<string> joint_names; 
+    sequence<geometry_msgs::msg::Transform> transforms; 
+    sequence<geometry_msgs::msg::Twist> twist; 
+    sequence<geometry_msgs::msg::Wrench> wrench; 
 }; 
-  
+ 
 }; };  // module msg::sensor_msgs 
  
 #endif  // __sensor_msgs__msg__MultiDOFJointState__idl 

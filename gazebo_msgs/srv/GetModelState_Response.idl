@@ -5,13 +5,12 @@
  
 module gazebo_msgs { module srv { 
  
-struct GetModelState_Response 
-{ 
-  std_msgs::msg::Header header; 
-  geometry_msgs::msg::Pose pose; 
-  geometry_msgs::msg::Twist twist; 
-  boolean success; 
-  string status_message; 
+struct GetModelState_Response {  
+    std_msgs::msg::Header header; 
+    geometry_msgs::msg::Pose pose; 
+    geometry_msgs::msg::Twist twist; 
+    boolean success; 
+    string status_message; 
 }; 
  
 }; };  // module srv::gazebo_msgs 

@@ -10,16 +10,15 @@ module visualization_msgs { module msg {
 const octet InteractiveMarkerUpdate__KEEP_ALIVE = 0; 
 const octet InteractiveMarkerUpdate__UPDATE = 1; 
  
-struct InteractiveMarkerUpdate 
-{ 
-  string server_id; 
-  unsigned long long seq_num; 
-  octet type; 
-  sequence<visualization_msgs::msg::InteractiveMarker> markers; 
-  sequence<visualization_msgs::msg::InteractiveMarkerPose> poses; 
-  sequence<string> erases; 
+struct InteractiveMarkerUpdate {  
+    string server_id; 
+    unsigned long long seq_num; 
+    octet type; 
+    sequence<visualization_msgs::msg::InteractiveMarker> markers; 
+    sequence<visualization_msgs::msg::InteractiveMarkerPose> poses; 
+    sequence<string> erases; 
 }; 
-  
+ 
 }; };  // module msg::visualization_msgs 
  
 #endif  // __visualization_msgs__msg__InteractiveMarkerUpdate__idl 

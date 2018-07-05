@@ -8,14 +8,13 @@
  
 module nav_msgs { module msg { 
  
-struct GridCells 
-{ 
-  std_msgs::msg::Header header; 
-  float cell_width; 
-  float cell_height; 
-  sequence<geometry_msgs::msg::Point> cells; 
+struct GridCells {  
+    std_msgs::msg::Header header; 
+    float cell_width; 
+    float cell_height; 
+    sequence<geometry_msgs::msg::Point> cells; 
 }; 
-  
+ 
 }; };  // module msg::nav_msgs 
  
 #endif  // __nav_msgs__msg__GridCells__idl 

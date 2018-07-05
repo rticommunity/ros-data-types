@@ -5,9 +5,8 @@
  
 module sensor_msgs { module msg { 
  
-struct LaserEcho 
-{ 
-  sequence<float> echoes; 
+struct LaserEcho {  
+    sequence<float> echoes; 
 }; 
  
 }; };  // module msg::sensor_msgs 

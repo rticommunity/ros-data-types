@@ -5,11 +5,10 @@
  
 module std_srvs { module srv { 
  
-struct SetBool_Request 
-{ 
-  boolean data; 
+struct SetBool_Request {  
+    boolean data; 
 }; 
-  
+ 
 }; };  // module srv::std_srvs 
  
 #endif  // __std_srvs__srv__SetBool_Request__idl 

@@ -7,13 +7,12 @@
  
 module diagnostic_msgs { module srv { 
  
-struct SelfTest_Response 
-{ 
-  string id; 
-  octet passed; 
-  sequence<diagnostic_msgs::msg::DiagnosticStatus> status; 
+struct SelfTest_Response {  
+    string id; 
+    octet passed; 
+    sequence<diagnostic_msgs::msg::DiagnosticStatus> status; 
 }; 
-  
+ 
 }; };  // module srv::diagnostic_msgs 
  
 #endif  // __diagnostic_msgs__srv__SelfTest_Response__idl__ 

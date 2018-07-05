@@ -7,13 +7,12 @@
  
 module visualization_msgs { module msg { 
  
-struct InteractiveMarkerInit 
-{ 
-  string server_id; 
-  unsigned long long seq_num; 
-  sequence<visualization_msgs::msg::InteractiveMarker> markers; 
+struct InteractiveMarkerInit {  
+    string server_id; 
+    unsigned long long seq_num; 
+    sequence<visualization_msgs::msg::InteractiveMarker> markers; 
 }; 
-  
+ 
 }; };  // module msg::visualization_msgs 
  
 #endif  // __visualization_msgs__msg__InteractiveMarkerInit__idl 

@@ -7,13 +7,12 @@
  
 module sensor_msgs { module msg { 
  
-struct FluidPressure 
-{ 
-  std_msgs::msg::Header header; 
-  double fluid_pressure; 
-  double variance; 
+struct FluidPressure {  
+    std_msgs::msg::Header header; 
+    double fluid_pressure; 
+    double variance; 
 }; 
-  
+ 
 }; };  // module msg::sensor_msgs 
  
 #endif  // __sensor_msgs__msg__FluidPressure__idl 

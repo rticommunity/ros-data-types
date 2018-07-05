@@ -7,12 +7,11 @@
  
 module lifecycle_msgs { module srv { 
  
-struct ChangeState_Request 
-{ 
-  string node_name; 
-  lifecycle_msgs::msg::Transition transition; 
+struct ChangeState_Request {  
+    string node_name; 
+    lifecycle_msgs::msg::Transition transition; 
 }; 
-  
+ 
 }; };  // module srv::lifecycle_msgs 
  
 #endif  // __lifecycle_msgs__srv__ChangeState_Request__idl 

@@ -5,12 +5,11 @@
  
 module diagnostic_msgs { module msg { 
  
-struct KeyValue 
-{ 
-  string key; 
-  string value; 
+struct KeyValue {  
+    string key; 
+    string value; 
 }; 
-  
+ 
 }; };  // module msg::diagnostic_msgs 
  
 #endif  // __diagnostic_msgs__msg__KeyValue__idl__ 

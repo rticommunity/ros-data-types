@@ -3,14 +3,13 @@
 #ifndef __test_msgs__srv__Empty_Request__idl 
 #define __test_msgs__srv__Empty_Request__idl 
  
-
+ 
 module test_msgs { module srv { 
  
-struct Empty_Request 
-{ 
-  boolean _dummy; 
+struct Empty_Request {  
+    boolean _dummy; 
 }; 
-  
+ 
 }; };  // module srv::test_msgs 
  
 #endif  // __test_msgs__srv__Empty_Request__idl 

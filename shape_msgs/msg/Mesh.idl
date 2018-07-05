@@ -8,12 +8,11 @@
  
 module shape_msgs { module msg { 
  
-struct Mesh 
-{ 
-  sequence<shape_msgs::msg::MeshTriangle> triangles; 
-  sequence<geometry_msgs::msg::Point> vertices; 
+struct Mesh {  
+    sequence<shape_msgs::msg::MeshTriangle> triangles; 
+    sequence<geometry_msgs::msg::Point> vertices; 
 }; 
-  
+ 
 }; };  // module msg::shape_msgs 
  
 #endif  // __shape_msgs__msg__Mesh__idl 

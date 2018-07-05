@@ -4,12 +4,11 @@
  
 module gazebo_msgs { module srv { 
  
-struct ApplyBodyWrench_Request 
-{ 
-  string joint_name; 
-  double effort; 
-  std_msgs::msg::Time start_time; 
-  std_msgs::msg::Duration duration;    
+struct ApplyBodyWrench_Request {  
+    string joint_name; 
+    double effort; 
+    std_msgs::msg::Time start_time; 
+    std_msgs::msg::Duration duration; 
 }; 
  
 }; };  // module srv::gazebo_msgs 

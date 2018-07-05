@@ -16,19 +16,18 @@ const octet InteractiveMarkerFeedback__BUTTON_CLICK = 3;
 const octet InteractiveMarkerFeedback__MOUSE_DOWN = 4; 
 const octet InteractiveMarkerFeedback__MOUSE_UP = 5; 
  
-struct InteractiveMarkerFeedback 
-{ 
-  std_msgs::msg::Header header; 
-  string client_id; 
-  string marker_name; 
-  string control_name; 
-  octet event_type; 
-  geometry_msgs::msg::Pose pose; 
-  unsigned long menu_entry_id; 
-  geometry_msgs::msg::Point mouse_point; 
-  boolean mouse_point_valid; 
+struct InteractiveMarkerFeedback {  
+    std_msgs::msg::Header header; 
+    string client_id; 
+    string marker_name; 
+    string control_name; 
+    octet event_type; 
+    geometry_msgs::msg::Pose pose; 
+    unsigned long menu_entry_id; 
+    geometry_msgs::msg::Point mouse_point; 
+    boolean mouse_point_valid; 
 }; 
-  
+ 
 }; };  // module msg::visualization_msgs 
  
 #endif  // __visualization_msgs__msg__InteractiveMarkerFeedback__idl 

@@ -5,9 +5,8 @@
  
 module lifecycle_msgs { module srv { 
  
-struct GetAvailableStates_Request 
-{ 
-  string node_name; 
+struct GetAvailableStates_Request {  
+    string node_name; 
 }; 
  
 }; };  // module srv::lifecycle_msgs 

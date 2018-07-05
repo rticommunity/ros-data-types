@@ -5,12 +5,11 @@
  
 module std_msgs { module msg { 
  
-struct Duration 
-{ 
-  long sec; 
-  unsigned long nanosec; 
+struct Duration {  
+    long sec; 
+    unsigned long nanosec; 
 }; 
-  
+ 
 }; };  // module msg::std_msgs 
  
 #endif  // __std_msgs__msg__Duration__idl 

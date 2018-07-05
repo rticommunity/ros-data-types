@@ -4,12 +4,11 @@
  
 module gazebo_msgs { module msg { 
  
-struct LinkState 
-{ 
-  string link_name; 
-  geometry_msgs::msg::Pose pose; 
-  geometry_msgs::msg::Twist twist; 
-  string reference_frame;    
+struct LinkState {  
+    string link_name; 
+    geometry_msgs::msg::Pose pose; 
+    geometry_msgs::msg::Twist twist; 
+    string reference_frame; 
 }; 
  
 }; };  // module msg::gazebo_msgs 

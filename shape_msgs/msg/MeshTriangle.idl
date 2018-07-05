@@ -7,11 +7,10 @@ module shape_msgs { module msg {
  
 typedef unsigned long shape_msgs__MeshTriangle__unsigned_long_array_3[3]; 
  
-struct MeshTriangle 
-{ 
-  shape_msgs__MeshTriangle__unsigned_long_array_3 vertex_indices; 
+struct MeshTriangle {  
+    shape_msgs__MeshTriangle__unsigned_long_array_3 vertex_indices; 
 }; 
-  
+ 
 }; };  // module msg::shape_msgs 
  
 #endif  // __shape_msgs__msg__MeshTriangle__idl 

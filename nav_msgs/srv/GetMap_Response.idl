@@ -7,11 +7,10 @@
  
 module nav_msgs { module srv { 
  
-struct GetMap_Response 
-{ 
-  nav_msgs::msg::OccupancyGrid map; 
+struct GetMap_Response {  
+    nav_msgs::msg::OccupancyGrid map; 
 }; 
-  
+ 
 }; };  // module srv::nav_msgs 
  
 #endif  // __nav_msgs__srv__GetMap_Response__idl 

@@ -7,13 +7,12 @@
  
 module sensor_msgs { module msg { 
  
-struct RelativeHumidity 
-{ 
-  std_msgs::msg::Header header; 
-  double relative_humidity; 
-  double variance; 
+struct RelativeHumidity {  
+    std_msgs::msg::Header header; 
+    double relative_humidity; 
+    double variance; 
 }; 
-  
+ 
 }; };  // module msg::sensor_msgs 
  
 #endif  // __sensor_msgs__msg__RelativeHumidity__idl 

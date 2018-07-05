@@ -7,11 +7,10 @@
  
 module geometry_msgs { module msg { 
  
-struct Polygon 
-{ 
-  sequence<geometry_msgs::msg::Point32> points; 
+struct Polygon {  
+    sequence<geometry_msgs::msg::Point32> points; 
 }; 
-  
+ 
 }; };  // module msg::geometry_msgs 
  
 #endif  // __geometry_msgs__msg__Polygon__idl 

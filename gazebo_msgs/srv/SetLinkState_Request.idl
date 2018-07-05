@@ -3,9 +3,8 @@
  
 module gazebo_msgs { module srv { 
  
-struct SetLinkState_Request 
-{ 
-  gazebo_msgs::msg::LinkState link_state;    
+struct SetLinkState_Request {  
+    gazebo_msgs::msg::LinkState link_state; 
 }; 
  
 }; };  // module srv::gazebo_msgs 

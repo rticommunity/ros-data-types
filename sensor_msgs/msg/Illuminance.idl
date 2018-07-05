@@ -7,13 +7,12 @@
  
 module sensor_msgs { module msg { 
  
-struct Illuminance 
-{ 
-  std_msgs::msg::Header header; 
-  double illuminance; 
-  double variance; 
+struct Illuminance {  
+    std_msgs::msg::Header header; 
+    double illuminance; 
+    double variance; 
 }; 
-  
+ 
 }; };  // module msg::sensor_msgs 
  
 #endif  // __sensor_msgs__msg__Illuminance__idl 

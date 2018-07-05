@@ -5,11 +5,10 @@
  
 module diagnostic_msgs { module srv { 
  
-struct AddDiagnostics_Request 
-{ 
-  string load_namespace; 
+struct AddDiagnostics_Request {  
+    string load_namespace; 
 }; 
-  
+ 
 }; };  // module srv::diagnostic_msgs 
  
 #endif  // __diagnostic_msgs__srv__AddDiagnostics_Request__idl__ 
