@@ -1,38 +1,29 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __test_msgs__msg__DynamicArrayPrimitives__idl
-#define __test_msgs__msg__DynamicArrayPrimitives__idl
-
-
-module test_msgs
-{
-
-module msg
-{
-
-struct DynamicArrayPrimitives
-{
-
-  sequence<boolean> bool_values;
-  sequence<octet> byte_values;
-  sequence<char> char_values;
-  sequence<float> float32_values;
-  sequence<double> float64_values;
-  sequence<octet> int8_values;
-  sequence<octet> uint8_values;
-  sequence<short> int16_values;
-  sequence<unsigned short> uint16_values;
-  sequence<long> int32_values;
-  sequence<unsigned long> uint32_values;
-  sequence<long long> int64_values;
-  sequence<unsigned long long> uint64_values;
-  sequence<string> string_values;
-  long check;
-
-};  // struct DynamicArrayPrimitives
-
-};  // module msg
-
-};  // module test_msgs
-
-#endif  // __test_msgs__msg__DynamicArrayPrimitives__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __test_msgs__msg__DynamicArrayPrimitives__idl 
+#define __test_msgs__msg__DynamicArrayPrimitives__idl 
+ 
+module test_msgs { module msg { 
+ 
+struct DynamicArrayPrimitives 
+{ 
+  sequence<boolean> bool_values; 
+  sequence<octet> byte_values; 
+  sequence<char> char_values; 
+  sequence<float> float32_values; 
+  sequence<double> float64_values; 
+  sequence<octet> int8_values; 
+  sequence<octet> uint8_values; 
+  sequence<short> int16_values; 
+  sequence<unsigned short> uint16_values; 
+  sequence<long> int32_values; 
+  sequence<unsigned long> uint32_values; 
+  sequence<long long> int64_values; 
+  sequence<unsigned long long> uint64_values; 
+  sequence<string> string_values; 
+  long check; 
+}; 
+  
+}; };  // module msg::test_msgs 
+ 
+#endif  // __test_msgs__msg__DynamicArrayPrimitives__idl 

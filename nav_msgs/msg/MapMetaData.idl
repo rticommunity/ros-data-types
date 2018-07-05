@@ -1,30 +1,22 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __nav_msgs__msg__MapMetaData__idl
-#define __nav_msgs__msg__MapMetaData__idl
-
-#include "../../std_msgs/msg/Time.idl"
-#include "../../geometry_msgs/msgPose.idl"
-
-module nav_msgs
-{
-
-module msg
-{
-
-struct MapMetaData
-{
-
-  std_msgs::msg::Time map_load_time;
-  float resolution;
-  unsigned long width;
-  unsigned long height;
-  geometry_msgs::msg::Pose origin;
-
-};  // struct MapMetaData
-
-};  // module msg
-
-};  // module nav_msgs
-
-#endif  // __nav_msgs__msg__MapMetaData__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __nav_msgs__msg__MapMetaData__idl 
+#define __nav_msgs__msg__MapMetaData__idl 
+ 
+#include "std_msgs/msg/Time.idl" 
+#include "geometry_msgs/msgPose.idl" 
+ 
+module nav_msgs { module msg { 
+ 
+struct MapMetaData 
+{ 
+  std_msgs::msg::Time map_load_time; 
+  float resolution; 
+  unsigned long width; 
+  unsigned long height; 
+  geometry_msgs::msg::Pose origin; 
+}; 
+  
+}; };  // module msg::nav_msgs 
+ 
+#endif  // __nav_msgs__msg__MapMetaData__idl 

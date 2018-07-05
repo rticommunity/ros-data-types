@@ -1,50 +1,41 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __test_msgs__msg__StaticArrayPrimitives__idl
-#define __test_msgs__msg__StaticArrayPrimitives__idl
-
-
-module test_msgs
-{
-
-module msg
-{
-
-typedef boolean test_msgs__StaticArrayPrimitives__boolean_array_3[3];
-typedef octet test_msgs__StaticArrayPrimitives__octet_array_3[3];
-typedef char test_msgs__StaticArrayPrimitives__char_array_3[3];
-typedef float test_msgs__StaticArrayPrimitives__float_array_3[3];
-typedef double test_msgs__StaticArrayPrimitives__double_array_3[3];
-typedef short test_msgs__StaticArrayPrimitives__short_array_3[3];
-typedef unsigned short test_msgs__StaticArrayPrimitives__unsigned_short_array_3[3];
-typedef long test_msgs__StaticArrayPrimitives__long_array_3[3];
-typedef unsigned long test_msgs__StaticArrayPrimitives__unsigned_long_array_3[3];
-typedef long long test_msgs__StaticArrayPrimitives__long_long_array_3[3];
-typedef unsigned long long test_msgs__StaticArrayPrimitives__unsigned_long_long_array_3[3];
-typedef string test_msgs__StaticArrayPrimitives__string_array_3[3];
-
-struct StaticArrayPrimitives
-{
-
-test_msgs__StaticArrayPrimitives__boolean_array_3 bool_values;
-test_msgs__StaticArrayPrimitives__octet_array_3 byte_values;
-test_msgs__StaticArrayPrimitives__char_array_3 char_values;
-test_msgs__StaticArrayPrimitives__float_array_3 float32_values;
-test_msgs__StaticArrayPrimitives__double_array_3 float64_values;
-test_msgs__StaticArrayPrimitives__octet_array_3 int8_values;
-test_msgs__StaticArrayPrimitives__octet_array_3 uint8_values;
-test_msgs__StaticArrayPrimitives__short_array_3 int16_values;
-test_msgs__StaticArrayPrimitives__unsigned_short_array_3 uint16_values;
-test_msgs__StaticArrayPrimitives__long_array_3 int32_values;
-test_msgs__StaticArrayPrimitives__unsigned_long_array_3 uint32_values;
-test_msgs__StaticArrayPrimitives__long_long_array_3 int64_values;
-test_msgs__StaticArrayPrimitives__unsigned_long_long_array_3 uint64_values;
-test_msgs__StaticArrayPrimitives__string_array_3 string_values;
-
-};  // struct StaticArrayPrimitives
-
-};  // module msg
-
-};  // module test_msgs
-
-#endif  // __test_msgs__msg__StaticArrayPrimitives__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __test_msgs__msg__StaticArrayPrimitives__idl 
+#define __test_msgs__msg__StaticArrayPrimitives__idl 
+ 
+module test_msgs { module msg { 
+ 
+typedef boolean test_msgs__StaticArrayPrimitives__boolean_array_3[3]; 
+typedef octet test_msgs__StaticArrayPrimitives__octet_array_3[3]; 
+typedef char test_msgs__StaticArrayPrimitives__char_array_3[3]; 
+typedef float test_msgs__StaticArrayPrimitives__float_array_3[3]; 
+typedef double test_msgs__StaticArrayPrimitives__double_array_3[3]; 
+typedef short test_msgs__StaticArrayPrimitives__short_array_3[3]; 
+typedef unsigned short test_msgs__StaticArrayPrimitives__unsigned_short_array_3[3]; 
+typedef long test_msgs__StaticArrayPrimitives__long_array_3[3]; 
+typedef unsigned long test_msgs__StaticArrayPrimitives__unsigned_long_array_3[3]; 
+typedef long long test_msgs__StaticArrayPrimitives__long_long_array_3[3]; 
+typedef unsigned long long test_msgs__StaticArrayPrimitives__unsigned_long_long_array_3[3]; 
+typedef string test_msgs__StaticArrayPrimitives__string_array_3[3]; 
+ 
+struct StaticArrayPrimitives 
+{ 
+  test_msgs__StaticArrayPrimitives__boolean_array_3 bool_values; 
+  test_msgs__StaticArrayPrimitives__octet_array_3 byte_values; 
+  test_msgs__StaticArrayPrimitives__char_array_3 char_values; 
+  test_msgs__StaticArrayPrimitives__float_array_3 float32_values; 
+  test_msgs__StaticArrayPrimitives__double_array_3 float64_values; 
+  test_msgs__StaticArrayPrimitives__octet_array_3 int8_values; 
+  test_msgs__StaticArrayPrimitives__octet_array_3 uint8_values; 
+  test_msgs__StaticArrayPrimitives__short_array_3 int16_values; 
+  test_msgs__StaticArrayPrimitives__unsigned_short_array_3 uint16_values; 
+  test_msgs__StaticArrayPrimitives__long_array_3 int32_values; 
+  test_msgs__StaticArrayPrimitives__unsigned_long_array_3 uint32_values; 
+  test_msgs__StaticArrayPrimitives__long_long_array_3 int64_values; 
+  test_msgs__StaticArrayPrimitives__unsigned_long_long_array_3 uint64_values; 
+  test_msgs__StaticArrayPrimitives__string_array_3 string_values; 
+}; 
+  
+}; };  // module msg::test_msgs 
+ 
+#endif  // __test_msgs__msg__StaticArrayPrimitives__idl 

@@ -1,25 +1,16 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __std_srvs__srv__Trigger_Response__idl
-#define __std_srvs__srv__Trigger_Response__idl
-
-
-module std_srvs
-{
-
-module srv
-{
-
-struct Trigger_Response
-{
-
-  boolean success;
-  string message;
-
-};  // struct Trigger_Response
-
-};  // module srv
-
-};  // module std_srvs
-
-#endif  // __std_srvs__srv__Trigger_Response__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __std_srvs__srv__Trigger_Response__idl 
+#define __std_srvs__srv__Trigger_Response__idl 
+ 
+module std_srvs { module srv { 
+ 
+struct Trigger_Response 
+{ 
+  boolean success; 
+  string message; 
+}; 
+  
+}; };  // module srv::std_srvs 
+ 
+#endif  // __std_srvs__srv__Trigger_Response__idl 

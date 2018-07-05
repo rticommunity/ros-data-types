@@ -1,24 +1,15 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __std_msgs__msg__Bool__idl
-#define __std_msgs__msg__Bool__idl
-
-
-module std_msgs
-{
-
-module msg
-{
-
-struct Bool
-{
-
-  boolean data;
-
-};  // struct Bool
-
-};  // module msg
-
-};  // module std_msgs
-
-#endif  // __std_msgs__msg__Bool__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __std_msgs__msg__Bool__idl 
+#define __std_msgs__msg__Bool__idl 
+ 
+module std_msgs { module msg { 
+ 
+struct Bool 
+{ 
+  boolean data; 
+}; 
+  
+}; };  // module msg::std_msgs 
+ 
+#endif  // __std_msgs__msg__Bool__idl 

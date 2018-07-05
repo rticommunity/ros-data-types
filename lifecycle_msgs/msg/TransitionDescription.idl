@@ -1,28 +1,20 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __lifecycle_msgs__msg__TransitionDescription__idl
-#define __lifecycle_msgs__msg__TransitionDescription__idl
-
-#include "State.idl"
-#include "Transition.idl"
-
-module lifecycle_msgs
-{
-
-module msg
-{
-
-struct TransitionDescription
-{
-
-  lifecycle_msgs::msg::Transition transition;
-  lifecycle_msgs::msg::State start_state;
-  lifecycle_msgs::msg::State goal_state;
-
-};  // struct TransitionDescription
-
-};  // module msg
-
-};  // module lifecycle_msgs
-
-#endif  // __lifecycle_msgs__msg__TransitionDescription__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __lifecycle_msgs__msg__TransitionDescription__idl 
+#define __lifecycle_msgs__msg__TransitionDescription__idl 
+ 
+#include "State.idl" 
+#include "Transition.idl" 
+ 
+module lifecycle_msgs { module msg { 
+ 
+struct TransitionDescription 
+{ 
+  lifecycle_msgs::msg::Transition transition; 
+  lifecycle_msgs::msg::State start_state; 
+  lifecycle_msgs::msg::State goal_state; 
+}; 
+  
+}; };  // module msg::lifecycle_msgs 
+ 
+#endif  // __lifecycle_msgs__msg__TransitionDescription__idl 

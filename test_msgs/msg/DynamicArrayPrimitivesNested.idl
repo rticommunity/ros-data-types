@@ -1,25 +1,17 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __test_msgs__msg__DynamicArrayPrimitivesNested__idl
-#define __test_msgs__msg__DynamicArrayPrimitivesNested__idl
-
-#include "DynamicArrayPrimitives.idl"
-
-module test_msgs
-{
-
-module msg
-{
-
-struct DynamicArrayPrimitivesNested
-{
-
-  sequence<test_msgs::msg::DynamicArrayPrimitives> dynamic_array_primitive_values;
-
-};  // struct DynamicArrayPrimitivesNested
-
-};  // module msg
-
-};  // module test_msgs
-
-#endif  // __test_msgs__msg__DynamicArrayPrimitivesNested__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __test_msgs__msg__DynamicArrayPrimitivesNested__idl 
+#define __test_msgs__msg__DynamicArrayPrimitivesNested__idl 
+ 
+#include "DynamicArrayPrimitives.idl" 
+ 
+module test_msgs { module msg { 
+ 
+struct DynamicArrayPrimitivesNested 
+{ 
+  sequence<test_msgs::msg::DynamicArrayPrimitives> dynamic_array_primitive_values; 
+}; 
+  
+}; };  // module msg::test_msgs 
+ 
+#endif  // __test_msgs__msg__DynamicArrayPrimitivesNested__idl 
