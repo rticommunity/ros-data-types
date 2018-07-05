@@ -3,7 +3,6 @@
 #ifndef __geometry_msgs__msg__Pose2D__idl
 #define __geometry_msgs__msg__Pose2D__idl
 
-
 module geometry_msgs { module msg {
 
 struct Pose2D

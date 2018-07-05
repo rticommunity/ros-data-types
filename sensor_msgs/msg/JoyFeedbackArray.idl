@@ -1,26 +1,17 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __sensor_msgs__msg__JoyFeedbackArray__idl
-#define __sensor_msgs__msg__JoyFeedbackArray__idl
-
-#include "JoyFeedback.idl"
-
-module sensor_msgs
-{
-
-module msg
-{
-
-struct JoyFeedbackArray
-{
-
-  sequence<sensor_msgs::msg::JoyFeedback> array;
-
-};  // struct JoyFeedbackArray
-
-
-};  // module msg
-
-};  // module sensor_msgs
-
-#endif  // __sensor_msgs__msg__JoyFeedbackArray__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __sensor_msgs__msg__JoyFeedbackArray__idl 
+#define __sensor_msgs__msg__JoyFeedbackArray__idl 
+ 
+#include "JoyFeedback.idl" 
+ 
+module sensor_msgs { module msg { 
+ 
+struct JoyFeedbackArray 
+{ 
+  sequence<sensor_msgs::msg::JoyFeedback> array; 
+}; 
+ 
+}; };  // module msg::sensor_msgs 
+ 
+#endif  // __sensor_msgs__msg__JoyFeedbackArray__idl 

@@ -1,46 +1,27 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __sensor_msgs__msg__PointField__idl
-#define __sensor_msgs__msg__PointField__idl
-
-
-module sensor_msgs
-{
-
-module msg
-{
-
-  const octet PointField__INT8 =
-    1;
-  const octet PointField__UINT8 =
-    2;
-  const octet PointField__INT16 =
-    3;
-  const octet PointField__UINT16 =
-    4;
-  const octet PointField__INT32 =
-    5;
-  const octet PointField__UINT32 =
-    6;
-  const octet PointField__FLOAT32 =
-    7;
-  const octet PointField__FLOAT64 =
-    8;
-
-
-
-struct PointField
-{
-
-  string name;
-  unsigned long offset;
-  octet datatype;
-  unsigned long count;
-
-};  // struct PointField
-
-};  // module msg
-
-};  // module sensor_msgs
-
-#endif  // __sensor_msgs__msg__PointField__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __sensor_msgs__msg__PointField__idl 
+#define __sensor_msgs__msg__PointField__idl 
+ 
+module sensor_msgs { module msg { 
+ 
+const octet PointField__INT8 = 1; 
+const octet PointField__UINT8 = 2; 
+const octet PointField__INT16 = 3; 
+const octet PointField__UINT16 = 4; 
+const octet PointField__INT32 = 5; 
+const octet PointField__UINT32 = 6; 
+const octet PointField__FLOAT32 = 7; 
+const octet PointField__FLOAT64 = 8; 
+ 
+struct PointField 
+{ 
+  string name; 
+  unsigned long offset; 
+  octet datatype; 
+  unsigned long count; 
+}; 
+  
+}; };  // module msg::sensor_msgs 
+ 
+#endif  // __sensor_msgs__msg__PointField__idl 

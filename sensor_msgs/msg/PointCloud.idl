@@ -1,29 +1,21 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __sensor_msgs__msg__PointCloud__idl
-#define __sensor_msgs__msg__PointCloud__idl
-
-#include "../../geometry_msgs/msg/Point32.idl"
-#include "ChannelFloat32.idl"
-#include "../../std_msgs/msg/Header.idl"
-
-module sensor_msgs
-{
-
-module msg
-{
-
-struct PointCloud
-{
-
-  std_msgs::msg::Header header;
-  sequence<geometry_msgs::msg::Point32> points;
-  sequence<sensor_msgs::msg::ChannelFloat32> channels;
-
-};  // struct PointCloud
-
-};  // module msg
-
-};  // module sensor_msgs
-
-#endif  // __sensor_msgs__msg__PointCloud__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __sensor_msgs__msg__PointCloud__idl 
+#define __sensor_msgs__msg__PointCloud__idl 
+ 
+#include "geometry_msgs/msg/Point32.idl" 
+#include "ChannelFloat32.idl" 
+#include "std_msgs/msg/Header.idl" 
+ 
+module sensor_msgs { module msg { 
+ 
+struct PointCloud 
+{ 
+  std_msgs::msg::Header header; 
+  sequence<geometry_msgs::msg::Point32> points; 
+  sequence<sensor_msgs::msg::ChannelFloat32> channels; 
+}; 
+  
+}; };  // module msg::sensor_msgs 
+ 
+#endif  // __sensor_msgs__msg__PointCloud__idl 

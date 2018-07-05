@@ -1,34 +1,26 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __sensor_msgs__msg__LaserScan__idl
-#define __sensor_msgs__msg__LaserScan__idl
-
-#include "../../std_msgs/msg/Header.idl"
-
-module sensor_msgs
-{
-
-module msg
-{
-
-struct LaserScan
-{
-
-  std_msgs::msg::Header header;
-  float angle_min;
-  float angle_max;
-  float angle_increment;
-  float time_increment;
-  float scan_time;
-  float range_min;
-  float range_max;
-  sequence<float> ranges;
-  sequence<float> intensities;
-
-};  // struct LaserScan
-
-};  // module msg
-
-};  // module sensor_msgs
-
-#endif  // __sensor_msgs__msg__LaserScan__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __sensor_msgs__msg__LaserScan__idl 
+#define __sensor_msgs__msg__LaserScan__idl 
+ 
+#include "std_msgs/msg/Header.idl" 
+ 
+module sensor_msgs { module msg { 
+ 
+struct LaserScan 
+{ 
+  std_msgs::msg::Header header; 
+  float angle_min; 
+  float angle_max; 
+  float angle_increment; 
+  float time_increment; 
+  float scan_time; 
+  float range_min; 
+  float range_max; 
+  sequence<float> ranges; 
+  sequence<float> intensities; 
+}; 
+  
+}; };  // module msg::sensor_msgs 
+ 
+#endif  // __sensor_msgs__msg__LaserScan__idl 

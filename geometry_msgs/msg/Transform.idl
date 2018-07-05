@@ -1,27 +1,19 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __geometry_msgs__msg__Transform__idl
-#define __geometry_msgs__msg__Transform__idl
-
-#include "Quaternion.idl"
-#include "Vector3.idl"
-
-module geometry_msgs
-{
-
-module msg
-{
-
-struct Transform
-{
-
-  geometry_msgs::msg::Vector3 translation;
-  geometry_msgs::msg::Quaternion rotation;
-
-};  // struct Transform
-
-};  // module msg
-
-};  // module geometry_msgs
-
-#endif  // __geometry_msgs__msg__Transform__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __geometry_msgs__msg__Transform__idl 
+#define __geometry_msgs__msg__Transform__idl 
+ 
+#include "Quaternion.idl" 
+#include "Vector3.idl" 
+ 
+module geometry_msgs { module msg { 
+ 
+struct Transform 
+{ 
+  geometry_msgs::msg::Vector3 translation; 
+  geometry_msgs::msg::Quaternion rotation; 
+}; 
+  
+}; };  // module msg::geometry_msgs 
+ 
+#endif  // __geometry_msgs__msg__Transform__idl 
