@@ -1,8 +1,9 @@
  
 module gazebo_msgs { module srv { 
  
-struct GetModelProperties_Request {  
-    string model_name; 
+struct Default_Response {  
+    boolean success; 
+    string status_message; 
 }; 
  
 }; };  // module srv::gazebo_msgs 

@@ -1,26 +1,17 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __geometry_msgs__msg__Wrench__idl
-#define __geometry_msgs__msg__Wrench__idl
-
-#include "Vector3.idl"
-
-module geometry_msgs
-{
-
-module msg
-{
-
-struct Wrench
-{
-
-  geometry_msgs::msg::Vector3 force;
-  geometry_msgs::msg::Vector3 torque;
-
-};  // struct Wrench
-
-};  // module msg
-
-};  // module geometry_msgs
-
-#endif  // __geometry_msgs__msg__Wrench__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __geometry_msgs__msg__Wrench__idl 
+#define __geometry_msgs__msg__Wrench__idl 
+ 
+#include "Vector3.idl" 
+ 
+module geometry_msgs { module msg { 
+ 
+struct Wrench {  
+    geometry_msgs::msg::Vector3 force; 
+    geometry_msgs::msg::Vector3 torque; 
+}; 
+ 
+}; };  // module msg::geometry_msgs 
+ 
+#endif  // __geometry_msgs__msg__Wrench__idl 

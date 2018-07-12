@@ -1,25 +1,16 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __tf2_msgs__msg__TFMessage__idl
-#define __tf2_msgs__msg__TFMessage__idl
-
-#include "../../geometry_msgs/msg/TransformStamped.idl"
-
-module tf2_msgs
-{
-
-module msg
-{
-
-struct TFMessage
-{
-
-  sequence<geometry_msgs::msg::TransformStamped> transforms;
-
-};  // struct TFMessage
-
-};  // module msg
-
-};  // module tf2_msgs
-
-#endif  // __tf2_msgs__msg__TFMessage__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __tf2_msgs__msg__TFMessage__idl 
+#define __tf2_msgs__msg__TFMessage__idl 
+ 
+#include "geometry_msgs/msg/TransformStamped.idl" 
+ 
+module tf2_msgs { module msg { 
+ 
+struct TFMessage {  
+    sequence<geometry_msgs::msg::TransformStamped> transforms; 
+}; 
+ 
+}; };  // module msg::tf2_msgs 
+ 
+#endif  // __tf2_msgs__msg__TFMessage__idl 

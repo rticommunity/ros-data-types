@@ -1,27 +1,18 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __sensor_msgs__msg__CompressedImage__idl
-#define __sensor_msgs__msg__CompressedImage__idl
-
-#include "../../std_msgs/msg/Header.idl"
-
-module sensor_msgs
-{
-
-module msg
-{
-
-struct CompressedImage
-{
-
-  std_msgs::msg::Header header;
-  string format;
-  sequence<octet> data;
-
-};  // struct CompressedImage
-
-};  // module msg
-
-};  // module sensor_msgs
-
-#endif  // __sensor_msgs__msg__CompressedImage__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __sensor_msgs__msg__CompressedImage__idl 
+#define __sensor_msgs__msg__CompressedImage__idl 
+ 
+#include "std_msgs/msg/Header.idl" 
+ 
+module sensor_msgs { module msg { 
+ 
+struct CompressedImage {  
+    std_msgs::msg::Header header; 
+    string format; 
+    sequence<octet> data; 
+}; 
+ 
+}; };  // module msg::sensor_msgs 
+ 
+#endif  // __sensor_msgs__msg__CompressedImage__idl 

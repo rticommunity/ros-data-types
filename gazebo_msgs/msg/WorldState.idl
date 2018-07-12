@@ -1,20 +1,17 @@
-
-module gazebo_msgs
-{
-
-module msg
-{
-
-struct WorldState {
-
-    Header header;
-    sequence<string> name;
-    sequence<Pose> pose;
-    sequence<Twist> twist;
-    sequence<Wrench> wrench;
-
-};
-
-};  // module msg
-
-};  // module gazebo_msgs
+ 
+#include "std_msgs/msg/Header.idl" 
+#include "geometry_msgs/msg/Pose.idl" 
+#include "geometry_msgs/msg/Twist.idl" 
+#include "geometry_msgs/msg/Wrench.idl" 
+ 
+module gazebo_msgs { module msg { 
+ 
+struct WorldState {  
+    std_msgs::msg::Header header; 
+    sequence<string> name; 
+    sequence<geometry_msgs::msg::Pose> pose; 
+    sequence<geometry_msgs::msg::Twist> twist; 
+    sequence<geometry_msgs::msg::Wrench> wrench; 
+}; 
+ 
+}; };  // module msg::gazebo_msgs 

@@ -1,37 +1,27 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __test_msgs__msg__Primitives__idl
-#define __test_msgs__msg__Primitives__idl
-
-
-module test_msgs
-{
-
-module msg
-{
-
-struct Primitives
-{
-
-  boolean bool_value;
-  octet byte_value;
-  char char_value;
-  float float32_value;
-  double float64_value;
-  octet int8_value;
-  octet uint8_value;
-  short int16_value;
-  unsigned short uint16_value;
-  long int32_value;
-  unsigned long uint32_value;
-  long long int64_value;
-  unsigned long long uint64_value;
-  string string_value;
-
-};  // struct Primitives
-
-};  // module msg
-
-};  // module test_msgs
-
-#endif  // __test_msgs__msg__Primitives__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __test_msgs__msg__Primitives__idl 
+#define __test_msgs__msg__Primitives__idl 
+ 
+module test_msgs { module msg { 
+ 
+struct Primitives {  
+    boolean bool_value; 
+    octet byte_value; 
+    char char_value; 
+    float float32_value; 
+    double float64_value; 
+    octet int8_value; 
+    octet uint8_value; 
+    short int16_value; 
+    unsigned short uint16_value; 
+    long int32_value; 
+    unsigned long uint32_value; 
+    long long int64_value; 
+    unsigned long long uint64_value; 
+    string string_value; 
+}; 
+ 
+}; };  // module msg::test_msgs 
+ 
+#endif  // __test_msgs__msg__Primitives__idl 

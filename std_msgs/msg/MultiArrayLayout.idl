@@ -1,26 +1,17 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __std_msgs__msg__MultiArrayLayout__idl
-#define __std_msgs__msg__MultiArrayLayout__idl
-
-#include "MultiArrayDimension.idl"
-
-module std_msgs
-{
-
-module msg
-{
-
-struct MultiArrayLayout
-{
-
-  sequence<std_msgs::msg::MultiArrayDimension> dim;
-  unsigned long data_offset;
-
-};  // struct MultiArrayLayout
-
-};  // module msg
-
-};  // module std_msgs
-
-#endif  // __std_msgs__msg__MultiArrayLayout__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __std_msgs__msg__MultiArrayLayout__idl 
+#define __std_msgs__msg__MultiArrayLayout__idl 
+ 
+#include "MultiArrayDimension.idl" 
+ 
+module std_msgs { module msg { 
+ 
+struct MultiArrayLayout {  
+    sequence<std_msgs::msg::MultiArrayDimension> dim; 
+    unsigned long data_offset; 
+}; 
+ 
+}; };  // module msg::std_msgs 
+ 
+#endif  // __std_msgs__msg__MultiArrayLayout__idl 

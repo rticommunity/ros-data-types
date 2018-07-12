@@ -1,26 +1,17 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __geometry_msgs__msg__Twist__idl
-#define __geometry_msgs__msg__Twist__idl
-
-#include "Vector3.idl"
-
-module geometry_msgs
-{
-
-module msg
-{
-
-struct Twist
-{
-
-  geometry_msgs::msg::Vector3 linear;
-  geometry_msgs::msg::Vector3 angular;
-
-};  // struct Twist
-
-};  // module msg
-
-};  // module geometry_msgs
-
-#endif  // __geometry_msgs__msg__Twist__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __geometry_msgs__msg__Twist__idl 
+#define __geometry_msgs__msg__Twist__idl 
+ 
+#include "Vector3.idl" 
+ 
+module geometry_msgs { module msg { 
+ 
+struct Twist {  
+    geometry_msgs::msg::Vector3 linear; 
+    geometry_msgs::msg::Vector3 angular; 
+}; 
+ 
+}; };  // module msg::geometry_msgs 
+ 
+#endif  // __geometry_msgs__msg__Twist__idl 

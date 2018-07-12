@@ -1,24 +1,14 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __lifecycle_msgs__srv__GetState_Request__idl
-#define __lifecycle_msgs__srv__GetState_Request__idl
-
-
-module lifecycle_msgs
-{
-
-module srv
-{
-
-struct GetState_Request
-{
-
-  string node_name;
-
-};  // struct GetState_Request
-
-};  // module srv
-
-};  // module lifecycle_msgs
-
-#endif  // __lifecycle_msgs__srv__GetState_Request__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __lifecycle_msgs__srv__GetState_Request__idl 
+#define __lifecycle_msgs__srv__GetState_Request__idl 
+ 
+module lifecycle_msgs { module srv { 
+ 
+struct GetState_Request {  
+    string node_name; 
+}; 
+ 
+}; };  // module srv::lifecycle_msgs 
+ 
+#endif  // __lifecycle_msgs__srv__GetState_Request__idl 

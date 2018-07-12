@@ -1,52 +1,28 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __shape_msgs__msg__SolidPrimitive__idl
-#define __shape_msgs__msg__SolidPrimitive__idl
-
-
-module shape_msgs
-{
-
-module msg
-{
-
-  const octet SolidPrimitive__BOX =
-    1;
-  const octet SolidPrimitive__SPHERE =
-    2;
-  const octet SolidPrimitive__CYLINDER =
-    3;
-  const octet SolidPrimitive__CONE =
-    4;
-  const octet SolidPrimitive__BOX_X =
-    0;
-  const octet SolidPrimitive__BOX_Y =
-    1;
-  const octet SolidPrimitive__BOX_Z =
-    2;
-  const octet SolidPrimitive__SPHERE_RADIUS =
-    0;
-  const octet SolidPrimitive__CYLINDER_HEIGHT =
-    0;
-  const octet SolidPrimitive__CYLINDER_RADIUS =
-    1;
-  const octet SolidPrimitive__CONE_HEIGHT =
-    0;
-  const octet SolidPrimitive__CONE_RADIUS =
-    1;
-
-
-
-struct SolidPrimitive
-{
-
-  octet type;
-  sequence<double, 3> dimensions;
-
-};  // struct SolidPrimitive
-
-};  // module msg
-
-};  // module shape_msgs
-
-#endif  // __shape_msgs__msg__SolidPrimitive__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __shape_msgs__msg__SolidPrimitive__idl 
+#define __shape_msgs__msg__SolidPrimitive__idl 
+ 
+module shape_msgs { module msg { 
+ 
+const octet SolidPrimitive__BOX = 1; 
+const octet SolidPrimitive__SPHERE = 2; 
+const octet SolidPrimitive__CYLINDER = 3; 
+const octet SolidPrimitive__CONE = 4; 
+const octet SolidPrimitive__BOX_X = 0; 
+const octet SolidPrimitive__BOX_Y = 1; 
+const octet SolidPrimitive__BOX_Z = 2; 
+const octet SolidPrimitive__SPHERE_RADIUS = 0; 
+const octet SolidPrimitive__CYLINDER_HEIGHT = 0; 
+const octet SolidPrimitive__CYLINDER_RADIUS = 1; 
+const octet SolidPrimitive__CONE_HEIGHT = 0; 
+const octet SolidPrimitive__CONE_RADIUS = 1; 
+ 
+struct SolidPrimitive {  
+    octet type; 
+    sequence<double, 3> dimensions; 
+}; 
+ 
+}; };  // module msg::shape_msgs 
+ 
+#endif  // __shape_msgs__msg__SolidPrimitive__idl 

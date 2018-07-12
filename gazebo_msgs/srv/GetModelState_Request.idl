@@ -1,17 +1,9 @@
-
-module gazebo_msgs
-{
-
-module srv
-{
-
-struct GetModelState_Request {
-
-    string model_name;
-    string relative_entity_name;
-
-};
-
-};  // module srv
-
-};  // module gazebo_msgs
+ 
+module gazebo_msgs { module srv { 
+ 
+struct GetModelState_Request {  
+    string model_name; 
+    string relative_entity_name; 
+}; 
+ 
+}; };  // module srv::gazebo_msgs 

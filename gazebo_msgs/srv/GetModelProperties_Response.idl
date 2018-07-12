@@ -1,24 +1,16 @@
-
-module gazebo_msgs
-{
-
-module srv
-{
-
-struct GetModelProperties_Response {
-
-    string parent_model_name;
-    string canonical_body_name;
-    sequence<string> body_names;
-    sequence<string> geom_names;
-    sequence<string> joint_names;
-    sequence<string> child_model_names;
-    boolean is_static;
-    boolean success;
-    string status_message;
-
-};
-
-};  // module srv
-
-};  // module gazebo_msgs
+ 
+module gazebo_msgs { module srv { 
+ 
+struct GetModelProperties_Response {  
+    string parent_model_name; 
+    string canonical_body_name; 
+    sequence<string> body_names; 
+    sequence<string> geom_names; 
+    sequence<string> joint_names; 
+    sequence<string> child_model_names; 
+    boolean is_static; 
+    boolean success; 
+    string status_message; 
+}; 
+ 
+}; };  // module srv::gazebo_msgs 

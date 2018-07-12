@@ -1,28 +1,19 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __sensor_msgs__msg__TimeReference__idl
-#define __sensor_msgs__msg__TimeReference__idl
-
-#include "../../std_msgs/msg/Time.idl"
-#include "../../std_msgs/msg/Header.idl"
-
-module sensor_msgs
-{
-
-module msg
-{
-
-struct TimeReference
-{
-
-  std_msgs::msg::Header header;
-  std_msgs::msg::Time time_ref;
-  string source;
-
-};  // struct TimeReference
-
-};  // module msg
-
-};  // module sensor_msgs
-
-#endif  // __sensor_msgs__msg__TimeReference__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __sensor_msgs__msg__TimeReference__idl 
+#define __sensor_msgs__msg__TimeReference__idl 
+ 
+#include "std_msgs/msg/Time.idl" 
+#include "std_msgs/msg/Header.idl" 
+ 
+module sensor_msgs { module msg { 
+ 
+struct TimeReference {  
+    std_msgs::msg::Header header; 
+    std_msgs::msg::Time time_ref; 
+    string source; 
+}; 
+ 
+}; };  // module msg::sensor_msgs 
+ 
+#endif  // __sensor_msgs__msg__TimeReference__idl 

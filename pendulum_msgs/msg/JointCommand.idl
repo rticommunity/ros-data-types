@@ -1,24 +1,14 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __pendulum_msgs__msg__JointCommand__idl
-#define __pendulum_msgs__msg__JointCommand__idl
-
-
-module pendulum_msgs
-{
-
-module msg
-{
-
-struct JointCommand
-{
-
-  double position;
-
-};  // struct JointCommand
-
-};  // module msg
-
-};  // module pendulum_msgs
-
-#endif  // __pendulum_msgs__msg__JointCommand__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __pendulum_msgs__msg__JointCommand__idl 
+#define __pendulum_msgs__msg__JointCommand__idl 
+ 
+module pendulum_msgs { module msg { 
+ 
+struct JointCommand {  
+    double position; 
+}; 
+ 
+}; };  // module msg::pendulum_msgs 
+ 
+#endif  // __pendulum_msgs__msg__JointCommand__idl 

@@ -1,18 +1,12 @@
-
-module gazebo_msgs
-{
-
-module srv
-{
-
-struct GetLinkState_Response {
-
-    LinkState link_state;
-    boolean success;
-    string status_message;
-
-};
-
-};  // module srv
-
-};  // module gazebo_msgs
+ 
+#include "gazebo_msgs/msg/LinkState.idl" 
+ 
+module gazebo_msgs { module srv { 
+ 
+struct GetLinkState_Response {  
+    gazebo_msgs::msg::LinkState link_state; 
+    boolean success; 
+    string status_message; 
+}; 
+ 
+}; };  // module srv::gazebo_msgs 

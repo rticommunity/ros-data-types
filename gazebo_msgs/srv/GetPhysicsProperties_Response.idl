@@ -1,22 +1,16 @@
-
-module gazebo_msgs
-{
-
-module srv
-{
-
-struct GetPhysicsProperties_Response {
-
-    double time_step;
-    boolean pause;
-    double max_update_rate;
-    Vector3 gravity;
-    ODEPhysics ode_config;
-    boolean success;
-    string status_message;
-
-};
-
-};  // module srv
-
-};  // module gazebo_msgs
+ 
+#include "gazebo_msgs/msg/ODEPhysics.idl" 
+ 
+module gazebo_msgs { module srv { 
+ 
+struct GetPhysicsProperties_Response {  
+    double time_step; 
+    boolean pause; 
+    double max_update_rate; 
+    Vector3 gravity; 
+    gazebo_msgs::msg::ODEPhysics ode_config; 
+    boolean success; 
+    string status_message; 
+}; 
+ 
+}; };  // module srv::gazebo_msgs 

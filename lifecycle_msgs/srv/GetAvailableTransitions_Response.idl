@@ -1,25 +1,16 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __lifecycle_msgs__srv__GetAvailableTransitions_Response__idl
-#define __lifecycle_msgs__srv__GetAvailableTransitions_Response__idl
-
-#include "../msg/TransitionDescription.idl"
-
-module lifecycle_msgs
-{
-
-module srv
-{
-
-struct GetAvailableTransitions_Response
-{
-
-  sequence<lifecycle_msgs::msg::TransitionDescription> available_transitions;
-
-};  // struct GetAvailableTransitions_Response
-
-};  // module srv
-
-};  // module lifecycle_msgs
-
-#endif  // __lifecycle_msgs__srv__GetAvailableTransitions_Response__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __lifecycle_msgs__srv__GetAvailableTransitions_Response__idl 
+#define __lifecycle_msgs__srv__GetAvailableTransitions_Response__idl 
+ 
+#include "lifecycle_msgs/msg/TransitionDescription.idl" 
+ 
+module lifecycle_msgs { module srv { 
+ 
+struct GetAvailableTransitions_Response {  
+    sequence<lifecycle_msgs::msg::TransitionDescription> available_transitions; 
+}; 
+ 
+}; };  // module srv::lifecycle_msgs 
+ 
+#endif  // __lifecycle_msgs__srv__GetAvailableTransitions_Response__idl 

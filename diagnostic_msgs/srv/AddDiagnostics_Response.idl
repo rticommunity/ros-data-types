@@ -1,25 +1,15 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __diagnostic_msgs__srv__AddDiagnostics_Response__idl__
-#define __diagnostic_msgs__srv__AddDiagnostics_Response__idl__
-
-
-module diagnostic_msgs
-{
-
-module srv
-{
-
-struct AddDiagnostics_Response
-{
-
-  boolean success;
-  string message;
-
-};  // struct AddDiagnostics_Response
-
-};  // module srv
-
-};  // module diagnostic_msgs
-
-#endif  // __diagnostic_msgs__srv__AddDiagnostics_Response__idl__
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __diagnostic_msgs__srv__AddDiagnostics_Response__idl__ 
+#define __diagnostic_msgs__srv__AddDiagnostics_Response__idl__ 
+ 
+module diagnostic_msgs { module srv { 
+ 
+struct AddDiagnostics_Response {  
+    boolean success; 
+    string message; 
+}; 
+ 
+}; };  // module srv::diagnostic_msgs 
+ 
+#endif  // __diagnostic_msgs__srv__AddDiagnostics_Response__idl__ 

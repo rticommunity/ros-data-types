@@ -1,30 +1,21 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __trajectory_msgs__msg__MultiDOFJointTrajectoryPoint__idl
-#define __trajectory_msgs__msg__MultiDOFJointTrajectoryPoint__idl
-
-#include "../../std_msgs/msg/Duration.idl"
-#include "../../geometry_msgs/msg/Transform.idl"
-#include "../../geometry_msgs/msg/Twist.idl"
-
-module trajectory_msgs
-{
-
-module msg
-{
-
-struct MultiDOFJointTrajectoryPoint
-{
-
-  sequence<geometry_msgs::msg::Transform> transforms;
-  sequence<geometry_msgs::msg::Twist> velocities;
-  sequence<geometry_msgs::msg::Twist> accelerations;
-  std_msgs::msg::Duration time_from_start;
-
-};  // struct MultiDOFJointTrajectoryPoint
-
-};  // module msg
-
-};  // module trajectory_msgs
-
-#endif  // __trajectory_msgs__msg__MultiDOFJointTrajectoryPoint__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __trajectory_msgs__msg__MultiDOFJointTrajectoryPoint__idl 
+#define __trajectory_msgs__msg__MultiDOFJointTrajectoryPoint__idl 
+ 
+#include "std_msgs/msg/Duration.idl" 
+#include "geometry_msgs/msg/Transform.idl" 
+#include "geometry_msgs/msg/Twist.idl" 
+ 
+module trajectory_msgs { module msg { 
+ 
+struct MultiDOFJointTrajectoryPoint {  
+    sequence<geometry_msgs::msg::Transform> transforms; 
+    sequence<geometry_msgs::msg::Twist> velocities; 
+    sequence<geometry_msgs::msg::Twist> accelerations; 
+    std_msgs::msg::Duration time_from_start; 
+}; 
+ 
+}; };  // module msg::trajectory_msgs 
+ 
+#endif  // __trajectory_msgs__msg__MultiDOFJointTrajectoryPoint__idl 

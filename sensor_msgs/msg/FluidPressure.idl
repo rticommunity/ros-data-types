@@ -1,27 +1,18 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __sensor_msgs__msg__FluidPressure__idl
-#define __sensor_msgs__msg__FluidPressure__idl
-
-#include "../../std_msgs/msg/Header.idl"
-
-module sensor_msgs
-{
-
-module msg
-{
-
-struct FluidPressure
-{
-
-  std_msgs::msg::Header header;
-  double fluid_pressure;
-  double variance;
-
-};  // struct FluidPressure
-
-};  // module msg
-
-};  // module sensor_msgs
-
-#endif  // __sensor_msgs__msg__FluidPressure__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __sensor_msgs__msg__FluidPressure__idl 
+#define __sensor_msgs__msg__FluidPressure__idl 
+ 
+#include "std_msgs/msg/Header.idl" 
+ 
+module sensor_msgs { module msg { 
+ 
+struct FluidPressure {  
+    std_msgs::msg::Header header; 
+    double fluid_pressure; 
+    double variance; 
+}; 
+ 
+}; };  // module msg::sensor_msgs 
+ 
+#endif  // __sensor_msgs__msg__FluidPressure__idl 

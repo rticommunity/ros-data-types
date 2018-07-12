@@ -1,26 +1,17 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __std_msgs__msg__Float32MultiArray__idl
-#define __std_msgs__msg__Float32MultiArray__idl
-
-#include "MultiArrayLayout.idl"
-
-module std_msgs
-{
-
-module msg
-{
-
-struct Float32MultiArray
-{
-
-  std_msgs::msg::MultiArrayLayout layout;
-  sequence<float> data;
-
-};  // struct Float32MultiArray
-
-};  // module msg
-
-};  // module std_msgs
-
-#endif  // __std_msgs__msg__Float32MultiArray__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __std_msgs__msg__Float32MultiArray__idl 
+#define __std_msgs__msg__Float32MultiArray__idl 
+ 
+#include "MultiArrayLayout.idl" 
+ 
+module std_msgs { module msg { 
+ 
+struct Float32MultiArray {  
+    std_msgs::msg::MultiArrayLayout layout; 
+    sequence<float> data; 
+}; 
+ 
+}; };  // module msg::std_msgs 
+ 
+#endif  // __std_msgs__msg__Float32MultiArray__idl 

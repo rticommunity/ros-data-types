@@ -1,26 +1,16 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __pendulum_msgs__msg__JointState__idl
-#define __pendulum_msgs__msg__JointState__idl
-
-
-module pendulum_msgs
-{
-
-module msg
-{
-
-struct JointState
-{
-
-  double position;
-  double velocity;
-  double effort;
-
-};  // struct JointState
-
-};  // module msg
-
-};  // module pendulum_msgs
-
-#endif  // __pendulum_msgs__msg__JointState__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __pendulum_msgs__msg__JointState__idl 
+#define __pendulum_msgs__msg__JointState__idl 
+ 
+module pendulum_msgs { module msg { 
+ 
+struct JointState {  
+    double position; 
+    double velocity; 
+    double effort; 
+}; 
+ 
+}; };  // module msg::pendulum_msgs 
+ 
+#endif  // __pendulum_msgs__msg__JointState__idl 

@@ -1,40 +1,25 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __diagnostic_msgs__msg__DiagnosticStatus__idl__
-#define __diagnostic_msgs__msg__DiagnosticStatus__idl__
-
-#include "KeyValue.idl"
-
-module diagnostic_msgs
-{
-
-module msg
-{
-
-  const octet DiagnosticStatus__OK =
-    0;
-  const octet DiagnosticStatus__WARN =
-    1;
-  const octet DiagnosticStatus__ERROR =
-    2;
-  const octet DiagnosticStatus__STALE =
-    3;
-
-
-
-struct DiagnosticStatus
-{
-
-  octet level;
-  string name;
-  string message;
-  string hardware_id;
-  sequence<diagnostic_msgs::msg::KeyValue> values;
-
-};  // struct DiagnosticStatus
-
-};  // module msg
-
-};  // module diagnostic_msgs
-
-#endif  // __diagnostic_msgs__msg__DiagnosticStatus__idl__
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __diagnostic_msgs__msg__DiagnosticStatus__idl__ 
+#define __diagnostic_msgs__msg__DiagnosticStatus__idl__ 
+ 
+#include "KeyValue.idl" 
+ 
+module diagnostic_msgs { module msg { 
+ 
+const octet DiagnosticStatus__OK = 0; 
+const octet DiagnosticStatus__WARN = 1; 
+const octet DiagnosticStatus__ERROR = 2; 
+const octet DiagnosticStatus__STALE = 3; 
+ 
+struct DiagnosticStatus {  
+    octet level; 
+    string name; 
+    string message; 
+    string hardware_id; 
+    sequence<diagnostic_msgs::msg::KeyValue> values; 
+}; 
+ 
+}; };  // module msg::diagnostic_msgs 
+ 
+#endif  // __diagnostic_msgs__msg__DiagnosticStatus__idl__ 

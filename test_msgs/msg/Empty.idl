@@ -1,24 +1,14 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __test_msgs__msg__Empty__idl
-#define __test_msgs__msg__Empty__idl
-
-
-module test_msgs
-{
-
-module msg
-{
-
-struct Empty
-{
-
-  boolean _dummy;
-
-};  // struct Empty
-
-};  // module msg
-
-};  // module test_msgs
-
-#endif  // __test_msgs__msg__Empty__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __test_msgs__msg__Empty__idl 
+#define __test_msgs__msg__Empty__idl 
+ 
+module test_msgs { module msg { 
+ 
+struct Empty {  
+    boolean dummy; 
+}; 
+ 
+}; };  // module msg::test_msgs 
+ 
+#endif  // __test_msgs__msg__Empty__idl 

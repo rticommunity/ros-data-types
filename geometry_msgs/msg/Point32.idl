@@ -1,26 +1,16 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __geometry_msgs__msg__Point32__idl
-#define __geometry_msgs__msg__Point32__idl
-
-
-module geometry_msgs
-{
-
-module msg
-{
-
-struct Point32
-{
-
-  float x;
-  float y;
-  float z;
-
-};  // struct Point32
-
-};  // module msg
-
-};  // module geometry_msgs
-
-#endif  // __geometry_msgs__msg__Point32__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __geometry_msgs__msg__Point32__idl 
+#define __geometry_msgs__msg__Point32__idl 
+ 
+module geometry_msgs { module msg { 
+ 
+struct Point32 {  
+    float x; 
+    float y; 
+    float z; 
+}; 
+ 
+}; };  // module msg::geometry_msgs 
+ 
+#endif  // __geometry_msgs__msg__Point32__idl 

@@ -1,19 +1,14 @@
-
-module gazebo_msgs
-{
-
-module srv
-{
-
-struct SetPhysicsProperties_Request {
-
-    double time_step;
-    double max_update_rate;
-    Vector3 gravity;
-    ODEPhysics ode_config;
-
-};
-
-};  // module srv
-
-};  // module gazebo_msgs
+ 
+#include "geometry_msgs/msg/Vector3.idl" 
+#include "gazebo_msgs/msg/ODEPhysics.idl" 
+ 
+module gazebo_msgs { module srv { 
+ 
+struct SetPhysicsProperties_Request {  
+    double time_step; 
+    double max_update_rate; 
+    geometry_msgs::msg::Vector3 gravity; 
+    gazebo_msgs::msg::ODEPhysics ode_config; 
+}; 
+ 
+}; };  // module srv::gazebo_msgs 

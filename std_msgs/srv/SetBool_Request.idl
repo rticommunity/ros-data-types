@@ -1,25 +1,14 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __std_srvs__srv__SetBool_Request__idl
-#define __std_srvs__srv__SetBool_Request__idl
-
-
-module std_srvs
-{
-
-module srv
-{
-
-struct SetBool_Request
-{
-
-  boolean data;
-
-};  // struct SetBool_Request
-
-
-};  // module srv
-
-};  // module std_srvs
-
-#endif  // __std_srvs__srv__SetBool_Request__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __std_srvs__srv__SetBool_Request__idl 
+#define __std_srvs__srv__SetBool_Request__idl 
+ 
+module std_srvs { module srv { 
+ 
+struct SetBool_Request {  
+    boolean data; 
+}; 
+ 
+}; };  // module srv::std_srvs 
+ 
+#endif  // __std_srvs__srv__SetBool_Request__idl 

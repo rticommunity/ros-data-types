@@ -1,19 +1,14 @@
-
-module gazebo_msgs
-{
-
-module msg
-{
-
-struct ModelState {
-        
-    string model_name;
-    Pose pose;
-    Twist twist;
-    string reference_frame;
-
-};
-
-};  // module msg
-
-};  // module gazebo_msgs
+ 
+#include "geometry_msgs/msg/Pose.idl" 
+#include "geometry_msgs/msg/Twist.idl" 
+ 
+module gazebo_msgs { module msg { 
+ 
+struct ModelState {  
+    string model_name; 
+    geometry_msgs::msg::Pose pose; 
+    geometry_msgs::msg::Twist twist; 
+    string reference_frame; 
+}; 
+ 
+}; };  // module msg::gazebo_msgs 

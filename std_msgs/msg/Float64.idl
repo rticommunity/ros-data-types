@@ -1,24 +1,14 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __std_msgs__msg__Float64__idl
-#define __std_msgs__msg__Float64__idl
-
-
-module std_msgs
-{
-
-module msg
-{
-
-struct Float64
-{
-
-  double data;
-
-};  // struct Float64
-
-};  // module msg
-
-};  // module std_msgs
-
-#endif  // __std_msgs__msg__Float64__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __std_msgs__msg__Float64__idl 
+#define __std_msgs__msg__Float64__idl 
+ 
+module std_msgs { module msg { 
+ 
+struct Float64 {  
+    double data; 
+}; 
+ 
+}; };  // module msg::std_msgs 
+ 
+#endif  // __std_msgs__msg__Float64__idl 

@@ -1,26 +1,16 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __std_msgs__msg__MultiArrayDimension__idl
-#define __std_msgs__msg__MultiArrayDimension__idl
-
-
-module std_msgs
-{
-
-module msg
-{
-
-struct MultiArrayDimension
-{
-
-  string label;
-  unsigned long size;
-  unsigned long stride;
-
-};  // struct MultiArrayDimension
-
-};  // module msg
-
-};  // module std_msgs
-
-#endif  // __std_msgs__msg__MultiArrayDimension__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __std_msgs__msg__MultiArrayDimension__idl 
+#define __std_msgs__msg__MultiArrayDimension__idl 
+ 
+module std_msgs { module msg { 
+ 
+struct MultiArrayDimension {  
+    string label; 
+    unsigned long size; 
+    unsigned long stride; 
+}; 
+ 
+}; };  // module msg::std_msgs 
+ 
+#endif  // __std_msgs__msg__MultiArrayDimension__idl 

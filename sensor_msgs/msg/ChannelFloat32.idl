@@ -1,25 +1,15 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __sensor_msgs__msg__ChannelFloat32__idl
-#define __sensor_msgs__msg__ChannelFloat32__idl
-
-
-module sensor_msgs
-{
-
-module msg
-{
-
-struct ChannelFloat32
-{
-
-  string name;
-  sequence<float> values;
-
-};  // struct ChannelFloat32
-
-};  // module msg
-
-};  // module sensor_msgs
-
-#endif  // __sensor_msgs__msg__ChannelFloat32__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __sensor_msgs__msg__ChannelFloat32__idl 
+#define __sensor_msgs__msg__ChannelFloat32__idl 
+ 
+module sensor_msgs { module msg { 
+ 
+struct ChannelFloat32 {  
+    string name; 
+    sequence<float> values; 
+}; 
+ 
+}; };  // module msg::sensor_msgs 
+ 
+#endif  // __sensor_msgs__msg__ChannelFloat32__idl 

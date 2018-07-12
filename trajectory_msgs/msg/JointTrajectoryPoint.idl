@@ -1,29 +1,20 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __trajectory_msgs__msg__JointTrajectoryPoint__idl
-#define __trajectory_msgs__msg__JointTrajectoryPoint__idl
-
-#include "../../std_msgs/msg/Duration.idl"
-
-module trajectory_msgs
-{
-
-module msg
-{
-
-struct JointTrajectoryPoint
-{
-
-  sequence<double> positions;
-  sequence<double> velocities;
-  sequence<double> accelerations;
-  sequence<double> effort;
-  std_msgs::msg::Duration time_from_start;
-
-};  // struct JointTrajectoryPoint
-
-};  // module msg
-
-};  // module trajectory_msgs
-
-#endif  // __trajectory_msgs__msg__JointTrajectoryPoint__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __trajectory_msgs__msg__JointTrajectoryPoint__idl 
+#define __trajectory_msgs__msg__JointTrajectoryPoint__idl 
+ 
+#include "std_msgs/msg/Duration.idl" 
+ 
+module trajectory_msgs { module msg { 
+ 
+struct JointTrajectoryPoint {  
+    sequence<double> positions; 
+    sequence<double> velocities; 
+    sequence<double> accelerations; 
+    sequence<double> effort; 
+    std_msgs::msg::Duration time_from_start; 
+}; 
+ 
+}; };  // module msg::trajectory_msgs 
+ 
+#endif  // __trajectory_msgs__msg__JointTrajectoryPoint__idl 

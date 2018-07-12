@@ -1,26 +1,17 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __lifecycle_msgs__srv__ChangeState_Request__idl
-#define __lifecycle_msgs__srv__ChangeState_Request__idl
-
-#include "../msg/Transition.idl"
-
-module lifecycle_msgs
-{
-
-module srv
-{
-
-struct ChangeState_Request
-{
-
-  string node_name;
-  lifecycle_msgs::msg::Transition transition;
-
-};  // struct ChangeState_Request
-
-};  // module srv
-
-};  // module lifecycle_msgs
-
-#endif  // __lifecycle_msgs__srv__ChangeState_Request__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __lifecycle_msgs__srv__ChangeState_Request__idl 
+#define __lifecycle_msgs__srv__ChangeState_Request__idl 
+ 
+#include "lifecycle_msgs/msg/Transition.idl" 
+ 
+module lifecycle_msgs { module srv { 
+ 
+struct ChangeState_Request {  
+    string node_name; 
+    lifecycle_msgs::msg::Transition transition; 
+}; 
+ 
+}; };  // module srv::lifecycle_msgs 
+ 
+#endif  // __lifecycle_msgs__srv__ChangeState_Request__idl 

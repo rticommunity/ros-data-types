@@ -1,27 +1,18 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __sensor_msgs__msg__Joy__idl
-#define __sensor_msgs__msg__Joy__idl
-
-#include "../../std_msgs/msg/Header.idl"
-
-module sensor_msgs
-{
-
-module msg
-{
-
-struct Joy
-{
-
-  std_msgs::msg::Header header;
-  sequence<float> axes;
-  sequence<long> buttons;
-
-};  // struct Joy
-
-};  // module msg
-
-};  // module sensor_msgs
-
-#endif  // __sensor_msgs__msg__Joy__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __sensor_msgs__msg__Joy__idl 
+#define __sensor_msgs__msg__Joy__idl 
+ 
+#include "std_msgs/msg/Header.idl" 
+ 
+module sensor_msgs { module msg { 
+ 
+struct Joy {  
+    std_msgs::msg::Header header; 
+    sequence<float> axes; 
+    sequence<long> buttons; 
+}; 
+ 
+}; };  // module msg::sensor_msgs 
+ 
+#endif  // __sensor_msgs__msg__Joy__idl 

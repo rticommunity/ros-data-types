@@ -1,18 +1,13 @@
-
-module gazebo_msgs
-{
-
-module msg
-{
-
-struct ModelStates {
-
-    sequence<string> name;
-    sequence<Pose> pose;
-    sequence<Twist> twist;
-
-};
-
-};  // module msg
-
-};  // module gazebo_msgs
+ 
+#include "geometry_msgs/msg/Pose.idl" 
+#include "geometry_msgs/msg/Twist.idl" 
+ 
+module gazebo_msgs { module msg { 
+ 
+struct ModelStates {  
+    sequence<string> name; 
+    sequence<geometry_msgs::msg::Pose> pose; 
+    sequence<geometry_msgs::msg::Twist> twist; 
+}; 
+ 
+}; };  // module msg::gazebo_msgs 

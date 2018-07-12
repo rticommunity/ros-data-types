@@ -1,27 +1,18 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em
-
-#ifndef __geometry_msgs__msg__PoseArray__idl
-#define __geometry_msgs__msg__PoseArray__idl
-
-#include "Pose.idl"
-#include "../../std_msgs/msg/Header.idl"
-
-module geometry_msgs
-{
-
-module msg
-{
-
-struct PoseArray
-{
-
-  std_msgs::msg::Header header;
-  sequence<geometry_msgs::msg::Pose> poses;
-
-};  // struct PoseArray
-
-};  // module msg
-
-};  // module geometry_msgs
-
-#endif  // __geometry_msgs__msg__PoseArray__idl
+// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+ 
+#ifndef __geometry_msgs__msg__PoseArray__idl 
+#define __geometry_msgs__msg__PoseArray__idl 
+ 
+#include "Pose.idl" 
+#include "std_msgs/msg/Header.idl" 
+ 
+module geometry_msgs { module msg { 
+ 
+struct PoseArray {  
+    std_msgs::msg::Header header; 
+    sequence<geometry_msgs::msg::Pose> poses; 
+}; 
+ 
+}; };  // module msg::geometry_msgs 
+ 
+#endif  // __geometry_msgs__msg__PoseArray__idl 
