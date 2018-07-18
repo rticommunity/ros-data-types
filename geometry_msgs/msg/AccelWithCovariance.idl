@@ -1,4 +1,18 @@
-// generated from rosidl_generator_dds_idl/resource/msg.idl.em 
+/*
+ * Copyright 2018 Real-Time Innovations, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */ 
  
 #ifndef __geometry_msgs__msg__AccelWithCovariance__idl 
 #define __geometry_msgs__msg__AccelWithCovariance__idl 
@@ -9,7 +23,7 @@ module geometry_msgs { module msg {
  
 typedef double geometry_msgs__AccelWithCovariance__double_array_36[36]; 
  
-struct AccelWithCovariance {  
+struct AccelWithCovariance { 
     geometry_msgs::msg::Accel accel; 
     geometry_msgs__AccelWithCovariance__double_array_36 covariance; 
 }; 
