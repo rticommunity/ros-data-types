@@ -14,17 +14,20 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#include "geometry_msgs/msg/Pose.idl" 
-#include "geometry_msgs/msg/Twist.idl" 
- 
+
 module gazebo_msgs { module msg { 
  
-struct ModelState { 
-    string model_name; 
-    geometry_msgs::msg::Pose pose; 
-    geometry_msgs::msg::Twist twist; 
-    string reference_frame; 
+struct ODEPhysics { 
+    boolean auto_disable_bodies; 
+    unsigned long sor_pgs_precon_iters; 
+    unsigned long sor_pgs_iters; 
+    double psor_pgs_w; 
+    double sor_pgs_rms_error_tol; 
+    double contact_surface_layer; 
+    double contact_max_correcting_vel; 
+    double cfm; 
+    double erp; 
+    unsigned long max_contacts; 
 }; 
  
 }; };  // module msg::gazebo_msgs 

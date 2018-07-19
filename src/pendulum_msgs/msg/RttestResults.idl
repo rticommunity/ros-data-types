@@ -20,7 +20,7 @@
  
 #include "std_msgs/msg/Time.idl" 
 #include "JointCommand.idl" 
-#include "JointState.idl" 
+#include "JointStatePendulum.idl" 
  
 module pendulum_msgs { module msg { 
  

@@ -14,19 +14,17 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
+
+#include "geometry_msgs/msg/Pose.idl" 
+#include "geometry_msgs/msg/Twist.idl" 
  
-#include "gazebo_msgs/msg/ODEPhysics.idl" 
+module gazebo_msgs { module msg { 
  
-module gazebo_msgs { module srv { 
- 
-struct GetPhysicsProperties_Response { 
-    double time_step; 
-    boolean pause; 
-    double max_update_rate; 
-    Vector3 gravity; 
-    gazebo_msgs::msg::ODEPhysics ode_config; 
-    boolean success; 
-    string status_message; 
+struct ModelState { 
+    string model_name; 
+    geometry_msgs::msg::Pose pose; 
+    geometry_msgs::msg::Twist twist; 
+    string reference_frame; 
 }; 
  
-}; };  // module srv::gazebo_msgs 
+}; };  // module msg::gazebo_msgs 

@@ -14,20 +14,20 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
+
 module gazebo_msgs { module msg { 
  
-struct ODEPhysics { 
-    boolean auto_disable_bodies; 
-    unsigned long sor_pgs_precon_iters; 
-    unsigned long sor_pgs_iters; 
-    double psor_pgs_w; 
-    double sor_pgs_rms_error_tol; 
-    double contact_surface_layer; 
-    double contact_max_correcting_vel; 
-    double cfm; 
-    double erp; 
-    unsigned long max_contacts; 
+struct ODEJointProperties { 
+    sequence<double> damping; 
+    sequence<double> hiStop; 
+    sequence<double> loStop; 
+    sequence<double> erp; 
+    sequence<double> cfm; 
+    sequence<double> stop_erp; 
+    sequence<double> stop_cfm; 
+    sequence<double> fudge_factor; 
+    sequence<double> fmax; 
+    sequence<double> vel; 
 }; 
  
 }; };  // module msg::gazebo_msgs 

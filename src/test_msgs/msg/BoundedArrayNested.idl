@@ -15,22 +15,17 @@
  * limitations under the License. 
  */ 
  
-#ifndef __nav_msgs__msg__MapMetaData__idl 
-#define __nav_msgs__msg__MapMetaData__idl 
+#ifndef __test_msgs__msg__BoundedArrayNested__idl 
+#define __test_msgs__msg__BoundedArrayNested__idl 
  
-#include "std_msgs/msg/Time.idl" 
-#include "geometry_msgs/msgPose.idl" 
+#include "Primitives.idl" 
  
-module nav_msgs { module msg { 
+module test_msgs { module msg { 
  
-struct MapMetaData { 
-    std_msgs::msg::Time map_load_time; 
-    float resolution; 
-    unsigned long width; 
-    unsigned long height; 
-    geometry_msgs::msg::Pose origin; 
+struct BoundedArrayNested { 
+    sequence<test_msgs::msg::Primitives, 4> primitive_values; 
 }; 
  
-}; };  // module msg::nav_msgs 
+}; };  // module msg::test_msgs 
  
-#endif  // __nav_msgs__msg__MapMetaData__idl 
+#endif  // __test_msgs__msg__BoundedArrayNested__idl 

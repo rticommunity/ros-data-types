@@ -1,6 +1,6 @@
 /* 
  * Copyright 2018 Real-Time Innovations, Inc. 
- * Copyright 2012-2018 Open Source Robotics Foundation
+ * Copyright 2012-2018 Open Source Robotics Foundation 
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); 
  * you may not use this file except in compliance with the License. 
@@ -15,15 +15,22 @@
  * limitations under the License. 
  */ 
  
+#ifndef __nav_msgs__msg__MapMetaData__idl 
+#define __nav_msgs__msg__MapMetaData__idl 
+ 
+#include "std_msgs/msg/Time.idl" 
 #include "geometry_msgs/msg/Pose.idl" 
-#include "geometry_msgs/msg/Twist.idl" 
  
-module gazebo_msgs { module msg { 
+module nav_msgs { module msg { 
  
-struct LinkStates { 
-    sequence<string> name; 
-    sequence<geometry_msgs::msg::Pose> pose; 
-    sequence<geometry_msgs::msg::Twist> twist; 
+struct MapMetaData { 
+    std_msgs::msg::Time map_load_time; 
+    float resolution; 
+    unsigned long width; 
+    unsigned long height; 
+    geometry_msgs::msg::Pose origin; 
 }; 
  
-}; };  // module msg::gazebo_msgs 
+}; };  // module msg::nav_msgs 
+ 
+#endif  // __nav_msgs__msg__MapMetaData__idl 

@@ -15,19 +15,16 @@
  * limitations under the License. 
  */ 
  
-#ifndef __diagnostic_msgs__msg__DiagnosticArray__idl__ 
-#define __diagnostic_msgs__msg__DiagnosticArray__idl__ 
+#include "std_msgs/msg/Time.idl" 
+#include "std_msgs/msg/Duration.idl" 
  
-#include "DiagnosticStatus.idl" 
-#include "std_msgs/msg/Header.idl" 
+module gazebo_msgs { module srv { 
  
-module diagnostic_msgs { module msg { 
- 
-struct DiagnosticArray { 
-    std_msgs::msg::Header header; 
-    sequence<diagnostic_msgs::msg:DiagnosticStatus> status; 
+struct ApplyJointEffort_Request { 
+    string joint_name; 
+    double effort; 
+    std_msgs::msg::Time start_time; 
+    std_msgs::msg::Duration duration; 
 }; 
  
-}; };  // module msg::diagnostic_msgs 
- 
-#endif  // __diagnostic_msgs__msg__DiagnosticArray__idl__ 
+}; };  // module srv::gazebo_msgs 

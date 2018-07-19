@@ -15,15 +15,16 @@
  * limitations under the License. 
  */ 
  
-#include "geometry_msgs/msg/Pose.idl" 
-#include "geometry_msgs/msg/Twist.idl" 
+module gazebo_msgs { module srv { 
  
-module gazebo_msgs { module msg { 
- 
-struct ModelStates { 
-    sequence<string> name; 
-    sequence<geometry_msgs::msg::Pose> pose; 
-    sequence<geometry_msgs::msg::Twist> twist; 
+enum type { REVOLUTE, CONTINUOUS, PRISMATIC, FIXED, BALL, UNIVERSAL };
+
+struct GetJointProperties_Response { 
+    sequence<double> damping; 
+    sequence<double> position; 
+    sequence<double> rate; 
+    boolean success; 
+    string status_message; 
 }; 
  
-}; };  // module msg::gazebo_msgs 
+}; };  // module srv::gazebo_msgs 

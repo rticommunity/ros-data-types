@@ -14,20 +14,16 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
+
+#include "geometry_msgs/msg/Pose.idl" 
+#include "geometry_msgs/msg/Twist.idl" 
  
 module gazebo_msgs { module msg { 
  
-struct ODEJointProperties { 
-    sequence<double> damping; 
-    sequence<double> hiStop; 
-    sequence<double> loStop; 
-    sequence<double> erp; 
-    sequence<double> cfm; 
-    sequence<double> stop_erp; 
-    sequence<double> stop_cfm; 
-    sequence<double> fudge_factor; 
-    sequence<double> fmax; 
-    sequence<double> vel; 
+struct LinkStates { 
+    sequence<string> name; 
+    sequence<geometry_msgs::msg::Pose> pose; 
+    sequence<geometry_msgs::msg::Twist> twist; 
 }; 
  
 }; };  // module msg::gazebo_msgs 

@@ -1,6 +1,6 @@
 /* 
  * Copyright 2018 Real-Time Innovations, Inc. 
- * Copyright 2012-2018 Open Source Robotics Foundation 
+ * Copyright 2012-2018 Open Source Robotics Foundation
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); 
  * you may not use this file except in compliance with the License. 
@@ -15,15 +15,19 @@
  * limitations under the License. 
  */ 
  
-#ifndef __test_msgs__srv__Empty_Request__idl 
-#define __test_msgs__srv__Empty_Request__idl 
+#include "gazebo_msgs/msg/ODEPhysics.idl" 
+#include "geometry_msgs/msg/Vector3.idl" 
  
-module test_msgs { module srv { 
+module gazebo_msgs { module srv { 
  
-struct Empty_Request { 
-    boolean _dummy; 
+struct GetPhysicsProperties_Response { 
+    double time_step; 
+    boolean pause; 
+    double max_update_rate; 
+    geometry_msgs::msg::Vector3 gravity; 
+    gazebo_msgs::msg::ODEPhysics ode_config; 
+    boolean success; 
+    string status_message; 
 }; 
  
-}; };  // module srv::test_msgs 
- 
-#endif  // __test_msgs__srv__Empty_Request__idl 
+}; };  // module srv::gazebo_msgs 
