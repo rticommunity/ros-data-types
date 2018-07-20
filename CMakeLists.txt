@@ -10,60 +10,49 @@ find_package(RTIConnextDDS)
 
 set (CMAKE_CXX_STANDARD 11)
 
-include(ConnextDdsCodegen)
+set(some_file "some/dir/sub/some_file.h")
 
-file(GLOB directories "${CMAKE_SOURCE_DIR}/src/*")
-foreach(dir ${directories})
-    IF(IS_DIRECTORY ${dir})
+get_filename_component(a_dir "${some_file}" PATH)
+get_filename_component(a_last_dir "${a_dir}" NAME)
+get_filename_component(a_second_dir "${a_dir}" PATH)
+get_filename_component(a_second_last_dir "${a_second_dir}" NAME)
 
-        get_filename_component(dir_name ${dir} NAME)
+message("a_last_dir = ${a_last_dir}")
+message("a_second_last_dir = ${a_second_last_dir}")
 
-        file(GLOB subdirectories "${dir}/*")
-        foreach(subdir ${subdirectories})
-            IF(IS_DIRECTORY ${subdir})
-                
-                get_filename_component(subdir_name ${subdir} NAME)
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/diagnostic_msgs")
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/gazebo_msgs")
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/geometry_msgs")
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/lifecycle_msgs")
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/nav_msgs")
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/pendulum_msgs")
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/sensor_msgs")
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/shape_msgs")
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/std_msgs")
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/stereo_msgs")
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/test_msgs")
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/tf2_msgs")
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/trajectory_msgs")
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/visualization_msgs")
 
-                set(output_directory "${CMAKE_CURRENT_BINARY_DIR}/src/${dir_name}/${subdir_name}/")
-
-                file(GLOB files "${subdir}/*.idl")
-                foreach(file ${files})
-                        message(${file})
-
-                        connextdds_rtiddsgen_run(
-                            LANG C++11
-                            OUTPUT_DIRECTORY ${output_directory}
-                            IDL_FILE ${file}
-                            INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/src/"
-                        )
-
-                        get_filename_component(filename ${file} NAME_WE)
-                        list(APPEND idl_list ${${filename}_CXX11_SOURCES}) 
-
-                endforeach()
-
-
-            ENDIF()
-        endforeach()
-
-    ENDIF()
-endforeach()
-
+# message(${idl_list_source})
 add_library(rosddstypes MODULE 
-    ${idl_list}
+    $<TARGET_OBJECTS:diagnosticlibrary>
+    $<TARGET_OBJECTS:stdlibrary>
+    # ${idl_list_source}
 )
 
-target_link_libraries(DdsIdl 
+target_link_libraries(rosddstypes 
     ${CONNEXTDDS_CPP2_API_LIBRARIES_RELEASE_SHARED}
     ${CONNEXTDDS_EXTERNAL_LIBS} 
 )
 
-target_include_directories(DdsIdl PRIVATE 
+target_include_directories(rosddstypes PRIVATE 
     ${CONNEXTDDS_INCLUDE_DIRS} 
     ${CMAKE_CURRENT_BINARY_DIR}
     "${CMAKE_CURRENT_BINARY_DIR}/src/"
 )
 
-target_compile_definitions(DdsIdl PRIVATE 
+target_compile_definitions(rosddstypes PRIVATE 
     ${CONNEXTDDS_DEFINITIONS}
 )
