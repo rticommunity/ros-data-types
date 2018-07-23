@@ -1,24 +1,19 @@
 include(ConnextDdsRosDdsTypes)
 
-file(GLOB files "${CMAKE_CURRENT_SOURCE_DIR}/msg/*.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/DiagnosticArray.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/DiagnosticStatus.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/KeyValue.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/srv/AddDiagnostics_Request.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/srv/AddDiagnostics_Response.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/srv/SelfTest_Request.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/srv/SelfTest_Response.idl")
 
 connextdds_generate_ros_dds_types(
     LANG "C++11"
-    OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/msg"
+    OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
     IDL_FILES ${files}
     INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/src/"
 )
-
-file(GLOB files "${CMAKE_CURRENT_SOURCE_DIR}/srv/*.idl")
-
-connextdds_generate_ros_dds_types(
-    LANG "C++11"
-    OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/srv"
-    IDL_FILES ${files}
-    INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/src/"
-)
-
-# set(idl_list ${idl_list} PARENT_SCOPE)
 
 add_library( diagnosticlibrary OBJECT
     ${idl_list_source}
@@ -37,4 +32,6 @@ target_compile_definitions(diagnosticlibrary PRIVATE
     ${CONNEXTDDS_DEFINITIONS}
 )
 
-add_dependencies(diagnosticlibrary stdlibrary)
+add_dependencies(diagnosticlibrary 
+    stdlibrary
+)

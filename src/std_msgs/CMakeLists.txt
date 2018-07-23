@@ -1,24 +1,51 @@
 include(ConnextDdsRosDdsTypes)
 
-file(GLOB files "${CMAKE_CURRENT_SOURCE_DIR}/msg/*.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Bool.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Byte.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/ByteMultiArray.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Char.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/ColorRGBA.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Duration.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Empty.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Float32.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Float32MultiArray.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Float64.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Float64MultiArray.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Header.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Int16.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Int16MultiArray.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Int32.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Int32MultiArray.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Int64.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Int64MultiArray.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Int8.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Int8MultiArray.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/MultiArrayDimension.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/MultiArrayLayout.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/String.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Time.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/UInt16.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/UInt16MultiArray.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/UInt32.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/UInt32MultiArray.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/UInt64.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/UInt64MultiArray.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/UInt8.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/UInt8MultiArray.idl")
+
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/srv/Empty_Request.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/srv/Empty_Response.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/srv/SetBool_Request.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/srv/SetBool_Response.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/srv/Trigger_Request.idl")
+list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/srv/Trigger_Response.idl")
 
 connextdds_generate_ros_dds_types(
     LANG "C++11"
-    OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/msg"
+    OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
     IDL_FILES ${files}
     INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/src/"
 )
-
-file(GLOB files "${CMAKE_CURRENT_SOURCE_DIR}/srv/*.idl")
-
-connextdds_generate_ros_dds_types(
-    LANG "C++11"
-    OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/srv"
-    IDL_FILES ${files}
-    INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/src/"
-)
-
-# set(idl_list ${idl_list} PARENT_SCOPE)
 
 add_library( stdlibrary OBJECT
     ${idl_list_source}

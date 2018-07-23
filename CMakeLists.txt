@@ -10,16 +10,6 @@ find_package(RTIConnextDDS)
 
 set (CMAKE_CXX_STANDARD 11)
 
-set(some_file "some/dir/sub/some_file.h")
-
-get_filename_component(a_dir "${some_file}" PATH)
-get_filename_component(a_last_dir "${a_dir}" NAME)
-get_filename_component(a_second_dir "${a_dir}" PATH)
-get_filename_component(a_second_last_dir "${a_second_dir}" NAME)
-
-message("a_last_dir = ${a_last_dir}")
-message("a_second_last_dir = ${a_second_last_dir}")
-
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/diagnostic_msgs")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/gazebo_msgs")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/geometry_msgs")
@@ -35,11 +25,21 @@ add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/tf2_msgs")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/trajectory_msgs")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/visualization_msgs")
 
-# message(${idl_list_source})
 add_library(rosddstypes MODULE 
     $<TARGET_OBJECTS:diagnosticlibrary>
+    $<TARGET_OBJECTS:gazebolibrary>
+    $<TARGET_OBJECTS:geometrylibrary>
+    $<TARGET_OBJECTS:lifecyclelibrary>
+    $<TARGET_OBJECTS:navlibrary>
+    $<TARGET_OBJECTS:pendulumlibrary>
+    $<TARGET_OBJECTS:sensorlibrary>
+    $<TARGET_OBJECTS:shapelibrary>
     $<TARGET_OBJECTS:stdlibrary>
-    # ${idl_list_source}
+    $<TARGET_OBJECTS:stereolibrary>
+    $<TARGET_OBJECTS:testlibrary>
+    $<TARGET_OBJECTS:tf2library>
+    $<TARGET_OBJECTS:trajectorylibrary>
+    $<TARGET_OBJECTS:visualizationlibrary>
 )
 
 target_link_libraries(rosddstypes 
