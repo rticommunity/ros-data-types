@@ -45,7 +45,7 @@ connextdds_generate_ros_dds_types(
     LANG "C++11"
     OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
     IDL_FILES ${files}
-    INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/src/"
+    INCLUDE_DIRS ${source_dir}
 )
 
 add_library( gazebolibrary OBJECT
@@ -58,7 +58,7 @@ set_property(TARGET gazebolibrary PROPERTY
 
 target_include_directories(gazebolibrary PRIVATE 
     ${CONNEXTDDS_INCLUDE_DIRS}
-    "${CMAKE_BINARY_DIR}/src/"
+    ${binary_dir}
 )
 
 target_compile_definitions(gazebolibrary PRIVATE 
