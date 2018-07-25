@@ -9,8 +9,8 @@ set(CMAKE_MODULE_PATH
 find_package(RTIConnextDDS)
 
 set (CMAKE_CXX_STANDARD 11)
-set (binary_dir "${CMAKE_CURRENT_BINARY_DIR}/src/")
-set (source_dir "${CMAKE_CURRENT_SOURCE_DIR}/src/")
+set (top_level_binary_dir "${CMAKE_CURRENT_BINARY_DIR}/src/")
+set (top_level_source_dir "${CMAKE_CURRENT_SOURCE_DIR}/src/")
 
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/diagnostic_msgs")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/gazebo_msgs")
@@ -57,3 +57,10 @@ target_include_directories(rosddstypes PRIVATE
 target_compile_definitions(rosddstypes PRIVATE 
     ${CONNEXTDDS_DEFINITIONS}
 )
+
+install(TARGETS rosddstypes DESTINATION lib)
+
+# install(EXPORT rosddstypes-targets
+#     NAMESPACE rosddstypes::
+#     FILE rosddstypes-config.cmake
+#     DESTINATION lib/cmake/rosddstypes)

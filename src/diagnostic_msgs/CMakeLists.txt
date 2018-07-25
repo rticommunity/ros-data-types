@@ -12,11 +12,11 @@ connextdds_generate_ros_dds_types(
     LANG "C++11"
     OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
     IDL_FILES ${files}
-    INCLUDE_DIRS ${source_dir}
+    INCLUDE_DIRS ${top_level_source_dir}
 )
 
-add_library( diagnosticlibrary OBJECT
-    ${idl_list_source}
+add_library(diagnosticlibrary OBJECT
+    ${generated_file_list}
 )
 
 set_property(TARGET diagnosticlibrary PROPERTY 
@@ -25,7 +25,7 @@ set_property(TARGET diagnosticlibrary PROPERTY
 
 target_include_directories(diagnosticlibrary PRIVATE 
     ${CONNEXTDDS_INCLUDE_DIRS}
-    ${binary_dir}
+    ${top_level_binary_dir}
 )
 
 target_compile_definitions(diagnosticlibrary PRIVATE 

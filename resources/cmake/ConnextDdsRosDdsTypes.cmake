@@ -42,8 +42,8 @@ Output values:
 The language variable is sanitized according to :ref:`connextdds_sanitize_language`
 for the variable name.
 
-``idl_list_source``
-    The list with the lists of generated source files.
+``generated_file_list``
+    The list with the lists of generated source and headers files.
 
 #]]
 
@@ -62,9 +62,13 @@ macro(connextdds_generate_ros_dds_types)
     connextdds_sanitize_language(LANG ${_ROS_TYPES_LANG} VAR lang_var)
 
     foreach(file ${_ROS_TYPES_IDL_FILES})
-        
+        # Obtain first the path to the IDL file
         get_filename_component(file_path ${file} PATH)
         get_filename_component(output_subdir ${file_path} NAME)
+
+        # Then, obtain the module_path (e.g., visualization_msgs)
+        get_filename_component(module_path ${file_path} PATH)
+        get_filename_component(module_name ${module_path} NAME)
 
         connextdds_rtiddsgen_run(
             LANG ${_ROS_TYPES_LANG}
@@ -75,11 +79,16 @@ macro(connextdds_generate_ros_dds_types)
             VAR generated_file
         )
 
-        list(APPEND idl_list_source 
+        list(APPEND generated_file_list 
             ${generated_file_${lang_var}_SOURCES}
-            ${generated_file_${lang_var}_HEADERS} 
+            ${generated_file_${lang_var}_HEADERS}
         )
-
+        # Add generated header files to the list of files that will be
+        # installed
+        install(FILES ${generated_file_${lang_var}_HEADERS} 
+            DESTINATION include/${module_name}/${output_subdir}
+        )
+    
     endforeach()
     
 endmacro()

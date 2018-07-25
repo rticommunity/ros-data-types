@@ -200,6 +200,14 @@ the following replacement:
 include(CMakeParseArguments)
 include(ConnextDdsArgumentChecks)
 
+# If CONNEXTDDS_HOME or NDDSHOME are previously defined, assume CODEGEN is 
+# there
+if (DEFINED CONNEXTDDS_HOME)
+    set(CODEGEN_HOME ${CONNEXTDDS_HOME})
+elseif(DEFINED ENV{NDDSHOME})
+    set(CODEGEN_HOME $ENV{NDDSHOME})
+endif()
+
 get_filename_component(JRE_BIN_DIR "${Java_JAVA_EXECUTABLE}" DIRECTORY)
 set(JREHOME "${JRE_BIN_DIR}/../")
 

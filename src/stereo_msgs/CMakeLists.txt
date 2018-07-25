@@ -6,11 +6,11 @@ connextdds_generate_ros_dds_types(
     LANG "C++11"
     OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
     IDL_FILES ${files}
-    INCLUDE_DIRS ${source_dir}
+    INCLUDE_DIRS ${top_level_source_dir}
 )
 
 add_library( stereolibrary OBJECT
-    ${idl_list_source}
+    ${generated_file_list}
 )
 
 set_property(TARGET stereolibrary PROPERTY 
@@ -19,7 +19,7 @@ set_property(TARGET stereolibrary PROPERTY
 
 target_include_directories(stereolibrary PRIVATE 
     ${CONNEXTDDS_INCLUDE_DIRS}
-    ${binary_dir}
+    ${top_level_binary_dir}
 )
 
 target_compile_definitions(stereolibrary PRIVATE 
