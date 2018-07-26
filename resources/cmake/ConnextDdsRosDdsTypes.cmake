@@ -59,6 +59,12 @@ macro(connextdds_generate_ros_dds_types)
         ${ARGN}
     )
 
+    # Introduce variables:
+    # * CMAKE_INSTALL_LIBDIR
+    # * CMAKE_INSTALL_BINDIR
+    # * CMAKE_INSTALL_INCLUDEDIR
+    include(GNUInstallDirs)
+
     connextdds_sanitize_language(LANG ${_ROS_TYPES_LANG} VAR lang_var)
 
     foreach(file ${_ROS_TYPES_IDL_FILES})
@@ -86,7 +92,7 @@ macro(connextdds_generate_ros_dds_types)
         # Add generated header files to the list of files that will be
         # installed
         install(FILES ${generated_file_${lang_var}_HEADERS} 
-            DESTINATION include/${module_name}/${output_subdir}
+            DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/${module_name}/${output_subdir}"
         )
     
     endforeach()
