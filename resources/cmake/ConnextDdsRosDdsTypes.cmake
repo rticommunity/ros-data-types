@@ -59,26 +59,22 @@ macro(connextdds_generate_ros_dds_types)
         ${ARGN}
     )
 
-    # Introduce variables:
-    # * CMAKE_INSTALL_LIBDIR
-    # * CMAKE_INSTALL_BINDIR
-    # * CMAKE_INSTALL_INCLUDEDIR
     include(GNUInstallDirs)
 
     connextdds_sanitize_language(LANG ${_ROS_TYPES_LANG} VAR lang_var)
 
     foreach(file ${_ROS_TYPES_IDL_FILES})
         # Obtain first the path to the IDL file
-        get_filename_component(file_path ${file} PATH)
-        get_filename_component(output_subdir ${file_path} NAME)
+        get_filename_component(idl_path ${file} PATH)
+        get_filename_component(idl_dir_name ${idl_path} NAME)
 
         # Then, obtain the module_path (e.g., visualization_msgs)
-        get_filename_component(module_path ${file_path} PATH)
+        get_filename_component(module_path ${idl_path} PATH)
         get_filename_component(module_name ${module_path} NAME)
 
         connextdds_rtiddsgen_run(
             LANG ${_ROS_TYPES_LANG}
-            OUTPUT_DIRECTORY "${_ROS_TYPES_OUTPUT_DIRECTORY}/${output_subdir}"
+            OUTPUT_DIRECTORY "${_ROS_TYPES_OUTPUT_DIRECTORY}/${idl_dir_name}"
             IDL_FILE ${file}
             INCLUDE_DIRS ${_ROS_TYPES_INCLUDE_DIRS}
             UNBOUNDED
@@ -89,10 +85,11 @@ macro(connextdds_generate_ros_dds_types)
             ${generated_file_${lang_var}_SOURCES}
             ${generated_file_${lang_var}_HEADERS}
         )
+        
         # Add generated header files to the list of files that will be
         # installed
         install(FILES ${generated_file_${lang_var}_HEADERS} 
-            DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/${module_name}/${output_subdir}"
+            DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/${module_name}/${idl_dir_name}"
         )
     
     endforeach()
