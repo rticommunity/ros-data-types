@@ -1,0 +1,40 @@
+/* 
+ * Copyright 2012-2018 Open Source Robotics Foundation 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0 
+ * 
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and 
+ * limitations under the License. 
+ */ 
+ 
+#ifndef __sensor_msgs__msg__Imu__idl 
+#define __sensor_msgs__msg__Imu__idl 
+ 
+#include "geometry_msgs/msg/Quaternion.idl" 
+#include "geometry_msgs/msg/Vector3.idl" 
+#include "std_msgs/msg/Header.idl" 
+ 
+module sensor_msgs { module msg { 
+ 
+typedef double sensor_msgs__Imu__double_array_9[9]; 
+ 
+struct Imu { 
+    std_msgs::msg::Header header; 
+    geometry_msgs::msg::Quaternion orientation; 
+    sensor_msgs__Imu__double_array_9 orientation_covariance; 
+    geometry_msgs::msg::Vector3 angular_velocity; 
+    sensor_msgs__Imu__double_array_9 angular_velocity_covariance; 
+    geometry_msgs::msg::Vector3 linear_acceleration; 
+    sensor_msgs__Imu__double_array_9 linear_acceleration_covariance; 
+}; 
+ 
+}; };  // module msg::sensor_msgs 
+ 
+#endif  // __sensor_msgs__msg__Imu__idl 

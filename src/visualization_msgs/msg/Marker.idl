@@ -1,0 +1,66 @@
+/* 
+ * Copyright 2012-2018 Open Source Robotics Foundation 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0 
+ * 
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and 
+ * limitations under the License. 
+ */ 
+ 
+#ifndef __visualization_msgs__msg__Marker__idl 
+#define __visualization_msgs__msg__Marker__idl 
+ 
+#include "std_msgs/msg/Duration.idl" 
+#include "geometry_msgs/msg/Point.idl" 
+#include "geometry_msgs/msg/Pose.idl" 
+#include "geometry_msgs/msg/Vector3.idl" 
+#include "std_msgs/msg/ColorRGBA.idl" 
+#include "std_msgs/msg/Header.idl" 
+ 
+module visualization_msgs { module msg { 
+ 
+const octet Marker__ARROW = 0; 
+const octet Marker__CUBE = 1; 
+const octet Marker__SPHERE = 2; 
+const octet Marker__CYLINDER = 3; 
+const octet Marker__LINE_STRIP = 4; 
+const octet Marker__LINE_LIST = 5; 
+const octet Marker__CUBE_LIST = 6; 
+const octet Marker__SPHERE_LIST = 7; 
+const octet Marker__POINTS = 8; 
+const octet Marker__TEXT_VIEW_FACING = 9; 
+const octet Marker__MESH_RESOURCE = 10; 
+const octet Marker__TRIANGLE_LIST = 11; 
+const octet Marker__ADD = 0; 
+const octet Marker__MODIFY = 0; 
+const octet Marker__DELETE = 2; 
+const octet Marker__DELETEALL = 3; 
+ 
+struct Marker { 
+    std_msgs::msg::Header header; 
+    string ns; 
+    long id; 
+    long type; 
+    long action; 
+    geometry_msgs::msg::Pose pose; 
+    geometry_msgs::msg::Vector3 scale; 
+    std_msgs::msg::ColorRGBA color; 
+    std_msgs::msg::Duration lifetime; 
+    boolean frame_locked; 
+    sequence<geometry_msgs::msg::Point> points; 
+    sequence<std_msgs::msg::ColorRGBA> colors; 
+    string text; 
+    string mesh_resource; 
+    boolean mesh_use_embedded_materials; 
+}; 
+ 
+}; };  // module msg::visualization_msgs 
+ 
+#endif  // __visualization_msgs__msg__Marker__idl 

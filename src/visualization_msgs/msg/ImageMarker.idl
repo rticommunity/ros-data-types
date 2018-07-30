@@ -1,0 +1,53 @@
+/* 
+ * Copyright 2012-2018 Open Source Robotics Foundation 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0 
+ * 
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and 
+ * limitations under the License. 
+ */ 
+ 
+#ifndef __visualization_msgs__msg__ImageMarker__idl 
+#define __visualization_msgs__msg__ImageMarker__idl 
+ 
+#include "std_msgs/msg/Duration.idl" 
+#include "geometry_msgs/msg/Point.idl" 
+#include "std_msgs/msg/ColorRGBA.idl" 
+#include "std_msgs/msg/Header.idl" 
+ 
+module visualization_msgs { module msg { 
+ 
+const octet ImageMarker__CIRCLE = 0; 
+const octet ImageMarker__LINE_STRIP = 1; 
+const octet ImageMarker__LINE_LIST = 2; 
+const octet ImageMarker__POLYGON = 3; 
+const octet ImageMarker__POINTS = 4; 
+const octet ImageMarker__ADD = 0; 
+const octet ImageMarker__REMOVE = 1; 
+ 
+struct ImageMarker { 
+    std_msgs::msg::Header header; 
+    string ns; 
+    long id; 
+    long type; 
+    long action; 
+    geometry_msgs::msg::Point position; 
+    float scale; 
+    std_msgs::msg::ColorRGBA outline_color; 
+    octet filled; 
+    std_msgs::msg::ColorRGBA fill_color; 
+    std_msgs::msg::Duration lifetime; 
+    sequence<geometry_msgs::msg::Point> points; 
+    sequence<std_msgs::msg::ColorRGBA> outline_colors; 
+}; 
+ 
+}; };  // module msg::visualization_msgs 
+ 
+#endif  // __visualization_msgs__msg__ImageMarker__idl 

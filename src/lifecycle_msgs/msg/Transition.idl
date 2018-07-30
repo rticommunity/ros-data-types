@@ -1,0 +1,61 @@
+/* 
+ * Copyright 2012-2018 Open Source Robotics Foundation 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0 
+ * 
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and 
+ * limitations under the License. 
+ */ 
+ 
+#ifndef __lifecycle_msgs__msg__Transition__idl 
+#define __lifecycle_msgs__msg__Transition__idl 
+ 
+module lifecycle_msgs { module msg { 
+ 
+const octet Transition__TRANSITION_CREATE = 0; 
+const octet Transition__TRANSITION_CONFIGURE = 1; 
+const octet Transition__TRANSITION_CLEANUP = 2; 
+const octet Transition__TRANSITION_ACTIVATE = 3; 
+const octet Transition__TRANSITION_DEACTIVATE = 4; 
+const octet Transition__TRANSITION_SHUTDOWN = 5; 
+const octet Transition__TRANSITION_DESTROY = 6; 
+const octet Transition__TRANSITION_ON_CONFIGURE_SUCCESS = 10; 
+const octet Transition__TRANSITION_ON_CONFIGURE_FAILURE = 11; 
+const octet Transition__TRANSITION_ON_CONFIGURE_ERROR = 12; 
+const octet Transition__TRANSITION_ON_CLEANUP_SUCCESS = 20; 
+const octet Transition__TRANSITION_ON_CLEANUP_FAILURE = 21; 
+const octet Transition__TRANSITION_ON_CLEANUP_ERROR = 22; 
+const octet Transition__TRANSITION_ON_ACTIVATE_SUCCESS = 30; 
+const octet Transition__TRANSITION_ON_ACTIVATE_FAILURE = 31; 
+const octet Transition__TRANSITION_ON_ACTIVATE_ERROR = 32; 
+const octet Transition__TRANSITION_ON_DEACTIVATE_SUCCESS = 40; 
+const octet Transition__TRANSITION_ON_DEACTIVATE_FAILURE = 41; 
+const octet Transition__TRANSITION_ON_DEACTIVATE_ERROR = 42; 
+const octet Transition__TRANSITION_UNCONFIGURED_SHUTDOWN = 50; 
+const octet Transition__TRANSITION_INACTIVE_SHUTDOWN = 51; 
+const octet Transition__TRANSITION_ACTIVE_SHUTDOWN = 52; 
+const octet Transition__TRANSITION_ON_SHUTDOWN_SUCCESS = 53; 
+const octet Transition__TRANSITION_ON_SHUTDOWN_FAILURE = 54; 
+const octet Transition__TRANSITION_ON_SHUTDOWN_ERROR = 55; 
+const octet Transition__TRANSITION_ON_ERROR_SUCCESS = 60; 
+const octet Transition__TRANSITION_ON_ERROR_FAILURE = 61; 
+const octet Transition__TRANSITION_ON_ERROR_ERROR = 62; 
+const octet Transition__TRANSITION_CALLBACK_SUCCESS = 97; 
+const octet Transition__TRANSITION_CALLBACK_FAILURE = 98; 
+const octet Transition__TRANSITION_CALLBACK_ERROR = 99; 
+ 
+struct Transition { 
+    octet id; 
+    string label; 
+}; 
+ 
+}; };  // module msg::lifecycle_msgs 
+ 
+#endif  // __lifecycle_msgs__msg__Transition__idl 
