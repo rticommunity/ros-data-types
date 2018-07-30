@@ -29,7 +29,7 @@ add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/tf2_msgs")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/trajectory_msgs")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/src/visualization_msgs")
 
-add_library(rosddstypes MODULE 
+add_library(rosddstypes SHARED
     $<TARGET_OBJECTS:diagnosticlibrary>
     $<TARGET_OBJECTS:gazebolibrary>
     $<TARGET_OBJECTS:geometrylibrary>

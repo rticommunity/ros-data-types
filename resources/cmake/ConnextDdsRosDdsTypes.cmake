@@ -72,12 +72,18 @@ macro(connextdds_generate_ros_dds_types)
         get_filename_component(module_path ${idl_path} PATH)
         get_filename_component(module_name ${module_path} NAME)
 
+        # Set unbounded 
+        set(unbounded "")
+        if(_ROS_TYPES_UNBOUNDED)
+            set(unbounded "UNBOUNDED")
+        endif()
+
         connextdds_rtiddsgen_run(
             LANG ${_ROS_TYPES_LANG}
             OUTPUT_DIRECTORY "${_ROS_TYPES_OUTPUT_DIRECTORY}/${idl_dir_name}"
             IDL_FILE ${file}
             INCLUDE_DIRS ${_ROS_TYPES_INCLUDE_DIRS}
-            UNBOUNDED
+            ${unbounded}
             VAR generated_file
         )
 

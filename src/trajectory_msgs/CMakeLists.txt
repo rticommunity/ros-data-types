@@ -1,14 +1,14 @@
 include(ConnextDdsRosDdsTypes)
 
-list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/JointTrajectory.idl")
-list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/JointTrajectoryPoint.idl")
-list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/MultiDOFJointTrajectory.idl")
-list(APPEND files "${CMAKE_CURRENT_SOURCE_DIR}/msg/MultiDOFJointTrajectoryPoint.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/JointTrajectory.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/JointTrajectoryPoint.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/MultiDOFJointTrajectory.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/MultiDOFJointTrajectoryPoint.idl")
 
 connextdds_generate_ros_dds_types(
     LANG "C++11"
     OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
-    IDL_FILES ${files}
+    IDL_FILES ${idl_files}
     INCLUDE_DIRS ${top_level_source_dir}
 )
 
