@@ -2,8 +2,10 @@ include(ConnextDdsCodegen)
 
 #[[
 
-ConnextDdsAddTypeObjectLibrary
+ConnextDdsRosDdsType
 -----------------
+
+.. connextdds_generate_ros_dds_types:
 
 Generate types using connextdds_rtiddsgen_run to generate the code of the idl file::
 
@@ -45,6 +47,23 @@ for the variable name.
 ``generated_file_list``
     The list with the lists of generated source and headers files.
 
+
+.. connextdds_sanitize_library_language:
+
+Sanitize Language
+^^^^^^^^^^^^^^^^^
+
+    connextdds_sanitize_library_language(
+        LANG language
+        VAR variable
+    )
+
+Get the sanitized version of the language to use in library names. It will do
+the following replacement:
+
+* Replace ``+`` with ``P`` (i.e.: C++ --> CPP)
+* Replace ``11`` with ``2`` (i.e.: C++11 --> CPP2)
+
 #]]
 
 macro(connextdds_generate_ros_dds_types)
@@ -58,8 +77,6 @@ macro(connextdds_generate_ros_dds_types)
         "${multi_value_args}"
         ${ARGN}
     )
-
-    include(GNUInstallDirs)
 
     connextdds_sanitize_language(LANG ${_ROS_TYPES_LANG} VAR lang_var)
 
@@ -91,13 +108,26 @@ macro(connextdds_generate_ros_dds_types)
             ${generated_file_${lang_var}_SOURCES}
             ${generated_file_${lang_var}_HEADERS}
         )
-        
+                    
         # Add generated header files to the list of files that will be
         # installed
-        install(FILES ${generated_file_${lang_var}_HEADERS} 
-            DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/${module_name}/${idl_dir_name}"
+        install(FILES ${generated_file_${lang_var}_HEADERS}             
+            DESTINATION "${CMAKE_INSTALL_PREFIX}/include/${module_name}/${idl_dir_name}"
         )
-    
+
     endforeach()
     
 endmacro()
+
+function(connextdds_sanitize_library_language)
+    cmake_parse_arguments(_LANG "" "LANG;VAR" "" ${ARGN})
+    connextdds_check_required_arguments(_LANG_LANG _LANG_VAR)
+
+    # Replaces C++ by CPP, C++1 by CPP2 
+    string(TOUPPER ${_LANG_LANG} lang_var)
+    string(REPLACE "+" "P" lang_var ${lang_var})
+    string(REPLACE "11" "2" lang_var ${lang_var})
+
+    # Define variable in the caller
+    set(${_LANG_VAR} ${lang_var} PARENT_SCOPE)
+endfunction()

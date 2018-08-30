@@ -33,46 +33,21 @@ As a result of these commands, the generated build system will run `rtiddsgen`
 to generate code, and the corresponding compiler to create the type library.
 
 If you want to copy the resulting library and header files to a different
-location, run `make install` and specify the destination directory:
-
+location, run `cmake` and specify the destination directory:
 ```bash
-make DESTDIR=/path/to/destination/directory install
+cmake .. -DCMAKE_INSTALL_PREFIX=/path/to/destination/installdirectory
+```
+After that, you can run `make install` to install the library in that location.
+
+In addition, If you want to change the language of the library ( by default C++11 ) 
+you can use the parameter `LANG`.That is:
+```bash
+cmake .. -DLANG=<C|C++|C++11>
 ```
 
 ## Using IDL ROS Types in Your Application
 
 ### Combining IDL ROS Types with Custom Types
 
-You may combine the types defined in this repository with your own types in
-custom IDL files.
-
-First, include the IDL file containing the definition of the type you want to
-use in your custom type (e.g., `trajectory_msgs::msg::JointTrajectory`):
-
-```cpp
-// MyCustomType.idl
-#include "trajectory_msgs/msg/JointTrajectory.idl"
-
-struct MyCustomType {
-    // ...
-    trajectory_msgs::msg::JointTrajectory joint_trajectory;
-    // ...
-};
-```
-
-Next, use `rtiddsgen` to generate `TypePlugin` and `TypeSupport` classes for
-both your type, and all the types you use in your type definition. That is:
-
-```bash
-rtiddsgen -language <C|C++|Java> \
-    MyCustomType.idl \
-    trajectory_msgs/msg/JointTrajectory.idl \
-    trajectory_msgs/msg/JointTrajectoryPoint.idl \
-    std_msgs/msg/Duration.idl \
-    ...
-```
-
-Finally, once you have generated all the `TypePlugin` and `TypeSupport`, you
-will need to link them into your application. If you are using CMake, simply
-use the generated header and source files as part of your library or executable
-in your `add_library()` or `add_executable()` call.
+You may use your own types combined with the types defined in this repository. 
+If this is your choise you can obtain more information [here](example/README.md).
