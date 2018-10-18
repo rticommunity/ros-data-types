@@ -1,5 +1,5 @@
 #.rst:
-# (c) 2017 Copyright, Real-Time Innovations, Inc. All rights reserved.
+# (c) 2017-2018 Copyright, Real-Time Innovations, Inc. All rights reserved.
 # RTI grants Licensee a license to use, modify, compile, and create derivative
 # works of this file solely for use with RTI Connext DDS.  Licensee may
 # redistribute copies of this file provided that all such copies are subject
