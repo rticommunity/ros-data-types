@@ -1,5 +1,4 @@
 /* 
- * Copyright 2018 Real-Time Innovations, Inc. 
  * Copyright 2012-2018 Open Source Robotics Foundation 
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); 
@@ -19,7 +18,7 @@
 #define __nav_msgs__msg__MapMetaData__idl 
  
 #include "std_msgs/msg/Time.idl" 
-#include "geometry_msgs/msgPose.idl" 
+#include "geometry_msgs/msg/Pose.idl" 
  
 module nav_msgs { module msg { 
  

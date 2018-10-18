@@ -1,5 +1,4 @@
 /* 
- * Copyright 2018 Real-Time Innovations, Inc. 
  * Copyright 2012-2018 Open Source Robotics Foundation 
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); 
@@ -23,7 +22,7 @@
 module test_msgs { module msg { 
  
 struct BoundedArrayNested { 
-    sequence<test_msgs::msg::Primitives_, 4> primitive_values; 
+    sequence<test_msgs::msg::Primitives, 4> primitive_values; 
 }; 
  
 }; };  // module msg::test_msgs 

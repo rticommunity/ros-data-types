@@ -1,6 +1,5 @@
 /* 
- * Copyright 2018 Real-Time Innovations, Inc. 
- * Copyright 2012-2018 Open Source Robotics Foundation
+ * Copyright 2012-2018 Open Source Robotics Foundation 
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); 
  * you may not use this file except in compliance with the License. 
@@ -16,6 +15,7 @@
  */ 
  
 #include "gazebo_msgs/msg/ODEPhysics.idl" 
+#include "geometry_msgs/msg/Vector3.idl" 
  
 module gazebo_msgs { module srv { 
  
@@ -23,7 +23,7 @@ struct GetPhysicsProperties_Response {
     double time_step; 
     boolean pause; 
     double max_update_rate; 
-    Vector3 gravity; 
+    geometry_msgs::msg::Vector3 gravity; 
     gazebo_msgs::msg::ODEPhysics ode_config; 
     boolean success; 
     string status_message; 
