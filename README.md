@@ -27,15 +27,6 @@ ros-data-types/
 └── visualization_msgs
 ```
 
-Moreover, the repository includes examples that describe how to use the ROS
-data types in a DDS applications. You will find these examples under the
-`examples` folder.
-
-```bash
-ros-data-types/
-├── examples
-```
-
 ## Building ROS Type Library
 
 The ROS Types repository repository provides a set of CMake files to generate
@@ -87,3 +78,86 @@ After that, you can run `make install` to install the library in that location:
 ```bash
 make install
 ```
+
+## Using ROS Data Types in Your Application
+
+In this section we explain how to use the ROS data types in defined in this
+repository in the declaration of custom types.
+
+### Defining a Custom Type
+
+In this example we show how to define a custom type named `MyCustomType` that
+combines native DDS types with types included in the ROS data type library.
+
+#### Custom Type Definition
+
+The IDL definition of `MyCustomType` is the following:
+
+```cpp
+// MyCustomType.idl
+#include "trajectory_msgs/msg/JointTrajectory.idl"
+
+struct MyCustomType {
+    @key short object_id;
+    trajectory_msgs::msg::JointTrajectory joint_trajectory;
+};
+```
+
+Note that to use `trajectory_msgs::msg::JointTrajectory` in the definition of
+our type, we must first include `trajectory_msgs/msg/JointTrajectory.idl`, which is the IDL file where the original type was defined.
+
+#### Generating TypePlugin and TypeSupport Classes
+
+To run the example, you must generate `TypePlugin` and `TypeSupport`
+classes for the custom type. To do so, you can either use `rtiddsgen` directly
+or -- if you are using CMake -- call the CMake macro 
+`connextdds_generate_ros_dds_types` defined in
+resources/cmake/ConnextDdsRosDdsTypes.cmake`.
+
+##### Generating Code Using rtiddsgen
+
+To generate the support files using `rtiddsgen` run:
+
+```bash
+rtiddsgen -language <C|C++|C++11> \
+    MyCustomType.idl \
+    -I/path/to/directory/ros/types/directory
+    ...
+```
+
+Note that you will need to provide the path to the directory where you
+installed the library; that is, the path to the parent directory of
+`trajectory_msgs/msg/JointTrajectory.idl`.
+
+##### Generating Code Using CMake Macro
+
+To use the macro `connextdds_generate_ros_dds_types`, you will need to include
+`ConnextDdsRosDdsTypes.cmake` from your CMake file:
+
+```cmake
+include(ConnextDdsRosDdsTypes)
+
+# ...
+
+connextdds_generate_ros_dds_types(
+    LANG <C|C++|C++11>
+    OUTPUT_DIRECTORY <output directory>
+    IDL_FILES <list of files>
+    INCLUDE_DIRS </path/to/directory/ros/types/directory>
+)
+
+# ...
+```
+
+Note that you will need to provide the path to the directory where you
+installed the library; that is, the path to the parent directory of
+`trajectory_msgs/msg/JointTrajectory.idl`.
+
+#### Build Example Application
+
+Once you have generated the `TypePlugin` and `TypeSupport` classes, you will
+need to compile and link them into into your application. If you are using
+CMake, simply add the generated header and source files to your library or
+executable using `add_library()` or `add_executable()`. In addition, you will
+need to link the application against the rosddstype library, which contains the
+type plugin and support classes for the original ROS data types.
