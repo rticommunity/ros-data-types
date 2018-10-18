@@ -62,7 +62,7 @@ target_include_directories(gazebolibrary PRIVATE
 )
 
 target_compile_definitions(gazebolibrary PRIVATE 
-    ${CONNEXTDDS_DEFINITIONS}
+    ${CONNEXTDDS_COMPILE_DEFINITIONS}
 )
 
 add_dependencies(gazebolibrary 

@@ -26,7 +26,7 @@ target_include_directories(shapelibrary PRIVATE
 )
 
 target_compile_definitions(shapelibrary PRIVATE 
-    ${CONNEXTDDS_DEFINITIONS}
+    ${CONNEXTDDS_COMPILE_DEFINITIONS}
 )
 
 add_dependencies(shapelibrary 

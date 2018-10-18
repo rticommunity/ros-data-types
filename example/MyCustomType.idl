@@ -1,5 +1,0 @@
-#include "trajectory_msgs/msg/JointTrajectory.idl"
-
-struct MyCustomType {
-    trajectory_msgs::msg::JointTrajectory joint_trajectory;
-};

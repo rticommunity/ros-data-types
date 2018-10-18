@@ -61,5 +61,5 @@ target_include_directories(stdlibrary PRIVATE
 )
 
 target_compile_definitions(stdlibrary PRIVATE 
-    ${CONNEXTDDS_DEFINITIONS}
+    ${CONNEXTDDS_COMPILE_DEFINITIONS}
 )

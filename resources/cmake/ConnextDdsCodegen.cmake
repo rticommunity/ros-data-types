@@ -202,9 +202,9 @@ include(ConnextDdsArgumentChecks)
 
 # If CONNEXTDDS_HOME or NDDSHOME are previously defined, assume CODEGEN is 
 # there
-if (DEFINED CONNEXTDDS_HOME)
-    set(CODEGEN_HOME ${CONNEXTDDS_HOME})
-elseif(DEFINED ENV{NDDSHOME})
+if (CONNEXTDDS_DIR)
+    set(CODEGEN_HOME ${CONNEXTDDS_DIR})
+elseif(ENV{NDDSHOME})
     set(CODEGEN_HOME $ENV{NDDSHOME})
 endif()
 

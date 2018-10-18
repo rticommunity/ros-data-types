@@ -33,5 +33,5 @@ target_include_directories(lifecyclelibrary PRIVATE
 )
 
 target_compile_definitions(lifecyclelibrary PRIVATE 
-    ${CONNEXTDDS_DEFINITIONS}
+    ${CONNEXTDDS_COMPILE_DEFINITIONS}
 )

@@ -34,7 +34,7 @@ target_include_directories(navlibrary PRIVATE
 )
 
 target_compile_definitions(navlibrary PRIVATE 
-    ${CONNEXTDDS_DEFINITIONS}
+    ${CONNEXTDDS_COMPILE_DEFINITIONS}
 )
 
 add_dependencies(navlibrary 

@@ -62,7 +62,7 @@ target_include_directories(rosddstypes PUBLIC
 )
 
 target_compile_definitions(rosddstypes PRIVATE 
-    ${CONNEXTDDS_DEFINITIONS}
+    ${CONNEXTDDS_COMPILE_DEFINITIONS}
 )
 
 # Set configuration variables

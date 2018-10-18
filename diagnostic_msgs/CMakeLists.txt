@@ -29,7 +29,7 @@ target_include_directories(diagnosticlibrary PRIVATE
 )
 
 target_compile_definitions(diagnosticlibrary PRIVATE 
-    ${CONNEXTDDS_DEFINITIONS}
+    ${CONNEXTDDS_COMPILE_DEFINITIONS}
 )
 
 add_dependencies(diagnosticlibrary 

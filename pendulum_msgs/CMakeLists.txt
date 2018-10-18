@@ -25,7 +25,7 @@ target_include_directories(pendulumlibrary PRIVATE
 )
 
 target_compile_definitions(pendulumlibrary PRIVATE 
-    ${CONNEXTDDS_DEFINITIONS}
+    ${CONNEXTDDS_COMPILE_DEFINITIONS}
 )
 
 add_dependencies(pendulumlibrary 

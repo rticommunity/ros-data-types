@@ -23,7 +23,7 @@ target_include_directories(stereolibrary PRIVATE
 )
 
 target_compile_definitions(stereolibrary PRIVATE 
-    ${CONNEXTDDS_DEFINITIONS}
+    ${CONNEXTDDS_COMPILE_DEFINITIONS}
 )
 
 add_dependencies(stereolibrary 

@@ -51,7 +51,7 @@ target_include_directories(geometrylibrary PRIVATE
 )
 
 target_compile_definitions(geometrylibrary PRIVATE 
-    ${CONNEXTDDS_DEFINITIONS}
+    ${CONNEXTDDS_COMPILE_DEFINITIONS}
 )
 
 add_dependencies(geometrylibrary 

@@ -27,7 +27,7 @@ target_include_directories(tf2library PRIVATE
 )
 
 target_compile_definitions(tf2library PRIVATE 
-    ${CONNEXTDDS_DEFINITIONS}
+    ${CONNEXTDDS_COMPILE_DEFINITIONS}
 )
 
 add_dependencies(tf2library 

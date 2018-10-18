@@ -38,7 +38,7 @@ target_include_directories(testlibrary PRIVATE
 )
 
 target_compile_definitions(testlibrary PRIVATE 
-    ${CONNEXTDDS_DEFINITIONS}
+    ${CONNEXTDDS_COMPILE_DEFINITIONS}
 )
 
 add_dependencies(testlibrary 

@@ -32,7 +32,7 @@ target_include_directories(visualizationlibrary PRIVATE
 )
 
 target_compile_definitions(visualizationlibrary PRIVATE 
-    ${CONNEXTDDS_DEFINITIONS}
+    ${CONNEXTDDS_COMPILE_DEFINITIONS}
 )
 
 add_dependencies(visualizationlibrary 

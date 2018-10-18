@@ -61,7 +61,7 @@ target_include_directories(sensorlibrary PRIVATE
 )
 
 target_compile_definitions(sensorlibrary PRIVATE 
-    ${CONNEXTDDS_DEFINITIONS}
+    ${CONNEXTDDS_COMPILE_DEFINITIONS}
 )
 
 add_dependencies(sensorlibrary 
