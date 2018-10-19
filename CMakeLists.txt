@@ -48,7 +48,7 @@ add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/tf2_msgs")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/trajectory_msgs")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/visualization_msgs")
 
-add_library(rosddstypes
+add_library(RosDataTypes
     $<TARGET_OBJECTS:diagnosticlibrary>
     $<TARGET_OBJECTS:gazebolibrary>
     $<TARGET_OBJECTS:geometrylibrary>
@@ -65,17 +65,17 @@ add_library(rosddstypes
     $<TARGET_OBJECTS:visualizationlibrary>
 )
 
-target_link_libraries(rosddstypes 
+target_link_libraries(RosDataTypes 
     ${CONNEXTDDS_${lang_var}_API_LIBRARIES_RELEASE_SHARED}
     ${CONNEXTDDS_EXTERNAL_LIBS} 
 )
 
-target_include_directories(rosddstypes PUBLIC 
+target_include_directories(RosDataTypes PUBLIC 
     ${CONNEXTDDS_INCLUDE_DIRS} 
     $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/>
 )
 
-target_compile_definitions(rosddstypes PRIVATE 
+target_compile_definitions(RosDataTypes PRIVATE 
     ${CONNEXTDDS_COMPILE_DEFINITIONS}
 )
 
@@ -99,7 +99,7 @@ configure_package_config_file(
 )
 
 # Install target
-install(TARGETS rosddstypes
+install(TARGETS RosDataTypes
     EXPORT "${TARGETS_EXPORT_NAME}"
     LIBRARY DESTINATION "${CMAKE_INSTALL_PREFIX}/lib"
     ARCHIVE DESTINATION "${CMAKE_INSTALL_PREFIX}/lib"
