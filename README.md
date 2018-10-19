@@ -3,9 +3,10 @@
 This repository contains a rich set of ROS data types in
 [OMG IDL](https://www.omg.org/spec/IDL) format. These types enable you to
 create native DDS applications capable of interoperating with ROS 2
-applications using equivalent message types.
+applications using the equivalent
+[common interfaces](https://github.com/ros2/common_interfaces).
 
-ROS data types are organized in different modules, and include both
+ROS data types are organized in different modules, including both
 general-purpose types (e.g., `std_msgs`) and domain-specific types (e.g.,
 `trajectory_msgs`).
 
@@ -26,6 +27,9 @@ ros-data-types/
 ├── trajectory_msgs
 └── visualization_msgs
 ```
+
+For more information on the original ROS 2 common interfaces, please refer to
+this [repository](https://github.com/ros2/common_interfaces).
 
 ## Building ROS Type Library
 
