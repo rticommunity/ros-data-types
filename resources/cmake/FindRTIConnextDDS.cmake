@@ -210,7 +210,12 @@ endif()
 
 # We require having an rti_versions file under the installation directory
 # as we will use it to verify that the version is appropriate.
-find_path(CONNEXTDDS_DIR NAMES rti_versions.xml PATHS ${connextdds_root_hints})
+find_path(CONNEXTDDS_DIR
+    NAMES rti_versions.xml
+    HINTS
+        ENV NDDSHOME
+        ${connextdds_root_hints})
+
 if(NOT CONNEXTDDS_DIR)
     string(CONCAT
         error

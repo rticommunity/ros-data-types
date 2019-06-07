@@ -360,6 +360,7 @@ function(connextdds_rtiddsgen_run)
     set(options
         NOT_REPLACE UNBOUNDED IGNORE_ALIGNMENT USE42_ALIGNMENT
         OPTIMIZE_ALIGNMENT NO_TYPECODE DISABLE_PREPROCESSOR STL STANDALONE
+        NAMESPACE
     )
     set(single_value_args LANG OUTPUT_DIRECTORY IDL_FILE VAR PACKAGE)
     set(multi_value_args TYPE_NAMES INCLUDE_DIRS DEFINES EXTRA_ARGS)
@@ -431,6 +432,10 @@ function(connextdds_rtiddsgen_run)
 
     if(_CODEGEN_UNBOUNDED)
         list(APPEND extra_flags "-unboundedSupport")
+    endif()
+
+    if(_CODEGEN_NAMESPACE)
+        list(APPEND extra_flags "-namespace")
     endif()
 
     if(_CODEGEN_DISABLE_PREPROCESSOR)

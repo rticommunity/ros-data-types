@@ -95,12 +95,19 @@ macro(connextdds_generate_ros_dds_types)
             set(unbounded "UNBOUNDED")
         endif()
 
+        set(namespace "")
+        if(${_ROS_TYPES_LANG} STREQUAL "C++")
+            set(namespace "NAMESPACE")
+        endif()
+
         connextdds_rtiddsgen_run(
             LANG ${_ROS_TYPES_LANG}
             OUTPUT_DIRECTORY "${_ROS_TYPES_OUTPUT_DIRECTORY}/${idl_dir_name}"
             IDL_FILE ${file}
             INCLUDE_DIRS ${_ROS_TYPES_INCLUDE_DIRS}
             ${unbounded}
+            ${namespace}
+            STL
             VAR generated_file
         )
 
