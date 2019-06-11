@@ -108,7 +108,8 @@ struct MyCustomType {
 ```
 
 Note that to use `trajectory_msgs::msg::JointTrajectory` in the definition of
-our type, we must first include `trajectory_msgs/msg/JointTrajectory.idl`, which is the IDL file where the original type was defined.
+our type, we must first include `trajectory_msgs/msg/JointTrajectory.idl`, which 
+is the IDL file where the original type was defined.
 
 #### Generating TypePlugin and TypeSupport Classes
 
