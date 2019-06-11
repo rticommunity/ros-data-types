@@ -1,3 +1,17 @@
+# Copyright 2018 Real-Time Innovations 
+# 
+# Licensed under the Apache License, Version 2.0 (the "License"); 
+# you may not use this file except in compliance with the License. 
+# You may obtain a copy of the License at 
+# 
+#     http://www.apache.org/licenses/LICENSE-2.0 
+# 
+# Unless required by applicable law or agreed to in writing, software 
+# distributed under the License is distributed on an "AS IS" BASIS, 
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+# See the License for the specific language governing permissions and 
+# limitations under the License. 
+
 include(ConnextDdsCodegen)
 
 #[[
@@ -95,12 +109,19 @@ macro(connextdds_generate_ros_dds_types)
             set(unbounded "UNBOUNDED")
         endif()
 
+        set(namespace "")
+        if(${_ROS_TYPES_LANG} STREQUAL "C++")
+            set(namespace "NAMESPACE")
+        endif()
+
         connextdds_rtiddsgen_run(
             LANG ${_ROS_TYPES_LANG}
             OUTPUT_DIRECTORY "${_ROS_TYPES_OUTPUT_DIRECTORY}/${idl_dir_name}"
             IDL_FILE ${file}
             INCLUDE_DIRS ${_ROS_TYPES_INCLUDE_DIRS}
             ${unbounded}
+            ${namespace}
+            STL
             VAR generated_file
         )
 

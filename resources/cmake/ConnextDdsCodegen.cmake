@@ -1,4 +1,4 @@
-# (c) 2017 Copyright, Real-Time Innovations, Inc.  All rights reserved.
+# (c) 2017-2018 Copyright, Real-Time Innovations, Inc. All rights reserved.
 # No duplications, whole or partial, manual or electronic, may be made
 # without express written permission.  Any such copies, or revisions thereof,
 # must display this notice unaltered.
@@ -202,9 +202,9 @@ include(ConnextDdsArgumentChecks)
 
 # If CONNEXTDDS_HOME or NDDSHOME are previously defined, assume CODEGEN is 
 # there
-if (DEFINED CONNEXTDDS_HOME)
-    set(CODEGEN_HOME ${CONNEXTDDS_HOME})
-elseif(DEFINED ENV{NDDSHOME})
+if (CONNEXTDDS_DIR)
+    set(CODEGEN_HOME ${CONNEXTDDS_DIR})
+elseif(ENV{NDDSHOME})
     set(CODEGEN_HOME $ENV{NDDSHOME})
 endif()
 
@@ -360,6 +360,7 @@ function(connextdds_rtiddsgen_run)
     set(options
         NOT_REPLACE UNBOUNDED IGNORE_ALIGNMENT USE42_ALIGNMENT
         OPTIMIZE_ALIGNMENT NO_TYPECODE DISABLE_PREPROCESSOR STL STANDALONE
+        NAMESPACE
     )
     set(single_value_args LANG OUTPUT_DIRECTORY IDL_FILE VAR PACKAGE)
     set(multi_value_args TYPE_NAMES INCLUDE_DIRS DEFINES EXTRA_ARGS)
@@ -432,6 +433,11 @@ function(connextdds_rtiddsgen_run)
     if(_CODEGEN_UNBOUNDED)
         list(APPEND extra_flags "-unboundedSupport")
     endif()
+
+    if(_CODEGEN_NAMESPACE)
+        list(APPEND extra_flags "-namespace")
+    endif()
+
 
     if(_CODEGEN_DISABLE_PREPROCESSOR)
         list(APPEND extra_flags "-ppDisable")
