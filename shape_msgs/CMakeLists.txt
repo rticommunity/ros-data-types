@@ -19,11 +19,17 @@ list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/MeshTriangle.idl")
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Plane.idl")
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/SolidPrimitive.idl")
 
+# for unbounded strings & sequences use -DUNBOUNDED_ALL on CMake cmdline
+if(UNBOUNDED_ALL)
+    set(extra_params UNBOUNDED)
+endif()
+
 connextdds_generate_ros_dds_types(
     LANG ${LANG}
     OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
     IDL_FILES ${idl_files}
     INCLUDE_DIRS ${top_level_source_dir}
+    ${extra_params}
 )
 
 add_library( shapelibrary OBJECT

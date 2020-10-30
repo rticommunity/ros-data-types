@@ -41,24 +41,20 @@ list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Temperature.idl")
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/TimeReference.idl")
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/srv/SetCameraInfo_Request.idl")
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/srv/SetCameraInfo_Response.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/LaserScan.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Image.idl")
+
+# for unbounded strings & sequences use -DUNBOUNDED_ALL on CMake cmdline
+if(UNBOUNDED_ALL)
+    set(extra_params UNBOUNDED)
+endif()
 
 connextdds_generate_ros_dds_types(
     LANG ${LANG}
     OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
     IDL_FILES ${idl_files}
     INCLUDE_DIRS ${top_level_source_dir}
-)
-
-# Generate idl files that require unbounded support
-list(APPEND unbounded_idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/LaserScan.idl")
-list(APPEND unbounded_idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Image.idl")
-
-connextdds_generate_ros_dds_types(
-    LANG ${LANG}
-    OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
-    IDL_FILES ${unbounded_idl_files}
-    INCLUDE_DIRS ${top_level_source_dir}
-    UNBOUNDED
+    ${extra_params}
 )
 
 add_library( sensorlibrary OBJECT
