@@ -13,20 +13,23 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __geometry_msgs__msg__PoseArray__idl 
-#define __geometry_msgs__msg__PoseArray__idl 
- 
-#include "Pose.idl" 
-#include "std_msgs/msg/Header.idl" 
- 
-module geometry_msgs { module msg { 
- 
-struct PoseArray { 
-    std_msgs::msg::Header header; 
-    sequence<geometry_msgs::msg::Pose> poses; 
-}; 
- 
-}; };  // module msg::geometry_msgs 
- 
-#endif  // __geometry_msgs__msg__PoseArray__idl 
+
+#ifndef __geometry_msgs__msg__PoseArray__idl
+#define __geometry_msgs__msg__PoseArray__idl
+
+#include "std_msgs/msg/Header.idl"
+#include "geometry_msgs/msg/Pose.idl"
+
+module geometry_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct PoseArray_ {
+        std_msgs::msg::dds_::Header_ header;
+        sequence<geometry_msgs::msg::dds_::Pose_> poses;
+      };
+    };
+  };
+};
+
+
+#endif // __geometry_msgs__msg__PoseArray__idl

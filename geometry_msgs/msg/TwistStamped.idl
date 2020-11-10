@@ -13,20 +13,23 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __geometry_msgs__msg__TwistStamped__idl 
-#define __geometry_msgs__msg__TwistStamped__idl 
- 
-#include "Twist.idl" 
-#include "std_msgs/msg/Header.idl" 
- 
-module geometry_msgs { module msg { 
- 
-struct TwistStamped { 
-    std_msgs::msg::Header header; 
-    geometry_msgs::msg::Twist twist; 
-}; 
- 
-}; };  // module msg::geometry_msgs 
- 
-#endif  // __geometry_msgs__msg__TwistStamped__idl 
+
+#ifndef __geometry_msgs__msg__TwistStamped__idl
+#define __geometry_msgs__msg__TwistStamped__idl
+
+#include "std_msgs/msg/Header.idl"
+#include "geometry_msgs/msg/Twist.idl"
+
+module geometry_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct TwistStamped_ {
+        std_msgs::msg::dds_::Header_ header;
+        geometry_msgs::msg::dds_::Twist_ twist;
+      };
+    };
+  };
+};
+
+
+#endif // __geometry_msgs__msg__TwistStamped__idl

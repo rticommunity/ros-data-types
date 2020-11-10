@@ -13,20 +13,23 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __sensor_msgs__msg__CompressedImage__idl 
-#define __sensor_msgs__msg__CompressedImage__idl 
- 
-#include "std_msgs/msg/Header.idl" 
- 
-module sensor_msgs { module msg { 
- 
-struct CompressedImage { 
-    std_msgs::msg::Header header; 
-    string format; 
-    sequence<octet> data; 
-}; 
- 
-}; };  // module msg::sensor_msgs 
- 
-#endif  // __sensor_msgs__msg__CompressedImage__idl 
+
+#ifndef __sensor_msgs__msg__CompressedImage__idl
+#define __sensor_msgs__msg__CompressedImage__idl
+
+#include "std_msgs/msg/Header.idl"
+
+module sensor_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct CompressedImage_ {
+        std_msgs::msg::dds_::Header_ header;
+        string format;
+        sequence<octet> data;
+      };
+    };
+  };
+};
+
+
+#endif // __sensor_msgs__msg__CompressedImage__idl

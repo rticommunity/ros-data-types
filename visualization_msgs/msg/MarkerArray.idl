@@ -13,18 +13,21 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __visualization_msgs__msg__MarkerArray__idl 
-#define __visualization_msgs__msg__MarkerArray__idl 
- 
-#include "Marker.idl" 
- 
-module visualization_msgs { module msg { 
- 
-struct MarkerArray { 
-    sequence<visualization_msgs::msg::Marker> markers; 
-}; 
- 
-}; };  // module msg::visualization_msgs 
- 
-#endif  // __visualization_msgs__msg__MarkerArray__idl 
+
+#ifndef __visualization_msgs__msg__MarkerArray__idl
+#define __visualization_msgs__msg__MarkerArray__idl
+
+#include "visualization_msgs/msg/Marker.idl"
+
+module visualization_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct MarkerArray_ {
+        sequence<visualization_msgs::msg::dds_::Marker_> markers;
+      };
+    };
+  };
+};
+
+
+#endif // __visualization_msgs__msg__MarkerArray__idl

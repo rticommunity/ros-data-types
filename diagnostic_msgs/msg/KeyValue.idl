@@ -13,17 +13,20 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __diagnostic_msgs__msg__KeyValue__idl__ 
-#define __diagnostic_msgs__msg__KeyValue__idl__ 
- 
-module diagnostic_msgs { module msg { 
- 
-struct KeyValue { 
-    string key; 
-    string value; 
-}; 
- 
-}; };  // module msg::diagnostic_msgs 
- 
-#endif  // __diagnostic_msgs__msg__KeyValue__idl__ 
+
+#ifndef __diagnostic_msgs__msg__KeyValue__idl
+#define __diagnostic_msgs__msg__KeyValue__idl
+
+module diagnostic_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct KeyValue_ {
+        string key;
+        string value;
+      };
+    };
+  };
+};
+
+
+#endif // __diagnostic_msgs__msg__KeyValue__idl

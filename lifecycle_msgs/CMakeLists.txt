@@ -41,17 +41,19 @@ connextdds_generate_ros_dds_types(
     ${extra_params}
 )
 
-add_library(lifecyclelibrary OBJECT ${generated_file_list})
+add_library( lifecyclemsgslibrary OBJECT
+    ${generated_file_list}
+)
 
-set_property(TARGET lifecyclelibrary PROPERTY 
+set_property(TARGET lifecyclemsgslibrary PROPERTY 
     POSITION_INDEPENDENT_CODE ON
 )
 
-target_include_directories(lifecyclelibrary PRIVATE 
+target_include_directories(lifecyclemsgslibrary PRIVATE 
     ${CONNEXTDDS_INCLUDE_DIRS}
     ${top_level_binary_dir}
 )
 
-target_compile_definitions(lifecyclelibrary PRIVATE 
+target_compile_definitions(lifecyclemsgslibrary PRIVATE 
     ${CONNEXTDDS_COMPILE_DEFINITIONS}
 )

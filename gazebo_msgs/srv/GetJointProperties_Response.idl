@@ -14,11 +14,14 @@
  * limitations under the License. 
  */ 
  
-module gazebo_msgs { module srv { 
+#ifndef __gazebo_msgs__srv__GetJointProperties_Response__idl
+#define __gazebo_msgs__srv__GetJointProperties_Response__idl
+ 
+module gazebo_msgs { module srv { module dds_ { 
  
 enum Type { REVOLUTE, CONTINUOUS, PRISMATIC, FIXED, BALL, UNIVERSAL }; 
  
-struct GetJointProperties_Response { 
+struct GetJointProperties_Response_ { 
     sequence<double> damping; 
     sequence<double> position; 
     sequence<double> rate; 
@@ -27,4 +30,6 @@ struct GetJointProperties_Response {
     string status_message; 
 }; 
  
-}; };  // module srv::gazebo_msgs 
+}; }; };  // module dds_::srv::gazebo_msgs 
+
+#endif  // __gazebo_msgs__srv__GetJointProperties_Response__idl

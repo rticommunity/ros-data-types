@@ -13,20 +13,23 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __sensor_msgs__msg__Joy__idl 
-#define __sensor_msgs__msg__Joy__idl 
- 
-#include "std_msgs/msg/Header.idl" 
- 
-module sensor_msgs { module msg { 
- 
-struct Joy { 
-    std_msgs::msg::Header header; 
-    sequence<float> axes; 
-    sequence<long> buttons; 
-}; 
- 
-}; };  // module msg::sensor_msgs 
- 
-#endif  // __sensor_msgs__msg__Joy__idl 
+
+#ifndef __sensor_msgs__msg__Joy__idl
+#define __sensor_msgs__msg__Joy__idl
+
+#include "std_msgs/msg/Header.idl"
+
+module sensor_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct Joy_ {
+        std_msgs::msg::dds_::Header_ header;
+        sequence<float> axes;
+        sequence<int32> buttons;
+      };
+    };
+  };
+};
+
+
+#endif // __sensor_msgs__msg__Joy__idl

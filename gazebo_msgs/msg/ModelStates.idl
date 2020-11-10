@@ -14,15 +14,20 @@
  * limitations under the License. 
  */ 
  
+#ifndef __gazebo_msgs__msg__ModelStates__idl
+#define __gazebo_msgs__msg__ModelStates__idl
+
 #include "geometry_msgs/msg/Pose.idl" 
 #include "geometry_msgs/msg/Twist.idl" 
  
-module gazebo_msgs { module msg { 
+module gazebo_msgs { module msg { module dds_ {
  
-struct ModelStates { 
+struct ModelStates_ { 
     sequence<string> name; 
-    sequence<geometry_msgs::msg::Pose> pose; 
-    sequence<geometry_msgs::msg::Twist> twist; 
+    sequence<geometry_msgs::msg::dds_::Pose_> pose; 
+    sequence<geometry_msgs::msg::dds_::Twist_> twist; 
 }; 
  
-}; };  // module msg::gazebo_msgs 
+}; }; };  // module dds_::msg::gazebo_msgs 
+
+#endif  // __gazebo_msgs__msg__ModelStates__idl

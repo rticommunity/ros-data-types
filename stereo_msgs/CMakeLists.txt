@@ -1,4 +1,4 @@
-# Copyright 2018 Real-Time Innovations 
+# Copyright 2020 Real-Time Innovations 
 # 
 # Licensed under the Apache License, Version 2.0 (the "License"); 
 # you may not use this file except in compliance with the License. 
@@ -29,23 +29,23 @@ connextdds_generate_ros_dds_types(
     ${extra_params}
 )
 
-add_library( stereolibrary OBJECT
+add_library( stereomsgslibrary OBJECT
     ${generated_file_list}
 )
 
-set_property(TARGET stereolibrary PROPERTY 
+set_property(TARGET stereomsgslibrary PROPERTY 
     POSITION_INDEPENDENT_CODE ON
 )
 
-target_include_directories(stereolibrary PRIVATE 
+target_include_directories(stereomsgslibrary PRIVATE 
     ${CONNEXTDDS_INCLUDE_DIRS}
     ${top_level_binary_dir}
 )
 
-target_compile_definitions(stereolibrary PRIVATE 
+target_compile_definitions(stereomsgslibrary PRIVATE 
     ${CONNEXTDDS_COMPILE_DEFINITIONS}
 )
 
-add_dependencies(stereolibrary 
-    sensorlibrary
+add_dependencies(stereomsgslibrary 
+    sensormsgslibrary 
 )

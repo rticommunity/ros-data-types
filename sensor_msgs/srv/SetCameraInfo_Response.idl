@@ -13,17 +13,20 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __sensor_msgs__srv__SetCameraInfo_Response__idl 
-#define __sensor_msgs__srv__SetCameraInfo_Response__idl 
- 
-module sensor_msgs { module srv { 
- 
-struct SetCameraInfo_Response { 
-    boolean success; 
-    string status_message; 
-}; 
- 
-}; };  // module srv::sensor_msgs 
- 
-#endif  // __sensor_msgs__srv__SetCameraInfo_Response__idl 
+
+#ifndef __sensor_msgs__srv__SetCameraInfo_Response__idl
+#define __sensor_msgs__srv__SetCameraInfo_Response__idl
+
+module sensor_msgs {
+  module srv {
+    module dds_ {
+      @appendable struct SetCameraInfo_Response_ {
+        boolean success;
+        string status_message;
+      };
+    };
+  };
+};
+
+
+#endif // __sensor_msgs__srv__SetCameraInfo_Response__idl

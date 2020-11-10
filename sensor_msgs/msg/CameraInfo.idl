@@ -13,32 +13,32 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __sensor_msgs__msg__CameraInfo__idl 
-#define __sensor_msgs__msg__CameraInfo__idl 
- 
-#include "RegionOfInterest.idl" 
-#include "std_msgs/msg/Header.idl" 
- 
-module sensor_msgs { module msg { 
- 
-typedef double sensor_msgs__CameraInfo__double_array_9[9]; 
-typedef double sensor_msgs__CameraInfo__double_array_12[12]; 
- 
-struct CameraInfo { 
-    std_msgs::msg::Header header; 
-    unsigned long height; 
-    unsigned long width; 
-    string distortion_model; 
-    sequence<double> d; 
-    sensor_msgs__CameraInfo__double_array_9 k; 
-    sensor_msgs__CameraInfo__double_array_9 r; 
-    sensor_msgs__CameraInfo__double_array_12 p; 
-    unsigned long binning_x; 
-    unsigned long binning_y; 
-    sensor_msgs::msg::RegionOfInterest roi; 
-}; 
- 
-}; };  // module msg::sensor_msgs 
- 
-#endif  // __sensor_msgs__msg__CameraInfo__idl 
+
+#ifndef __sensor_msgs__msg__CameraInfo__idl
+#define __sensor_msgs__msg__CameraInfo__idl
+
+#include "std_msgs/msg/Header.idl"
+#include "sensor_msgs/msg/RegionOfInterest.idl"
+
+module sensor_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct CameraInfo_ {
+        std_msgs::msg::dds_::Header_ header;
+        uint32 height;
+        uint32 width;
+        string distortion_model;
+        sequence<double> d;
+        double k[9];
+        double r[9];
+        double p[12];
+        uint32 binning_x;
+        uint32 binning_y;
+        sensor_msgs::msg::dds_::RegionOfInterest_ roi;
+      };
+    };
+  };
+};
+
+
+#endif // __sensor_msgs__msg__CameraInfo__idl

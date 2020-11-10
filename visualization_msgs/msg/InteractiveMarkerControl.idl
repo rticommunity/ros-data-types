@@ -13,40 +13,44 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __visualization_msgs__msg__InteractiveMarkerControl__idl 
-#define __visualization_msgs__msg__InteractiveMarkerControl__idl 
- 
-#include "geometry_msgs/msg/Quaternion.idl" 
-#include "Marker.idl" 
- 
-module visualization_msgs { module msg { 
- 
-const octet InteractiveMarkerControl__INHERIT = 0; 
-const octet InteractiveMarkerControl__FIXED = 1; 
-const octet InteractiveMarkerControl__VIEW_FACING = 2; 
-const octet InteractiveMarkerControl__NONE = 0; 
-const octet InteractiveMarkerControl__MENU = 1; 
-const octet InteractiveMarkerControl__BUTTON = 2; 
-const octet InteractiveMarkerControl__MOVE_AXIS = 3; 
-const octet InteractiveMarkerControl__MOVE_PLANE = 4; 
-const octet InteractiveMarkerControl__ROTATE_AXIS = 5; 
-const octet InteractiveMarkerControl__MOVE_ROTATE = 6; 
-const octet InteractiveMarkerControl__MOVE_3D = 7; 
-const octet InteractiveMarkerControl__ROTATE_3D = 8; 
-const octet InteractiveMarkerControl__MOVE_ROTATE_3D = 9; 
- 
-struct InteractiveMarkerControl { 
-    string name; 
-    geometry_msgs::msg::Quaternion orientation; 
-    octet orientation_mode; 
-    octet interaction_mode; 
-    boolean always_visible; 
-    sequence<visualization_msgs::msg::Marker> markers; 
-    boolean independent_marker_orientation; 
-    string description; 
-}; 
- 
-}; };  // module msg::visualization_msgs 
- 
-#endif  // __visualization_msgs__msg__InteractiveMarkerControl__idl 
+
+#ifndef __visualization_msgs__msg__InteractiveMarkerControl__idl
+#define __visualization_msgs__msg__InteractiveMarkerControl__idl
+
+#include "geometry_msgs/msg/Quaternion.idl"
+#include "visualization_msgs/msg/Marker.idl"
+
+module visualization_msgs {
+  module msg {
+    module dds_ {
+      module InteractiveMarkerControl_Constants {
+        const octet INHERIT_ = 0;
+        const octet FIXED_ = 1;
+        const octet VIEW_FACING_ = 2;
+        const octet NONE_ = 0;
+        const octet MENU_ = 1;
+        const octet BUTTON_ = 2;
+        const octet MOVE_AXIS_ = 3;
+        const octet MOVE_PLANE_ = 4;
+        const octet ROTATE_AXIS_ = 5;
+        const octet MOVE_ROTATE_ = 6;
+        const octet MOVE_3D_ = 7;
+        const octet ROTATE_3D_ = 8;
+        const octet MOVE_ROTATE_3D_ = 9;
+      };
+      @appendable struct InteractiveMarkerControl_ {
+        string name;
+        geometry_msgs::msg::dds_::Quaternion_ orientation;
+        octet orientation_mode;
+        octet interaction_mode;
+        boolean always_visible;
+        sequence<visualization_msgs::msg::dds_::Marker_> markers;
+        boolean independent_marker_orientation;
+        string description;
+      };
+    };
+  };
+};
+
+
+#endif // __visualization_msgs__msg__InteractiveMarkerControl__idl

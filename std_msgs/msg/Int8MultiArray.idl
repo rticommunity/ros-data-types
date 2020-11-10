@@ -13,19 +13,22 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __std_msgs__msg__Int8MultiArray__idl 
-#define __std_msgs__msg__Int8MultiArray__idl 
- 
-#include "MultiArrayLayout.idl" 
- 
-module std_msgs { module msg { 
- 
-struct Int8MultiArray { 
-    std_msgs::msg::MultiArrayLayout layout; 
-    sequence<octet> data; 
-}; 
- 
-}; };  // module msg::std_msgs 
- 
-#endif  // __std_msgs__msg__Int8MultiArray__idl 
+
+#ifndef __std_msgs__msg__Int8MultiArray__idl
+#define __std_msgs__msg__Int8MultiArray__idl
+
+#include "std_msgs/msg/MultiArrayLayout.idl"
+
+module std_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct Int8MultiArray_ {
+        std_msgs::msg::dds_::MultiArrayLayout_ layout;
+        sequence<octet> data;
+      };
+    };
+  };
+};
+
+
+#endif // __std_msgs__msg__Int8MultiArray__idl

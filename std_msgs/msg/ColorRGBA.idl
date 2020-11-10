@@ -13,19 +13,22 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __std_msgs__msg__ColorRGBA__idl 
-#define __std_msgs__msg__ColorRGBA__idl 
- 
-module std_msgs { module msg { 
- 
-struct ColorRGBA { 
-    float r; 
-    float g; 
-    float b; 
-    float a; 
-}; 
- 
-}; };  // module msg::std_msgs 
- 
-#endif  // __std_msgs__msg__ColorRGBA__idl 
+
+#ifndef __std_msgs__msg__ColorRGBA__idl
+#define __std_msgs__msg__ColorRGBA__idl
+
+module std_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct ColorRGBA_ {
+        float r;
+        float g;
+        float b;
+        float a;
+      };
+    };
+  };
+};
+
+
+#endif // __std_msgs__msg__ColorRGBA__idl

@@ -13,23 +13,26 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __nav_msgs__msg__MapMetaData__idl 
-#define __nav_msgs__msg__MapMetaData__idl 
- 
-#include "std_msgs/msg/Time.idl" 
-#include "geometry_msgs/msg/Pose.idl" 
- 
-module nav_msgs { module msg { 
- 
-struct MapMetaData { 
-    std_msgs::msg::Time map_load_time; 
-    float resolution; 
-    unsigned long width; 
-    unsigned long height; 
-    geometry_msgs::msg::Pose origin; 
-}; 
- 
-}; };  // module msg::nav_msgs 
- 
-#endif  // __nav_msgs__msg__MapMetaData__idl 
+
+#ifndef __nav_msgs__msg__MapMetaData__idl
+#define __nav_msgs__msg__MapMetaData__idl
+
+#include "geometry_msgs/msg/Pose.idl"
+#include "builtin_interfaces/msg/Time.idl"
+
+module nav_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct MapMetaData_ {
+        builtin_interfaces::msg::dds_::Time_ map_load_time;
+        float resolution;
+        uint32 width;
+        uint32 height;
+        geometry_msgs::msg::dds_::Pose_ origin;
+      };
+    };
+  };
+};
+
+
+#endif // __nav_msgs__msg__MapMetaData__idl

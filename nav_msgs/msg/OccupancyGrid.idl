@@ -13,21 +13,24 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __nav_msgs__msg__OccupancyGrid__idl 
-#define __nav_msgs__msg__OccupancyGrid__idl 
- 
-#include "MapMetaData.idl" 
-#include "std_msgs/msg/Header.idl" 
- 
-module nav_msgs { module msg { 
- 
-struct OccupancyGrid { 
-    std_msgs::msg::Header header; 
-    nav_msgs::msg::MapMetaData info; 
-    sequence<octet> data; 
-}; 
- 
-}; };  // module msg::nav_msgs 
- 
-#endif  // __nav_msgs__msg__OccupancyGrid__idl 
+
+#ifndef __nav_msgs__msg__OccupancyGrid__idl
+#define __nav_msgs__msg__OccupancyGrid__idl
+
+#include "nav_msgs/msg/MapMetaData.idl"
+#include "std_msgs/msg/Header.idl"
+
+module nav_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct OccupancyGrid_ {
+        std_msgs::msg::dds_::Header_ header;
+        nav_msgs::msg::dds_::MapMetaData_ info;
+        sequence<octet> data;
+      };
+    };
+  };
+};
+
+
+#endif // __nav_msgs__msg__OccupancyGrid__idl

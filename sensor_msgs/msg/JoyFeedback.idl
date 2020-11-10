@@ -13,22 +13,26 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __sensor_msgs__msg__JoyFeedback__idl 
-#define __sensor_msgs__msg__JoyFeedback__idl 
- 
-module sensor_msgs { module msg { 
- 
-const octet JoyFeedback__TYPE_LED = 0; 
-const octet JoyFeedback__TYPE_RUMBLE = 1; 
-const octet JoyFeedback__TYPE_BUZZER = 2; 
- 
-struct JoyFeedback { 
-    octet type; 
-    octet id; 
-    float intensity; 
-}; 
- 
-}; };  // module msg::sensor_msgs 
- 
-#endif  // __sensor_msgs__msg__JoyFeedback__idl 
+
+#ifndef __sensor_msgs__msg__JoyFeedback__idl
+#define __sensor_msgs__msg__JoyFeedback__idl
+
+module sensor_msgs {
+  module msg {
+    module dds_ {
+      module JoyFeedback_Constants {
+        const octet TYPE_LED_ = 0;
+        const octet TYPE_RUMBLE_ = 1;
+        const octet TYPE_BUZZER_ = 2;
+      };
+      @appendable struct JoyFeedback_ {
+        octet type;
+        octet id;
+        float intensity;
+      };
+    };
+  };
+};
+
+
+#endif // __sensor_msgs__msg__JoyFeedback__idl

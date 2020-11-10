@@ -13,19 +13,22 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __geometry_msgs__msg__Quaternion__idl 
-#define __geometry_msgs__msg__Quaternion__idl 
- 
-module geometry_msgs { module msg { 
- 
-struct Quaternion { 
-    double x; 
-    double y; 
-    double z; 
-    double w; 
-}; 
- 
-}; };  // module msg::geometry_msgs 
- 
-#endif  // __geometry_msgs__msg__Quaternion__idl 
+
+#ifndef __geometry_msgs__msg__Quaternion__idl
+#define __geometry_msgs__msg__Quaternion__idl
+
+module geometry_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct Quaternion_ {
+        double x;
+        double y;
+        double z;
+        double w;
+      };
+    };
+  };
+};
+
+
+#endif // __geometry_msgs__msg__Quaternion__idl

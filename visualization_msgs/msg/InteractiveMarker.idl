@@ -13,27 +13,30 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __visualization_msgs__msg__InteractiveMarker__idl 
-#define __visualization_msgs__msg__InteractiveMarker__idl 
- 
-#include "geometry_msgs/msg/Pose.idl" 
-#include "std_msgs/msg/Header.idl" 
-#include "InteractiveMarkerControl.idl" 
-#include "MenuEntry.idl" 
- 
-module visualization_msgs { module msg { 
- 
-struct InteractiveMarker { 
-    std_msgs::msg::Header header; 
-    geometry_msgs::msg::Pose pose; 
-    string name; 
-    string description; 
-    float scale; 
-    sequence<visualization_msgs::msg::MenuEntry> menu_entries; 
-    sequence<visualization_msgs::msg::InteractiveMarkerControl> controls; 
-}; 
- 
-}; };  // module msg::visualization_msgs 
- 
-#endif  // __visualization_msgs__msg__InteractiveMarker__idl 
+
+#ifndef __visualization_msgs__msg__InteractiveMarker__idl
+#define __visualization_msgs__msg__InteractiveMarker__idl
+
+#include "std_msgs/msg/Header.idl"
+#include "visualization_msgs/msg/InteractiveMarkerControl.idl"
+#include "geometry_msgs/msg/Pose.idl"
+#include "visualization_msgs/msg/MenuEntry.idl"
+
+module visualization_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct InteractiveMarker_ {
+        std_msgs::msg::dds_::Header_ header;
+        geometry_msgs::msg::dds_::Pose_ pose;
+        string name;
+        string description;
+        float scale;
+        sequence<visualization_msgs::msg::dds_::MenuEntry_> menu_entries;
+        sequence<visualization_msgs::msg::dds_::InteractiveMarkerControl_> controls;
+      };
+    };
+  };
+};
+
+
+#endif // __visualization_msgs__msg__InteractiveMarker__idl

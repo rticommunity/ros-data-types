@@ -1,4 +1,4 @@
-# Copyright 2018 Real-Time Innovations 
+# Copyright 2020 Real-Time Innovations 
 # 
 # Licensed under the Apache License, Version 2.0 (the "License"); 
 # you may not use this file except in compliance with the License. 
@@ -14,22 +14,43 @@
 
 include(ConnextDdsRosDdsTypes)
 
-list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/BoundedArrayNested.idl")
-list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/BoundedArrayPrimitives.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/action/Fibonacci_Feedback.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/action/Fibonacci_FeedbackMessage.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/action/Fibonacci_GetResult_Request.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/action/Fibonacci_GetResult_Response.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/action/Fibonacci_Goal.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/action/Fibonacci_Result.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/action/Fibonacci_SendGoal_Request.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/action/Fibonacci_SendGoal_Response.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/action/NestedMessage_Feedback.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/action/NestedMessage_FeedbackMessage.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/action/NestedMessage_GetResult_Request.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/action/NestedMessage_GetResult_Response.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/action/NestedMessage_Goal.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/action/NestedMessage_Result.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/action/NestedMessage_SendGoal_Request.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/action/NestedMessage_SendGoal_Response.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Arrays.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/BasicTypes.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/BoundedSequences.idl")
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Builtins.idl")
-list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/DynamicArrayNested.idl")
-list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/DynamicArrayPrimitives.idl")
-list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/DynamicArrayPrimitivesNested.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Constants.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Defaults.idl")
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Empty.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/MultiNested.idl")
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Nested.idl")
-list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Primitives.idl")
-list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/StaticArrayNested.idl")
-list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/StaticArrayPrimitives.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Strings.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/UnboundedSequences.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/WStrings.idl")
 
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/srv/Arrays_Request.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/srv/Arrays_Response.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/srv/BasicTypes_Request.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/srv/BasicTypes_Response.idl")
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/srv/Empty_Request.idl")
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/srv/Empty_Response.idl")
-list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/srv/Primitives_Request.idl")
-list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/srv/Primitives_Response.idl")
+
+
 
 # for unbounded strings & sequences use -DUNBOUNDED_ALL on CMake cmdline
 if(UNBOUNDED_ALL)
@@ -44,23 +65,24 @@ connextdds_generate_ros_dds_types(
     ${extra_params}
 )
 
-add_library( testlibrary OBJECT
+add_library( testmsgslibrary OBJECT
     ${generated_file_list}
 )
 
-set_property(TARGET testlibrary PROPERTY 
+set_property(TARGET testmsgslibrary PROPERTY 
     POSITION_INDEPENDENT_CODE ON
 )
 
-target_include_directories(testlibrary PRIVATE 
+target_include_directories(testmsgslibrary PRIVATE 
     ${CONNEXTDDS_INCLUDE_DIRS}
     ${top_level_binary_dir}
 )
 
-target_compile_definitions(testlibrary PRIVATE 
+target_compile_definitions(testmsgslibrary PRIVATE 
     ${CONNEXTDDS_COMPILE_DEFINITIONS}
 )
 
-add_dependencies(testlibrary 
-    stdlibrary
+add_dependencies(testmsgslibrary 
+    builtininterfaceslibrary 
+    uniqueidentifiermsgslibrary 
 )

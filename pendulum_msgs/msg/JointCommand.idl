@@ -13,16 +13,19 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __pendulum_msgs__msg__JointCommand__idl 
-#define __pendulum_msgs__msg__JointCommand__idl 
- 
-module pendulum_msgs { module msg { 
- 
-struct JointCommand { 
-    double position; 
-}; 
- 
-}; };  // module msg::pendulum_msgs 
- 
-#endif  // __pendulum_msgs__msg__JointCommand__idl 
+
+#ifndef __pendulum_msgs__msg__JointCommand__idl
+#define __pendulum_msgs__msg__JointCommand__idl
+
+module pendulum_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct JointCommand_ {
+        double position;
+      };
+    };
+  };
+};
+
+
+#endif // __pendulum_msgs__msg__JointCommand__idl

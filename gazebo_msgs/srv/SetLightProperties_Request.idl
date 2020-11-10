@@ -14,16 +14,21 @@
  * limitations under the License. 
  */ 
  
+#ifndef __gazebo_msgs__srv__SetLightProperties_Request__idl
+#define __gazebo_msgs__srv__SetLightProperties_Request__idl
+ 
 #include "std_msgs/msg/ColorRGBA.idl" 
  
-module gazebo_msgs { module srv { 
+module gazebo_msgs { module srv { module dds_ { 
  
-struct SetLightProperties_Request { 
+struct SetLightProperties_Request_ { 
     string light_name; 
-    std_msgs::msg::ColorRGBA diffuse; 
+    std_msgs::msg::dds_::ColorRGBA_ diffuse; 
     double attenuation_constant; 
     double attenuation_linear; 
     double attenuation_quadratic; 
 }; 
  
-}; };  // module srv::gazebo_msgs 
+}; }; };  // module dds_::srv::gazebo_msgs 
+
+#endif  // __gazebo_msgs__srv__SetLightProperties_Request__idl

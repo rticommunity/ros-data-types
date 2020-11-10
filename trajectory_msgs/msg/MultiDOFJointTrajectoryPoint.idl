@@ -13,23 +13,26 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __trajectory_msgs__msg__MultiDOFJointTrajectoryPoint__idl 
-#define __trajectory_msgs__msg__MultiDOFJointTrajectoryPoint__idl 
- 
-#include "std_msgs/msg/Duration.idl" 
-#include "geometry_msgs/msg/Transform.idl" 
-#include "geometry_msgs/msg/Twist.idl" 
- 
-module trajectory_msgs { module msg { 
- 
-struct MultiDOFJointTrajectoryPoint { 
-    sequence<geometry_msgs::msg::Transform> transforms; 
-    sequence<geometry_msgs::msg::Twist> velocities; 
-    sequence<geometry_msgs::msg::Twist> accelerations; 
-    std_msgs::msg::Duration time_from_start; 
-}; 
- 
-}; };  // module msg::trajectory_msgs 
- 
-#endif  // __trajectory_msgs__msg__MultiDOFJointTrajectoryPoint__idl 
+
+#ifndef __trajectory_msgs__msg__MultiDOFJointTrajectoryPoint__idl
+#define __trajectory_msgs__msg__MultiDOFJointTrajectoryPoint__idl
+
+#include "builtin_interfaces/msg/Duration.idl"
+#include "geometry_msgs/msg/Transform.idl"
+#include "geometry_msgs/msg/Twist.idl"
+
+module trajectory_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct MultiDOFJointTrajectoryPoint_ {
+        sequence<geometry_msgs::msg::dds_::Transform_> transforms;
+        sequence<geometry_msgs::msg::dds_::Twist_> velocities;
+        sequence<geometry_msgs::msg::dds_::Twist_> accelerations;
+        builtin_interfaces::msg::dds_::Duration_ time_from_start;
+      };
+    };
+  };
+};
+
+
+#endif // __trajectory_msgs__msg__MultiDOFJointTrajectoryPoint__idl

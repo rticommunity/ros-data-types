@@ -13,21 +13,22 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __geometry_msgs__msg__PoseWithCovariance__idl 
-#define __geometry_msgs__msg__PoseWithCovariance__idl 
- 
-#include "Pose.idl" 
- 
-module geometry_msgs { module msg { 
- 
-typedef double geometry_msgs__PoseWithCovariance__double_array_36[36]; 
- 
-struct PoseWithCovariance { 
-    geometry_msgs::msg::Pose pose; 
-    geometry_msgs__PoseWithCovariance__double_array_36 covariance; 
-}; 
- 
-}; };  // module msg::geometry_msgs 
- 
-#endif  // __geometry_msgs__msg__PoseWithCovariance__idl 
+
+#ifndef __geometry_msgs__msg__PoseWithCovariance__idl
+#define __geometry_msgs__msg__PoseWithCovariance__idl
+
+#include "geometry_msgs/msg/Pose.idl"
+
+module geometry_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct PoseWithCovariance_ {
+        geometry_msgs::msg::dds_::Pose_ pose;
+        double covariance[36];
+      };
+    };
+  };
+};
+
+
+#endif // __geometry_msgs__msg__PoseWithCovariance__idl

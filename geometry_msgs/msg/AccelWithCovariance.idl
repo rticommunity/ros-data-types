@@ -13,21 +13,22 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __geometry_msgs__msg__AccelWithCovariance__idl 
-#define __geometry_msgs__msg__AccelWithCovariance__idl 
- 
-#include "Accel.idl" 
- 
-module geometry_msgs { module msg { 
- 
-typedef double geometry_msgs__AccelWithCovariance__double_array_36[36]; 
- 
-struct AccelWithCovariance { 
-    geometry_msgs::msg::Accel accel; 
-    geometry_msgs__AccelWithCovariance__double_array_36 covariance; 
-}; 
- 
-}; };  // module msg::geometry_msgs 
- 
-#endif  // __geometry_msgs__msg__AccelWithCovariance__idl 
+
+#ifndef __geometry_msgs__msg__AccelWithCovariance__idl
+#define __geometry_msgs__msg__AccelWithCovariance__idl
+
+#include "geometry_msgs/msg/Accel.idl"
+
+module geometry_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct AccelWithCovariance_ {
+        geometry_msgs::msg::dds_::Accel_ accel;
+        double covariance[36];
+      };
+    };
+  };
+};
+
+
+#endif // __geometry_msgs__msg__AccelWithCovariance__idl

@@ -14,20 +14,25 @@
  * limitations under the License. 
  */ 
  
-#include "std_msgs/msg/Time.idl" 
-#include "std_msgs/msg/Duration.idl" 
+#ifndef __gazebo_msgs__srv__ApplyBodyWrench_Request__idl
+#define __gazebo_msgs__srv__ApplyBodyWrench_Request__idl
+
+#include "builtin_interfaces/msg/Time.idl" 
+#include "builtin_interfaces/msg/Duration.idl" 
 #include "geometry_msgs/msg/Wrench.idl" 
 #include "geometry_msgs/msg/Point.idl" 
  
-module gazebo_msgs { module srv { 
+module gazebo_msgs { module srv { module dds_ {
  
-struct ApplyBodyWrench_Request { 
+struct ApplyBodyWrench_Request_ { 
     string body_name; 
     string reference_frame; 
-    geometry_msgs::msg::Point reference_point; 
-    geometry_msgs::msg::Wrench wrench; 
-    std_msgs::msg::Time start_time; 
-    std_msgs::msg::Duration duration; 
+    geometry_msgs::msg::dds_::Point_ reference_point; 
+    geometry_msgs::msg::dds_::Wrench_ wrench; 
+    builtin_interfaces::msg::dds_::Time_ start_time; 
+    builtin_interfaces::msg::dds_::Duration_ duration; 
 }; 
  
-}; };  // module srv::gazebo_msgs 
+}; }; };  // module dds_::srv::gazebo_msgs 
+
+#endif  // __gazebo_msgs__srv__ApplyBodyWrench_Request__idl

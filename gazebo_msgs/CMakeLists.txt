@@ -68,25 +68,25 @@ connextdds_generate_ros_dds_types(
     ${extra_params}
 )
 
-add_library( gazebolibrary OBJECT
+add_library( gazebomsgslibrary OBJECT
     ${generated_file_list}
 )
 
-set_property(TARGET gazebolibrary PROPERTY 
+set_property(TARGET gazebomsgslibrary PROPERTY 
     POSITION_INDEPENDENT_CODE ON
 )
 
-target_include_directories(gazebolibrary PRIVATE 
+target_include_directories(gazebomsgslibrary PRIVATE 
     ${CONNEXTDDS_INCLUDE_DIRS}
     ${top_level_binary_dir}
 )
 
-target_compile_definitions(gazebolibrary PRIVATE 
+target_compile_definitions(gazebomsgslibrary PRIVATE 
     ${CONNEXTDDS_COMPILE_DEFINITIONS}
 )
 
-add_dependencies(gazebolibrary 
-    stdlibrary 
-    geometrylibrary 
-    trajectorylibrary
+add_dependencies(gazebomsgslibrary 
+    stdmsgslibrary 
+    geometrymsgslibrary 
+    trajectorymsgslibrary
 )

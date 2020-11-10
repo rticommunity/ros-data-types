@@ -13,16 +13,19 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __std_msgs__msg__Int16__idl 
-#define __std_msgs__msg__Int16__idl 
- 
-module std_msgs { module msg { 
- 
-struct Int16 { 
-    short data; 
-}; 
- 
-}; };  // module msg::std_msgs 
- 
-#endif  // __std_msgs__msg__Int16__idl 
+
+#ifndef __std_msgs__msg__Int16__idl
+#define __std_msgs__msg__Int16__idl
+
+module std_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct Int16_ {
+        int16 data;
+      };
+    };
+  };
+};
+
+
+#endif // __std_msgs__msg__Int16__idl
