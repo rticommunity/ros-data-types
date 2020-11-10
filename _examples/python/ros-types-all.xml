@@ -1,0 +1,1462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+(c) 2019 Copyright, Real-Time Innovations, Inc.  All rights reserved.
+RTI grants Licensee a license to use, modify, compile, and create derivative
+works of the Software.  Licensee has the right to distribute object form only
+for use with RTI products.  The Software is provided "as is", with no warranty
+of any type, including any warranty for fitness for any purpose. RTI is under
+no obligation to maintain or support the Software.  RTI shall not be liable for
+any incidental or consequential damages arising out of the use or inability to
+use the software.
+-->
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://community.rti.com/schema/6.0.0/rti_dds_profiles.xsd" version="6.0.0">
+
+  <!-- Qos Library -->
+  <qos_library name="QosLibrary">
+    <qos_profile name="DefaultProfile" base_name="BuiltinQosLibExp::Generic.StrictReliable" is_default_qos="true">
+      <participant_qos>
+        <transport_builtin>
+          <mask>UDPV4 | SHMEM</mask>
+        </transport_builtin>
+      </participant_qos>
+    </qos_profile>
+  </qos_library>
+
+  <!-- types -->
+  <types>
+    <module name="std_msgs">
+      <module name="msg">
+        <struct name= "MultiArrayDimension">
+          <member name="label" stringMaxLength="255" type="string"/>
+          <member name="size" type="uint32"/>
+          <member name="stride" type="uint32"/>
+        </struct>
+        <struct name= "MultiArrayLayout">
+          <member name="dim" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::MultiArrayDimension"/>
+          <member name="data_offset" type="uint32"/>
+        </struct>
+        <struct name= "Time" nested="true">
+          <member name="sec" type="int32"/>
+          <member name="nanosec" type="uint32"/>
+        </struct>
+        <struct name= "Header">
+          <member name="stamp" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Time"/>
+          <member name="frame_id" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "Bool">
+          <member name="data" type="boolean"/>
+        </struct>
+        <struct name= "Byte">
+          <member name="data" type="byte"/>
+        </struct>
+        <struct name= "ByteMultiArray">
+          <member name="layout" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::MultiArrayLayout"/>
+          <member name="data" sequenceMaxLength="100" type="byte"/>
+        </struct>
+        <struct name= "Char">
+          <member name="data" type="char8"/>
+        </struct>
+        <struct name= "Float32">
+          <member name="data" type="float32"/>
+        </struct>
+        <struct name= "ColorRGBA">
+          <member name="r" type="float32"/>
+          <member name="g" type="float32"/>
+          <member name="b" type="float32"/>
+          <member name="a" type="float32"/>
+        </struct>
+        <struct name= "Duration">
+          <member name="sec" type="int32"/>
+          <member name="nanosec" type="uint32"/>
+        </struct>
+        <struct name= "Float32MultiArray">
+          <member name="layout" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::MultiArrayLayout"/>
+          <member name="data" sequenceMaxLength="100" type="float32"/>
+        </struct>
+        <struct name= "Float64">
+          <member name="data" type="float64"/>
+        </struct>
+        <struct name= "Float64MultiArray">
+          <member name="layout" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::MultiArrayLayout"/>
+          <member name="data" sequenceMaxLength="100" type="float64"/>
+        </struct>
+        <struct name= "Int16">
+          <member name="data" type="int16"/>
+        </struct>
+        <struct name= "Int16MultiArray">
+          <member name="layout" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::MultiArrayLayout"/>
+          <member name="data" sequenceMaxLength="100" type="int16"/>
+        </struct>
+        <struct name= "Int32">
+          <member name="data" type="int32"/>
+        </struct>
+        <struct name= "Int32MultiArray">
+          <member name="layout" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::MultiArrayLayout"/>
+          <member name="data" sequenceMaxLength="100" type="int32"/>
+        </struct>
+        <struct name= "Int64">
+          <member name="data" type="int64"/>
+        </struct>
+        <struct name= "Int64MultiArray">
+          <member name="layout" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::MultiArrayLayout"/>
+          <member name="data" sequenceMaxLength="100" type="int64"/>
+        </struct>
+        <struct name= "Int8">
+          <member name="data" type="byte"/>
+        </struct>
+        <struct name= "Int8MultiArray">
+          <member name="layout" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::MultiArrayLayout"/>
+          <member name="data" sequenceMaxLength="100" type="byte"/>
+        </struct>
+        <struct name= "String">
+          <member name="data" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "UInt16">
+          <member name="data" type="uint16"/>
+        </struct>
+        <struct name= "UInt16MultiArray">
+          <member name="layout" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::MultiArrayLayout"/>
+          <member name="data" sequenceMaxLength="100" type="uint16"/>
+        </struct>
+        <struct name= "UInt32">
+          <member name="data" type="uint32"/>
+        </struct>
+        <struct name= "UInt32MultiArray">
+          <member name="layout" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::MultiArrayLayout"/>
+          <member name="data" sequenceMaxLength="100" type="uint32"/>
+        </struct>
+        <struct name= "UInt64">
+          <member name="data" type="uint64"/>
+        </struct>
+        <struct name= "UInt64MultiArray">
+          <member name="layout" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::MultiArrayLayout"/>
+          <member name="data" sequenceMaxLength="100" type="uint64"/>
+        </struct>
+        <struct name= "UInt8">
+          <member name="data" type="byte"/>
+        </struct>
+        <struct name= "UInt8MultiArray">
+          <member name="layout" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::MultiArrayLayout"/>
+          <member name="data" sequenceMaxLength="100" type="byte"/>
+        </struct>
+      </module>
+    </module>
+    <!-- group divider ################################################### -->
+    <module name="geometry_msgs">
+      <module name="msg">
+        <struct name= "Vector3">
+          <member name="x" type="float64"/>
+          <member name="y" type="float64"/>
+          <member name="z" type="float64"/>
+        </struct>
+        <struct name= "Accel">
+          <member name="linear" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Vector3"/>
+          <member name="angular" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Vector3"/>
+        </struct>
+        <struct name= "AccelStamped">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="accel" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Accel"/>
+        </struct>
+        <typedef name="geometry_msgs__AccelWithCovariance__double_array_36" type="float64" arrayDimensions="36"/>
+        <struct name= "AccelWithCovariance">
+          <member name="accel" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Accel"/>
+          <member name="covariance" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::geometry_msgs__AccelWithCovariance__double_array_36"/>
+        </struct>
+        <struct name= "AccelWithCovarianceStamped">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="accel" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::AccelWithCovariance"/>
+        </struct>
+        <struct name= "Inertia">
+          <member name="m" type="float64"/>
+          <member name="com" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Vector3"/>
+          <member name="ixx" type="float64"/>
+          <member name="ixy" type="float64"/>
+          <member name="ixz" type="float64"/>
+          <member name="iyy" type="float64"/>
+          <member name="iyz" type="float64"/>
+          <member name="izz" type="float64"/>
+        </struct>
+        <struct name= "InertiaStamped">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="inertia" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Inertia"/>
+        </struct>
+        <struct name= "Point">
+          <member name="x" type="float64"/>
+          <member name="y" type="float64"/>
+          <member name="z" type="float64"/>
+        </struct>
+        <struct name= "Point32">
+          <member name="x" type="float32"/>
+          <member name="y" type="float32"/>
+          <member name="z" type="float32"/>
+        </struct>
+        <struct name= "PointStamped">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="point" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Point"/>
+        </struct>
+        <struct name= "Polygon">
+          <member name="points" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Point32"/>
+        </struct>
+        <struct name= "PolygonStamped">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="polygon" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Polygon"/>
+        </struct>
+        <struct name= "Quaternion">
+          <member name="x" type="float64"/>
+          <member name="y" type="float64"/>
+          <member name="z" type="float64"/>
+          <member name="w" type="float64"/>
+        </struct>
+        <struct name= "Pose">
+          <member name="position" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Point"/>
+          <member name="orientation" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Quaternion"/>
+        </struct>
+        <struct name= "Pose2D">
+          <member name="x" type="float64"/>
+          <member name="y" type="float64"/>
+          <member name="theta" type="float64"/>
+        </struct>
+        <struct name= "PoseArray">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="poses" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Pose"/>
+        </struct>
+        <struct name= "PoseStamped">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="pose" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Pose"/>
+        </struct>
+        <typedef name="geometry_msgs__PoseWithCovariance__double_array_36" type="float64" arrayDimensions="36"/>
+        <struct name= "PoseWithCovariance">
+          <member name="pose" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Pose"/>
+          <member name="covariance" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::geometry_msgs__PoseWithCovariance__double_array_36"/>
+        </struct>
+        <struct name= "PoseWithCovarianceStamped">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="pose" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::PoseWithCovariance"/>
+        </struct>
+        <struct name= "QuaternionStamped">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="quaternion" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Quaternion"/>
+        </struct>
+        <struct name= "Transform">
+          <member name="translation" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Vector3"/>
+          <member name="rotation" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Quaternion"/>
+        </struct>
+        <struct name= "TransformStamped">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="child_frame_id" stringMaxLength="255" type="string"/>
+          <member name="transform" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Transform"/>
+        </struct>
+        <struct name= "Twist">
+          <member name="linear" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Vector3"/>
+          <member name="angular" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Vector3"/>
+        </struct>
+        <struct name= "TwistStamped">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="twist" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Twist"/>
+        </struct>
+        <typedef name="geometry_msgs__TwistWithCovariance__double_array_36" type="float64" arrayDimensions="36"/>
+        <struct name= "TwistWithCovariance">
+          <member name="twist" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Twist"/>
+          <member name="covariance" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::geometry_msgs__TwistWithCovariance__double_array_36"/>
+        </struct>
+        <struct name= "TwistWithCovarianceStamped">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="twist" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::TwistWithCovariance"/>
+        </struct>
+        <struct name= "Vector3Stamped">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="vector" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Vector3"/>
+        </struct>
+        <struct name= "Wrench">
+          <member name="force" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Vector3"/>
+          <member name="torque" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Vector3"/>
+        </struct>
+        <struct name= "WrenchStamped">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="wrench" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Wrench"/>
+        </struct>
+      </module>
+    </module>
+    <!-- group divider ################################################### -->
+    <module name="diagnostic_msgs">
+      <module name="msg">
+        <struct name= "KeyValue">
+          <member name="key" stringMaxLength="255" type="string"/>
+          <member name="value" stringMaxLength="255" type="string"/>
+        </struct>
+        <const name="DiagnosticStatus__OK" type="byte" value="0"/>
+        <const name="DiagnosticStatus__WARN" type="byte" value="1"/>
+        <const name="DiagnosticStatus__ERROR" type="byte" value="2"/>
+        <const name="DiagnosticStatus__STALE" type="byte" value="3"/>
+        <struct name= "DiagnosticStatus">
+          <member name="level" type="byte"/>
+          <member name="name" stringMaxLength="255" type="string"/>
+          <member name="message" stringMaxLength="255" type="string"/>
+          <member name="hardware_id" stringMaxLength="255" type="string"/>
+          <member name="values" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "diagnostic_msgs::msg::KeyValue"/>
+        </struct>
+        <struct name= "DiagnosticArray">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="status" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "diagnostic_msgs::msg::DiagnosticStatus"/>
+        </struct>
+      </module>
+      <module name="srv">
+        <struct name= "AddDiagnostics_Request">
+          <member name="load_namespace" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "AddDiagnostics_Response">
+          <member name="success" type="boolean"/>
+          <member name="message" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "SelfTest_Request">
+          <member name="_dummy" type="boolean"/>
+        </struct>
+        <struct name= "SelfTest_Response">
+          <member name="id" stringMaxLength="255" type="string"/>
+          <member name="passed" type="byte"/>
+          <member name="status" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "diagnostic_msgs::msg::DiagnosticStatus"/>
+        </struct>
+      </module>
+    </module>
+    <!-- group divider ################################################### -->
+    <module name="gazebo_msgs">
+      <module name="msg">
+        <struct name= "ContactState">
+          <member name="info" stringMaxLength="255" type="string"/>
+          <member name="collision1_name" stringMaxLength="255" type="string"/>
+          <member name="collision2_name" stringMaxLength="255" type="string"/>
+          <member name="wrenches" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Wrench"/>
+          <member name="total_wrench" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Wrench"/>
+          <member name="contact_positions" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Vector3"/>
+          <member name="contact_normals" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Vector3"/>
+          <member name="depths" sequenceMaxLength="100" type="float64"/>
+        </struct>
+        <struct name= "ContactsState">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="states" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "gazebo_msgs::msg::ContactState"/>
+        </struct>
+        <struct name= "LinkState">
+          <member name="link_name" stringMaxLength="255" type="string"/>
+          <member name="pose" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Pose"/>
+          <member name="twist" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Twist"/>
+          <member name="reference_frame" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "LinkStates">
+          <member name="name" sequenceMaxLength="100" stringMaxLength="255" type="string"/>
+          <member name="pose" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Pose"/>
+          <member name="twist" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Twist"/>
+        </struct>
+        <struct name= "ModelState">
+          <member name="model_name" stringMaxLength="255" type="string"/>
+          <member name="pose" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Pose"/>
+          <member name="twist" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Twist"/>
+          <member name="reference_frame" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "ModelStates">
+          <member name="name" sequenceMaxLength="100" stringMaxLength="255" type="string"/>
+          <member name="pose" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Pose"/>
+          <member name="twist" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Twist"/>
+        </struct>
+        <struct name= "ODEPhysics">
+          <member name="auto_disable_bodies" type="boolean"/>
+          <member name="sor_pgs_precon_iters" type="uint32"/>
+          <member name="sor_pgs_iters" type="uint32"/>
+          <member name="psor_pgs_w" type="float64"/>
+          <member name="sor_pgs_rms_error_tol" type="float64"/>
+          <member name="contact_surface_layer" type="float64"/>
+          <member name="contact_max_correcting_vel" type="float64"/>
+          <member name="cfm" type="float64"/>
+          <member name="erp" type="float64"/>
+          <member name="max_contacts" type="uint32"/>
+        </struct>
+        <struct name= "WorldState">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="name" sequenceMaxLength="100" stringMaxLength="255" type="string"/>
+          <member name="pose" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Pose"/>
+          <member name="twist" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Twist"/>
+          <member name="wrench" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Wrench"/>
+        </struct>
+        <struct name= "ODEJointProperties">
+          <member name="damping" sequenceMaxLength="100" type="float64"/>
+          <member name="hiStop" sequenceMaxLength="100" type="float64"/>
+          <member name="loStop" sequenceMaxLength="100" type="float64"/>
+          <member name="erp" sequenceMaxLength="100" type="float64"/>
+          <member name="cfm" sequenceMaxLength="100" type="float64"/>
+          <member name="stop_erp" sequenceMaxLength="100" type="float64"/>
+          <member name="stop_cfm" sequenceMaxLength="100" type="float64"/>
+          <member name="fudge_factor" sequenceMaxLength="100" type="float64"/>
+          <member name="fmax" sequenceMaxLength="100" type="float64"/>
+          <member name="vel" sequenceMaxLength="100" type="float64"/>
+        </struct>
+      </module>
+      <module name="srv">
+        <struct name= "ApplyBodyWrench_Request">
+          <member name="body_name" stringMaxLength="255" type="string"/>
+          <member name="reference_frame" stringMaxLength="255" type="string"/>
+          <member name="reference_point" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Point"/>
+          <member name="wrench" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Wrench"/>
+          <member name="start_time" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Time"/>
+          <member name="duration" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Duration"/>
+        </struct>
+        <struct name= "ApplyJointEffort_Request">
+          <member name="joint_name" stringMaxLength="255" type="string"/>
+          <member name="effort" type="float64"/>
+          <member name="start_time" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Time"/>
+          <member name="duration" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Duration"/>
+        </struct>
+        <struct name= "BodyRequest">
+          <member name="body_name" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "Default_Response">
+          <member name="success" type="boolean"/>
+          <member name="status_message" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "DeleteLight_Request">
+          <member name="light_name" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "DeleteModel_Request">
+          <member name="model_name" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "GetJointProperties_Request">
+          <member name="joint_name" stringMaxLength="255" type="string"/>
+        </struct>
+        <enum name="Type">
+          <enumerator name="REVOLUTE"/>
+          <enumerator name="CONTINUOUS"/>
+          <enumerator name="PRISMATIC"/>
+          <enumerator name="FIXED"/>
+          <enumerator name="BALL"/>
+          <enumerator name="UNIVERSAL"/>
+        </enum>
+        <struct name= "GetJointProperties_Response">
+          <member name="damping" sequenceMaxLength="100" type="float64"/>
+          <member name="position" sequenceMaxLength="100" type="float64"/>
+          <member name="rate" sequenceMaxLength="100" type="float64"/>
+          <member name="success" type="boolean"/>
+          <member name="type" type="nonBasic"  nonBasicTypeName= "gazebo_msgs::srv::Type"/>
+          <member name="status_message" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "GetLightProperties_Request">
+          <member name="light_name" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "GetLightProperties_Response">
+          <member name="diffuse" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::ColorRGBA"/>
+          <member name="attenuation_constant" type="float64"/>
+          <member name="attenuation_linear" type="float64"/>
+          <member name="attenuation_quadratic" type="float64"/>
+          <member name="success" type="boolean"/>
+          <member name="status_message" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "GetLinkProperties_Request">
+          <member name="link_name" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "GetLinkProperties_Response">
+          <member name="com" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Pose"/>
+          <member name="gravity_mode" type="boolean"/>
+          <member name="mass" type="float64"/>
+          <member name="ixx" type="float64"/>
+          <member name="ixy" type="float64"/>
+          <member name="ixz" type="float64"/>
+          <member name="iyy" type="float64"/>
+          <member name="iyz" type="float64"/>
+          <member name="izz" type="float64"/>
+          <member name="success" type="boolean"/>
+          <member name="status_message" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "GetLinkState_Request">
+          <member name="link_name" stringMaxLength="255" type="string"/>
+          <member name="reference_frame" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "GetLinkState_Response">
+          <member name="link_state" type="nonBasic"  nonBasicTypeName= "gazebo_msgs::msg::LinkState"/>
+          <member name="success" type="boolean"/>
+          <member name="status_message" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "GetModelProperties_Request">
+          <member name="model_name" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "GetModelProperties_Response">
+          <member name="parent_model_name" stringMaxLength="255" type="string"/>
+          <member name="canonical_body_name" stringMaxLength="255" type="string"/>
+          <member name="body_names" sequenceMaxLength="100" stringMaxLength="255" type="string"/>
+          <member name="geom_names" sequenceMaxLength="100" stringMaxLength="255" type="string"/>
+          <member name="joint_names" sequenceMaxLength="100" stringMaxLength="255" type="string"/>
+          <member name="child_model_names" sequenceMaxLength="100" stringMaxLength="255" type="string"/>
+          <member name="is_static" type="boolean"/>
+          <member name="success" type="boolean"/>
+          <member name="status_message" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "GetModelState_Request">
+          <member name="model_name" stringMaxLength="255" type="string"/>
+          <member name="relative_entity_name" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "GetModelState_Response">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="pose" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Pose"/>
+          <member name="twist" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Twist"/>
+          <member name="success" type="boolean"/>
+          <member name="status_message" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "GetPhysicsProperties_Response">
+          <member name="time_step" type="float64"/>
+          <member name="pause" type="boolean"/>
+          <member name="max_update_rate" type="float64"/>
+          <member name="gravity" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Vector3"/>
+          <member name="ode_config" type="nonBasic"  nonBasicTypeName= "gazebo_msgs::msg::ODEPhysics"/>
+          <member name="success" type="boolean"/>
+          <member name="status_message" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "GetWorldProperties_Response">
+          <member name="sim_time" type="float64"/>
+          <member name="model_names" sequenceMaxLength="100" stringMaxLength="255" type="string"/>
+          <member name="rendering_enabled" type="boolean"/>
+          <member name="success" type="boolean"/>
+          <member name="status_message" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "JointRequest">
+          <member name="joint_name" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "SetJointTrajectory_Request">
+          <member name="model_name" stringMaxLength="255" type="string"/>
+          <member name="joint_trajectory" type="nonBasic"  nonBasicTypeName= "trajectory_msgs::msg::JointTrajectory"/>
+          <member name="model_pose" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Pose"/>
+          <member name="set_model_pose" type="boolean"/>
+          <member name="disable_physics_updates" type="boolean"/>
+        </struct>
+        <struct name= "SetJointProperties_Request">
+          <member name="joint_name" stringMaxLength="255" type="string"/>
+          <member name="ode_joint_config" type="nonBasic"  nonBasicTypeName= "gazebo_msgs::msg::ODEJointProperties"/>
+        </struct>
+        <struct name= "SetLightProperties_Request">
+          <member name="light_name" stringMaxLength="255" type="string"/>
+          <member name="diffuse" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::ColorRGBA"/>
+          <member name="attenuation_constant" type="float64"/>
+          <member name="attenuation_linear" type="float64"/>
+          <member name="attenuation_quadratic" type="float64"/>
+        </struct>
+        <struct name= "SetLinkProperties_Request">
+          <member name="link_name" stringMaxLength="255" type="string"/>
+          <member name="com" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Pose"/>
+          <member name="gravity_mode" type="boolean"/>
+          <member name="mass" type="float64"/>
+          <member name="ixx" type="float64"/>
+          <member name="ixy" type="float64"/>
+          <member name="ixz" type="float64"/>
+          <member name="iyy" type="float64"/>
+          <member name="iyz" type="float64"/>
+          <member name="izz" type="float64"/>
+        </struct>
+        <struct name= "SetLinkState_Request">
+          <member name="link_state" type="nonBasic"  nonBasicTypeName= "gazebo_msgs::msg::LinkState"/>
+        </struct>
+        <struct name= "SetModelConfiguration_Request">
+          <member name="model_name" stringMaxLength="255" type="string"/>
+          <member name="urdf_param_name" stringMaxLength="255" type="string"/>
+          <member name="joint_names" sequenceMaxLength="100" stringMaxLength="255" type="string"/>
+          <member name="joint_positions" sequenceMaxLength="100" type="float64"/>
+        </struct>
+        <struct name= "SetModelState_Request">
+          <member name="model_state" type="nonBasic"  nonBasicTypeName= "gazebo_msgs::msg::ModelState"/>
+        </struct>
+        <struct name= "SetPhysicsProperties_Request">
+          <member name="time_step" type="float64"/>
+          <member name="max_update_rate" type="float64"/>
+          <member name="gravity" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Vector3"/>
+          <member name="ode_config" type="nonBasic"  nonBasicTypeName= "gazebo_msgs::msg::ODEPhysics"/>
+        </struct>
+        <struct name= "SpawnModel_Request">
+          <member name="model_name" stringMaxLength="255" type="string"/>
+          <member name="model_xml" stringMaxLength="255" type="string"/>
+          <member name="robot_namespace" stringMaxLength="255" type="string"/>
+          <member name="initial_pose" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Pose"/>
+          <member name="reference_frame" stringMaxLength="255" type="string"/>
+        </struct>
+      </module>
+    </module>
+    <!-- group divider ################################################### -->
+    <module name="sensor_msgs">
+      <module name="msg">
+        <!-- debug 2019Oct22 [neil] -->
+        <module name="dds_">
+          <struct name= "PointField_">
+            <member name="name" stringMaxLength="255" type="string"/>
+            <member name="offset" type="uint32"/>
+            <member name="datatype" type="byte"/>
+            <member name="count" type="uint32"/>
+          </struct>
+          <struct name= "PointCloud2_">
+            <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+            <member name="height" type="uint32"/>
+            <member name="width" type="uint32"/>
+            <member name="fields" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "sensor_msgs::msg::dds_::PointField_"/>
+            <member name="is_bigendian" type="boolean"/>
+            <member name="point_step" type="uint32"/>
+            <member name="row_step" type="uint32"/>
+            <member name="data" sequenceMaxLength="32000" type="byte"/>
+            <member name="is_dense" type="boolean"/>
+          </struct>  
+        </module>
+        
+        <const name="BatteryState__POWER_SUPPLY_STATUS_UNKNOWN" type="byte" value="0"/>
+        <const name="BatteryState__POWER_SUPPLY_STATUS_CHARGING" type="byte" value="1"/>
+        <const name="BatteryState__POWER_SUPPLY_STATUS_DISCHARGING" type="byte" value="2"/>
+        <const name="BatteryState__POWER_SUPPLY_STATUS_NOT_CHARGING" type="byte" value="3"/>
+        <const name="BatteryState__POWER_SUPPLY_STATUS_FULL" type="byte" value="4"/>
+        <const name="BatteryState__POWER_SUPPLY_HEALTH_UNKNOWN" type="byte" value="0"/>
+        <const name="BatteryState__POWER_SUPPLY_HEALTH_GOOD" type="byte" value="1"/>
+        <const name="BatteryState__POWER_SUPPLY_HEALTH_OVERHEAT" type="byte" value="2"/>
+        <const name="BatteryState__POWER_SUPPLY_HEALTH_DEAD" type="byte" value="3"/>
+        <const name="BatteryState__POWER_SUPPLY_HEALTH_OVERVOLTAGE" type="byte" value="4"/>
+        <const name="BatteryState__POWER_SUPPLY_HEALTH_UNSPEC_FAILURE" type="byte" value="5"/>
+        <const name="BatteryState__POWER_SUPPLY_HEALTH_COLD" type="byte" value="6"/>
+        <const name="BatteryState__POWER_SUPPLY_HEALTH_WATCHDOG_TIMER_EXPIRE" type="byte" value="7"/>
+        <const name="BatteryState__POWER_SUPPLY_HEALTH_SAFETY_TIMER_EXPIRE" type="byte" value="8"/>
+        <const name="BatteryState__POWER_SUPPLY_TECHNOLOGY_UNKNOWN" type="byte" value="0"/>
+        <const name="BatteryState__POWER_SUPPLY_TECHNOLOGY_NIMH" type="byte" value="1"/>
+        <const name="BatteryState__POWER_SUPPLY_TECHNOLOGY_LION" type="byte" value="2"/>
+        <const name="BatteryState__POWER_SUPPLY_TECHNOLOGY_LIPO" type="byte" value="3"/>
+        <const name="BatteryState__POWER_SUPPLY_TECHNOLOGY_LIFE" type="byte" value="4"/>
+        <const name="BatteryState__POWER_SUPPLY_TECHNOLOGY_NICD" type="byte" value="5"/>
+        <const name="BatteryState__POWER_SUPPLY_TECHNOLOGY_LIMN" type="byte" value="6"/>
+        <struct name= "BatteryState">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="voltage" type="float32"/>
+          <member name="current" type="float32"/>
+          <member name="charge" type="float32"/>
+          <member name="capacity" type="float32"/>
+          <member name="design_capacity" type="float32"/>
+          <member name="percentage" type="float32"/>
+          <member name="power_supply_status" type="byte"/>
+          <member name="power_supply_health" type="byte"/>
+          <member name="power_supply_technology" type="byte"/>
+          <member name="present" type="boolean"/>
+          <member name="cell_voltage" sequenceMaxLength="100" type="float32"/>
+          <member name="location" stringMaxLength="255" type="string"/>
+          <member name="serial_number" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "RegionOfInterest">
+          <member name="x_offset" type="uint32"/>
+          <member name="y_offset" type="uint32"/>
+          <member name="height" type="uint32"/>
+          <member name="width" type="uint32"/>
+          <member name="do_rectify" type="boolean"/>
+        </struct>
+        <typedef name="sensor_msgs__CameraInfo__double_array_9" type="float64" arrayDimensions="9"/>
+        <typedef name="sensor_msgs__CameraInfo__double_array_12" type="float64" arrayDimensions="12"/>
+        <struct name= "CameraInfo">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="height" type="uint32"/>
+          <member name="width" type="uint32"/>
+          <member name="distortion_model" stringMaxLength="255" type="string"/>
+          <member name="d" sequenceMaxLength="100" type="float64"/>
+          <member name="k" type="nonBasic"  nonBasicTypeName= "sensor_msgs::msg::sensor_msgs__CameraInfo__double_array_9"/>
+          <member name="r" type="nonBasic"  nonBasicTypeName= "sensor_msgs::msg::sensor_msgs__CameraInfo__double_array_9"/>
+          <member name="p" type="nonBasic"  nonBasicTypeName= "sensor_msgs::msg::sensor_msgs__CameraInfo__double_array_12"/>
+          <member name="binning_x" type="uint32"/>
+          <member name="binning_y" type="uint32"/>
+          <member name="roi" type="nonBasic"  nonBasicTypeName= "sensor_msgs::msg::RegionOfInterest"/>
+        </struct>
+        <struct name= "ChannelFloat32">
+          <member name="name" stringMaxLength="255" type="string"/>
+          <member name="values" sequenceMaxLength="100" type="float32"/>
+        </struct>
+        <struct name= "CompressedImage">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="format" stringMaxLength="255" type="string"/>
+          <member name="data" sequenceMaxLength="100" type="byte"/>
+        </struct>
+        <struct name= "FluidPressure">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="fluid_pressure" type="float64"/>
+          <member name="variance" type="float64"/>
+        </struct>
+        <struct name= "Illuminance">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="illuminance" type="float64"/>
+          <member name="variance" type="float64"/>
+        </struct>
+        <struct name= "Image">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="height" type="uint32"/>
+          <member name="width" type="uint32"/>
+          <member name="encoding" stringMaxLength="255" type="string"/>
+          <member name="is_bigendian" type="byte"/>
+          <member name="step" type="uint32"/>
+          <member name="data" sequenceMaxLength="100" type="byte"/>
+        </struct>
+        <typedef name="sensor_msgs__Imu__double_array_9" type="float64" arrayDimensions="9"/>
+        <struct name= "Imu">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="orientation" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Quaternion"/>
+          <member name="orientation_covariance" type="nonBasic"  nonBasicTypeName= "sensor_msgs::msg::sensor_msgs__Imu__double_array_9"/>
+          <member name="angular_velocity" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Vector3"/>
+          <member name="angular_velocity_covariance" type="nonBasic"  nonBasicTypeName= "sensor_msgs::msg::sensor_msgs__Imu__double_array_9"/>
+          <member name="linear_acceleration" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Vector3"/>
+          <member name="linear_acceleration_covariance" type="nonBasic"  nonBasicTypeName= "sensor_msgs::msg::sensor_msgs__Imu__double_array_9"/>
+        </struct>
+        <struct name= "JointState">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="name" sequenceMaxLength="100" stringMaxLength="255" type="string"/>
+          <member name="position" sequenceMaxLength="100" type="float64"/>
+          <member name="velocity" sequenceMaxLength="100" type="float64"/>
+          <member name="effort" sequenceMaxLength="100" type="float64"/>
+        </struct>
+        <struct name= "Joy">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="axes" sequenceMaxLength="100" type="float32"/>
+          <member name="buttons" sequenceMaxLength="100" type="int32"/>
+        </struct>
+        <const name="JoyFeedback__TYPE_LED" type="byte" value="0"/>
+        <const name="JoyFeedback__TYPE_RUMBLE" type="byte" value="1"/>
+        <const name="JoyFeedback__TYPE_BUZZER" type="byte" value="2"/>
+        <struct name= "JoyFeedback">
+          <member name="type" type="byte"/>
+          <member name="id" type="byte"/>
+          <member name="intensity" type="float32"/>
+        </struct>
+        <struct name= "JoyFeedbackArray">
+          <member name="array" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "sensor_msgs::msg::JoyFeedback"/>
+        </struct>
+        <struct name= "LaserEcho">
+          <member name="echoes" sequenceMaxLength="100" type="float32"/>
+        </struct>
+        <struct name= "LaserScan">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="angle_min" type="float32"/>
+          <member name="angle_max" type="float32"/>
+          <member name="angle_increment" type="float32"/>
+          <member name="time_increment" type="float32"/>
+          <member name="scan_time" type="float32"/>
+          <member name="range_min" type="float32"/>
+          <member name="range_max" type="float32"/>
+          <member name="ranges" sequenceMaxLength="100" type="float32"/>
+          <member name="intensities" sequenceMaxLength="100" type="float32"/>
+        </struct>
+        <typedef name="sensor_msgs__MagneticField__double_array_9" type="float64" arrayDimensions="9"/>
+        <struct name= "MagneticField">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="magnetic_field" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Vector3"/>
+          <member name="magnetic_field_covariance" type="nonBasic"  nonBasicTypeName= "sensor_msgs::msg::sensor_msgs__MagneticField__double_array_9"/>
+        </struct>
+        <struct name= "MultiDOFJointState">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="joint_names" sequenceMaxLength="100" stringMaxLength="255" type="string"/>
+          <member name="transforms" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Transform"/>
+          <member name="twist" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Twist"/>
+          <member name="wrench" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Wrench"/>
+        </struct>
+        <struct name= "MultiEchoLaserScan">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="angle_min" type="float32"/>
+          <member name="angle_max" type="float32"/>
+          <member name="angle_increment" type="float32"/>
+          <member name="time_increment" type="float32"/>
+          <member name="scan_time" type="float32"/>
+          <member name="range_min" type="float32"/>
+          <member name="range_max" type="float32"/>
+          <member name="ranges" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "sensor_msgs::msg::LaserEcho"/>
+          <member name="intensities" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "sensor_msgs::msg::LaserEcho"/>
+        </struct>
+        <const name="NavSatStatus__STATUS_NO_FIX" type="byte" value="255"/>
+        <const name="NavSatStatus__STATUS_FIX" type="byte" value="0"/>
+        <const name="NavSatStatus__STATUS_SBAS_FIX" type="byte" value="1"/>
+        <const name="NavSatStatus__STATUS_GBAS_FIX" type="byte" value="2"/>
+        <const name="NavSatStatus__SERVICE_GPS" type="uint16" value="1"/>
+        <const name="NavSatStatus__SERVICE_GLONASS" type="uint16" value="2"/>
+        <const name="NavSatStatus__SERVICE_COMPASS" type="uint16" value="4"/>
+        <const name="NavSatStatus__SERVICE_GALILEO" type="uint16" value="8"/>
+        <struct name= "NavSatStatus">
+          <member name="status" type="byte"/>
+          <member name="service" type="uint16"/>
+        </struct>
+        <const name="NavSatFix__COVARIANCE_TYPE_UNKNOWN" type="byte" value="0"/>
+        <const name="NavSatFix__COVARIANCE_TYPE_APPROXIMATED" type="byte" value="1"/>
+        <const name="NavSatFix__COVARIANCE_TYPE_DIAGONAL_KNOWN" type="byte" value="2"/>
+        <const name="NavSatFix__COVARIANCE_TYPE_KNOWN" type="byte" value="3"/>
+        <typedef name="sensor_msgs__NavSatFix__double_array_9" type="float64" arrayDimensions="9"/>
+        <struct name= "NavSatFix">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="status" type="nonBasic"  nonBasicTypeName= "sensor_msgs::msg::NavSatStatus"/>
+          <member name="latitude" type="float64"/>
+          <member name="longitude" type="float64"/>
+          <member name="altitude" type="float64"/>
+          <member name="position_covariance" type="nonBasic"  nonBasicTypeName= "sensor_msgs::msg::sensor_msgs__NavSatFix__double_array_9"/>
+          <member name="position_covariance_type" type="byte"/>
+        </struct>
+        <const name="PointField__INT8" type="byte" value="1"/>
+        <const name="PointField__UINT8" type="byte" value="2"/>
+        <const name="PointField__INT16" type="byte" value="3"/>
+        <const name="PointField__UINT16" type="byte" value="4"/>
+        <const name="PointField__INT32" type="byte" value="5"/>
+        <const name="PointField__UINT32" type="byte" value="6"/>
+        <const name="PointField__FLOAT32" type="byte" value="7"/>
+        <const name="PointField__FLOAT64" type="byte" value="8"/>
+        <struct name= "PointField">
+          <member name="name" stringMaxLength="255" type="string"/>
+          <member name="offset" type="uint32"/>
+          <member name="datatype" type="byte"/>
+          <member name="count" type="uint32"/>
+        </struct>
+        <struct name= "PointCloud">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="points" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Point32"/>
+          <member name="channels" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "sensor_msgs::msg::ChannelFloat32"/>
+        </struct>
+        <struct name= "PointCloud2">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="height" type="uint32"/>
+          <member name="width" type="uint32"/>
+          <member name="fields" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "sensor_msgs::msg::PointField"/>
+          <member name="is_bigendian" type="boolean"/>
+          <member name="point_step" type="uint32"/>
+          <member name="row_step" type="uint32"/>
+          <member name="data" sequenceMaxLength="8000" type="byte"/>
+          <member name="is_dense" type="boolean"/>
+        </struct>
+        <const name="Range__ULTRASOUND" type="byte" value="0"/>
+        <const name="Range__INFRARED" type="byte" value="1"/>
+        <struct name= "Range">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="radiation_type" type="byte"/>
+          <member name="field_of_view" type="float32"/>
+          <member name="min_range" type="float32"/>
+          <member name="max_range" type="float32"/>
+          <member name="range" type="float32"/>
+        </struct>
+        <struct name= "RelativeHumidity">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="relative_humidity" type="float64"/>
+          <member name="variance" type="float64"/>
+        </struct>
+        <struct name= "Temperature">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="temperature" type="float64"/>
+          <member name="variance" type="float64"/>
+        </struct>
+        <struct name= "TimeReference">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="time_ref" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Time"/>
+          <member name="source" stringMaxLength="255" type="string"/>
+        </struct>
+      </module>
+      <module name="srv">
+        <struct name= "SetCameraInfo_Request">
+          <member name="camera_info" type="nonBasic"  nonBasicTypeName= "sensor_msgs::msg::CameraInfo"/>
+        </struct>
+        <struct name= "SetCameraInfo_Response">
+          <member name="success" type="boolean"/>
+          <member name="status_message" stringMaxLength="255" type="string"/>
+        </struct>
+      </module>
+    </module>
+    <!-- group divider ################################################### -->
+    <module name="test_msgs">
+      <module name="msg">
+        <struct name= "Primitives">
+          <member name="bool_value" type="boolean"/>
+          <member name="byte_value" type="byte"/>
+          <member name="char_value" type="char8"/>
+          <member name="float32_value" type="float32"/>
+          <member name="float64_value" type="float64"/>
+          <member name="int8_value" type="byte"/>
+          <member name="uint8_value" type="byte"/>
+          <member name="int16_value" type="int16"/>
+          <member name="uint16_value" type="uint16"/>
+          <member name="int32_value" type="int32"/>
+          <member name="uint32_value" type="uint32"/>
+          <member name="int64_value" type="int64"/>
+          <member name="uint64_value" type="uint64"/>
+          <member name="string_value" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "BoundedArrayNested">
+          <member name="primitive_values" sequenceMaxLength="4" type="nonBasic"  nonBasicTypeName= "test_msgs::msg::Primitives"/>
+        </struct>
+        <struct name= "BoundedArrayPrimitives">
+          <member name="bool_values" sequenceMaxLength="3" type="boolean"/>
+          <member name="byte_values" sequenceMaxLength="3" type="byte"/>
+          <member name="char_values" sequenceMaxLength="3" type="char8"/>
+          <member name="float32_values" sequenceMaxLength="3" type="float32"/>
+          <member name="float64_values" sequenceMaxLength="3" type="float64"/>
+          <member name="int8_values" sequenceMaxLength="3" type="byte"/>
+          <member name="uint8_values" sequenceMaxLength="3" type="byte"/>
+          <member name="int16_values" sequenceMaxLength="3" type="int16"/>
+          <member name="uint16_values" sequenceMaxLength="3" type="uint16"/>
+          <member name="int32_values" sequenceMaxLength="3" type="int32"/>
+          <member name="uint32_values" sequenceMaxLength="3" type="uint32"/>
+          <member name="int64_values" sequenceMaxLength="3" type="int64"/>
+          <member name="uint64_values" sequenceMaxLength="3" type="uint64"/>
+          <member name="string_values" sequenceMaxLength="3" stringMaxLength="255" type="string"/>
+          <member name="check" type="int32"/>
+        </struct>
+        <struct name= "Builtins">
+          <member name="duration_value" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Duration"/>
+          <member name="time_value" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Time"/>
+        </struct>
+        <struct name= "DynamicArrayNested">
+          <member name="primitive_values" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "test_msgs::msg::Primitives"/>
+        </struct>
+        <struct name= "DynamicArrayPrimitives">
+          <member name="bool_values" sequenceMaxLength="100" type="boolean"/>
+          <member name="byte_values" sequenceMaxLength="100" type="byte"/>
+          <member name="char_values" sequenceMaxLength="100" type="char8"/>
+          <member name="float32_values" sequenceMaxLength="100" type="float32"/>
+          <member name="float64_values" sequenceMaxLength="100" type="float64"/>
+          <member name="int8_values" sequenceMaxLength="100" type="byte"/>
+          <member name="uint8_values" sequenceMaxLength="100" type="byte"/>
+          <member name="int16_values" sequenceMaxLength="100" type="int16"/>
+          <member name="uint16_values" sequenceMaxLength="100" type="uint16"/>
+          <member name="int32_values" sequenceMaxLength="100" type="int32"/>
+          <member name="uint32_values" sequenceMaxLength="100" type="uint32"/>
+          <member name="int64_values" sequenceMaxLength="100" type="int64"/>
+          <member name="uint64_values" sequenceMaxLength="100" type="uint64"/>
+          <member name="string_values" sequenceMaxLength="100" stringMaxLength="255" type="string"/>
+          <member name="check" type="int32"/>
+        </struct>
+        <struct name= "DynamicArrayPrimitivesNested">
+          <member name="dynamic_array_primitive_values" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "test_msgs::msg::DynamicArrayPrimitives"/>
+        </struct>
+        <struct name= "Empty">
+          <member name="dummy" type="boolean"/>
+        </struct>
+        <struct name= "Empty_Request">
+          <member name="_dummy" type="boolean"/>
+        </struct>
+        <struct name= "Empty_Response">
+          <member name="_dummy" type="boolean"/>
+        </struct>
+        <struct name= "Nested">
+          <member name="primitive_values" type="nonBasic"  nonBasicTypeName= "test_msgs::msg::Primitives"/>
+        </struct>
+        <typedef name="test_msgs__StaticArrayPrimitives__boolean_array_3" type="boolean" arrayDimensions="3"/>
+        <typedef name="test_msgs__StaticArrayPrimitives__octet_array_3" type="byte" arrayDimensions="3"/>
+        <typedef name="test_msgs__StaticArrayPrimitives__char_array_3" type="char8" arrayDimensions="3"/>
+        <typedef name="test_msgs__StaticArrayPrimitives__float_array_3" type="float32" arrayDimensions="3"/>
+        <typedef name="test_msgs__StaticArrayPrimitives__double_array_3" type="float64" arrayDimensions="3"/>
+        <typedef name="test_msgs__StaticArrayPrimitives__short_array_3" type="int16" arrayDimensions="3"/>
+        <typedef name="test_msgs__StaticArrayPrimitives__unsigned_short_array_3" type="uint16" arrayDimensions="3"/>
+        <typedef name="test_msgs__StaticArrayPrimitives__long_array_3" type="int32" arrayDimensions="3"/>
+        <typedef name="test_msgs__StaticArrayPrimitives__unsigned_long_array_3" type="uint32" arrayDimensions="3"/>
+        <typedef name="test_msgs__StaticArrayPrimitives__long_long_array_3" type="int64" arrayDimensions="3"/>
+        <typedef name="test_msgs__StaticArrayPrimitives__unsigned_long_long_array_3" type="uint64" arrayDimensions="3"/>
+        <typedef name="test_msgs__StaticArrayPrimitives__string_array_3" stringMaxLength="255" type="string" arrayDimensions="3"/>
+        <struct name= "StaticArrayPrimitives">
+          <member name="bool_values" type="nonBasic"  nonBasicTypeName= "test_msgs::msg::test_msgs__StaticArrayPrimitives__boolean_array_3"/>
+          <member name="byte_values" type="nonBasic"  nonBasicTypeName= "test_msgs::msg::test_msgs__StaticArrayPrimitives__octet_array_3"/>
+          <member name="char_values" type="nonBasic"  nonBasicTypeName= "test_msgs::msg::test_msgs__StaticArrayPrimitives__char_array_3"/>
+          <member name="float32_values" type="nonBasic"  nonBasicTypeName= "test_msgs::msg::test_msgs__StaticArrayPrimitives__float_array_3"/>
+          <member name="float64_values" type="nonBasic"  nonBasicTypeName= "test_msgs::msg::test_msgs__StaticArrayPrimitives__double_array_3"/>
+          <member name="int8_values" type="nonBasic"  nonBasicTypeName= "test_msgs::msg::test_msgs__StaticArrayPrimitives__octet_array_3"/>
+          <member name="uint8_values" type="nonBasic"  nonBasicTypeName= "test_msgs::msg::test_msgs__StaticArrayPrimitives__octet_array_3"/>
+          <member name="int16_values" type="nonBasic"  nonBasicTypeName= "test_msgs::msg::test_msgs__StaticArrayPrimitives__short_array_3"/>
+          <member name="uint16_values" type="nonBasic"  nonBasicTypeName= "test_msgs::msg::test_msgs__StaticArrayPrimitives__unsigned_short_array_3"/>
+          <member name="int32_values" type="nonBasic"  nonBasicTypeName= "test_msgs::msg::test_msgs__StaticArrayPrimitives__long_array_3"/>
+          <member name="uint32_values" type="nonBasic"  nonBasicTypeName= "test_msgs::msg::test_msgs__StaticArrayPrimitives__unsigned_long_array_3"/>
+          <member name="int64_values" type="nonBasic"  nonBasicTypeName= "test_msgs::msg::test_msgs__StaticArrayPrimitives__long_long_array_3"/>
+          <member name="uint64_values" type="nonBasic"  nonBasicTypeName= "test_msgs::msg::test_msgs__StaticArrayPrimitives__unsigned_long_long_array_3"/>
+          <member name="string_values" type="nonBasic"  nonBasicTypeName= "test_msgs::msg::test_msgs__StaticArrayPrimitives__string_array_3"/>
+        </struct>
+        <typedef name="test_msgs__StaticArrayNested__test_msgs__msg__dds___Primitives__array_4" type="nonBasic"  nonBasicTypeName= "test_msgs::msg::Primitives" arrayDimensions="4"/>
+        <struct name= "StaticArrayNested">
+          <member name="primitive_values" type="nonBasic"  nonBasicTypeName= "test_msgs::msg::test_msgs__StaticArrayNested__test_msgs__msg__dds___Primitives__array_4"/>
+        </struct>
+      </module>
+      <module name="srv">
+        <struct name= "Primitives_Request">
+          <member name="bool_value" type="boolean"/>
+          <member name="byte_value" type="byte"/>
+          <member name="char_value" type="char8"/>
+          <member name="float32_value" type="float32"/>
+          <member name="float64_value" type="float64"/>
+          <member name="int8_value" type="byte"/>
+          <member name="uint8_value" type="byte"/>
+          <member name="int16_value" type="int16"/>
+          <member name="uint16_value" type="uint16"/>
+          <member name="int32_value" type="int32"/>
+          <member name="uint32_value" type="uint32"/>
+          <member name="int64_value" type="int64"/>
+          <member name="uint64_value" type="uint64"/>
+          <member name="string_value" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "Primitives_Response">
+          <member name="bool_value" type="boolean"/>
+          <member name="byte_value" type="byte"/>
+          <member name="char_value" type="char8"/>
+          <member name="float32_value" type="float32"/>
+          <member name="float64_value" type="float64"/>
+          <member name="int8_value" type="byte"/>
+          <member name="uint8_value" type="byte"/>
+          <member name="int16_value" type="int16"/>
+          <member name="uint16_value" type="uint16"/>
+          <member name="int32_value" type="int32"/>
+          <member name="uint32_value" type="uint32"/>
+          <member name="int64_value" type="int64"/>
+          <member name="uint64_value" type="uint64"/>
+          <member name="string_value" stringMaxLength="255" type="string"/>
+        </struct>
+      </module>
+    </module>
+    <!-- group divider ################################################### -->
+    <module name="lifecycle_msgs">
+      <module name="msg">
+        <const name="State__PRIMARY_STATE_UNKNOWN" type="byte" value="0"/>
+        <const name="State__PRIMARY_STATE_UNCONFIGURED" type="byte" value="1"/>
+        <const name="State__PRIMARY_STATE_INACTIVE" type="byte" value="2"/>
+        <const name="State__PRIMARY_STATE_ACTIVE" type="byte" value="3"/>
+        <const name="State__PRIMARY_STATE_FINALIZED" type="byte" value="4"/>
+        <const name="State__TRANSITION_STATE_CONFIGURING" type="byte" value="10"/>
+        <const name="State__TRANSITION_STATE_CLEANINGUP" type="byte" value="11"/>
+        <const name="State__TRANSITION_STATE_SHUTTINGDOWN" type="byte" value="12"/>
+        <const name="State__TRANSITION_STATE_ACTIVATING" type="byte" value="13"/>
+        <const name="State__TRANSITION_STATE_DEACTIVATING" type="byte" value="14"/>
+        <const name="State__TRANSITION_STATE_ERRORPROCESSING" type="byte" value="15"/>
+        <struct name= "State">
+          <member name="id" type="byte"/>
+          <member name="label" stringMaxLength="255" type="string"/>
+        </struct>
+        <const name="Transition__TRANSITION_CREATE" type="byte" value="0"/>
+        <const name="Transition__TRANSITION_CONFIGURE" type="byte" value="1"/>
+        <const name="Transition__TRANSITION_CLEANUP" type="byte" value="2"/>
+        <const name="Transition__TRANSITION_ACTIVATE" type="byte" value="3"/>
+        <const name="Transition__TRANSITION_DEACTIVATE" type="byte" value="4"/>
+        <const name="Transition__TRANSITION_SHUTDOWN" type="byte" value="5"/>
+        <const name="Transition__TRANSITION_DESTROY" type="byte" value="6"/>
+        <const name="Transition__TRANSITION_ON_CONFIGURE_SUCCESS" type="byte" value="10"/>
+        <const name="Transition__TRANSITION_ON_CONFIGURE_FAILURE" type="byte" value="11"/>
+        <const name="Transition__TRANSITION_ON_CONFIGURE_ERROR" type="byte" value="12"/>
+        <const name="Transition__TRANSITION_ON_CLEANUP_SUCCESS" type="byte" value="20"/>
+        <const name="Transition__TRANSITION_ON_CLEANUP_FAILURE" type="byte" value="21"/>
+        <const name="Transition__TRANSITION_ON_CLEANUP_ERROR" type="byte" value="22"/>
+        <const name="Transition__TRANSITION_ON_ACTIVATE_SUCCESS" type="byte" value="30"/>
+        <const name="Transition__TRANSITION_ON_ACTIVATE_FAILURE" type="byte" value="31"/>
+        <const name="Transition__TRANSITION_ON_ACTIVATE_ERROR" type="byte" value="32"/>
+        <const name="Transition__TRANSITION_ON_DEACTIVATE_SUCCESS" type="byte" value="40"/>
+        <const name="Transition__TRANSITION_ON_DEACTIVATE_FAILURE" type="byte" value="41"/>
+        <const name="Transition__TRANSITION_ON_DEACTIVATE_ERROR" type="byte" value="42"/>
+        <const name="Transition__TRANSITION_UNCONFIGURED_SHUTDOWN" type="byte" value="50"/>
+        <const name="Transition__TRANSITION_INACTIVE_SHUTDOWN" type="byte" value="51"/>
+        <const name="Transition__TRANSITION_ACTIVE_SHUTDOWN" type="byte" value="52"/>
+        <const name="Transition__TRANSITION_ON_SHUTDOWN_SUCCESS" type="byte" value="53"/>
+        <const name="Transition__TRANSITION_ON_SHUTDOWN_FAILURE" type="byte" value="54"/>
+        <const name="Transition__TRANSITION_ON_SHUTDOWN_ERROR" type="byte" value="55"/>
+        <const name="Transition__TRANSITION_ON_ERROR_SUCCESS" type="byte" value="60"/>
+        <const name="Transition__TRANSITION_ON_ERROR_FAILURE" type="byte" value="61"/>
+        <const name="Transition__TRANSITION_ON_ERROR_ERROR" type="byte" value="62"/>
+        <const name="Transition__TRANSITION_CALLBACK_SUCCESS" type="byte" value="97"/>
+        <const name="Transition__TRANSITION_CALLBACK_FAILURE" type="byte" value="98"/>
+        <const name="Transition__TRANSITION_CALLBACK_ERROR" type="byte" value="99"/>
+        <struct name= "Transition">
+          <member name="id" type="byte"/>
+          <member name="label" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "TransitionDescription">
+          <member name="transition" type="nonBasic"  nonBasicTypeName= "lifecycle_msgs::msg::Transition"/>
+          <member name="start_state" type="nonBasic"  nonBasicTypeName= "lifecycle_msgs::msg::State"/>
+          <member name="goal_state" type="nonBasic"  nonBasicTypeName= "lifecycle_msgs::msg::State"/>
+        </struct>
+        <struct name= "TransitionEvent">
+          <member name="timestamp" type="uint64"/>
+          <member name="transition" type="nonBasic"  nonBasicTypeName= "lifecycle_msgs::msg::Transition"/>
+          <member name="start_state" type="nonBasic"  nonBasicTypeName= "lifecycle_msgs::msg::State"/>
+          <member name="goal_state" type="nonBasic"  nonBasicTypeName= "lifecycle_msgs::msg::State"/>
+        </struct>
+      </module>
+      <module name="srv">
+        <struct name= "ChangeState_Request">
+          <member name="node_name" stringMaxLength="255" type="string"/>
+          <member name="transition" type="nonBasic"  nonBasicTypeName= "lifecycle_msgs::msg::Transition"/>
+        </struct>
+        <struct name= "ChangeState_Response">
+          <member name="success" type="boolean"/>
+        </struct>
+        <struct name= "GetAvailableStates_Request">
+          <member name="node_name" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "GetAvailableStates_Response">
+          <member name="available_states" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "lifecycle_msgs::msg::State"/>
+        </struct>
+        <struct name= "GetAvailableTransitions_Request">
+          <member name="node_name" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "GetAvailableTransitions_Response">
+          <member name="available_transitions" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "lifecycle_msgs::msg::TransitionDescription"/>
+        </struct>
+        <struct name= "GetState_Request">
+          <member name="node_name" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "GetState_Response">
+          <member name="current_state" type="nonBasic"  nonBasicTypeName= "lifecycle_msgs::msg::State"/>
+        </struct>
+      </module>
+    </module>
+    <!-- group divider ################################################### -->
+    <module name="stereo_msgs">
+      <module name="msg">
+        <struct name= "DisparityImage">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="image" type="nonBasic"  nonBasicTypeName= "sensor_msgs::msg::Image"/>
+          <member name="f" type="float32"/>
+          <member name="t" type="float32"/>
+          <member name="valid_window" type="nonBasic"  nonBasicTypeName= "sensor_msgs::msg::RegionOfInterest"/>
+          <member name="min_disparity" type="float32"/>
+          <member name="max_disparity" type="float32"/>
+          <member name="delta_d" type="float32"/>
+        </struct>
+      </module>
+    </module>
+    <!-- group divider ################################################### -->
+    <module name="tf2_msgs">
+      <module name="msg">
+        <const name="TF2Error__NO_ERROR" type="byte" value="0"/>
+        <const name="TF2Error__LOOKUP_ERROR" type="byte" value="1"/>
+        <const name="TF2Error__CONNECTIVITY_ERROR" type="byte" value="2"/>
+        <const name="TF2Error__EXTRAPOLATION_ERROR" type="byte" value="3"/>
+        <const name="TF2Error__INVALID_ARGUMENT_ERROR" type="byte" value="4"/>
+        <const name="TF2Error__TIMEOUT_ERROR" type="byte" value="5"/>
+        <const name="TF2Error__TRANSFORM_ERROR" type="byte" value="6"/>
+        <struct name= "TF2Error">
+          <member name="error" type="byte"/>
+          <member name="error_string" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "TFMessage">
+          <member name="transforms" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::TransformStamped"/>
+        </struct>
+      </module>
+      <module name="srv">
+        <struct name= "FrameGraph_Request">
+          <member name="dummy" type="boolean"/>
+        </struct>
+        <struct name= "FrameGraph_Response">
+          <member name="frame_yaml" stringMaxLength="255" type="string"/>
+        </struct>
+      </module>
+    </module>
+    <!-- group divider ################################################### -->
+    <module name="nav_msgs">
+      <module name="msg">
+        <struct name= "GridCells">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="cell_width" type="float32"/>
+          <member name="cell_height" type="float32"/>
+          <member name="cells" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Point"/>
+        </struct>
+        <struct name= "MapMetaData">
+          <member name="map_load_time" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Time"/>
+          <member name="resolution" type="float32"/>
+          <member name="width" type="uint32"/>
+          <member name="height" type="uint32"/>
+          <member name="origin" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Pose"/>
+        </struct>
+        <struct name= "Odometry">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="child_frame_id" stringMaxLength="255" type="string"/>
+          <member name="pose" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::PoseWithCovariance"/>
+          <member name="twist" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::TwistWithCovariance"/>
+        </struct>
+        <struct name= "OccupancyGrid">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="info" type="nonBasic"  nonBasicTypeName= "nav_msgs::msg::MapMetaData"/>
+          <member name="data" sequenceMaxLength="100" type="byte"/>
+        </struct>
+        <struct name= "Path">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="poses" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::PoseStamped"/>
+        </struct>
+      </module>
+      <module name="srv">
+        <struct name= "GetMap_Request">
+          <member name="dummy" type="boolean"/>
+        </struct>
+        <struct name= "GetMap_Response">
+          <member name="map" type="nonBasic"  nonBasicTypeName= "nav_msgs::msg::OccupancyGrid"/>
+        </struct>
+        <struct name= "GetPlan_Request">
+          <member name="start" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::PoseStamped"/>
+          <member name="goal" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::PoseStamped"/>
+          <member name="tolerance" type="float32"/>
+        </struct>
+        <struct name= "GetPlan_Response">
+          <member name="plan" type="nonBasic"  nonBasicTypeName= "nav_msgs::msg::Path"/>
+        </struct>
+        <struct name= "SetMap_Request">
+          <member name="map" type="nonBasic"  nonBasicTypeName= "nav_msgs::msg::OccupancyGrid"/>
+          <member name="initial_pose" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::PoseWithCovarianceStamped"/>
+        </struct>
+        <struct name= "SetMap_Response">
+          <member name="success" type="boolean"/>
+        </struct>
+      </module>
+    </module>
+    <!-- group divider ################################################### -->
+    <module name="visualization_msgs">
+      <module name="msg">
+        <const name="Marker__ARROW" type="byte" value="0"/>
+        <const name="Marker__CUBE" type="byte" value="1"/>
+        <const name="Marker__SPHERE" type="byte" value="2"/>
+        <const name="Marker__CYLINDER" type="byte" value="3"/>
+        <const name="Marker__LINE_STRIP" type="byte" value="4"/>
+        <const name="Marker__LINE_LIST" type="byte" value="5"/>
+        <const name="Marker__CUBE_LIST" type="byte" value="6"/>
+        <const name="Marker__SPHERE_LIST" type="byte" value="7"/>
+        <const name="Marker__POINTS" type="byte" value="8"/>
+        <const name="Marker__TEXT_VIEW_FACING" type="byte" value="9"/>
+        <const name="Marker__MESH_RESOURCE" type="byte" value="10"/>
+        <const name="Marker__TRIANGLE_LIST" type="byte" value="11"/>
+        <const name="Marker__ADD" type="byte" value="0"/>
+        <const name="Marker__MODIFY" type="byte" value="0"/>
+        <const name="Marker__DELETE" type="byte" value="2"/>
+        <const name="Marker__DELETEALL" type="byte" value="3"/>
+        <struct name= "Marker">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="ns" stringMaxLength="255" type="string"/>
+          <member name="id" type="int32"/>
+          <member name="type" type="int32"/>
+          <member name="action" type="int32"/>
+          <member name="pose" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Pose"/>
+          <member name="scale" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Vector3"/>
+          <member name="color" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::ColorRGBA"/>
+          <member name="lifetime" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Duration"/>
+          <member name="frame_locked" type="boolean"/>
+          <member name="points" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Point"/>
+          <member name="colors" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::ColorRGBA"/>
+          <member name="text" stringMaxLength="255" type="string"/>
+          <member name="mesh_resource" stringMaxLength="255" type="string"/>
+          <member name="mesh_use_embedded_materials" type="boolean"/>
+        </struct>
+        <struct name= "MarkerArray">
+          <member name="markers" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "visualization_msgs::msg::Marker"/>
+        </struct>
+        <const name="MenuEntry__FEEDBACK" type="byte" value="0"/>
+        <const name="MenuEntry__ROSRUN" type="byte" value="1"/>
+        <const name="MenuEntry__ROSLAUNCH" type="byte" value="2"/>
+        <struct name= "MenuEntry">
+          <member name="id" type="uint32"/>
+          <member name="parent_id" type="uint32"/>
+          <member name="title" stringMaxLength="255" type="string"/>
+          <member name="command" stringMaxLength="255" type="string"/>
+          <member name="command_type" type="byte"/>
+        </struct>
+        <const name="ImageMarker__CIRCLE" type="byte" value="0"/>
+        <const name="ImageMarker__LINE_STRIP" type="byte" value="1"/>
+        <const name="ImageMarker__LINE_LIST" type="byte" value="2"/>
+        <const name="ImageMarker__POLYGON" type="byte" value="3"/>
+        <const name="ImageMarker__POINTS" type="byte" value="4"/>
+        <const name="ImageMarker__ADD" type="byte" value="0"/>
+        <const name="ImageMarker__REMOVE" type="byte" value="1"/>
+        <struct name= "ImageMarker">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="ns" stringMaxLength="255" type="string"/>
+          <member name="id" type="int32"/>
+          <member name="type" type="int32"/>
+          <member name="action" type="int32"/>
+          <member name="position" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Point"/>
+          <member name="scale" type="float32"/>
+          <member name="outline_color" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::ColorRGBA"/>
+          <member name="filled" type="byte"/>
+          <member name="fill_color" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::ColorRGBA"/>
+          <member name="lifetime" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Duration"/>
+          <member name="points" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Point"/>
+          <member name="outline_colors" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::ColorRGBA"/>
+        </struct>
+        <struct name= "InteractiveMarker">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="pose" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Pose"/>
+          <member name="name" stringMaxLength="255" type="string"/>
+          <member name="description" stringMaxLength="255" type="string"/>
+          <member name="scale" type="float32"/>
+          <member name="menu_entries" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "visualization_msgs::msg::MenuEntry"/>
+          <member name="controls" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "visualization_msgs::msg::InteractiveMarkerControl"/>
+        </struct>
+        <const name="InteractiveMarkerControl__INHERIT" type="byte" value="0"/>
+        <const name="InteractiveMarkerControl__FIXED" type="byte" value="1"/>
+        <const name="InteractiveMarkerControl__VIEW_FACING" type="byte" value="2"/>
+        <const name="InteractiveMarkerControl__NONE" type="byte" value="0"/>
+        <const name="InteractiveMarkerControl__MENU" type="byte" value="1"/>
+        <const name="InteractiveMarkerControl__BUTTON" type="byte" value="2"/>
+        <const name="InteractiveMarkerControl__MOVE_AXIS" type="byte" value="3"/>
+        <const name="InteractiveMarkerControl__MOVE_PLANE" type="byte" value="4"/>
+        <const name="InteractiveMarkerControl__ROTATE_AXIS" type="byte" value="5"/>
+        <const name="InteractiveMarkerControl__MOVE_ROTATE" type="byte" value="6"/>
+        <const name="InteractiveMarkerControl__MOVE_3D" type="byte" value="7"/>
+        <const name="InteractiveMarkerControl__ROTATE_3D" type="byte" value="8"/>
+        <const name="InteractiveMarkerControl__MOVE_ROTATE_3D" type="byte" value="9"/>
+        <struct name= "InteractiveMarkerControl">
+          <member name="name" stringMaxLength="255" type="string"/>
+          <member name="orientation" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Quaternion"/>
+          <member name="orientation_mode" type="byte"/>
+          <member name="interaction_mode" type="byte"/>
+          <member name="always_visible" type="boolean"/>
+          <member name="markers" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "visualization_msgs::msg::Marker"/>
+          <member name="independent_marker_orientation" type="boolean"/>
+          <member name="description" stringMaxLength="255" type="string"/>
+        </struct>
+        <const name="InteractiveMarkerFeedback__KEEP_ALIVE" type="byte" value="0"/>
+        <const name="InteractiveMarkerFeedback__POSE_UPDATE" type="byte" value="1"/>
+        <const name="InteractiveMarkerFeedback__MENU_SELECT" type="byte" value="2"/>
+        <const name="InteractiveMarkerFeedback__BUTTON_CLICK" type="byte" value="3"/>
+        <const name="InteractiveMarkerFeedback__MOUSE_DOWN" type="byte" value="4"/>
+        <const name="InteractiveMarkerFeedback__MOUSE_UP" type="byte" value="5"/>
+        <struct name= "InteractiveMarkerFeedback">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="client_id" stringMaxLength="255" type="string"/>
+          <member name="marker_name" stringMaxLength="255" type="string"/>
+          <member name="control_name" stringMaxLength="255" type="string"/>
+          <member name="event_type" type="byte"/>
+          <member name="pose" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Pose"/>
+          <member name="menu_entry_id" type="uint32"/>
+          <member name="mouse_point" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Point"/>
+          <member name="mouse_point_valid" type="boolean"/>
+        </struct>
+        <struct name= "InteractiveMarkerInit">
+          <member name="server_id" stringMaxLength="255" type="string"/>
+          <member name="seq_num" type="uint64"/>
+          <member name="markers" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "visualization_msgs::msg::InteractiveMarker"/>
+        </struct>
+        <struct name= "InteractiveMarkerPose">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="pose" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Pose"/>
+          <member name="name" stringMaxLength="255" type="string"/>
+        </struct>
+        <const name="InteractiveMarkerUpdate__KEEP_ALIVE" type="byte" value="0"/>
+        <const name="InteractiveMarkerUpdate__UPDATE" type="byte" value="1"/>
+        <struct name= "InteractiveMarkerUpdate">
+          <member name="server_id" stringMaxLength="255" type="string"/>
+          <member name="seq_num" type="uint64"/>
+          <member name="type" type="byte"/>
+          <member name="markers" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "visualization_msgs::msg::InteractiveMarker"/>
+          <member name="poses" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "visualization_msgs::msg::InteractiveMarkerPose"/>
+          <member name="erases" sequenceMaxLength="100" stringMaxLength="255" type="string"/>
+        </struct>
+      </module>
+    </module>
+    <!-- group divider ################################################### -->
+    <module name="pendulum_msgs">
+      <module name="msg">
+        <struct name= "JointCommand">
+          <member name="position" type="float64"/>
+        </struct>
+        <struct name= "JointState">
+          <member name="position" type="float64"/>
+          <member name="velocity" type="float64"/>
+          <member name="effort" type="float64"/>
+        </struct>
+        <struct name= "RttestResults">
+          <member name="stamp" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Time"/>
+          <member name="command" type="nonBasic"  nonBasicTypeName= "pendulum_msgs::msg::JointCommand"/>
+          <member name="state" type="nonBasic"  nonBasicTypeName= "pendulum_msgs::msg::JointState"/>
+          <member name="cur_latency" type="uint64"/>
+          <member name="mean_latency" type="float64"/>
+          <member name="min_latency" type="uint64"/>
+          <member name="max_latency" type="uint64"/>
+          <member name="minor_pagefaults" type="uint64"/>
+          <member name="major_pagefaults" type="uint64"/>
+        </struct>
+      </module>
+    </module>
+    <!-- group divider ################################################### -->
+    <module name="trajectory_msgs">
+      <module name="msg">
+        <struct name= "JointTrajectoryPoint">
+          <member name="positions" sequenceMaxLength="100" type="float64"/>
+          <member name="velocities" sequenceMaxLength="100" type="float64"/>
+          <member name="accelerations" sequenceMaxLength="100" type="float64"/>
+          <member name="effort" sequenceMaxLength="100" type="float64"/>
+          <member name="time_from_start" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Duration"/>
+        </struct>
+        <struct name= "JointTrajectory">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="joint_names" sequenceMaxLength="100" stringMaxLength="255" type="string"/>
+          <member name="points" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "trajectory_msgs::msg::JointTrajectoryPoint"/>
+        </struct>
+        <struct name= "MultiDOFJointTrajectoryPoint">
+          <member name="transforms" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Transform"/>
+          <member name="velocities" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Twist"/>
+          <member name="accelerations" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Twist"/>
+          <member name="time_from_start" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Duration"/>
+        </struct>
+        <struct name= "MultiDOFJointTrajectory">
+          <member name="header" type="nonBasic"  nonBasicTypeName= "std_msgs::msg::Header"/>
+          <member name="joint_names" sequenceMaxLength="100" stringMaxLength="255" type="string"/>
+          <member name="points" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "trajectory_msgs::msg::MultiDOFJointTrajectoryPoint"/>
+        </struct>
+      </module>
+    </module>
+    <!-- group divider ################################################### -->
+    <module name="std_srvs">
+      <module name="srv">
+        <struct name= "SetBool_Request">
+          <member name="data" type="boolean"/>
+        </struct>
+        <struct name= "SetBool_Response">
+          <member name="success" type="boolean"/>
+          <member name="message" stringMaxLength="255" type="string"/>
+        </struct>
+        <struct name= "Trigger_Request">
+          <member name="dummy" type="boolean"/>
+        </struct>
+        <struct name= "Trigger_Response">
+          <member name="success" type="boolean"/>
+          <member name="message" stringMaxLength="255" type="string"/>
+        </struct>
+      </module>
+    </module>
+    <!-- group divider ################################################### -->
+    <module name="shape_msgs">
+      <module name="msg">
+        <typedef name="shape_msgs__MeshTriangle__unsigned_long_array_3" type="uint32" arrayDimensions="3"/>
+        <struct name= "MeshTriangle">
+          <member name="vertex_indices" type="nonBasic"  nonBasicTypeName= "shape_msgs::msg::shape_msgs__MeshTriangle__unsigned_long_array_3"/>
+        </struct>
+        <struct name= "Mesh">
+          <member name="triangles" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "shape_msgs::msg::MeshTriangle"/>
+          <member name="vertices" sequenceMaxLength="100" type="nonBasic"  nonBasicTypeName= "geometry_msgs::msg::Point"/>
+        </struct>
+        <typedef name="shape_msgs__Plane__double_array_4" type="float64" arrayDimensions="4"/>
+        <struct name= "Plane">
+          <member name="coef" type="nonBasic"  nonBasicTypeName= "shape_msgs::msg::shape_msgs__Plane__double_array_4"/>
+        </struct>
+        <const name="SolidPrimitive__BOX" type="byte" value="1"/>
+        <const name="SolidPrimitive__SPHERE" type="byte" value="2"/>
+        <const name="SolidPrimitive__CYLINDER" type="byte" value="3"/>
+        <const name="SolidPrimitive__CONE" type="byte" value="4"/>
+        <const name="SolidPrimitive__BOX_X" type="byte" value="0"/>
+        <const name="SolidPrimitive__BOX_Y" type="byte" value="1"/>
+        <const name="SolidPrimitive__BOX_Z" type="byte" value="2"/>
+        <const name="SolidPrimitive__SPHERE_RADIUS" type="byte" value="0"/>
+        <const name="SolidPrimitive__CYLINDER_HEIGHT" type="byte" value="0"/>
+        <const name="SolidPrimitive__CYLINDER_RADIUS" type="byte" value="1"/>
+        <const name="SolidPrimitive__CONE_HEIGHT" type="byte" value="0"/>
+        <const name="SolidPrimitive__CONE_RADIUS" type="byte" value="1"/>
+        <struct name= "SolidPrimitive">
+          <member name="type" type="byte"/>
+          <member name="dimensions" sequenceMaxLength="3" type="float64"/>
+        </struct>
+      </module>
+    </module>
+  </types>
+
+
+  <!-- Domain Library -->
+  <domain_library name="MyDomainLibrary">
+    <domain name="MyDomain" domain_id="0">
+      <!-- Register the data types and topic names here -->
+      <!--register_type name="sensor_msgs::msg::PointCloud2" type_ref="sensor_msgs::msg::PointCloud2"/>
+      <topic name="rt/velodyne_points" register_type_ref="sensor_msgs::msg::PointCloud2"/-->
+
+      <register_type name="sensor_msgs::msg::dds_::PointCloud2_" type_ref="sensor_msgs::msg::dds_::PointCloud2_"/>
+      <topic name="rt/lidar_points" register_type_ref="sensor_msgs::msg::dds_::PointCloud2_"/>
+      
+    </domain>
+  </domain_library>
+
+  <!-- Participant library -->
+  <domain_participant_library name="MyParticipantLibrary">
+    <domain_participant name="Zero" domain_ref="MyDomainLibrary::MyDomain">
+
+      <publisher name="ddsPointCloud2Pub">
+        <data_writer name="ddsPointCloud2Writer" topic_ref="rt/lidar_points" />
+      </publisher>
+
+    </domain_participant>
+  </domain_participant_library>
+</dds>
