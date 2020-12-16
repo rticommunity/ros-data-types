@@ -51,4 +51,5 @@ target_compile_definitions(actionmsgslibrary PRIVATE
 
 add_dependencies(actionmsgslibrary 
     stdmsgslibrary 
+    uniqueidentifiermsgslibrary
 )

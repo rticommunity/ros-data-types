@@ -75,3 +75,7 @@ target_include_directories(stdmsgslibrary PRIVATE
 target_compile_definitions(stdmsgslibrary PRIVATE 
     ${CONNEXTDDS_COMPILE_DEFINITIONS}
 )
+
+add_dependencies(stdmsgslibrary 
+    builtininterfaceslibrary 
+)
