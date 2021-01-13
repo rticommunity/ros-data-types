@@ -31,6 +31,12 @@ ros-data-types/
 For more information on the original ROS 2 common interfaces, please refer to
 this [repository](https://github.com/ros2/common_interfaces).
 
+This repository also includes data type definitions for topics that are *ROS2 internal*, 
+for supporting ROS2 parameters, actions, RCL and RMW, etc., thus enabling non-ROS2 
+Connext DDS applications full access and interoperability with any ROS2 component, 
+module, tool, visualizer, etc.
+
+
 ## Building ROS Type Library
 
 The ROS Types repository repository provides a set of CMake files to generate
@@ -45,6 +51,7 @@ that are required to build the library.
 **Be sure to include the Connext DDS installation directory in your path before proceeding**
 This can be added to the current command shell by using the `rtisetenv_<arch>` script 
 included with Connext, such as:  
+
 **Linux:**
 ```sh
 ~/rti_connext_dds-6.0.1/resource/scripts/rtisetenv_x64Linux4gcc7.3.0.bash
@@ -56,7 +63,8 @@ included with Connext, such as:
 ```
 
 Windows builds can also benefit from running the `vcvars<option>.bat` script before building,
-such as `vcvarsall.bat`
+such as `vcvarsall.bat`, to add Visual Studio to the PATH.
+
 
 **Run CMake to generate the build files**
 ```bash
@@ -65,19 +73,17 @@ mkdir build; cd build
 cmake ..
 ```
 
-**CMake Options**
+**CMake Options**  
 Optional arguments may be passed to CMake to control the build or correct errors, including:  
 
 
 **RTI Connext Target Type**  
-
 If your RTI Connext installation includes support for multiple target platform types, a 
 specific target may be specified by adding the `-DCONNEXTDDS_ARCH=<arch>` switch, where
 `<arch>` is set to your desired build target, such as `x64Linux4gcc7.3.0`, `x64Win64VS2017`, etc. 
 
 
 **Debug or Release Build**  
-
 DEBUG build is enabled by default.  To build for RELEASE, use the parameter `DCMAKE_BUILD_TYPE=Release`
 as part of your `cmake` invocation.
 
