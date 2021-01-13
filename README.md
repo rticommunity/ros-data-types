@@ -77,6 +77,13 @@ cmake ..
 Optional arguments may be passed to CMake to control the build or correct errors, including:  
 
 
+**ROS2 unbounded variables**  
+ROS2 uses UNBOUNDED strings and sequences by default; this library can also be built to use
+UNBOUNDED vars by passing the `-DUNBOUNDED_ALL=ON` switch on the command line, as in:
+```sh
+cmake -DUNBOUNDED_ALL=ON ..
+``` 
+
 **RTI Connext Target Type**  
 If your RTI Connext installation includes support for multiple target platform types, a 
 specific target may be specified by adding the `-DCONNEXTDDS_ARCH=<arch>` switch, where
@@ -84,9 +91,11 @@ specific target may be specified by adding the `-DCONNEXTDDS_ARCH=<arch>` switch
 
 
 **Debug or Release Build**  
-DEBUG build is enabled by default.  To build for RELEASE, use the parameter `DCMAKE_BUILD_TYPE=Release`
-as part of your `cmake` invocation.
-
+DEBUG build is enabled by default.  To build for RELEASE, use the parameter `CMAKE_BUILD_TYPE=Release`
+definition as part of your `cmake` invocation, as in:
+```sh
+cmake -DCMAKE_BUILD_TYPE=Release ..
+```
 
 **Language**  
 By default, the project will generate a type library for C++11. If you want to
@@ -96,6 +105,12 @@ as part of your `cmake` invocation:
 ```bash
 cmake -DLANG=<C|C++|C++11> ..
 ```
+
+These CMake arguments shall be combined into a single command line, as in:
+```sh
+cmake -DCMAKE_BUILD_TYPE=Release -DUNBOUNDED_ALL=ON ..
+```
+
 
 ### Building the Type Library
 
