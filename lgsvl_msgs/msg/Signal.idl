@@ -1,0 +1,35 @@
+// generated from rosidl_generator_dds_idl/resource/idl.idl.em
+// with input from lgsvl_msgs:msg/Signal.idl
+// generated code does not contain a copyright notice
+#include "lgsvl_msgs/msg/BoundingBox3D.idl"
+#include "std_msgs/msg/Header.idl"
+
+#ifndef __lgsvl_msgs__msg__signal__idl__
+#define __lgsvl_msgs__msg__signal__idl__
+
+
+module lgsvl_msgs {
+
+module msg {
+
+module dds_ {
+
+
+struct Signal_ {
+std_msgs::msg::dds_::Header_ header;
+unsigned long id;
+string label;
+float score;
+lgsvl_msgs::msg::dds_::BoundingBox3D_ bbox;
+
+};
+
+
+};  // module dds_
+
+};  // module msg
+
+};  // module lgsvl_msgs
+
+
+#endif  // __lgsvl_msgs__msg__signal__idl__

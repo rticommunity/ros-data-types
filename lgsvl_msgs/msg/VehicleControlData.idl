@@ -1,0 +1,43 @@
+// generated from rosidl_generator_dds_idl/resource/idl.idl.em
+// with input from lgsvl_msgs:msg/VehicleControlData.idl
+// generated code does not contain a copyright notice
+#include "std_msgs/msg/Header.idl"
+
+#ifndef __lgsvl_msgs__msg__vehicle_control_data__idl__
+#define __lgsvl_msgs__msg__vehicle_control_data__idl__
+
+
+module lgsvl_msgs {
+
+module msg {
+
+module dds_ {
+
+module VehicleControlData_Constants {
+const octet GEAR_NEUTRAL = 0;
+const octet GEAR_DRIVE = 1;
+const octet GEAR_REVERSE = 2;
+const octet GEAR_PARKING = 3;
+const octet GEAR_LOW = 4;
+
+};
+
+struct VehicleControlData_ {
+std_msgs::msg::dds_::Header_ header;
+float acceleration_pct;
+float braking_pct;
+float target_wheel_angle;
+float target_wheel_angular_rate;
+octet target_gear;
+
+};
+
+
+};  // module dds_
+
+};  // module msg
+
+};  // module lgsvl_msgs
+
+
+#endif  // __lgsvl_msgs__msg__vehicle_control_data__idl__

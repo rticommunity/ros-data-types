@@ -42,6 +42,7 @@ add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/diagnostic_msgs")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/example_interfaces")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/gazebo_msgs")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/geometry_msgs")
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/lgsvl_msgs")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/libstatistics_collector")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/lifecycle_msgs")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/logging_demo")
@@ -80,6 +81,7 @@ add_library(RosDataTypes
     $<TARGET_OBJECTS:exampleinterfaceslibrary>
     $<TARGET_OBJECTS:gazebomsgslibrary>
     $<TARGET_OBJECTS:geometrymsgslibrary>
+    $<TARGET_OBJECTS:lgsvlmsgslibrary>
     $<TARGET_OBJECTS:libstatisticscollectorlibrary>
     $<TARGET_OBJECTS:lifecyclemsgslibrary>
     $<TARGET_OBJECTS:loggingdemolibrary>
