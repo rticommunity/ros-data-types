@@ -13,22 +13,25 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __sensor_msgs__msg__PointCloud__idl 
-#define __sensor_msgs__msg__PointCloud__idl 
- 
-#include "geometry_msgs/msg/Point32.idl" 
-#include "ChannelFloat32.idl" 
-#include "std_msgs/msg/Header.idl" 
- 
-module sensor_msgs { module msg { 
- 
-struct PointCloud { 
-    std_msgs::msg::Header header; 
-    sequence<geometry_msgs::msg::Point32> points; 
-    sequence<sensor_msgs::msg::ChannelFloat32> channels; 
-}; 
- 
-}; };  // module msg::sensor_msgs 
- 
-#endif  // __sensor_msgs__msg__PointCloud__idl 
+
+#ifndef __sensor_msgs__msg__PointCloud__idl
+#define __sensor_msgs__msg__PointCloud__idl
+
+#include "geometry_msgs/msg/Point32.idl"
+#include "std_msgs/msg/Header.idl"
+#include "sensor_msgs/msg/ChannelFloat32.idl"
+
+module sensor_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct PointCloud_ {
+        std_msgs::msg::dds_::Header_ header;
+        sequence<geometry_msgs::msg::dds_::Point32_> points;
+        sequence<sensor_msgs::msg::dds_::ChannelFloat32_> channels;
+      };
+    };
+  };
+};
+
+
+#endif // __sensor_msgs__msg__PointCloud__idl

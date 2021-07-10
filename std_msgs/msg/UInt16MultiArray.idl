@@ -13,19 +13,22 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __std_msgs__msg__UInt16MultiArray__idl 
-#define __std_msgs__msg__UInt16MultiArray__idl 
- 
-#include "MultiArrayLayout.idl" 
- 
-module std_msgs { module msg { 
- 
-struct UInt16MultiArray { 
-    std_msgs::msg::MultiArrayLayout layout; 
-    sequence<unsigned short> data; 
-}; 
- 
-}; };  // module msg::std_msgs 
- 
-#endif  // __std_msgs__msg__UInt16MultiArray__idl 
+
+#ifndef __std_msgs__msg__UInt16MultiArray__idl
+#define __std_msgs__msg__UInt16MultiArray__idl
+
+#include "std_msgs/msg/MultiArrayLayout.idl"
+
+module std_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct UInt16MultiArray_ {
+        std_msgs::msg::dds_::MultiArrayLayout_ layout;
+        sequence<uint16> data;
+      };
+    };
+  };
+};
+
+
+#endif // __std_msgs__msg__UInt16MultiArray__idl

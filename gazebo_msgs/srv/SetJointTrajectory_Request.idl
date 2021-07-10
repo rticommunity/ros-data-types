@@ -14,17 +14,22 @@
  * limitations under the License. 
  */ 
  
+#ifndef __gazebo_msgs__srv__SetJointTrajectory_Request__idl
+#define __gazebo_msgs__srv__SetJointTrajectory_Request__idl
+ 
 #include "trajectory_msgs/msg/JointTrajectory.idl" 
 #include "geometry_msgs/msg/Pose.idl" 
  
-module gazebo_msgs { module srv { 
+module gazebo_msgs { module srv { module dds_ { 
  
-struct SetJointTrajectory_Request { 
+struct SetJointTrajectory_Request_ { 
     string model_name; 
-    trajectory_msgs::msg::JointTrajectory joint_trajectory; 
-    geometry_msgs::msg::Pose model_pose; 
+    trajectory_msgs::msg::dds_::JointTrajectory_ joint_trajectory; 
+    geometry_msgs::msg::dds_::Pose_ model_pose; 
     boolean set_model_pose; 
     boolean disable_physics_updates; 
 }; 
  
-}; };  // module srv::gazebo_msgs 
+}; }; };  // module dds_::srv::gazebo_msgs 
+
+#endif  // __gazebo_msgs__srv__SetJointTrajectory_Request__idl

@@ -13,18 +13,21 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __sensor_msgs__msg__JoyFeedbackArray__idl 
-#define __sensor_msgs__msg__JoyFeedbackArray__idl 
- 
-#include "JoyFeedback.idl" 
- 
-module sensor_msgs { module msg { 
- 
-struct JoyFeedbackArray { 
-    sequence<sensor_msgs::msg::JoyFeedback> array; 
-}; 
- 
-}; };  // module msg::sensor_msgs 
- 
-#endif  // __sensor_msgs__msg__JoyFeedbackArray__idl 
+
+#ifndef __sensor_msgs__msg__JoyFeedbackArray__idl
+#define __sensor_msgs__msg__JoyFeedbackArray__idl
+
+#include "sensor_msgs/msg/JoyFeedback.idl"
+
+module sensor_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct JoyFeedbackArray_ {
+        sequence<sensor_msgs::msg::dds_::JoyFeedback_> array;
+      };
+    };
+  };
+};
+
+
+#endif // __sensor_msgs__msg__JoyFeedbackArray__idl

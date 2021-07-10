@@ -14,12 +14,15 @@
  * limitations under the License. 
  */ 
  
+#ifndef __gazebo_msgs__srv__GetLinkProperties_Response__idl
+#define __gazebo_msgs__srv__GetLinkProperties_Response__idl
+ 
 #include "geometry_msgs/msg/Pose.idl" 
  
-module gazebo_msgs { module srv { 
+module gazebo_msgs { module srv { module dds_ { 
  
-struct GetLinkProperties_Response { 
-    geometry_msgs::msg::Pose com; 
+struct GetLinkProperties_Response_ { 
+    geometry_msgs::msg::dds_::Pose_ com; 
     boolean gravity_mode; 
     double mass; 
     double ixx; 
@@ -32,4 +35,6 @@ struct GetLinkProperties_Response {
     string status_message; 
 }; 
  
-}; };  // module srv::gazebo_msgs 
+}; }; };  // module dds_::srv::gazebo_msgs 
+
+#endif  // __gazebo_msgs__srv__GetLinkProperties_Response__idl

@@ -14,9 +14,12 @@
  * limitations under the License. 
  */ 
  
-module gazebo_msgs { module srv { 
+#ifndef __gazebo_msgs__srv__GetModelProperties_Response__idl
+#define __gazebo_msgs__srv__GetModelProperties_Response__idl
  
-struct GetModelProperties_Response { 
+module gazebo_msgs { module srv { module dds_ { 
+ 
+struct GetModelProperties_Response_ { 
     string parent_model_name; 
     string canonical_body_name; 
     sequence<string> body_names; 
@@ -28,4 +31,6 @@ struct GetModelProperties_Response {
     string status_message; 
 }; 
  
-}; };  // module srv::gazebo_msgs 
+}; }; };  // module dds_::srv::gazebo_msgs 
+
+#endif  // __gazebo_msgs__srv__GetModelProperties_Response__idl

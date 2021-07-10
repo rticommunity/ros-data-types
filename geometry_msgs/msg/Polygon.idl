@@ -13,18 +13,21 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __geometry_msgs__msg__Polygon__idl 
-#define __geometry_msgs__msg__Polygon__idl 
- 
-#include "Point32.idl" 
- 
-module geometry_msgs { module msg { 
- 
-struct Polygon { 
-    sequence<geometry_msgs::msg::Point32> points; 
-}; 
- 
-}; };  // module msg::geometry_msgs 
- 
-#endif  // __geometry_msgs__msg__Polygon__idl 
+
+#ifndef __geometry_msgs__msg__Polygon__idl
+#define __geometry_msgs__msg__Polygon__idl
+
+#include "geometry_msgs/msg/Point32.idl"
+
+module geometry_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct Polygon_ {
+        sequence<geometry_msgs::msg::dds_::Point32_> points;
+      };
+    };
+  };
+};
+
+
+#endif // __geometry_msgs__msg__Polygon__idl

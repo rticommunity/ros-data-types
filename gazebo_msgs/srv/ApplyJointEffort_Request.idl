@@ -14,16 +14,21 @@
  * limitations under the License. 
  */ 
  
-#include "std_msgs/msg/Time.idl" 
-#include "std_msgs/msg/Duration.idl" 
+#ifndef __gazebo_msgs__srv__ApplyJointEffort_Request__idl
+#define __gazebo_msgs__srv__ApplyJointEffort_Request__idl
  
-module gazebo_msgs { module srv { 
+#include "builtin_interfaces/msg/Time.idl" 
+#include "builtin_interfaces/msg/Duration.idl" 
  
-struct ApplyJointEffort_Request { 
+module gazebo_msgs { module srv { module dds_ { 
+ 
+struct ApplyJointEffort_Request_ { 
     string joint_name; 
     double effort; 
-    std_msgs::msg::Time start_time; 
-    std_msgs::msg::Duration duration; 
+    builtin_interfaces::msg::dds_::Time_ start_time; 
+    builtin_interfaces::msg::dds_::Duration_ duration; 
 }; 
  
-}; };  // module srv::gazebo_msgs 
+}; }; };  // module dds_::srv::gazebo_msgs 
+
+#endif  // __gazebo_msgs__srv__ApplyJointEffort_Request__idl

@@ -13,16 +13,19 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __test_msgs__srv__Empty_Request__idl 
-#define __test_msgs__srv__Empty_Request__idl 
- 
-module test_msgs { module srv { 
- 
-struct Empty_Request { 
-    boolean _dummy; 
-}; 
- 
-}; };  // module srv::test_msgs 
- 
-#endif  // __test_msgs__srv__Empty_Request__idl 
+
+#ifndef __test_msgs__srv__Empty_Request__idl
+#define __test_msgs__srv__Empty_Request__idl
+
+module test_msgs {
+  module srv {
+    module dds_ {
+      @appendable struct Empty_Request_ {
+        octet structure_needs_at_least_one_member;
+      };
+    };
+  };
+};
+
+
+#endif // __test_msgs__srv__Empty_Request__idl

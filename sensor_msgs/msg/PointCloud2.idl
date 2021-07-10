@@ -13,27 +13,30 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __sensor_msgs__msg__PointCloud2__idl 
-#define __sensor_msgs__msg__PointCloud2__idl 
- 
-#include "PointField.idl" 
-#include "std_msgs/msg/Header.idl" 
- 
-module sensor_msgs { module msg { 
- 
-struct PointCloud2 { 
-    std_msgs::msg::Header header; 
-    unsigned long height; 
-    unsigned long width; 
-    sequence<sensor_msgs::msg::PointField> fields; 
-    boolean is_bigendian; 
-    unsigned long point_step; 
-    unsigned long row_step; 
-    sequence<octet> data; 
-    boolean is_dense; 
-}; 
- 
-}; };  // module msg::sensor_msgs 
- 
-#endif  // __sensor_msgs__msg__PointCloud2__idl 
+
+#ifndef __sensor_msgs__msg__PointCloud2__idl
+#define __sensor_msgs__msg__PointCloud2__idl
+
+#include "std_msgs/msg/Header.idl"
+#include "sensor_msgs/msg/PointField.idl"
+
+module sensor_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct PointCloud2_ {
+        std_msgs::msg::dds_::Header_ header;
+        uint32 height;
+        uint32 width;
+        sequence<sensor_msgs::msg::dds_::PointField_> fields;
+        boolean is_bigendian;
+        uint32 point_step;
+        uint32 row_step;
+        sequence<octet> data;
+        boolean is_dense;
+      };
+    };
+  };
+};
+
+
+#endif // __sensor_msgs__msg__PointCloud2__idl

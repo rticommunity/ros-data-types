@@ -13,25 +13,28 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __geometry_msgs__msg__Inertia__idl 
-#define __geometry_msgs__msg__Inertia__idl 
- 
-#include "Vector3.idl" 
- 
-module geometry_msgs { module msg { 
- 
-struct Inertia { 
-    double m; 
-    geometry_msgs::msg::Vector3 com; 
-    double ixx; 
-    double ixy; 
-    double ixz; 
-    double iyy; 
-    double iyz; 
-    double izz; 
-}; 
- 
-}; };  // module msg::geometry_msgs 
- 
-#endif  // __geometry_msgs__msg__Inertia__idl 
+
+#ifndef __geometry_msgs__msg__Inertia__idl
+#define __geometry_msgs__msg__Inertia__idl
+
+#include "geometry_msgs/msg/Vector3.idl"
+
+module geometry_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct Inertia_ {
+        double m;
+        geometry_msgs::msg::dds_::Vector3_ com;
+        double ixx;
+        double ixy;
+        double ixz;
+        double iyy;
+        double iyz;
+        double izz;
+      };
+    };
+  };
+};
+
+
+#endif // __geometry_msgs__msg__Inertia__idl

@@ -13,18 +13,19 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __shape_msgs__msg__MeshTriangle__idl 
-#define __shape_msgs__msg__MeshTriangle__idl 
- 
-module shape_msgs { module msg { 
- 
-typedef unsigned long shape_msgs__MeshTriangle__unsigned_long_array_3[3]; 
- 
-struct MeshTriangle { 
-    shape_msgs__MeshTriangle__unsigned_long_array_3 vertex_indices; 
-}; 
- 
-}; };  // module msg::shape_msgs 
- 
-#endif  // __shape_msgs__msg__MeshTriangle__idl 
+
+#ifndef __shape_msgs__msg__MeshTriangle__idl
+#define __shape_msgs__msg__MeshTriangle__idl
+
+module shape_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct MeshTriangle_ {
+        uint32 vertex_indices[3];
+      };
+    };
+  };
+};
+
+
+#endif // __shape_msgs__msg__MeshTriangle__idl

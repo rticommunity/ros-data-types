@@ -1,0 +1,41 @@
+/* 
+ * Copyright 2012-2018 Open Source Robotics Foundation 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0 
+ * 
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and 
+ * limitations under the License. 
+ */ 
+
+#ifndef __rosidl_generator_py__msg__StringArrays__idl
+#define __rosidl_generator_py__msg__StringArrays__idl
+
+module rosidl_generator_py {
+  module msg {
+    module dds_ {
+      @appendable struct StringArrays_ {
+        string<5> ub_string_static_array_value[3];
+        sequence<string<5>,10 > ub_string_ub_array_value;
+        sequence<string<5> > ub_string_dynamic_array_value;
+        sequence<string> string_dynamic_array_value;
+        string string_static_array_value[3];
+        sequence<string,10 > string_bounded_array_value;
+        sequence<string> def_string_dynamic_array_value;
+        string def_string_static_array_value[3];
+        sequence<string,10 > def_string_bounded_array_value;
+        sequence<string> def_various_quotes;
+        sequence<string> def_various_commas;
+      };
+    };
+  };
+};
+
+
+#endif // __rosidl_generator_py__msg__StringArrays__idl

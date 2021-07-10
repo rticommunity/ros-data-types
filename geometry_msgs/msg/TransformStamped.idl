@@ -13,21 +13,24 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __geometry_msgs__msg__TransformStamped__idl 
-#define __geometry_msgs__msg__TransformStamped__idl 
- 
-#include "Transform.idl" 
-#include "std_msgs/msg/Header.idl" 
- 
-module geometry_msgs { module msg { 
- 
-struct TransformStamped { 
-    std_msgs::msg::Header header; 
-    string child_frame_id; 
-    geometry_msgs::msg::Transform transform; 
-}; 
- 
-}; };  // module msg::geometry_msgs 
- 
-#endif  // __geometry_msgs__msg__TransformStamped__idl 
+
+#ifndef __geometry_msgs__msg__TransformStamped__idl
+#define __geometry_msgs__msg__TransformStamped__idl
+
+#include "std_msgs/msg/Header.idl"
+#include "geometry_msgs/msg/Transform.idl"
+
+module geometry_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct TransformStamped_ {
+        std_msgs::msg::dds_::Header_ header;
+        string child_frame_id;
+        geometry_msgs::msg::dds_::Transform_ transform;
+      };
+    };
+  };
+};
+
+
+#endif // __geometry_msgs__msg__TransformStamped__idl

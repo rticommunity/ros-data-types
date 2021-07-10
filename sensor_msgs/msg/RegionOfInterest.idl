@@ -13,20 +13,23 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __sensor_msgs__msg__RegionOfInterest__idl 
-#define __sensor_msgs__msg__RegionOfInterest__idl 
- 
-module sensor_msgs { module msg { 
- 
-struct RegionOfInterest { 
-    unsigned long x_offset; 
-    unsigned long y_offset; 
-    unsigned long height; 
-    unsigned long width; 
-    boolean do_rectify; 
-}; 
- 
-}; };  // module msg::sensor_msgs 
- 
-#endif  // __sensor_msgs__msg__RegionOfInterest__idl 
+
+#ifndef __sensor_msgs__msg__RegionOfInterest__idl
+#define __sensor_msgs__msg__RegionOfInterest__idl
+
+module sensor_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct RegionOfInterest_ {
+        uint32 x_offset;
+        uint32 y_offset;
+        uint32 height;
+        uint32 width;
+        boolean do_rectify;
+      };
+    };
+  };
+};
+
+
+#endif // __sensor_msgs__msg__RegionOfInterest__idl

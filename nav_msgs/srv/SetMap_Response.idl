@@ -13,16 +13,19 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __nav_msgs__srv__SetMap_Response__idl 
-#define __nav_msgs__srv__SetMap_Response__idl 
- 
-module nav_msgs { module srv { 
- 
-struct SetMap_Response { 
-    boolean success; 
-}; 
- 
-}; };  // module srv::nav_msgs 
- 
-#endif  // __nav_msgs__srv__SetMap_Response__idl 
+
+#ifndef __nav_msgs__srv__SetMap_Response__idl
+#define __nav_msgs__srv__SetMap_Response__idl
+
+module nav_msgs {
+  module srv {
+    module dds_ {
+      @appendable struct SetMap_Response_ {
+        boolean success;
+      };
+    };
+  };
+};
+
+
+#endif // __nav_msgs__srv__SetMap_Response__idl

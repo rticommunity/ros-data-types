@@ -13,20 +13,23 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __shape_msgs__msg__Mesh__idl 
-#define __shape_msgs__msg__Mesh__idl 
- 
-#include "geometry_msgs/msg/Point.idl" 
-#include "MeshTriangle.idl" 
- 
-module shape_msgs { module msg { 
- 
-struct Mesh { 
-    sequence<shape_msgs::msg::MeshTriangle> triangles; 
-    sequence<geometry_msgs::msg::Point> vertices; 
-}; 
- 
-}; };  // module msg::shape_msgs 
- 
-#endif  // __shape_msgs__msg__Mesh__idl 
+
+#ifndef __shape_msgs__msg__Mesh__idl
+#define __shape_msgs__msg__Mesh__idl
+
+#include "geometry_msgs/msg/Point.idl"
+#include "shape_msgs/msg/MeshTriangle.idl"
+
+module shape_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct Mesh_ {
+        sequence<shape_msgs::msg::dds_::MeshTriangle_> triangles;
+        sequence<geometry_msgs::msg::dds_::Point_> vertices;
+      };
+    };
+  };
+};
+
+
+#endif // __shape_msgs__msg__Mesh__idl

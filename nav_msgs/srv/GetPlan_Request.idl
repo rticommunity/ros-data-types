@@ -13,20 +13,23 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __nav_msgs__srv__GetPlan_Request__idl 
-#define __nav_msgs__srv__GetPlan_Request__idl 
- 
-#include "geometry_msgs/msg/PoseStamped.idl" 
- 
-module nav_msgs { module srv { 
- 
-struct GetPlan_Request { 
-    geometry_msgs::msg::PoseStamped start; 
-    geometry_msgs::msg::PoseStamped goal; 
-    float tolerance; 
-}; 
- 
-}; };  // module srv::nav_msgs 
- 
-#endif  // __nav_msgs__srv__GetPlan_Request__idl 
+
+#ifndef __nav_msgs__srv__GetPlan_Request__idl
+#define __nav_msgs__srv__GetPlan_Request__idl
+
+#include "geometry_msgs/msg/PoseStamped.idl"
+
+module nav_msgs {
+  module srv {
+    module dds_ {
+      @appendable struct GetPlan_Request_ {
+        geometry_msgs::msg::dds_::PoseStamped_ start;
+        geometry_msgs::msg::dds_::PoseStamped_ goal;
+        float tolerance;
+      };
+    };
+  };
+};
+
+
+#endif // __nav_msgs__srv__GetPlan_Request__idl

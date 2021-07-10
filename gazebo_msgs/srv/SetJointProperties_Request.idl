@@ -14,13 +14,18 @@
  * limitations under the License. 
  */ 
  
+#ifndef __gazebo_msgs__srv__SetJointProperties_Request__idl
+#define __gazebo_msgs__srv__SetJointProperties_Request__idl
+ 
 #include "gazebo_msgs/msg/ODEJointProperties.idl" 
  
-module gazebo_msgs { module srv { 
+module gazebo_msgs { module srv { module dds_ { 
  
-struct SetJointProperties_Request { 
+struct SetJointProperties_Request_ { 
     string joint_name; 
-    gazebo_msgs::msg::ODEJointProperties ode_joint_config; 
+    gazebo_msgs::msg::dds_::ODEJointProperties_ ode_joint_config; 
 }; 
  
-}; };  // module srv::gazebo_msgs 
+}; }; };  // module dds_::srv::gazebo_msgs 
+
+#endif  // __gazebo_msgs__srv__SetJointProperties_Request__idl

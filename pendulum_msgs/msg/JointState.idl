@@ -13,18 +13,21 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __pendulum_msgs__msg__JointState__idl 
-#define __pendulum_msgs__msg__JointState__idl 
- 
-module pendulum_msgs { module msg { 
- 
-struct JointState { 
-    double position; 
-    double velocity; 
-    double effort; 
-}; 
- 
-}; };  // module msg::pendulum_msgs 
- 
-#endif  // __pendulum_msgs__msg__JointState__idl 
+
+#ifndef __pendulum_msgs__msg__JointState__idl
+#define __pendulum_msgs__msg__JointState__idl
+
+module pendulum_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct JointState_ {
+        double position;
+        double velocity;
+        double effort;
+      };
+    };
+  };
+};
+
+
+#endif // __pendulum_msgs__msg__JointState__idl

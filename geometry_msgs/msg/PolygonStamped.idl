@@ -13,20 +13,23 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __geometry_msgs__msg__PolygonStamped__idl 
-#define __geometry_msgs__msg__PolygonStamped__idl 
- 
-#include "Polygon.idl" 
-#include "std_msgs/msg/Header.idl" 
- 
-module geometry_msgs { module msg { 
- 
-struct PolygonStamped { 
-    std_msgs::msg::Header header; 
-    geometry_msgs::msg::Polygon polygon; 
-}; 
- 
-}; };  // module msg::geometry_msgs 
- 
-#endif  // __geometry_msgs__msg__PolygonStamped__idl 
+
+#ifndef __geometry_msgs__msg__PolygonStamped__idl
+#define __geometry_msgs__msg__PolygonStamped__idl
+
+#include "std_msgs/msg/Header.idl"
+#include "geometry_msgs/msg/Polygon.idl"
+
+module geometry_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct PolygonStamped_ {
+        std_msgs::msg::dds_::Header_ header;
+        geometry_msgs::msg::dds_::Polygon_ polygon;
+      };
+    };
+  };
+};
+
+
+#endif // __geometry_msgs__msg__PolygonStamped__idl

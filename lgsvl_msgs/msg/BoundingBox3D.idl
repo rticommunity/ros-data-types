@@ -1,0 +1,32 @@
+// generated from rosidl_generator_dds_idl/resource/idl.idl.em
+// with input from lgsvl_msgs:msg/BoundingBox3D.idl
+// generated code does not contain a copyright notice
+#include "geometry_msgs/msg/Pose.idl"
+#include "geometry_msgs/msg/Vector3.idl"
+
+#ifndef __lgsvl_msgs__msg__bounding_box3_d__idl__
+#define __lgsvl_msgs__msg__bounding_box3_d__idl__
+
+
+module lgsvl_msgs {
+
+module msg {
+
+module dds_ {
+
+
+struct BoundingBox3D_ {
+geometry_msgs::msg::dds_::Pose_ position;
+geometry_msgs::msg::dds_::Vector3_ size;
+
+};
+
+
+};  // module dds_
+
+};  // module msg
+
+};  // module lgsvl_msgs
+
+
+#endif  // __lgsvl_msgs__msg__bounding_box3_d__idl__

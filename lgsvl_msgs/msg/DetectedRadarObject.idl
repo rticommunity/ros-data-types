@@ -1,0 +1,48 @@
+// generated from rosidl_generator_dds_idl/resource/idl.idl.em
+// with input from lgsvl_msgs:msg/DetectedRadarObject.idl
+// generated code does not contain a copyright notice
+#include "geometry_msgs/msg/Point.idl"
+#include "geometry_msgs/msg/Vector3.idl"
+
+#ifndef __lgsvl_msgs__msg__detected_radar_object__idl__
+#define __lgsvl_msgs__msg__detected_radar_object__idl__
+
+
+module lgsvl_msgs {
+
+module msg {
+
+module dds_ {
+
+module DetectedRadarObject_Constants {
+const octet STATE_MOVING = 0;
+const octet STATE_STATIONARY = 1;
+
+};
+
+struct DetectedRadarObject_ {
+long id;
+geometry_msgs::msg::dds_::Vector3_ sensor_aim;
+geometry_msgs::msg::dds_::Vector3_ sensor_right;
+geometry_msgs::msg::dds_::Point_ sensor_position;
+geometry_msgs::msg::dds_::Vector3_ sensor_velocity;
+double sensor_angle;
+geometry_msgs::msg::dds_::Point_ object_position;
+geometry_msgs::msg::dds_::Vector3_ object_velocity;
+geometry_msgs::msg::dds_::Point_ object_relative_position;
+geometry_msgs::msg::dds_::Vector3_ object_relative_velocity;
+geometry_msgs::msg::dds_::Vector3_ object_collider_size;
+octet object_state;
+boolean new_detection;
+
+};
+
+
+};  // module dds_
+
+};  // module msg
+
+};  // module lgsvl_msgs
+
+
+#endif  // __lgsvl_msgs__msg__detected_radar_object__idl__

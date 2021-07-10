@@ -1,0 +1,44 @@
+/* 
+ * Copyright 2012-2018 Open Source Robotics Foundation 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0 
+ * 
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and 
+ * limitations under the License. 
+ */ 
+
+#ifndef __test_msgs__srv__BasicTypes_Request__idl
+#define __test_msgs__srv__BasicTypes_Request__idl
+
+module test_msgs {
+  module srv {
+    module dds_ {
+      @appendable struct BasicTypes_Request_ {
+        boolean bool_value;
+        octet byte_value;
+        octet char_value;
+        float float32_value;
+        double float64_value;
+        octet int8_value;
+        octet uint8_value;
+        int16 int16_value;
+        uint16 uint16_value;
+        int32 int32_value;
+        uint32 uint32_value;
+        int64 int64_value;
+        uint64 uint64_value;
+        string string_value;
+      };
+    };
+  };
+};
+
+
+#endif // __test_msgs__srv__BasicTypes_Request__idl

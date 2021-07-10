@@ -13,19 +13,22 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __std_msgs__msg__Header__idl 
-#define __std_msgs__msg__Header__idl 
- 
-#include "Time.idl" 
- 
-module std_msgs { module msg { 
- 
-struct Header { 
-    std_msgs::msg::Time stamp; 
-    string frame_id; 
-}; 
- 
-}; };  // module msg::std_msgs 
- 
-#endif  // __std_msgs__msg__Header__idl 
+
+#ifndef __std_msgs__msg__Header__idl
+#define __std_msgs__msg__Header__idl
+
+#include "builtin_interfaces/msg/Time.idl"
+
+module std_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct Header_ {
+        builtin_interfaces::msg::dds_::Time_ stamp;
+        string frame_id;
+      };
+    };
+  };
+};
+
+
+#endif // __std_msgs__msg__Header__idl

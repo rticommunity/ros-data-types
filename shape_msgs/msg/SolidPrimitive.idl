@@ -13,30 +13,34 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __shape_msgs__msg__SolidPrimitive__idl 
-#define __shape_msgs__msg__SolidPrimitive__idl 
- 
-module shape_msgs { module msg { 
- 
-const octet SolidPrimitive__BOX = 1; 
-const octet SolidPrimitive__SPHERE = 2; 
-const octet SolidPrimitive__CYLINDER = 3; 
-const octet SolidPrimitive__CONE = 4; 
-const octet SolidPrimitive__BOX_X = 0; 
-const octet SolidPrimitive__BOX_Y = 1; 
-const octet SolidPrimitive__BOX_Z = 2; 
-const octet SolidPrimitive__SPHERE_RADIUS = 0; 
-const octet SolidPrimitive__CYLINDER_HEIGHT = 0; 
-const octet SolidPrimitive__CYLINDER_RADIUS = 1; 
-const octet SolidPrimitive__CONE_HEIGHT = 0; 
-const octet SolidPrimitive__CONE_RADIUS = 1; 
- 
-struct SolidPrimitive { 
-    octet type; 
-    sequence<double, 3> dimensions; 
-}; 
- 
-}; };  // module msg::shape_msgs 
- 
-#endif  // __shape_msgs__msg__SolidPrimitive__idl 
+
+#ifndef __shape_msgs__msg__SolidPrimitive__idl
+#define __shape_msgs__msg__SolidPrimitive__idl
+
+module shape_msgs {
+  module msg {
+    module dds_ {
+      module SolidPrimitive_Constants {
+        const octet BOX_ = 1;
+        const octet SPHERE_ = 2;
+        const octet CYLINDER_ = 3;
+        const octet CONE_ = 4;
+        const octet BOX_X_ = 0;
+        const octet BOX_Y_ = 1;
+        const octet BOX_Z_ = 2;
+        const octet SPHERE_RADIUS_ = 0;
+        const octet CYLINDER_HEIGHT_ = 0;
+        const octet CYLINDER_RADIUS_ = 1;
+        const octet CONE_HEIGHT_ = 0;
+        const octet CONE_RADIUS_ = 1;
+      };
+      @appendable struct SolidPrimitive_ {
+        octet type;
+        sequence<double,3> dimensions;
+      };
+    };
+  };
+};
+
+
+#endif // __shape_msgs__msg__SolidPrimitive__idl

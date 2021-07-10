@@ -13,26 +13,31 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __visualization_msgs__msg__InteractiveMarkerUpdate__idl 
-#define __visualization_msgs__msg__InteractiveMarkerUpdate__idl 
- 
-#include "InteractiveMarkerPose.idl" 
-#include "InteractiveMarker.idl" 
- 
-module visualization_msgs { module msg { 
-const octet InteractiveMarkerUpdate__KEEP_ALIVE = 0; 
-const octet InteractiveMarkerUpdate__UPDATE = 1; 
- 
-struct InteractiveMarkerUpdate { 
-    string server_id; 
-    unsigned long long seq_num; 
-    octet type; 
-    sequence<visualization_msgs::msg::InteractiveMarker> markers; 
-    sequence<visualization_msgs::msg::InteractiveMarkerPose> poses; 
-    sequence<string> erases; 
-}; 
- 
-}; };  // module msg::visualization_msgs 
- 
-#endif  // __visualization_msgs__msg__InteractiveMarkerUpdate__idl 
+
+#ifndef __visualization_msgs__msg__InteractiveMarkerUpdate__idl
+#define __visualization_msgs__msg__InteractiveMarkerUpdate__idl
+
+#include "visualization_msgs/msg/InteractiveMarkerPose.idl"
+#include "visualization_msgs/msg/InteractiveMarker.idl"
+
+module visualization_msgs {
+  module msg {
+    module dds_ {
+      module InteractiveMarkerUpdate_Constants {
+        const octet KEEP_ALIVE_ = 0;
+        const octet UPDATE_ = 1;
+      };
+      @appendable struct InteractiveMarkerUpdate_ {
+        string server_id;
+        uint64 seq_num;
+        octet type;
+        sequence<visualization_msgs::msg::dds_::InteractiveMarker_> markers;
+        sequence<visualization_msgs::msg::dds_::InteractiveMarkerPose_> poses;
+        sequence<string> erases;
+      };
+    };
+  };
+};
+
+
+#endif // __visualization_msgs__msg__InteractiveMarkerUpdate__idl

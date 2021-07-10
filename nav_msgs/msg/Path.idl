@@ -13,20 +13,23 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __nav_msgs__msg__Path__idl 
-#define __nav_msgs__msg__Path__idl 
- 
-#include "geometry_msgs/msg/PoseStamped.idl" 
-#include "std_msgs/msg/Header.idl" 
- 
-module nav_msgs { module msg { 
- 
-struct Path { 
-    std_msgs::msg::Header header; 
-    sequence<geometry_msgs::msg::PoseStamped> poses; 
-}; 
- 
-}; };  // module msg::nav_msgs 
- 
-#endif  // __nav_msgs__msg__Path__idl 
+
+#ifndef __nav_msgs__msg__Path__idl
+#define __nav_msgs__msg__Path__idl
+
+#include "std_msgs/msg/Header.idl"
+#include "geometry_msgs/msg/PoseStamped.idl"
+
+module nav_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct Path_ {
+        std_msgs::msg::dds_::Header_ header;
+        sequence<geometry_msgs::msg::dds_::PoseStamped_> poses;
+      };
+    };
+  };
+};
+
+
+#endif // __nav_msgs__msg__Path__idl

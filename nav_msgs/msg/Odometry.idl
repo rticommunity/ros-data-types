@@ -13,23 +13,26 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __nav_msgs__msg__Odometry__idl 
-#define __nav_msgs__msg__Odometry__idl 
- 
-#include "geometry_msgs/msg/PoseWithCovariance.idl" 
-#include "geometry_msgs/msg/TwistWithCovariance.idl" 
-#include "std_msgs/msg/Header.idl" 
- 
-module nav_msgs { module msg { 
- 
-struct Odometry { 
-    std_msgs::msg::Header header; 
-    string child_frame_id; 
-    geometry_msgs::msg::PoseWithCovariance pose; 
-    geometry_msgs::msg::TwistWithCovariance twist; 
-}; 
- 
-}; };  // module msg::nav_msgs 
- 
-#endif  // __nav_msgs__msg__Odometry__idl 
+
+#ifndef __nav_msgs__msg__Odometry__idl
+#define __nav_msgs__msg__Odometry__idl
+
+#include "geometry_msgs/msg/PoseWithCovariance.idl"
+#include "std_msgs/msg/Header.idl"
+#include "geometry_msgs/msg/TwistWithCovariance.idl"
+
+module nav_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct Odometry_ {
+        std_msgs::msg::dds_::Header_ header;
+        string child_frame_id;
+        geometry_msgs::msg::dds_::PoseWithCovariance_ pose;
+        geometry_msgs::msg::dds_::TwistWithCovariance_ twist;
+      };
+    };
+  };
+};
+
+
+#endif // __nav_msgs__msg__Odometry__idl

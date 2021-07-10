@@ -1,0 +1,32 @@
+// generated from rosidl_generator_dds_idl/resource/idl.idl.em
+// with input from lgsvl_msgs:msg/BoundingBox2D.idl
+// generated code does not contain a copyright notice
+
+#ifndef __lgsvl_msgs__msg__bounding_box2_d__idl__
+#define __lgsvl_msgs__msg__bounding_box2_d__idl__
+
+
+module lgsvl_msgs {
+
+module msg {
+
+module dds_ {
+
+
+struct BoundingBox2D_ {
+float x;
+float y;
+float width;
+float height;
+
+};
+
+
+};  // module dds_
+
+};  // module msg
+
+};  // module lgsvl_msgs
+
+
+#endif  // __lgsvl_msgs__msg__bounding_box2_d__idl__

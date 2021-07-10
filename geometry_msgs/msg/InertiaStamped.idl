@@ -13,20 +13,23 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __geometry_msgs__msg__InertiaStamped__idl 
-#define __geometry_msgs__msg__InertiaStamped__idl 
- 
-#include "Inertia.idl" 
-#include "std_msgs/msg/Header.idl" 
- 
-module geometry_msgs { module msg { 
- 
-struct InertiaStamped { 
-    std_msgs::msg::Header header; 
-    geometry_msgs::msg::Inertia inertia; 
-}; 
- 
-}; };  // module msg::geometry_msgs 
- 
-#endif  // __geometry_msgs__msg__InertiaStamped__idl 
+
+#ifndef __geometry_msgs__msg__InertiaStamped__idl
+#define __geometry_msgs__msg__InertiaStamped__idl
+
+#include "std_msgs/msg/Header.idl"
+#include "geometry_msgs/msg/Inertia.idl"
+
+module geometry_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct InertiaStamped_ {
+        std_msgs::msg::dds_::Header_ header;
+        geometry_msgs::msg::dds_::Inertia_ inertia;
+      };
+    };
+  };
+};
+
+
+#endif // __geometry_msgs__msg__InertiaStamped__idl

@@ -13,20 +13,23 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __geometry_msgs__msg__Transform__idl 
-#define __geometry_msgs__msg__Transform__idl 
- 
-#include "Quaternion.idl" 
-#include "Vector3.idl" 
- 
-module geometry_msgs { module msg { 
- 
-struct Transform { 
-    geometry_msgs::msg::Vector3 translation; 
-    geometry_msgs::msg::Quaternion rotation; 
-}; 
- 
-}; };  // module msg::geometry_msgs 
- 
-#endif  // __geometry_msgs__msg__Transform__idl 
+
+#ifndef __geometry_msgs__msg__Transform__idl
+#define __geometry_msgs__msg__Transform__idl
+
+#include "geometry_msgs/msg/Vector3.idl"
+#include "geometry_msgs/msg/Quaternion.idl"
+
+module geometry_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct Transform_ {
+        geometry_msgs::msg::dds_::Vector3_ translation;
+        geometry_msgs::msg::dds_::Quaternion_ rotation;
+      };
+    };
+  };
+};
+
+
+#endif // __geometry_msgs__msg__Transform__idl

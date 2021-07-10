@@ -13,25 +13,28 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __sensor_msgs__msg__MultiDOFJointState__idl 
-#define __sensor_msgs__msg__MultiDOFJointState__idl 
- 
-#include "geometry_msgs/msg/Transform.idl" 
-#include "geometry_msgs/msg/Twist.idl" 
-#include "geometry_msgs/msg/Wrench.idl" 
-#include "std_msgs/msg/Header.idl" 
- 
-module sensor_msgs { module msg { 
- 
-struct MultiDOFJointState { 
-    std_msgs::msg::Header header; 
-    sequence<string> joint_names; 
-    sequence<geometry_msgs::msg::Transform> transforms; 
-    sequence<geometry_msgs::msg::Twist> twist; 
-    sequence<geometry_msgs::msg::Wrench> wrench; 
-}; 
- 
-}; };  // module msg::sensor_msgs 
- 
-#endif  // __sensor_msgs__msg__MultiDOFJointState__idl 
+
+#ifndef __sensor_msgs__msg__MultiDOFJointState__idl
+#define __sensor_msgs__msg__MultiDOFJointState__idl
+
+#include "std_msgs/msg/Header.idl"
+#include "geometry_msgs/msg/Wrench.idl"
+#include "geometry_msgs/msg/Transform.idl"
+#include "geometry_msgs/msg/Twist.idl"
+
+module sensor_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct MultiDOFJointState_ {
+        std_msgs::msg::dds_::Header_ header;
+        sequence<string> joint_names;
+        sequence<geometry_msgs::msg::dds_::Transform_> transforms;
+        sequence<geometry_msgs::msg::dds_::Twist_> twist;
+        sequence<geometry_msgs::msg::dds_::Wrench_> wrench;
+      };
+    };
+  };
+};
+
+
+#endif // __sensor_msgs__msg__MultiDOFJointState__idl

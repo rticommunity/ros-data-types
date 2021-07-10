@@ -13,18 +13,21 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __geometry_msgs__msg__Pose2D__idl 
-#define __geometry_msgs__msg__Pose2D__idl 
- 
-module geometry_msgs { module msg { 
- 
-struct Pose2D { 
-    double x; 
-    double y; 
-    double theta; 
-};  // struct Pose2D 
- 
-}; }; // module msg::geometry_msgs 
- 
-#endif  // __geometry_msgs__msg__Pose2D__idl 
+
+#ifndef __geometry_msgs__msg__Pose2D__idl
+#define __geometry_msgs__msg__Pose2D__idl
+
+module geometry_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct Pose2D_ {
+        double x;
+        double y;
+        double theta;
+      };
+    };
+  };
+};
+
+
+#endif // __geometry_msgs__msg__Pose2D__idl

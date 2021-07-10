@@ -13,20 +13,23 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __diagnostic_msgs__msg__DiagnosticArray__idl__ 
-#define __diagnostic_msgs__msg__DiagnosticArray__idl__ 
- 
-#include "DiagnosticStatus.idl" 
-#include "std_msgs/msg/Header.idl" 
- 
-module diagnostic_msgs { module msg { 
- 
-struct DiagnosticArray { 
-    std_msgs::msg::Header header; 
-    sequence<diagnostic_msgs::msg::DiagnosticStatus> status; 
-}; 
- 
-}; };  // module msg::diagnostic_msgs 
- 
-#endif  // __diagnostic_msgs__msg__DiagnosticArray__idl__ 
+
+#ifndef __diagnostic_msgs__msg__DiagnosticArray__idl
+#define __diagnostic_msgs__msg__DiagnosticArray__idl
+
+#include "std_msgs/msg/Header.idl"
+#include "diagnostic_msgs/msg/DiagnosticStatus.idl"
+
+module diagnostic_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct DiagnosticArray_ {
+        std_msgs::msg::dds_::Header_ header;
+        sequence<diagnostic_msgs::msg::dds_::DiagnosticStatus_> status;
+      };
+    };
+  };
+};
+
+
+#endif // __diagnostic_msgs__msg__DiagnosticArray__idl

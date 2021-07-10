@@ -31,6 +31,12 @@ ros-data-types/
 For more information on the original ROS 2 common interfaces, please refer to
 this [repository](https://github.com/ros2/common_interfaces).
 
+This repository also includes data type definitions for topics that are *ROS2 internal*, 
+for supporting ROS2 parameters, actions, RCL and RMW, etc., thus enabling non-ROS2 
+Connext DDS applications full access and interoperability with any ROS2 component, 
+module, tool, visualizer, etc.
+
+
 ## Building ROS Type Library
 
 The ROS Types repository repository provides a set of CMake files to generate
@@ -41,14 +47,57 @@ that are required to build DDS applications capable of sending ROS messages.
 
 To generate the library, first run `cmake` from a subfolder. This process will
 create all the build constructs (e.g., Makefiles or Visual Studio solutions)
-that are required to build the library.
+that are required to build the library.  
+**Be sure to include the Connext DDS installation directory in your path before proceeding**
+This can be added to the current command shell by using the `rtisetenv_<arch>` script 
+included with Connext, such as:  
 
+**Linux:**
+```sh
+~/rti_connext_dds-6.0.1/resource/scripts/rtisetenv_x64Linux4gcc7.3.0.bash
+```
+
+**Windows:**
+```sh
+"C:\Program Files\rti_connext_dds-6.0.1\resource\scripts\rtisetenv_x64Win64VS2017.bat"
+```
+
+Windows builds can also benefit from running the `vcvars<option>.bat` script before building,
+such as `vcvarsall.bat`, to add Visual Studio to the PATH.
+
+
+**Run CMake to generate the build files**
 ```bash
 cd ros-data-types
 mkdir build; cd build
 cmake ..
 ```
 
+**CMake Options**  
+Optional arguments may be passed to CMake to control the build or correct errors, including:  
+
+
+**ROS2 unbounded variables**  
+ROS2 uses UNBOUNDED strings and sequences by default; this library can also be built to use
+UNBOUNDED vars by passing the `-DUNBOUNDED_ALL=ON` switch on the command line, as in:
+```sh
+cmake -DUNBOUNDED_ALL=ON ..
+``` 
+
+**RTI Connext Target Type**  
+If your RTI Connext installation includes support for multiple target platform types, a 
+specific target may be specified by adding the `-DCONNEXTDDS_ARCH=<arch>` switch, where
+`<arch>` is set to your desired build target, such as `x64Linux4gcc7.3.0`, `x64Win64VS2017`, etc. 
+
+
+**Debug or Release Build**  
+DEBUG build is enabled by default.  To build for RELEASE, use the parameter `CMAKE_BUILD_TYPE=Release`
+definition as part of your `cmake` invocation, as in:
+```sh
+cmake -DCMAKE_BUILD_TYPE=Release ..
+```
+
+**Language**  
 By default, the project will generate a type library for C++11. If you want to
 generate a type library for a different language, use the the parameter `LANG`
 as part of your `cmake` invocation:
@@ -57,18 +106,33 @@ as part of your `cmake` invocation:
 cmake -DLANG=<C|C++|C++11> ..
 ```
 
-### Building Type Library
+These CMake arguments shall be combined into a single command line, as in:
+```sh
+cmake -DCMAKE_BUILD_TYPE=Release -DUNBOUNDED_ALL=ON ..
+```
 
-Next, run the created build constructs. On Unix, that implies using GNU `make`:
+
+### Building the Type Library
+
+Next, run the created build constructs. On **Unix**, that implies using GNU `make`:
 
 ```bash
 make
 ```
 
-(On Windows, you will need to build the generated Visual Studio solution
-instead.)
+On **Windows**, you will need to build the generated Visual Studio solution instead:
 
-### Installing Type Library
+```sh
+  msbuild ros-types.sln </Flags>
+```
+or:
+```sh
+  devenv ros-types.sln
+```
+to launch the Visual Studio IDE
+
+
+### Installing the Type Library
 
 If you want to copy the resulting library and header files to a different
 location, run `cmake` and specify the destination directory:

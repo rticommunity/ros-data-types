@@ -13,18 +13,19 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __shape_msgs__msg__Plane__idl 
-#define __shape_msgs__msg__Plane__idl 
- 
-module shape_msgs { module msg { 
- 
-typedef double shape_msgs__Plane__double_array_4[4]; 
- 
-struct Plane { 
-    shape_msgs__Plane__double_array_4 coef; 
-}; 
- 
-}; };  // module msg::shape_msgs 
- 
-#endif  // __shape_msgs__msg__Plane__idl 
+
+#ifndef __shape_msgs__msg__Plane__idl
+#define __shape_msgs__msg__Plane__idl
+
+module shape_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct Plane_ {
+        double coef[4];
+      };
+    };
+  };
+};
+
+
+#endif // __shape_msgs__msg__Plane__idl

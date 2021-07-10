@@ -13,26 +13,30 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __sensor_msgs__msg__Range__idl 
-#define __sensor_msgs__msg__Range__idl 
- 
-#include "std_msgs/msg/Header.idl" 
- 
-module sensor_msgs { module msg { 
- 
-const octet Range__ULTRASOUND = 0; 
-const octet Range__INFRARED = 1; 
- 
-struct Range { 
-    std_msgs::msg::Header header; 
-    octet radiation_type; 
-    float field_of_view; 
-    float min_range; 
-    float max_range; 
-    float range; 
-}; 
- 
-}; };  // module msg::sensor_msgs 
- 
-#endif  // __sensor_msgs__msg__Range__idl 
+
+#ifndef __sensor_msgs__msg__Range__idl
+#define __sensor_msgs__msg__Range__idl
+
+#include "std_msgs/msg/Header.idl"
+
+module sensor_msgs {
+  module msg {
+    module dds_ {
+      module Range_Constants {
+        const octet ULTRASOUND_ = 0;
+        const octet INFRARED_ = 1;
+      };
+      @appendable struct Range_ {
+        std_msgs::msg::dds_::Header_ header;
+        octet radiation_type;
+        float field_of_view;
+        float min_range;
+        float max_range;
+        float range;
+      };
+    };
+  };
+};
+
+
+#endif // __sensor_msgs__msg__Range__idl

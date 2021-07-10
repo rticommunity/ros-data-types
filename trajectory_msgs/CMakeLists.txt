@@ -1,4 +1,4 @@
-# Copyright 2018 Real-Time Innovations 
+# Copyright 2020 Real-Time Innovations 
 # 
 # Licensed under the Apache License, Version 2.0 (the "License"); 
 # you may not use this file except in compliance with the License. 
@@ -19,31 +19,36 @@ list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/JointTrajectoryPoint.idl"
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/MultiDOFJointTrajectory.idl")
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/MultiDOFJointTrajectoryPoint.idl")
 
+# for unbounded strings & sequences use -DUNBOUNDED_ALL on CMake cmdline
+if(UNBOUNDED_ALL)
+    set(extra_params UNBOUNDED)
+endif()
 connextdds_generate_ros_dds_types(
     LANG ${LANG}
     OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
     IDL_FILES ${idl_files}
     INCLUDE_DIRS ${top_level_source_dir}
+    ${extra_params}
 )
 
-add_library( trajectorylibrary OBJECT
+add_library( trajectorymsgslibrary OBJECT
     ${generated_file_list}
 )
 
-set_property(TARGET trajectorylibrary PROPERTY 
+set_property(TARGET trajectorymsgslibrary PROPERTY 
     POSITION_INDEPENDENT_CODE ON
 )
 
-target_include_directories(trajectorylibrary PRIVATE 
+target_include_directories(trajectorymsgslibrary PRIVATE 
     ${CONNEXTDDS_INCLUDE_DIRS}
     ${top_level_binary_dir}
 )
 
-target_compile_definitions(trajectorylibrary PRIVATE 
+target_compile_definitions(trajectorymsgslibrary PRIVATE 
     ${CONNEXTDDS_COMPILE_DEFINITIONS}
 )
 
-add_dependencies(trajectorylibrary 
-    stdlibrary 
-    geometrylibrary
+add_dependencies(trajectorymsgslibrary 
+    stdmsgslibrary 
+    geometrymsgslibrary 
 )

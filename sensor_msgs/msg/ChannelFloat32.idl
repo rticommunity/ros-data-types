@@ -13,17 +13,20 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __sensor_msgs__msg__ChannelFloat32__idl 
-#define __sensor_msgs__msg__ChannelFloat32__idl 
- 
-module sensor_msgs { module msg { 
- 
-struct ChannelFloat32 { 
-    string name; 
-    sequence<float> values; 
-}; 
- 
-}; };  // module msg::sensor_msgs 
- 
-#endif  // __sensor_msgs__msg__ChannelFloat32__idl 
+
+#ifndef __sensor_msgs__msg__ChannelFloat32__idl
+#define __sensor_msgs__msg__ChannelFloat32__idl
+
+module sensor_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct ChannelFloat32_ {
+        string name;
+        sequence<float> values;
+      };
+    };
+  };
+};
+
+
+#endif // __sensor_msgs__msg__ChannelFloat32__idl

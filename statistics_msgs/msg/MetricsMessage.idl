@@ -1,0 +1,39 @@
+/* 
+ * Copyright 2012-2018 Open Source Robotics Foundation 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0 
+ * 
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and 
+ * limitations under the License. 
+ */ 
+
+#ifndef __statistics_msgs__msg__MetricsMessage__idl
+#define __statistics_msgs__msg__MetricsMessage__idl
+
+#include "statistics_msgs/msg/StatisticDataPoint.idl"
+#include "builtin_interfaces/msg/Time.idl"
+
+module statistics_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct MetricsMessage_ {
+        string measurement_source_name;
+        string metrics_source;
+        string unit;
+        builtin_interfaces::msg::dds_::Time_ window_start;
+        builtin_interfaces::msg::dds_::Time_ window_stop;
+        sequence<statistics_msgs::msg::dds_::StatisticDataPoint_> statistics;
+      };
+    };
+  };
+};
+
+
+#endif // __statistics_msgs__msg__MetricsMessage__idl

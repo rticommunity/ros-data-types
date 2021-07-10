@@ -13,21 +13,24 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __visualization_msgs__msg__InteractiveMarkerPose__idl 
-#define __visualization_msgs__msg__InteractiveMarkerPose__idl 
- 
-#include "geometry_msgs/msg/Pose.idl" 
-#include "std_msgs/msg/Header.idl" 
- 
-module visualization_msgs { module msg { 
- 
-struct InteractiveMarkerPose { 
-    std_msgs::msg::Header header; 
-    geometry_msgs::msg::Pose pose; 
-    string name; 
-}; 
- 
-}; };  // module msg::visualization_msgs 
- 
-#endif  // __visualization_msgs__msg__InteractiveMarkerPose__idl 
+
+#ifndef __visualization_msgs__msg__InteractiveMarkerPose__idl
+#define __visualization_msgs__msg__InteractiveMarkerPose__idl
+
+#include "std_msgs/msg/Header.idl"
+#include "geometry_msgs/msg/Pose.idl"
+
+module visualization_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct InteractiveMarkerPose_ {
+        std_msgs::msg::dds_::Header_ header;
+        geometry_msgs::msg::dds_::Pose_ pose;
+        string name;
+      };
+    };
+  };
+};
+
+
+#endif // __visualization_msgs__msg__InteractiveMarkerPose__idl

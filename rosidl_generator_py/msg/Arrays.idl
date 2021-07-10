@@ -1,0 +1,66 @@
+/* 
+ * Copyright 2012-2018 Open Source Robotics Foundation 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0 
+ * 
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and 
+ * limitations under the License. 
+ */ 
+
+#ifndef __rosidl_generator_py__msg__Arrays__idl
+#define __rosidl_generator_py__msg__Arrays__idl
+
+#include "rosidl_generator_py/msg/BasicTypes.idl"
+#include "rosidl_generator_py/msg/Constants.idl"
+#include "rosidl_generator_py/msg/Defaults.idl"
+
+module rosidl_generator_py {
+  module msg {
+    module dds_ {
+      @appendable struct Arrays_ {
+        boolean bool_values[3];
+        octet byte_values[3];
+        octet char_values[3];
+        float float32_values[3];
+        double float64_values[3];
+        octet int8_values[3];
+        octet uint8_values[3];
+        int16 int16_values[3];
+        uint16 uint16_values[3];
+        int32 int32_values[3];
+        uint32 uint32_values[3];
+        int64 int64_values[3];
+        uint64 uint64_values[3];
+        string string_values[3];
+        rosidl_generator_py::msg::dds_::BasicTypes_ basic_types_values[3];
+        rosidl_generator_py::msg::dds_::Constants_ constants_values[3];
+        rosidl_generator_py::msg::dds_::Defaults_ defaults_values[3];
+        boolean bool_values_default[3];
+        octet byte_values_default[3];
+        octet char_values_default[3];
+        float float32_values_default[3];
+        double float64_values_default[3];
+        octet int8_values_default[3];
+        octet uint8_values_default[3];
+        int16 int16_values_default[3];
+        uint16 uint16_values_default[3];
+        int32 int32_values_default[3];
+        uint32 uint32_values_default[3];
+        int64 int64_values_default[3];
+        uint64 uint64_values_default[3];
+        string string_values_default[3];
+        int32 alignment_check;
+      };
+    };
+  };
+};
+
+
+#endif // __rosidl_generator_py__msg__Arrays__idl

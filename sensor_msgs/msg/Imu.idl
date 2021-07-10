@@ -13,28 +13,29 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __sensor_msgs__msg__Imu__idl 
-#define __sensor_msgs__msg__Imu__idl 
- 
-#include "geometry_msgs/msg/Quaternion.idl" 
-#include "geometry_msgs/msg/Vector3.idl" 
-#include "std_msgs/msg/Header.idl" 
- 
-module sensor_msgs { module msg { 
- 
-typedef double sensor_msgs__Imu__double_array_9[9]; 
- 
-struct Imu { 
-    std_msgs::msg::Header header; 
-    geometry_msgs::msg::Quaternion orientation; 
-    sensor_msgs__Imu__double_array_9 orientation_covariance; 
-    geometry_msgs::msg::Vector3 angular_velocity; 
-    sensor_msgs__Imu__double_array_9 angular_velocity_covariance; 
-    geometry_msgs::msg::Vector3 linear_acceleration; 
-    sensor_msgs__Imu__double_array_9 linear_acceleration_covariance; 
-}; 
- 
-}; };  // module msg::sensor_msgs 
- 
-#endif  // __sensor_msgs__msg__Imu__idl 
+
+#ifndef __sensor_msgs__msg__Imu__idl
+#define __sensor_msgs__msg__Imu__idl
+
+#include "geometry_msgs/msg/Vector3.idl"
+#include "geometry_msgs/msg/Quaternion.idl"
+#include "std_msgs/msg/Header.idl"
+
+module sensor_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct Imu_ {
+        std_msgs::msg::dds_::Header_ header;
+        geometry_msgs::msg::dds_::Quaternion_ orientation;
+        double orientation_covariance[9];
+        geometry_msgs::msg::dds_::Vector3_ angular_velocity;
+        double angular_velocity_covariance[9];
+        geometry_msgs::msg::dds_::Vector3_ linear_acceleration;
+        double linear_acceleration_covariance[9];
+      };
+    };
+  };
+};
+
+
+#endif // __sensor_msgs__msg__Imu__idl

@@ -13,17 +13,20 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __diagnostic_msgs__srv__AddDiagnostics_Response__idl__ 
-#define __diagnostic_msgs__srv__AddDiagnostics_Response__idl__ 
- 
-module diagnostic_msgs { module srv { 
- 
-struct AddDiagnostics_Response { 
-    boolean success; 
-    string message; 
-}; 
- 
-}; };  // module srv::diagnostic_msgs 
- 
-#endif  // __diagnostic_msgs__srv__AddDiagnostics_Response__idl__ 
+
+#ifndef __diagnostic_msgs__srv__AddDiagnostics_Response__idl
+#define __diagnostic_msgs__srv__AddDiagnostics_Response__idl
+
+module diagnostic_msgs {
+  module srv {
+    module dds_ {
+      @appendable struct AddDiagnostics_Response_ {
+        boolean success;
+        string message;
+      };
+    };
+  };
+};
+
+
+#endif // __diagnostic_msgs__srv__AddDiagnostics_Response__idl

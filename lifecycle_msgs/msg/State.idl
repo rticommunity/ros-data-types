@@ -13,29 +13,33 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __lifecycle_msgs__msg__State__idl 
-#define __lifecycle_msgs__msg__State__idl 
- 
-module lifecycle_msgs { module msg { 
- 
-const octet State__PRIMARY_STATE_UNKNOWN = 0; 
-const octet State__PRIMARY_STATE_UNCONFIGURED = 1; 
-const octet State__PRIMARY_STATE_INACTIVE = 2; 
-const octet State__PRIMARY_STATE_ACTIVE = 3; 
-const octet State__PRIMARY_STATE_FINALIZED = 4; 
-const octet State__TRANSITION_STATE_CONFIGURING = 10; 
-const octet State__TRANSITION_STATE_CLEANINGUP = 11; 
-const octet State__TRANSITION_STATE_SHUTTINGDOWN = 12; 
-const octet State__TRANSITION_STATE_ACTIVATING = 13; 
-const octet State__TRANSITION_STATE_DEACTIVATING = 14; 
-const octet State__TRANSITION_STATE_ERRORPROCESSING = 15; 
- 
-struct State { 
-    octet id; 
-    string label; 
-}; 
- 
-}; };  // module msg::lifecycle_msgs 
- 
-#endif  // __lifecycle_msgs__msg__State__idl 
+
+#ifndef __lifecycle_msgs__msg__State__idl
+#define __lifecycle_msgs__msg__State__idl
+
+module lifecycle_msgs {
+  module msg {
+    module dds_ {
+      module State_Constants {
+        const octet PRIMARY_STATE_UNKNOWN_ = 0;
+        const octet PRIMARY_STATE_UNCONFIGURED_ = 1;
+        const octet PRIMARY_STATE_INACTIVE_ = 2;
+        const octet PRIMARY_STATE_ACTIVE_ = 3;
+        const octet PRIMARY_STATE_FINALIZED_ = 4;
+        const octet TRANSITION_STATE_CONFIGURING_ = 10;
+        const octet TRANSITION_STATE_CLEANINGUP_ = 11;
+        const octet TRANSITION_STATE_SHUTTINGDOWN_ = 12;
+        const octet TRANSITION_STATE_ACTIVATING_ = 13;
+        const octet TRANSITION_STATE_DEACTIVATING_ = 14;
+        const octet TRANSITION_STATE_ERRORPROCESSING_ = 15;
+      };
+      @appendable struct State_ {
+        octet id;
+        string label;
+      };
+    };
+  };
+};
+
+
+#endif // __lifecycle_msgs__msg__State__idl

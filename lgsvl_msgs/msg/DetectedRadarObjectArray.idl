@@ -1,0 +1,33 @@
+// generated from rosidl_generator_dds_idl/resource/idl.idl.em
+// with input from lgsvl_msgs:msg/DetectedRadarObjectArray.idl
+// generated code does not contain a copyright notice
+#include "lgsvl_msgs/msg/DetectedRadarObject.idl"
+#include "std_msgs/msg/Header.idl"
+
+#ifndef __lgsvl_msgs__msg__detected_radar_object_array__idl__
+#define __lgsvl_msgs__msg__detected_radar_object_array__idl__
+
+
+module lgsvl_msgs {
+
+module msg {
+
+module dds_ {
+
+
+struct DetectedRadarObjectArray_ {
+std_msgs::msg::dds_::Header_ header;
+sequence<lgsvl_msgs::msg::dds_::DetectedRadarObject_> objects;
+
+
+};
+
+
+};  // module dds_
+
+};  // module msg
+
+};  // module lgsvl_msgs
+
+
+#endif  // __lgsvl_msgs__msg__detected_radar_object_array__idl__

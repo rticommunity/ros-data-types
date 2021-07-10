@@ -1,0 +1,37 @@
+// generated from rosidl_generator_dds_idl/resource/idl.idl.em
+// with input from lgsvl_msgs:msg/Detection2D.idl
+// generated code does not contain a copyright notice
+#include "geometry_msgs/msg/Twist.idl"
+#include "lgsvl_msgs/msg/BoundingBox2D.idl"
+#include "std_msgs/msg/Header.idl"
+
+#ifndef __lgsvl_msgs__msg__detection2_d__idl__
+#define __lgsvl_msgs__msg__detection2_d__idl__
+
+
+module lgsvl_msgs {
+
+module msg {
+
+module dds_ {
+
+
+struct Detection2D_ {
+std_msgs::msg::dds_::Header_ header;
+unsigned long id;
+string label;
+float score;
+lgsvl_msgs::msg::dds_::BoundingBox2D_ bbox;
+geometry_msgs::msg::dds_::Twist_ velocity;
+
+};
+
+
+};  // module dds_
+
+};  // module msg
+
+};  // module lgsvl_msgs
+
+
+#endif  // __lgsvl_msgs__msg__detection2_d__idl__

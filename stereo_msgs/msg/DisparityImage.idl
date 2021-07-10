@@ -13,27 +13,30 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __stereo_msgs__msg__DisparityImage__idl 
-#define __stereo_msgs__msg__DisparityImage__idl 
- 
-#include "sensor_msgs/msg/Image.idl" 
-#include "sensor_msgs/msg/RegionOfInterest.idl" 
-#include "std_msgs/msg/Header.idl" 
- 
-module stereo_msgs { module msg { 
- 
-struct DisparityImage { 
-    std_msgs::msg::Header header; 
-    sensor_msgs::msg::Image image; 
-    float f; 
-    float t; 
-    sensor_msgs::msg::RegionOfInterest valid_window; 
-    float min_disparity; 
-    float max_disparity; 
-    float delta_d; 
-}; 
- 
-}; };  // module msg::stereo_msgs 
- 
-#endif  // __stereo_msgs__msg__DisparityImage__idl 
+
+#ifndef __stereo_msgs__msg__DisparityImage__idl
+#define __stereo_msgs__msg__DisparityImage__idl
+
+#include "std_msgs/msg/Header.idl"
+#include "sensor_msgs/msg/Image.idl"
+#include "sensor_msgs/msg/RegionOfInterest.idl"
+
+module stereo_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct DisparityImage_ {
+        std_msgs::msg::dds_::Header_ header;
+        sensor_msgs::msg::dds_::Image_ image;
+        float f;
+        float t;
+        sensor_msgs::msg::dds_::RegionOfInterest_ valid_window;
+        float min_disparity;
+        float max_disparity;
+        float delta_d;
+      };
+    };
+  };
+};
+
+
+#endif // __stereo_msgs__msg__DisparityImage__idl

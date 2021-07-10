@@ -14,10 +14,15 @@
  * limitations under the License. 
  */ 
  
-module gazebo_msgs { module srv { 
+#ifndef __gazebo_msgs__srv__DeleteModel_Request__idl
+#define __gazebo_msgs__srv__DeleteModel_Request__idl
  
-struct DeleteModel_Request { 
+module gazebo_msgs { module srv { module dds_ { 
+ 
+struct DeleteModel_Request_ { 
     string model_name; 
 }; 
  
-}; };  // module srv::gazebo_msgs 
+}; }; };  // module dds_::srv::gazebo_msgs 
+
+#endif  // __gazebo_msgs__srv__DeleteModel_Request__idl

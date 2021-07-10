@@ -14,19 +14,24 @@
  * limitations under the License. 
  */ 
  
+#ifndef __gazebo_msgs__srv__GetPhysicsProperties_Response__idl
+#define __gazebo_msgs__srv__GetPhysicsProperties_Response__idl
+ 
 #include "gazebo_msgs/msg/ODEPhysics.idl" 
 #include "geometry_msgs/msg/Vector3.idl" 
  
-module gazebo_msgs { module srv { 
+module gazebo_msgs { module srv { module dds_ { 
  
-struct GetPhysicsProperties_Response { 
+struct GetPhysicsProperties_Response_ { 
     double time_step; 
     boolean pause; 
     double max_update_rate; 
-    geometry_msgs::msg::Vector3 gravity; 
-    gazebo_msgs::msg::ODEPhysics ode_config; 
+    geometry_msgs::msg::dds_::Vector3_ gravity; 
+    gazebo_msgs::msg::dds_::ODEPhysics_ ode_config; 
     boolean success; 
     string status_message; 
 }; 
  
-}; };  // module srv::gazebo_msgs 
+}; }; };  // module dds_::srv::gazebo_msgs 
+
+#endif  // __gazebo_msgs__srv__GetPhysicsProperties_Response__idl

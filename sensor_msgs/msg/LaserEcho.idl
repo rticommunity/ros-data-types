@@ -13,16 +13,19 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __sensor_msgs__msg__LaserEcho__idl 
-#define __sensor_msgs__msg__LaserEcho__idl 
- 
-module sensor_msgs { module msg { 
- 
-struct LaserEcho { 
-    sequence<float> echoes; 
-}; 
- 
-}; };  // module msg::sensor_msgs 
- 
-#endif  // __sensor_msgs__msg__LaserEcho__idl 
+
+#ifndef __sensor_msgs__msg__LaserEcho__idl
+#define __sensor_msgs__msg__LaserEcho__idl
+
+module sensor_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct LaserEcho_ {
+        sequence<float> echoes;
+      };
+    };
+  };
+};
+
+
+#endif // __sensor_msgs__msg__LaserEcho__idl

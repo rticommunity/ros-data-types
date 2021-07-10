@@ -13,26 +13,30 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __sensor_msgs__msg__NavSatStatus__idl 
-#define __sensor_msgs__msg__NavSatStatus__idl 
- 
-module sensor_msgs { module msg { 
- 
-const octet NavSatStatus__STATUS_NO_FIX = 255; 
-const octet NavSatStatus__STATUS_FIX = 0; 
-const octet NavSatStatus__STATUS_SBAS_FIX = 1; 
-const octet NavSatStatus__STATUS_GBAS_FIX = 2; 
-const unsigned short NavSatStatus__SERVICE_GPS = 1; 
-const unsigned short NavSatStatus__SERVICE_GLONASS = 2; 
-const unsigned short NavSatStatus__SERVICE_COMPASS = 4; 
-const unsigned short NavSatStatus__SERVICE_GALILEO = 8; 
- 
-struct NavSatStatus { 
-    octet status; 
-    unsigned short service; 
-}; 
- 
-}; };  // module msg::sensor_msgs 
- 
-#endif  // __sensor_msgs__msg__NavSatStatus__idl 
+
+#ifndef __sensor_msgs__msg__NavSatStatus__idl
+#define __sensor_msgs__msg__NavSatStatus__idl
+
+module sensor_msgs {
+  module msg {
+    module dds_ {
+      module NavSatStatus_Constants {
+        const octet STATUS_NO_FIX_ = 255;
+        const octet STATUS_FIX_ = 0;
+        const octet STATUS_SBAS_FIX_ = 1;
+        const octet STATUS_GBAS_FIX_ = 2;
+        const uint16 SERVICE_GPS_ = 1;
+        const uint16 SERVICE_GLONASS_ = 2;
+        const uint16 SERVICE_COMPASS_ = 4;
+        const uint16 SERVICE_GALILEO_ = 8;
+      };
+      @appendable struct NavSatStatus_ {
+        octet status;
+        uint16 service;
+      };
+    };
+  };
+};
+
+
+#endif // __sensor_msgs__msg__NavSatStatus__idl

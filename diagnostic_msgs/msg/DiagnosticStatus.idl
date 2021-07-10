@@ -13,27 +13,31 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __diagnostic_msgs__msg__DiagnosticStatus__idl__ 
-#define __diagnostic_msgs__msg__DiagnosticStatus__idl__ 
- 
-#include "KeyValue.idl" 
- 
-module diagnostic_msgs { module msg { 
- 
-const octet DiagnosticStatus__OK = 0; 
-const octet DiagnosticStatus__WARN = 1; 
-const octet DiagnosticStatus__ERROR = 2; 
-const octet DiagnosticStatus__STALE = 3; 
- 
-struct DiagnosticStatus { 
-    octet level; 
-    string name; 
-    string message; 
-    string hardware_id; 
-    sequence<diagnostic_msgs::msg::KeyValue> values; 
-}; 
- 
-}; };  // module msg::diagnostic_msgs 
- 
-#endif  // __diagnostic_msgs__msg__DiagnosticStatus__idl__ 
+
+#ifndef __diagnostic_msgs__msg__DiagnosticStatus__idl
+#define __diagnostic_msgs__msg__DiagnosticStatus__idl
+
+#include "diagnostic_msgs/msg/KeyValue.idl"
+
+module diagnostic_msgs {
+  module msg {
+    module dds_ {
+      module DiagnosticStatus_Constants {
+        const octet OK_ = 0;
+        const octet WARN_ = 1;
+        const octet ERROR_ = 2;
+        const octet STALE_ = 3;
+      };
+      @appendable struct DiagnosticStatus_ {
+        octet level;
+        string name;
+        string message;
+        string hardware_id;
+        sequence<diagnostic_msgs::msg::dds_::KeyValue_> values;
+      };
+    };
+  };
+};
+
+
+#endif // __diagnostic_msgs__msg__DiagnosticStatus__idl
