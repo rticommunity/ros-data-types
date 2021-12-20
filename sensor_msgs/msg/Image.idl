@@ -13,24 +13,27 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __sensor_msgs__msg__Image__idl 
-#define __sensor_msgs__msg__Image__idl 
- 
-#include "std_msgs/msg/Header.idl" 
- 
-module sensor_msgs { module msg { 
- 
-struct Image { 
-    std_msgs::msg::Header header; 
-    unsigned long height; 
-    unsigned long width; 
-    string encoding; 
-    octet is_bigendian; 
-    unsigned long step; 
-    sequence<octet> data; 
-}; 
- 
-}; };  // module msg::sensor_msgs 
- 
-#endif  // __sensor_msgs__msg__Image__idl 
+
+#ifndef __sensor_msgs__msg__Image__idl
+#define __sensor_msgs__msg__Image__idl
+
+#include "std_msgs/msg/Header.idl"
+
+module sensor_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct Image_ {
+        std_msgs::msg::dds_::Header_ header;
+        uint32 height;
+        uint32 width;
+        string encoding;
+        octet is_bigendian;
+        uint32 step;
+        sequence<octet> data;
+      };
+    };
+  };
+};
+
+
+#endif // __sensor_msgs__msg__Image__idl

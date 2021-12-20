@@ -14,9 +14,12 @@
  * limitations under the License. 
  */ 
  
-module gazebo_msgs { module msg { 
+#ifndef __gazebo_msgs__msg__ODEPhysics__idl
+#define __gazebo_msgs__msg__ODEPhysics__idl
+
+module gazebo_msgs { module msg { module dds_ {
  
-struct ODEPhysics { 
+struct ODEPhysics_ { 
     boolean auto_disable_bodies; 
     unsigned long sor_pgs_precon_iters; 
     unsigned long sor_pgs_iters; 
@@ -29,4 +32,6 @@ struct ODEPhysics {
     unsigned long max_contacts; 
 }; 
  
-}; };  // module msg::gazebo_msgs 
+}; }; };  // module dds_::msg::gazebo_msgs 
+
+#endif  // __gazebo_msgs__msg__ODEPhysics__idl

@@ -13,21 +13,24 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __trajectory_msgs__msg__MultiDOFJointTrajectory__idl 
-#define __trajectory_msgs__msg__MultiDOFJointTrajectory__idl 
- 
-#include "std_msgs/msg/Header.idl" 
-#include "MultiDOFJointTrajectoryPoint.idl" 
- 
-module trajectory_msgs { module msg { 
- 
-struct MultiDOFJointTrajectory { 
-    std_msgs::msg::Header header; 
-    sequence<string> joint_names; 
-    sequence<trajectory_msgs::msg::MultiDOFJointTrajectoryPoint> points; 
-}; 
- 
-}; };  // module msg::trajectory_msgs 
- 
-#endif  // __trajectory_msgs__msg__MultiDOFJointTrajectory__idl 
+
+#ifndef __trajectory_msgs__msg__MultiDOFJointTrajectory__idl
+#define __trajectory_msgs__msg__MultiDOFJointTrajectory__idl
+
+#include "std_msgs/msg/Header.idl"
+#include "trajectory_msgs/msg/MultiDOFJointTrajectoryPoint.idl"
+
+module trajectory_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct MultiDOFJointTrajectory_ {
+        std_msgs::msg::dds_::Header_ header;
+        sequence<string> joint_names;
+        sequence<trajectory_msgs::msg::dds_::MultiDOFJointTrajectoryPoint_> points;
+      };
+    };
+  };
+};
+
+
+#endif // __trajectory_msgs__msg__MultiDOFJointTrajectory__idl

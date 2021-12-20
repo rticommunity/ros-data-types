@@ -13,22 +13,25 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __trajectory_msgs__msg__JointTrajectoryPoint__idl 
-#define __trajectory_msgs__msg__JointTrajectoryPoint__idl 
- 
-#include "std_msgs/msg/Duration.idl" 
- 
-module trajectory_msgs { module msg { 
- 
-struct JointTrajectoryPoint { 
-    sequence<double> positions; 
-    sequence<double> velocities; 
-    sequence<double> accelerations; 
-    sequence<double> effort; 
-    std_msgs::msg::Duration time_from_start; 
-}; 
- 
-}; };  // module msg::trajectory_msgs 
- 
-#endif  // __trajectory_msgs__msg__JointTrajectoryPoint__idl 
+
+#ifndef __trajectory_msgs__msg__JointTrajectoryPoint__idl
+#define __trajectory_msgs__msg__JointTrajectoryPoint__idl
+
+#include "builtin_interfaces/msg/Duration.idl"
+
+module trajectory_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct JointTrajectoryPoint_ {
+        sequence<double> positions;
+        sequence<double> velocities;
+        sequence<double> accelerations;
+        sequence<double> effort;
+        builtin_interfaces::msg::dds_::Duration_ time_from_start;
+      };
+    };
+  };
+};
+
+
+#endif // __trajectory_msgs__msg__JointTrajectoryPoint__idl

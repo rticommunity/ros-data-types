@@ -1,0 +1,46 @@
+/* 
+ * Copyright 2012-2018 Open Source Robotics Foundation 
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0 
+ * 
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and 
+ * limitations under the License. 
+ */ 
+
+#ifndef __test_msgs__msg__Constants__idl
+#define __test_msgs__msg__Constants__idl
+
+module test_msgs {
+  module msg {
+    module dds_ {
+      module Constants_Constants {
+        const boolean BOOL_CONST_ = TRUE;
+        const octet BYTE_CONST_ = 50;
+        const octet CHAR_CONST_ = 100;
+        const float FLOAT32_CONST_ = 1.125000;
+        const double FLOAT64_CONST_ = 1.125000;
+        const octet INT8_CONST_ = 206;
+        const octet UINT8_CONST_ = 200;
+        const int16 INT16_CONST_ = -1000;
+        const uint16 UINT16_CONST_ = 2000;
+        const int32 INT32_CONST_ = -30000;
+        const uint32 UINT32_CONST_ = 60000;
+        const int64 INT64_CONST_ = -40000000;
+        const uint64 UINT64_CONST_ = 50000000;
+      };
+      @appendable struct Constants_ {
+        octet structure_needs_at_least_one_member;
+      };
+    };
+  };
+};
+
+
+#endif // __test_msgs__msg__Constants__idl

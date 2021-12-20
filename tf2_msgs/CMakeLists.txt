@@ -1,4 +1,4 @@
-# Copyright 2018 Real-Time Innovations 
+# Copyright 2020 Real-Time Innovations 
 # 
 # Licensed under the Apache License, Version 2.0 (the "License"); 
 # you may not use this file except in compliance with the License. 
@@ -14,36 +14,51 @@
 
 include(ConnextDdsRosDdsTypes)
 
+
+
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/action/LookupTransform_Feedback.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/action/LookupTransform_FeedbackMessage.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/action/LookupTransform_GetResult_Request.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/action/LookupTransform_GetResult_Response.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/action/LookupTransform_Goal.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/action/LookupTransform_Result.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/action/LookupTransform_SendGoal_Request.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/action/LookupTransform_SendGoal_Response.idl")
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/TF2Error.idl")
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/TFMessage.idl")
-
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/srv/FrameGraph_Request.idl")
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/srv/FrameGraph_Response.idl")
+
+# for unbounded strings & sequences use -DUNBOUNDED_ALL on CMake cmdline
+if(UNBOUNDED_ALL)
+    set(extra_params UNBOUNDED)
+endif()
 
 connextdds_generate_ros_dds_types(
     LANG ${LANG}
     OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
     IDL_FILES ${idl_files}
     INCLUDE_DIRS ${top_level_source_dir}
+    ${extra_params}
 )
 
-add_library( tf2library OBJECT
+add_library( tf2msgslibrary OBJECT
     ${generated_file_list}
 )
 
-set_property(TARGET tf2library PROPERTY 
+set_property(TARGET tf2msgslibrary PROPERTY 
     POSITION_INDEPENDENT_CODE ON
 )
 
-target_include_directories(tf2library PRIVATE 
+target_include_directories(tf2msgslibrary PRIVATE 
     ${CONNEXTDDS_INCLUDE_DIRS}
     ${top_level_binary_dir}
 )
 
-target_compile_definitions(tf2library PRIVATE 
+target_compile_definitions(tf2msgslibrary PRIVATE 
     ${CONNEXTDDS_COMPILE_DEFINITIONS}
 )
 
-add_dependencies(tf2library 
-    geometrylibrary
+add_dependencies(tf2msgslibrary 
+    geometrymsgslibrary 
 )

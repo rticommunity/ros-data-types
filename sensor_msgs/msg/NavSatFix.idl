@@ -13,32 +13,34 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __sensor_msgs__msg__NavSatFix__idl 
-#define __sensor_msgs__msg__NavSatFix__idl 
- 
-#include "NavSatStatus.idl" 
-#include "std_msgs/msg/Header.idl" 
- 
-module sensor_msgs { module msg { 
- 
-const octet NavSatFix__COVARIANCE_TYPE_UNKNOWN = 0; 
-const octet NavSatFix__COVARIANCE_TYPE_APPROXIMATED = 1; 
-const octet NavSatFix__COVARIANCE_TYPE_DIAGONAL_KNOWN = 2; 
-const octet NavSatFix__COVARIANCE_TYPE_KNOWN = 3; 
- 
-typedef double sensor_msgs__NavSatFix__double_array_9[9]; 
- 
-struct NavSatFix { 
-    std_msgs::msg::Header header; 
-    sensor_msgs::msg::NavSatStatus status; 
-    double latitude; 
-    double longitude; 
-    double altitude; 
-    sensor_msgs__NavSatFix__double_array_9 position_covariance; 
-    octet position_covariance_type; 
-}; 
- 
-}; };  // module msg::sensor_msgs 
- 
-#endif  // __sensor_msgs__msg__NavSatFix__idl 
+
+#ifndef __sensor_msgs__msg__NavSatFix__idl
+#define __sensor_msgs__msg__NavSatFix__idl
+
+#include "sensor_msgs/msg/NavSatStatus.idl"
+#include "std_msgs/msg/Header.idl"
+
+module sensor_msgs {
+  module msg {
+    module dds_ {
+      module NavSatFix_Constants {
+        const octet COVARIANCE_TYPE_UNKNOWN_ = 0;
+        const octet COVARIANCE_TYPE_APPROXIMATED_ = 1;
+        const octet COVARIANCE_TYPE_DIAGONAL_KNOWN_ = 2;
+        const octet COVARIANCE_TYPE_KNOWN_ = 3;
+      };
+      @appendable struct NavSatFix_ {
+        std_msgs::msg::dds_::Header_ header;
+        sensor_msgs::msg::dds_::NavSatStatus_ status;
+        double latitude;
+        double longitude;
+        double altitude;
+        double position_covariance[9];
+        octet position_covariance_type;
+      };
+    };
+  };
+};
+
+
+#endif // __sensor_msgs__msg__NavSatFix__idl

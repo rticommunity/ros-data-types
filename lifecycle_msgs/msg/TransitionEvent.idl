@@ -13,22 +13,25 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __lifecycle_msgs__msg__TransitionEvent__idl 
-#define __lifecycle_msgs__msg__TransitionEvent__idl 
- 
-#include "State.idl" 
-#include "Transition.idl" 
- 
-module lifecycle_msgs { module msg { 
- 
-struct TransitionEvent { 
-    unsigned long long timestamp; 
-    lifecycle_msgs::msg::Transition transition; 
-    lifecycle_msgs::msg::State start_state; 
-    lifecycle_msgs::msg::State goal_state; 
-}; 
- 
-}; };  // module msg::lifecycle_msgs 
- 
-#endif  // __lifecycle_msgs__msg__TransitionEvent__idl 
+
+#ifndef __lifecycle_msgs__msg__TransitionEvent__idl
+#define __lifecycle_msgs__msg__TransitionEvent__idl
+
+#include "lifecycle_msgs/msg/Transition.idl"
+#include "lifecycle_msgs/msg/State.idl"
+
+module lifecycle_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct TransitionEvent_ {
+        uint64 timestamp;
+        lifecycle_msgs::msg::dds_::Transition_ transition;
+        lifecycle_msgs::msg::dds_::State_ start_state;
+        lifecycle_msgs::msg::dds_::State_ goal_state;
+      };
+    };
+  };
+};
+
+
+#endif // __lifecycle_msgs__msg__TransitionEvent__idl

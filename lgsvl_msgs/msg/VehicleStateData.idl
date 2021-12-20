@@ -1,0 +1,62 @@
+// generated from rosidl_generator_dds_idl/resource/idl.idl.em
+// with input from lgsvl_msgs:msg/VehicleStateData.idl
+// generated code does not contain a copyright notice
+#include "std_msgs/msg/Header.idl"
+
+#ifndef __lgsvl_msgs__msg__vehicle_state_data__idl__
+#define __lgsvl_msgs__msg__vehicle_state_data__idl__
+
+
+module lgsvl_msgs {
+
+module msg {
+
+module dds_ {
+
+module VehicleStateData_Constants {
+const octet BLINKERS_OFF = 0;
+const octet BLINKERS_LEFT = 1;
+const octet BLINKERS_RIGHT = 2;
+const octet BLINKERS_HAZARD = 3;
+const octet HEADLIGHTS_OFF = 0;
+const octet HEADLIGHTS_LOW = 1;
+const octet HEADLIGHTS_HIGH = 2;
+const octet WIPERS_OFF = 0;
+const octet WIPERS_LOW = 1;
+const octet WIPERS_MED = 2;
+const octet WIPERS_HIGH = 3;
+const octet GEAR_NEUTRAL = 0;
+const octet GEAR_DRIVE = 1;
+const octet GEAR_REVERSE = 2;
+const octet GEAR_PARKING = 3;
+const octet GEAR_LOW = 4;
+const octet VEHICLE_MODE_COMPLETE_MANUAL = 0;
+const octet VEHICLE_MODE_COMPLETE_AUTO_DRIVE = 1;
+const octet VEHICLE_MODE_AUTO_STEER_ONLY = 2;
+const octet VEHICLE_MODE_AUTO_SPEED_ONLY = 3;
+const octet VEHICLE_MODE_EMERGENCY_MODE = 4;
+
+};
+
+struct VehicleStateData_ {
+std_msgs::msg::dds_::Header_ header;
+octet blinker_state;
+octet headlight_state;
+octet wiper_state;
+octet current_gear;
+octet vehicle_mode;
+boolean hand_brake_active;
+boolean horn_active;
+boolean autonomous_mode_active;
+
+};
+
+
+};  // module dds_
+
+};  // module msg
+
+};  // module lgsvl_msgs
+
+
+#endif  // __lgsvl_msgs__msg__vehicle_state_data__idl__

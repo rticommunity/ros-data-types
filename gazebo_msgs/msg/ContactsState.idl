@@ -14,14 +14,19 @@
  * limitations under the License. 
  */ 
  
-#include "ContactState.idl" 
+#ifndef __gazebo_msgs__msg__ContactsState__idl
+#define __gazebo_msgs__msg__ContactsState__idl
+
 #include "std_msgs/msg/Header.idl" 
+#include "gazebo_msgs/msg/ContactState.idl" 
  
-module gazebo_msgs { module msg { 
+module gazebo_msgs { module msg { module dds_ {
  
-struct ContactsState { 
-    std_msgs::msg::Header header; 
-    sequence<gazebo_msgs::msg::ContactState> states; 
+struct ContactsState_ { 
+    std_msgs::msg::dds_::Header_ header; 
+    sequence<gazebo_msgs::msg::dds_::ContactState_> states; 
 }; 
  
-}; };  // module msg::gazebo_msgs 
+}; }; };  // module dds_::msg::gazebo_msgs 
+
+#endif  // __gazebo_msgs__msg__ContactsState__idl

@@ -14,20 +14,25 @@
  * limitations under the License. 
  */ 
  
+#ifndef __gazebo_msgs__msg__ContactState__idl
+#define __gazebo_msgs__msg__ContactState__idl
+
 #include "geometry_msgs/msg/Vector3.idl" 
 #include "geometry_msgs/msg/Wrench.idl" 
  
-module gazebo_msgs { module msg { 
+module gazebo_msgs { module msg { module dds_ {
  
-struct ContactState { 
+struct ContactState_ { 
     string info; 
     string collision1_name; 
     string collision2_name; 
-    sequence<geometry_msgs::msg::Wrench> wrenches; 
-    geometry_msgs::msg::Wrench total_wrench; 
-    sequence<geometry_msgs::msg::Vector3> contact_positions; 
-    sequence<geometry_msgs::msg::Vector3> contact_normals; 
+    sequence<geometry_msgs::msg::dds_::Wrench_> wrenches; 
+    geometry_msgs::msg::dds_::Wrench_ total_wrench; 
+    sequence<geometry_msgs::msg::dds_::Vector3_> contact_positions; 
+    sequence<geometry_msgs::msg::dds_::Vector3_> contact_normals; 
     sequence<double> depths; 
 }; 
  
-}; };  // module msg::gazebo_msgs 
+}; }; };  // module dds_::msg::gazebo_msgs 
+
+#endif  // __gazebo_msgs__msg__ContactsState__idl

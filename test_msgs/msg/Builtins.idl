@@ -13,20 +13,23 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __test_msgs__msg__Builtins__idl 
-#define __test_msgs__msg__Builtins__idl 
- 
-#include "std_msgs/msg/Duration.idl" 
-#include "std_msgs/msg/Time.idl" 
- 
-module test_msgs { module msg { 
- 
-struct Builtins { 
-    std_msgs::msg::Duration duration_value; 
-    std_msgs::msg::Time time_value; 
-}; 
- 
-}; };  // module msg::test_msgs 
- 
-#endif  // __test_msgs__msg__Builtins__idl 
+
+#ifndef __test_msgs__msg__Builtins__idl
+#define __test_msgs__msg__Builtins__idl
+
+#include "builtin_interfaces/msg/Duration.idl"
+#include "builtin_interfaces/msg/Time.idl"
+
+module test_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct Builtins_ {
+        builtin_interfaces::msg::dds_::Duration_ duration_value;
+        builtin_interfaces::msg::dds_::Time_ time_value;
+      };
+    };
+  };
+};
+
+
+#endif // __test_msgs__msg__Builtins__idl

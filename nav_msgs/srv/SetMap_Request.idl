@@ -13,20 +13,23 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __nav_msgs__srv__SetMap_Request__idl 
-#define __nav_msgs__srv__SetMap_Request__idl 
- 
-#include "geometry_msgs/msg/PoseWithCovarianceStamped.idl" 
-#include "nav_msgs/msg/OccupancyGrid.idl" 
- 
-module nav_msgs { module srv { 
- 
-struct SetMap_Request { 
-    nav_msgs::msg::OccupancyGrid map; 
-    geometry_msgs::msg::PoseWithCovarianceStamped initial_pose; 
-}; 
- 
-}; };  // module srv::nav_msgs 
- 
-#endif  // __nav_msgs__srv__SetMap_Request__idl 
+
+#ifndef __nav_msgs__srv__SetMap_Request__idl
+#define __nav_msgs__srv__SetMap_Request__idl
+
+#include "geometry_msgs/msg/PoseWithCovarianceStamped.idl"
+#include "nav_msgs/msg/OccupancyGrid.idl"
+
+module nav_msgs {
+  module srv {
+    module dds_ {
+      @appendable struct SetMap_Request_ {
+        nav_msgs::msg::dds_::OccupancyGrid_ map;
+        geometry_msgs::msg::dds_::PoseWithCovarianceStamped_ initial_pose;
+      };
+    };
+  };
+};
+
+
+#endif // __nav_msgs__srv__SetMap_Request__idl

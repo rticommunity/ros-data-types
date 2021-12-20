@@ -13,18 +13,21 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __test_msgs__msg__Nested__idl 
-#define __test_msgs__msg__Nested__idl 
- 
-#include "Primitives.idl" 
- 
-module test_msgs { module msg { 
- 
-struct Nested { 
-    test_msgs::msg::Primitives primitive_values; 
-}; 
- 
-}; };  // module msg::test_msgs 
- 
-#endif  // __test_msgs__msg__Nested__idl 
+
+#ifndef __test_msgs__msg__Nested__idl
+#define __test_msgs__msg__Nested__idl
+
+#include "test_msgs/msg/BasicTypes.idl"
+
+module test_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct Nested_ {
+        test_msgs::msg::dds_::BasicTypes_ basic_types_value;
+      };
+    };
+  };
+};
+
+
+#endif // __test_msgs__msg__Nested__idl

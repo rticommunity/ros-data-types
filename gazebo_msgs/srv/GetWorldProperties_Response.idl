@@ -14,9 +14,12 @@
  * limitations under the License. 
  */ 
  
-module gazebo_msgs { module srv { 
+#ifndef __gazebo_msgs__srv__GetWorldProperties_Response__idl
+#define __gazebo_msgs__srv__GetWorldProperties_Response__idl
  
-struct GetWorldProperties_Response { 
+module gazebo_msgs { module srv { module dds_ { 
+ 
+struct GetWorldProperties_Response_ { 
     double sim_time; 
     sequence<string> model_names; 
     boolean rendering_enabled; 
@@ -24,4 +27,6 @@ struct GetWorldProperties_Response {
     string status_message; 
 }; 
  
-}; };  // module srv::gazebo_msgs 
+}; }; };  // module dds_::srv::gazebo_msgs 
+
+#endif  // __gazebo_msgs__srv__GetWorldProperties_Response__idl

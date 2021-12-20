@@ -13,20 +13,23 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __diagnostic_msgs__srv__SelfTest_Response__idl__ 
-#define __diagnostic_msgs__srv__SelfTest_Response__idl__ 
- 
-#include "diagnostic_msgs/msg/DiagnosticStatus.idl" 
- 
-module diagnostic_msgs { module srv { 
- 
-struct SelfTest_Response { 
-    string id; 
-    octet passed; 
-    sequence<diagnostic_msgs::msg::DiagnosticStatus> status; 
-}; 
- 
-}; };  // module srv::diagnostic_msgs 
- 
-#endif  // __diagnostic_msgs__srv__SelfTest_Response__idl__ 
+
+#ifndef __diagnostic_msgs__srv__SelfTest_Response__idl
+#define __diagnostic_msgs__srv__SelfTest_Response__idl
+
+#include "diagnostic_msgs/msg/DiagnosticStatus.idl"
+
+module diagnostic_msgs {
+  module srv {
+    module dds_ {
+      @appendable struct SelfTest_Response_ {
+        string id;
+        octet passed;
+        sequence<diagnostic_msgs::msg::dds_::DiagnosticStatus_> status;
+      };
+    };
+  };
+};
+
+
+#endif // __diagnostic_msgs__srv__SelfTest_Response__idl

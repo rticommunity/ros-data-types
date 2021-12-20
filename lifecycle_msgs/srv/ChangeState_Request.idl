@@ -13,19 +13,21 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __lifecycle_msgs__srv__ChangeState_Request__idl 
-#define __lifecycle_msgs__srv__ChangeState_Request__idl 
- 
-#include "lifecycle_msgs/msg/Transition.idl" 
- 
-module lifecycle_msgs { module srv { 
- 
-struct ChangeState_Request { 
-    string node_name; 
-    lifecycle_msgs::msg::Transition transition; 
-}; 
- 
-}; };  // module srv::lifecycle_msgs 
- 
-#endif  // __lifecycle_msgs__srv__ChangeState_Request__idl 
+
+#ifndef __lifecycle_msgs__srv__ChangeState_Request__idl
+#define __lifecycle_msgs__srv__ChangeState_Request__idl
+
+#include "lifecycle_msgs/msg/Transition.idl"
+
+module lifecycle_msgs {
+  module srv {
+    module dds_ {
+      @appendable struct ChangeState_Request_ {
+        lifecycle_msgs::msg::dds_::Transition_ transition;
+      };
+    };
+  };
+};
+
+
+#endif // __lifecycle_msgs__srv__ChangeState_Request__idl

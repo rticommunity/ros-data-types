@@ -1,4 +1,4 @@
-# Copyright 2018 Real-Time Innovations 
+# Copyright 2020 Real-Time Innovations 
 # 
 # Licensed under the Apache License, Version 2.0 (the "License"); 
 # you may not use this file except in compliance with the License. 
@@ -15,41 +15,50 @@
 include(ConnextDdsRosDdsTypes)
 
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/ImageMarker.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/InteractiveMarker.idl")
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/InteractiveMarkerControl.idl")
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/InteractiveMarkerFeedback.idl")
-list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/InteractiveMarker.idl")
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/InteractiveMarkerInit.idl")
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/InteractiveMarkerPose.idl")
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/InteractiveMarkerUpdate.idl")
-list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/MarkerArray.idl")
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Marker.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/MarkerArray.idl")
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/MenuEntry.idl")
+
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/srv/GetInteractiveMarkers_Request.idl")
+list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/srv/GetInteractiveMarkers_Response.idl")
+
+# for unbounded strings & sequences use -DUNBOUNDED_ALL on CMake cmdline
+if(UNBOUNDED_ALL)
+    set(extra_params UNBOUNDED)
+endif()
 
 connextdds_generate_ros_dds_types(
     LANG ${LANG}
     OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
     IDL_FILES ${idl_files}
     INCLUDE_DIRS ${top_level_source_dir}
+    ${extra_params}
 )
 
-add_library( visualizationlibrary OBJECT
+add_library( visualizationmsgslibrary OBJECT
     ${generated_file_list}
 )
 
-set_property(TARGET visualizationlibrary PROPERTY 
+set_property(TARGET visualizationmsgslibrary PROPERTY 
     POSITION_INDEPENDENT_CODE ON
 )
 
-target_include_directories(visualizationlibrary PRIVATE 
+target_include_directories(visualizationmsgslibrary PRIVATE 
     ${CONNEXTDDS_INCLUDE_DIRS}
     ${top_level_binary_dir}
 )
 
-target_compile_definitions(visualizationlibrary PRIVATE 
+target_compile_definitions(visualizationmsgslibrary PRIVATE 
     ${CONNEXTDDS_COMPILE_DEFINITIONS}
 )
 
-add_dependencies(visualizationlibrary 
-    stdlibrary 
-    geometrylibrary
+add_dependencies(visualizationmsgslibrary 
+    stdmsgslibrary
+    geometrymsgslibrary 
 )

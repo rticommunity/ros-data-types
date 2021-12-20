@@ -13,25 +13,29 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __tf2_msgs__msg__TF2Error__idl 
-#define __tf2_msgs__msg__TF2Error__idl 
- 
-module tf2_msgs { module msg { 
- 
-const octet TF2Error__NO_ERROR = 0; 
-const octet TF2Error__LOOKUP_ERROR = 1; 
-const octet TF2Error__CONNECTIVITY_ERROR = 2; 
-const octet TF2Error__EXTRAPOLATION_ERROR = 3; 
-const octet TF2Error__INVALID_ARGUMENT_ERROR = 4; 
-const octet TF2Error__TIMEOUT_ERROR = 5; 
-const octet TF2Error__TRANSFORM_ERROR = 6; 
- 
-struct TF2Error { 
-    octet error; 
-    string error_string; 
-}; 
- 
-}; };  // module msg::tf2_msgs 
- 
-#endif  // __tf2_msgs__msg__TF2Error__idl 
+
+#ifndef __tf2_msgs__msg__TF2Error__idl
+#define __tf2_msgs__msg__TF2Error__idl
+
+module tf2_msgs {
+  module msg {
+    module dds_ {
+      module TF2Error_Constants {
+        const octet NO_ERROR_ = 0;
+        const octet LOOKUP_ERROR_ = 1;
+        const octet CONNECTIVITY_ERROR_ = 2;
+        const octet EXTRAPOLATION_ERROR_ = 3;
+        const octet INVALID_ARGUMENT_ERROR_ = 4;
+        const octet TIMEOUT_ERROR_ = 5;
+        const octet TRANSFORM_ERROR_ = 6;
+      };
+      @appendable struct TF2Error_ {
+        octet error;
+        string error_string;
+      };
+    };
+  };
+};
+
+
+#endif // __tf2_msgs__msg__TF2Error__idl

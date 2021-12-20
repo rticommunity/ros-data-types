@@ -13,54 +13,58 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __visualization_msgs__msg__Marker__idl 
-#define __visualization_msgs__msg__Marker__idl 
- 
-#include "std_msgs/msg/Duration.idl" 
-#include "geometry_msgs/msg/Point.idl" 
-#include "geometry_msgs/msg/Pose.idl" 
-#include "geometry_msgs/msg/Vector3.idl" 
-#include "std_msgs/msg/ColorRGBA.idl" 
-#include "std_msgs/msg/Header.idl" 
- 
-module visualization_msgs { module msg { 
- 
-const octet Marker__ARROW = 0; 
-const octet Marker__CUBE = 1; 
-const octet Marker__SPHERE = 2; 
-const octet Marker__CYLINDER = 3; 
-const octet Marker__LINE_STRIP = 4; 
-const octet Marker__LINE_LIST = 5; 
-const octet Marker__CUBE_LIST = 6; 
-const octet Marker__SPHERE_LIST = 7; 
-const octet Marker__POINTS = 8; 
-const octet Marker__TEXT_VIEW_FACING = 9; 
-const octet Marker__MESH_RESOURCE = 10; 
-const octet Marker__TRIANGLE_LIST = 11; 
-const octet Marker__ADD = 0; 
-const octet Marker__MODIFY = 0; 
-const octet Marker__DELETE = 2; 
-const octet Marker__DELETEALL = 3; 
- 
-struct Marker { 
-    std_msgs::msg::Header header; 
-    string ns; 
-    long id; 
-    long type; 
-    long action; 
-    geometry_msgs::msg::Pose pose; 
-    geometry_msgs::msg::Vector3 scale; 
-    std_msgs::msg::ColorRGBA color; 
-    std_msgs::msg::Duration lifetime; 
-    boolean frame_locked; 
-    sequence<geometry_msgs::msg::Point> points; 
-    sequence<std_msgs::msg::ColorRGBA> colors; 
-    string text; 
-    string mesh_resource; 
-    boolean mesh_use_embedded_materials; 
-}; 
- 
-}; };  // module msg::visualization_msgs 
- 
-#endif  // __visualization_msgs__msg__Marker__idl 
+
+#ifndef __visualization_msgs__msg__Marker__idl
+#define __visualization_msgs__msg__Marker__idl
+
+#include "geometry_msgs/msg/Pose.idl"
+#include "builtin_interfaces/msg/Duration.idl"
+#include "geometry_msgs/msg/Point.idl"
+#include "std_msgs/msg/Header.idl"
+#include "geometry_msgs/msg/Vector3.idl"
+#include "std_msgs/msg/ColorRGBA.idl"
+
+module visualization_msgs {
+  module msg {
+    module dds_ {
+      module Marker_Constants {
+        const int32 ARROW_ = 0;
+        const int32 CUBE_ = 1;
+        const int32 SPHERE_ = 2;
+        const int32 CYLINDER_ = 3;
+        const int32 LINE_STRIP_ = 4;
+        const int32 LINE_LIST_ = 5;
+        const int32 CUBE_LIST_ = 6;
+        const int32 SPHERE_LIST_ = 7;
+        const int32 POINTS_ = 8;
+        const int32 TEXT_VIEW_FACING_ = 9;
+        const int32 MESH_RESOURCE_ = 10;
+        const int32 TRIANGLE_LIST_ = 11;
+        const int32 ADD_ = 0;
+        const int32 MODIFY_ = 0;
+        const int32 DELETE_ = 2;
+        const int32 DELETEALL_ = 3;
+      };
+      @appendable struct Marker_ {
+        std_msgs::msg::dds_::Header_ header;
+        string ns;
+        int32 id;
+        int32 type;
+        int32 action;
+        geometry_msgs::msg::dds_::Pose_ pose;
+        geometry_msgs::msg::dds_::Vector3_ scale;
+        std_msgs::msg::dds_::ColorRGBA_ color;
+        builtin_interfaces::msg::dds_::Duration_ lifetime;
+        boolean frame_locked;
+        sequence<geometry_msgs::msg::dds_::Point_> points;
+        sequence<std_msgs::msg::dds_::ColorRGBA_> colors;
+        string text;
+        string mesh_resource;
+        boolean mesh_use_embedded_materials;
+      };
+    };
+  };
+};
+
+
+#endif // __visualization_msgs__msg__Marker__idl

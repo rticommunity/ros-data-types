@@ -13,16 +13,19 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __test_msgs__msg__Empty__idl 
-#define __test_msgs__msg__Empty__idl 
- 
-module test_msgs { module msg { 
- 
-struct Empty { 
-    boolean dummy; 
-}; 
- 
-}; };  // module msg::test_msgs 
- 
-#endif  // __test_msgs__msg__Empty__idl 
+
+#ifndef __test_msgs__msg__Empty__idl
+#define __test_msgs__msg__Empty__idl
+
+module test_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct Empty_ {
+        octet structure_needs_at_least_one_member;
+      };
+    };
+  };
+};
+
+
+#endif // __test_msgs__msg__Empty__idl

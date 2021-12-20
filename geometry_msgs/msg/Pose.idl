@@ -13,20 +13,23 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __geometry_msgs__msg__Pose__idl 
-#define __geometry_msgs__msg__Pose__idl 
- 
-#include "Point.idl" 
-#include "Quaternion.idl" 
- 
-module geometry_msgs { module msg { 
- 
-struct Pose { 
-    geometry_msgs::msg::Point position; 
-    geometry_msgs::msg::Quaternion orientation; 
-}; 
- 
-}; };  // module msg::geometry_msgs 
- 
-#endif  // __geometry_msgs__msg__Pose__idl 
+
+#ifndef __geometry_msgs__msg__Pose__idl
+#define __geometry_msgs__msg__Pose__idl
+
+#include "geometry_msgs/msg/Point.idl"
+#include "geometry_msgs/msg/Quaternion.idl"
+
+module geometry_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct Pose_ {
+        geometry_msgs::msg::dds_::Point_ position;
+        geometry_msgs::msg::dds_::Quaternion_ orientation;
+      };
+    };
+  };
+};
+
+
+#endif // __geometry_msgs__msg__Pose__idl

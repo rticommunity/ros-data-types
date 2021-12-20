@@ -14,19 +14,24 @@
  * limitations under the License. 
  */ 
  
+#ifndef __gazebo_msgs__msg__WorldState__idl
+#define __gazebo_msgs__msg__WorldState__idl
+
 #include "std_msgs/msg/Header.idl" 
 #include "geometry_msgs/msg/Pose.idl" 
 #include "geometry_msgs/msg/Twist.idl" 
 #include "geometry_msgs/msg/Wrench.idl" 
  
-module gazebo_msgs { module msg { 
+module gazebo_msgs { module msg { module dds_ {
  
-struct WorldState { 
-    std_msgs::msg::Header header; 
+struct WorldState_ { 
+    std_msgs::msg::dds_::Header_ header; 
     sequence<string> name; 
-    sequence<geometry_msgs::msg::Pose> pose; 
-    sequence<geometry_msgs::msg::Twist> twist; 
-    sequence<geometry_msgs::msg::Wrench> wrench; 
+    sequence<geometry_msgs::msg::dds_::Pose_> pose; 
+    sequence<geometry_msgs::msg::dds_::Twist_> twist; 
+    sequence<geometry_msgs::msg::dds_::Wrench_> wrench; 
 }; 
  
-}; };  // module msg::gazebo_msgs 
+}; }; };  // module dds_::msg::gazebo_msgs 
+
+#endif  // __gazebo_msgs__msg__WorldState__idl

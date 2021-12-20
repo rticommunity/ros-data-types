@@ -14,16 +14,21 @@
  * limitations under the License. 
  */ 
  
+#ifndef __gazebo_msgs__msg__ModelState__idl
+#define __gazebo_msgs__msg__ModelState__idl
+
 #include "geometry_msgs/msg/Pose.idl" 
 #include "geometry_msgs/msg/Twist.idl" 
  
-module gazebo_msgs { module msg { 
+module gazebo_msgs { module msg { module dds_ {
  
-struct ModelState { 
+struct ModelState_ { 
     string model_name; 
-    geometry_msgs::msg::Pose pose; 
-    geometry_msgs::msg::Twist twist; 
+    geometry_msgs::msg::dds_::Pose_ pose; 
+    geometry_msgs::msg::dds_::Twist_ twist; 
     string reference_frame; 
 }; 
  
-}; };  // module msg::gazebo_msgs 
+}; }; };  // module dds_::msg::gazebo_msgs 
+
+#endif  // __gazebo_msgs__msg__ModelState__idl

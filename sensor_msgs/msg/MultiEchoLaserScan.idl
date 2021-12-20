@@ -13,28 +13,31 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __sensor_msgs__msg__MultiEchoLaserScan__idl 
-#define __sensor_msgs__msg__MultiEchoLaserScan__idl 
- 
-#include "LaserEcho.idl" 
-#include "std_msgs/msg/Header.idl" 
- 
-module sensor_msgs { module msg { 
- 
-struct MultiEchoLaserScan { 
-    std_msgs::msg::Header header; 
-    float angle_min; 
-    float angle_max; 
-    float angle_increment; 
-    float time_increment; 
-    float scan_time; 
-    float range_min; 
-    float range_max; 
-    sequence<sensor_msgs::msg::LaserEcho> ranges; 
-    sequence<sensor_msgs::msg::LaserEcho> intensities; 
-}; 
- 
-}; };  // module msg::sensor_msgs 
- 
-#endif  // __sensor_msgs__msg__MultiEchoLaserScan__idl 
+
+#ifndef __sensor_msgs__msg__MultiEchoLaserScan__idl
+#define __sensor_msgs__msg__MultiEchoLaserScan__idl
+
+#include "std_msgs/msg/Header.idl"
+#include "sensor_msgs/msg/LaserEcho.idl"
+
+module sensor_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct MultiEchoLaserScan_ {
+        std_msgs::msg::dds_::Header_ header;
+        float angle_min;
+        float angle_max;
+        float angle_increment;
+        float time_increment;
+        float scan_time;
+        float range_min;
+        float range_max;
+        sequence<sensor_msgs::msg::dds_::LaserEcho_> ranges;
+        sequence<sensor_msgs::msg::dds_::LaserEcho_> intensities;
+      };
+    };
+  };
+};
+
+
+#endif // __sensor_msgs__msg__MultiEchoLaserScan__idl

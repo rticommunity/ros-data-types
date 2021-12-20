@@ -13,18 +13,21 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __geometry_msgs__msg__Point32__idl 
-#define __geometry_msgs__msg__Point32__idl 
- 
-module geometry_msgs { module msg { 
- 
-struct Point32 { 
-    float x; 
-    float y; 
-    float z; 
-}; 
- 
-}; };  // module msg::geometry_msgs 
- 
-#endif  // __geometry_msgs__msg__Point32__idl 
+
+#ifndef __geometry_msgs__msg__Point32__idl
+#define __geometry_msgs__msg__Point32__idl
+
+module geometry_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct Point32_ {
+        float x;
+        float y;
+        float z;
+      };
+    };
+  };
+};
+
+
+#endif // __geometry_msgs__msg__Point32__idl

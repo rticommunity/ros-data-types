@@ -13,21 +13,22 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __geometry_msgs__msg__TwistWithCovariance__idl 
-#define __geometry_msgs__msg__TwistWithCovariance__idl 
- 
-#include "Twist.idl" 
- 
-module geometry_msgs { module msg { 
- 
-typedef double geometry_msgs__TwistWithCovariance__double_array_36[36]; 
- 
-struct TwistWithCovariance { 
-    geometry_msgs::msg::Twist twist; 
-    geometry_msgs__TwistWithCovariance__double_array_36 covariance; 
-}; 
- 
-}; };  // module msg::geometry_msgs 
- 
-#endif  // __geometry_msgs__msg__TwistWithCovariance__idl 
+
+#ifndef __geometry_msgs__msg__TwistWithCovariance__idl
+#define __geometry_msgs__msg__TwistWithCovariance__idl
+
+#include "geometry_msgs/msg/Twist.idl"
+
+module geometry_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct TwistWithCovariance_ {
+        geometry_msgs::msg::dds_::Twist_ twist;
+        double covariance[36];
+      };
+    };
+  };
+};
+
+
+#endif // __geometry_msgs__msg__TwistWithCovariance__idl

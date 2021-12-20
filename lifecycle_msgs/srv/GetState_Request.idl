@@ -13,16 +13,19 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __lifecycle_msgs__srv__GetState_Request__idl 
-#define __lifecycle_msgs__srv__GetState_Request__idl 
- 
-module lifecycle_msgs { module srv { 
- 
-struct GetState_Request { 
-    string node_name; 
-}; 
- 
-}; };  // module srv::lifecycle_msgs 
- 
-#endif  // __lifecycle_msgs__srv__GetState_Request__idl 
+
+#ifndef __lifecycle_msgs__srv__GetState_Request__idl
+#define __lifecycle_msgs__srv__GetState_Request__idl
+
+module lifecycle_msgs {
+  module srv {
+    module dds_ {
+      @appendable struct GetState_Request_ {
+        octet structure_needs_at_least_one_member;
+      };
+    };
+  };
+};
+
+
+#endif // __lifecycle_msgs__srv__GetState_Request__idl

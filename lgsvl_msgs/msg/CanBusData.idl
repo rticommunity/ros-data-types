@@ -1,0 +1,61 @@
+// generated from rosidl_generator_dds_idl/resource/idl.idl.em
+// with input from lgsvl_msgs:msg/CanBusData.idl
+// generated code does not contain a copyright notice
+#include "geometry_msgs/msg/Quaternion.idl"
+#include "geometry_msgs/msg/Vector3.idl"
+#include "std_msgs/msg/Header.idl"
+
+#ifndef __lgsvl_msgs__msg__can_bus_data__idl__
+#define __lgsvl_msgs__msg__can_bus_data__idl__
+
+
+module lgsvl_msgs {
+
+module msg {
+
+module dds_ {
+
+module CanBusData_Constants {
+const octet GEAR_NEUTRAL = 0;
+const octet GEAR_DRIVE = 1;
+const octet GEAR_REVERSE = 2;
+const octet GEAR_PARKING = 3;
+const octet GEAR_LOW = 4;
+
+};
+
+struct CanBusData_ {
+std_msgs::msg::dds_::Header_ header;
+float speed_mps;
+float throttle_pct;
+float brake_pct;
+float steer_pct;
+boolean parking_brake_active;
+boolean high_beams_active;
+boolean low_beams_active;
+boolean hazard_lights_active;
+boolean fog_lights_active;
+boolean left_turn_signal_active;
+boolean right_turn_signal_active;
+boolean wipers_active;
+boolean reverse_gear_active;
+octet selected_gear;
+boolean engine_active;
+float engine_rpm;
+double gps_latitude;
+double gps_longitude;
+double gps_altitude;
+geometry_msgs::msg::dds_::Quaternion_ orientation;
+geometry_msgs::msg::dds_::Vector3_ linear_velocities;
+
+};
+
+
+};  // module dds_
+
+};  // module msg
+
+};  // module lgsvl_msgs
+
+
+#endif  // __lgsvl_msgs__msg__can_bus_data__idl__

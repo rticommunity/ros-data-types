@@ -13,18 +13,21 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __lifecycle_msgs__srv__GetState_Response__idl 
-#define __lifecycle_msgs__srv__GetState_Response__idl 
- 
-#include "lifecycle_msgs/msg/State.idl" 
- 
-module lifecycle_msgs { module srv { 
- 
-struct GetState_Response { 
-    lifecycle_msgs::msg::State current_state; 
-}; 
- 
-}; };  // module srv::lifecycle_msgs 
- 
-#endif  // __lifecycle_msgs__srv__GetState_Response__idl 
+
+#ifndef __lifecycle_msgs__srv__GetState_Response__idl
+#define __lifecycle_msgs__srv__GetState_Response__idl
+
+#include "lifecycle_msgs/msg/State.idl"
+
+module lifecycle_msgs {
+  module srv {
+    module dds_ {
+      @appendable struct GetState_Response_ {
+        lifecycle_msgs::msg::dds_::State_ current_state;
+      };
+    };
+  };
+};
+
+
+#endif // __lifecycle_msgs__srv__GetState_Response__idl

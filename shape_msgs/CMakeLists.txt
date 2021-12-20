@@ -1,4 +1,4 @@
-# Copyright 2018 Real-Time Innovations 
+# Copyright 2020 Real-Time Innovations 
 # 
 # Licensed under the Apache License, Version 2.0 (the "License"); 
 # you may not use this file except in compliance with the License. 
@@ -19,30 +19,36 @@ list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/MeshTriangle.idl")
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/Plane.idl")
 list(APPEND idl_files "${CMAKE_CURRENT_SOURCE_DIR}/msg/SolidPrimitive.idl")
 
+# for unbounded strings & sequences use -DUNBOUNDED_ALL on CMake cmdline
+if(UNBOUNDED_ALL)
+    set(extra_params UNBOUNDED)
+endif()
+
 connextdds_generate_ros_dds_types(
     LANG ${LANG}
     OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
     IDL_FILES ${idl_files}
     INCLUDE_DIRS ${top_level_source_dir}
+    ${extra_params}
 )
 
-add_library( shapelibrary OBJECT
+add_library( shapemsgslibrary OBJECT
     ${generated_file_list}
 )
 
-set_property(TARGET shapelibrary PROPERTY 
+set_property(TARGET shapemsgslibrary PROPERTY 
     POSITION_INDEPENDENT_CODE ON
 )
 
-target_include_directories(shapelibrary PRIVATE 
+target_include_directories(shapemsgslibrary PRIVATE 
     ${CONNEXTDDS_INCLUDE_DIRS}
     ${top_level_binary_dir}
 )
 
-target_compile_definitions(shapelibrary PRIVATE 
+target_compile_definitions(shapemsgslibrary PRIVATE 
     ${CONNEXTDDS_COMPILE_DEFINITIONS}
 )
 
-add_dependencies(shapelibrary 
-    geometrylibrary
+add_dependencies(shapemsgslibrary 
+    geometrymsgslibrary 
 )

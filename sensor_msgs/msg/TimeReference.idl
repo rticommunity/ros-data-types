@@ -13,21 +13,24 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */ 
- 
-#ifndef __sensor_msgs__msg__TimeReference__idl 
-#define __sensor_msgs__msg__TimeReference__idl 
- 
-#include "std_msgs/msg/Time.idl" 
-#include "std_msgs/msg/Header.idl" 
- 
-module sensor_msgs { module msg { 
- 
-struct TimeReference { 
-    std_msgs::msg::Header header; 
-    std_msgs::msg::Time time_ref; 
-    string source; 
-}; 
- 
-}; };  // module msg::sensor_msgs 
- 
-#endif  // __sensor_msgs__msg__TimeReference__idl 
+
+#ifndef __sensor_msgs__msg__TimeReference__idl
+#define __sensor_msgs__msg__TimeReference__idl
+
+#include "std_msgs/msg/Header.idl"
+#include "builtin_interfaces/msg/Time.idl"
+
+module sensor_msgs {
+  module msg {
+    module dds_ {
+      @appendable struct TimeReference_ {
+        std_msgs::msg::dds_::Header_ header;
+        builtin_interfaces::msg::dds_::Time_ time_ref;
+        string source;
+      };
+    };
+  };
+};
+
+
+#endif // __sensor_msgs__msg__TimeReference__idl
